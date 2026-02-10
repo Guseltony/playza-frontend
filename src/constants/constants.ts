@@ -14,7 +14,20 @@ import {
   Rocket,
   Target,
   Users,
+  Home,
+  Gamepad2,
+  Wallet,
+  User,
 } from "lucide-react";
+
+export const navItems = [
+  { icon: Home, label: "Home", active: true },
+  { icon: Trophy, label: "Leaderboard", active: false },
+  { icon: Gamepad2, label: "Games", active: false },
+  { icon: Wallet, label: "Wallet", active: false },
+  { icon: User, label: "Profile", active: false },
+];
+
 
 export const steps = [
   {

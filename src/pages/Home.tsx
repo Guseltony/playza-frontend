@@ -13,7 +13,7 @@ import { ArrowRight, Star, Trophy } from "lucide-react";
 const Home = () => {
   return (
     <div>
-      <div className="pb-24 pt-24">
+      <div className="pb-20 pt-24">
         {/* Hero Section */}
         <section className="relative px-4 py-20 overflow-hidden min-h-150">
           {/* Wireframe Background */}
