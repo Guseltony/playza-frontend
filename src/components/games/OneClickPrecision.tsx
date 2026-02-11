@@ -51,7 +51,7 @@ export function OneClickPrecision({ mode, onExit }: OneClickPrecisionProps) {
   const accuracy = hits + misses > 0 ? Math.round((hits / (hits + misses)) * 100) : 0;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-slate-900 to-slate-800 text-white px-4 py-24">
+    <div className="min-h-screen bg-linear-to-b from-gray-900 via-slate-900 to-slate-800 text-white px-4 py-24">
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
@@ -73,22 +73,22 @@ export function OneClickPrecision({ mode, onExit }: OneClickPrecisionProps) {
 
         {/* Stats Bar */}
         <div className="grid grid-cols-4 gap-3 mb-6">
-          <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center">
+          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center">
             <Trophy className="w-6 h-6 text-yellow-400 mx-auto mb-1" />
             <div className="text-xl font-bold text-yellow-400">{score}</div>
             <div className="text-xs text-gray-400">Score</div>
           </div>
-          <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center">
+          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center">
             <Clock className="w-6 h-6 text-blue-400 mx-auto mb-1" />
             <div className="text-xl font-bold text-blue-400">{timeLeft}s</div>
             <div className="text-xs text-gray-400">Time</div>
           </div>
-          <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center">
+          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center">
             <div className="text-2xl mb-1">✓</div>
             <div className="text-xl font-bold text-green-400">{hits}</div>
             <div className="text-xs text-gray-400">Hits</div>
           </div>
-          <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center">
+          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center">
             <div className="text-2xl mb-1">📊</div>
             <div className="text-xl font-bold text-purple-400">{accuracy}%</div>
             <div className="text-xs text-gray-400">Accuracy</div>
@@ -97,7 +97,7 @@ export function OneClickPrecision({ mode, onExit }: OneClickPrecisionProps) {
 
         {!gameOver ? (
           <div
-            className="relative bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl border-2 border-gray-700 overflow-hidden"
+            className="relative bg-linear-to-b from-gray-800 to-gray-900 rounded-2xl border-2 border-gray-700 overflow-hidden"
             style={{ height: "500px" }}
             onClick={handleMissClick}
           >
@@ -124,7 +124,7 @@ export function OneClickPrecision({ mode, onExit }: OneClickPrecisionProps) {
             </button>
           </div>
         ) : (
-          <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-8 border-2 border-yellow-600/50 text-center">
+          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-2xl p-8 border-2 border-yellow-600/50 text-center">
             <div className="text-6xl mb-4">🎯</div>
             <h3 className="text-3xl font-bold mb-2">Perfect!</h3>
             <div className="text-5xl font-bold text-yellow-400 mb-2">
@@ -143,7 +143,7 @@ export function OneClickPrecision({ mode, onExit }: OneClickPrecisionProps) {
             )}
             <button
               onClick={onExit}
-              className="w-full bg-gradient-to-b from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold py-4 rounded-xl transition-all"
+              className="w-full bg-linear-to-b from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold py-4 rounded-xl transition-all"
             >
               Back to Games
             </button>

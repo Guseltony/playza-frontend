@@ -25,7 +25,7 @@ const Profile = () => {
   const [email, setEmail] = useState("alex.thunder@email.com");
   const [phone, setPhone] = useState("+234 801 234 5678");
   const [location, setLocation] = useState("Lagos, Nigeria");
-  const [joinDate] = useState("January 2024");
+  // const [joinDate] = useState("January 2024");
 
   // Bank Information
   const [bankName, setBankName] = useState("First Bank Nigeria");
@@ -92,11 +92,11 @@ const Profile = () => {
   return (
     <div className="px-4 py-6 pb-24 pt-24 max-w-4xl mx-auto">
       {/* Profile Card */}
-      <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 mb-6">
+      <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 mb-6">
         <div className="flex flex-col md:flex-row items-center gap-6 mb-8">
           {/* Avatar */}
           <div className="relative">
-            <div className="w-32 h-32 rounded-full bg-gradient-to-br from-green-500 to-blue-600 flex items-center justify-center text-white text-4xl font-bold shadow-lg">
+            <div className="w-32 h-32 rounded-full bg-linear-to-br from-green-500 to-blue-600 flex items-center justify-center text-white text-4xl font-bold shadow-lg">
               AT
             </div>
             <button className="absolute bottom-0 right-0 bg-green-600 hover:bg-green-500 rounded-full p-3 shadow-lg transition-colors">
@@ -148,7 +148,7 @@ const Profile = () => {
             <button
               key={index}
               onClick={onClick}
-              className="w-full bg-gradient-to-b from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 border border-gray-700 hover:border-gray-600 rounded-xl p-5 transition-all group"
+              className="w-full bg-linear-to-b from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 border border-gray-700 hover:border-gray-600 rounded-xl p-5 transition-all group"
             >
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center group-hover:bg-green-600/20 transition-colors">
@@ -185,7 +185,7 @@ const Profile = () => {
       {/* Personal Information Modal */}
       {showPersonalModal && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-6 max-w-md w-full border-2 border-gray-700">
+          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-2xl p-6 max-w-md w-full border-2 border-gray-700">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-2xl font-semibold flex items-center gap-2">
                 <User className="w-6 h-6 text-green-400" />
@@ -251,7 +251,7 @@ const Profile = () => {
 
             <button
               onClick={() => setShowPersonalModal(false)}
-              className="w-full bg-gradient-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white py-4 rounded-xl transition-all shadow-lg mt-6"
+              className="w-full bg-linear-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white py-4 rounded-xl transition-all shadow-lg mt-6"
             >
               Save Changes
             </button>
@@ -262,7 +262,7 @@ const Profile = () => {
       {/* Bank Information Modal */}
       {showBankModal && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-6 max-w-md w-full border-2 border-gray-700">
+          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-2xl p-6 max-w-md w-full border-2 border-gray-700">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-2xl font-semibold flex items-center gap-2">
                 <CreditCard className="w-6 h-6 text-green-400" />
@@ -334,7 +334,7 @@ const Profile = () => {
 
             <button
               onClick={() => setShowBankModal(false)}
-              className="w-full bg-gradient-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white py-4 rounded-xl transition-all shadow-lg mt-6"
+              className="w-full bg-linear-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white py-4 rounded-xl transition-all shadow-lg mt-6"
             >
               Save Bank Details
             </button>
@@ -345,7 +345,7 @@ const Profile = () => {
       {/* EVM Wallet Modal */}
       {showWalletModal && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-6 max-w-md w-full border-2 border-gray-700">
+          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-2xl p-6 max-w-md w-full border-2 border-gray-700">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-2xl font-semibold flex items-center gap-2">
                 <Wallet className="w-6 h-6 text-green-400" />
@@ -383,7 +383,7 @@ const Profile = () => {
                   </p>
                   <button
                     onClick={() => copyToClipboard(evmWallet)}
-                    className="text-gray-400 hover:text-white transition-colors flex-shrink-0"
+                    className="text-gray-400 hover:text-white transition-colors shrink-0"
                   >
                     {copied ? (
                       <Check className="w-4 h-4 text-green-400" />
@@ -407,7 +407,7 @@ const Profile = () => {
                 setEvmWallet(tempEvmWallet);
                 setShowWalletModal(false);
               }}
-              className="w-full bg-gradient-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white py-4 rounded-xl transition-all shadow-lg"
+              className="w-full bg-linear-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white py-4 rounded-xl transition-all shadow-lg"
             >
               Save Wallet Address
             </button>

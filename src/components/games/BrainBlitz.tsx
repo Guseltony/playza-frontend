@@ -49,7 +49,7 @@ export function BrainBlitz({ mode, onExit }: BrainBlitzProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-slate-900 to-slate-800 text-white px-4 py-24">
+    <div className="min-h-screen bg-linear-to-b from-gray-900 via-slate-900 to-slate-800 text-white px-4 py-24">
       {/* Header */}
       <div className="max-w-2xl mx-auto mb-6">
         <div className="flex items-center justify-between mb-4">
@@ -72,17 +72,17 @@ export function BrainBlitz({ mode, onExit }: BrainBlitzProps) {
 
         {/* Stats Bar */}
         <div className="grid grid-cols-3 gap-3 mb-6">
-          <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center">
+          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center">
             <Trophy className="w-6 h-6 text-yellow-400 mx-auto mb-1" />
             <div className="text-2xl font-bold text-yellow-400">{score}</div>
             <div className="text-xs text-gray-400">Score</div>
           </div>
-          <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center">
+          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center">
             <Clock className="w-6 h-6 text-blue-400 mx-auto mb-1" />
             <div className="text-2xl font-bold text-blue-400">{timeLeft}s</div>
             <div className="text-xs text-gray-400">Time Left</div>
           </div>
-          <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center">
+          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center">
             <div className="text-2xl mb-1">🔥</div>
             <div className="text-2xl font-bold text-orange-400">{streak}</div>
             <div className="text-xs text-gray-400">Streak</div>
@@ -90,7 +90,7 @@ export function BrainBlitz({ mode, onExit }: BrainBlitzProps) {
         </div>
 
         {!gameOver ? (
-          <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-8 border-2 border-gray-700">
+          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-2xl p-8 border-2 border-gray-700">
             <div className="text-center mb-8">
               <h3 className="text-6xl font-bold mb-4">
                 {question.num1} + {question.num2} = ?
@@ -107,14 +107,14 @@ export function BrainBlitz({ mode, onExit }: BrainBlitzProps) {
               />
               <button
                 type="submit"
-                className="w-full bg-gradient-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white font-bold py-4 rounded-xl transition-all shadow-lg"
+                className="w-full bg-linear-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white font-bold py-4 rounded-xl transition-all shadow-lg"
               >
                 Submit Answer
               </button>
             </form>
           </div>
         ) : (
-          <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-8 border-2 border-yellow-600/50 text-center">
+          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-2xl p-8 border-2 border-yellow-600/50 text-center">
             <div className="text-6xl mb-4">🎉</div>
             <h3 className="text-3xl font-bold mb-2">Game Over!</h3>
             <div className="text-5xl font-bold text-yellow-400 mb-4">
@@ -130,7 +130,7 @@ export function BrainBlitz({ mode, onExit }: BrainBlitzProps) {
             )}
             <button
               onClick={onExit}
-              className="w-full bg-gradient-to-b from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold py-4 rounded-xl transition-all"
+              className="w-full bg-linear-to-b from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold py-4 rounded-xl transition-all"
             >
               Back to Games
             </button>

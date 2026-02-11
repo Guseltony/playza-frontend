@@ -59,7 +59,7 @@ export function SpeedTapArena({ mode, onExit }: SpeedTapArenaProps) {
   const tapsPerSecond = taps > 0 ? (taps / (30 - timeLeft)).toFixed(1) : '0.0';
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-slate-900 to-slate-800 text-white px-4 py-24">
+    <div className="min-h-screen bg-linear-to-b from-gray-900 via-slate-900 to-slate-800 text-white px-4 py-24">
       <div className="max-w-2xl mx-auto">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
@@ -81,22 +81,22 @@ export function SpeedTapArena({ mode, onExit }: SpeedTapArenaProps) {
 
         {/* Stats Bar */}
         <div className="grid grid-cols-4 gap-3 mb-6">
-          <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center">
+          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center">
             <Trophy className="w-6 h-6 text-yellow-400 mx-auto mb-1" />
             <div className="text-xl font-bold text-yellow-400">{score}</div>
             <div className="text-xs text-gray-400">Score</div>
           </div>
-          <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center">
+          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center">
             <Clock className="w-6 h-6 text-blue-400 mx-auto mb-1" />
             <div className="text-xl font-bold text-blue-400">{timeLeft}s</div>
             <div className="text-xs text-gray-400">Time</div>
           </div>
-          <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center">
+          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center">
             <div className="text-2xl mb-1">👆</div>
             <div className="text-xl font-bold text-green-400">{taps}</div>
             <div className="text-xs text-gray-400">Taps</div>
           </div>
-          <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center">
+          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center">
             <div className="text-2xl mb-1">🔥</div>
             <div className="text-xl font-bold text-orange-400">{combo}x</div>
             <div className="text-xs text-gray-400">Combo</div>
@@ -105,7 +105,7 @@ export function SpeedTapArena({ mode, onExit }: SpeedTapArenaProps) {
 
         {!gameOver ? (
           <div className="space-y-4">
-            <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-6 border-2 border-gray-700 text-center">
+            <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-2xl p-6 border-2 border-gray-700 text-center">
               <p className="text-gray-400 mb-4">Tap as fast as you can!</p>
               <p className="text-5xl font-bold text-yellow-400 mb-2">
                 {tapsPerSecond}
@@ -117,10 +117,10 @@ export function SpeedTapArena({ mode, onExit }: SpeedTapArenaProps) {
               onClick={handleTap}
               className={`w-full h-64 rounded-2xl font-bold text-3xl transition-all ${
                 combo > 10
-                  ? "bg-gradient-to-b from-red-500 to-red-600 hover:from-red-400 hover:to-red-500 shadow-2xl shadow-red-500/50 scale-105"
+                  ? "bg-linear-to-b from-red-500 to-red-600 hover:from-red-400 hover:to-red-500 shadow-2xl shadow-red-500/50 scale-105"
                   : combo > 5
-                    ? "bg-gradient-to-b from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 shadow-xl shadow-orange-500/30"
-                    : "bg-gradient-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 shadow-lg"
+                    ? "bg-linear-to-b from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 shadow-xl shadow-orange-500/30"
+                    : "bg-linear-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 shadow-lg"
               } active:scale-95`}
             >
               <div className="text-6xl mb-2">👆</div>
@@ -133,7 +133,7 @@ export function SpeedTapArena({ mode, onExit }: SpeedTapArenaProps) {
             </button>
           </div>
         ) : (
-          <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-8 border-2 border-yellow-600/50 text-center">
+          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-2xl p-8 border-2 border-yellow-600/50 text-center">
             <div className="text-6xl mb-4">🔥</div>
             <h3 className="text-3xl font-bold mb-2">Blazing Fast!</h3>
             <div className="text-5xl font-bold text-yellow-400 mb-2">
@@ -152,7 +152,7 @@ export function SpeedTapArena({ mode, onExit }: SpeedTapArenaProps) {
             )}
             <button
               onClick={onExit}
-              className="w-full bg-gradient-to-b from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold py-4 rounded-xl transition-all"
+              className="w-full bg-linear-to-b from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold py-4 rounded-xl transition-all"
             >
               Back to Games
             </button>

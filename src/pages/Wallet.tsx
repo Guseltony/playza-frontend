@@ -57,16 +57,16 @@ const WalletPage = () => {
       </div>
 
       {/* Balance Card */}
-      <div className="bg-gradient-to-br from-green-900/60 to-emerald-800/40 backdrop-blur rounded-2xl p-8 border-2 border-green-600/50 mb-6 shadow-lg">
+      <div className="bg-linear-to-br from-green-900/60 to-emerald-800/40 backdrop-blur rounded-2xl p-8 border-2 border-green-600/50 mb-6 shadow-lg">
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-400 via-yellow-500 to-amber-600 flex items-center justify-center shadow-xl border-2 border-yellow-300/50 relative">
+          <div className="w-12 h-12 rounded-full bg-linear-to-br from-yellow-400 via-yellow-500 to-amber-600 flex items-center justify-center shadow-xl border-2 border-yellow-300/50 relative">
             <span
               className="text-2xl font-black text-gray-900 tracking-tighter"
               style={{ fontFamily: "system-ui" }}
             >
               Z
             </span>
-            <div className="absolute inset-0 rounded-full bg-gradient-to-t from-amber-700/30 to-transparent"></div>
+            <div className="absolute inset-0 rounded-full bg-linear-to-t from-amber-700/30 to-transparent"></div>
           </div>
           <span className="text-gray-300 text-lg">ZA Gold Balance</span>
         </div>
@@ -98,7 +98,7 @@ const WalletPage = () => {
       {/* Currency Dropdown */}
       <div className=" -mt-12 relative">
         {showCurrencySelector && (
-          <div className="bg-gray-800 absolute top-full left-9 border border-gray-700 rounded-xl p-2 min-w-[200px] shadow-xl z-35">
+          <div className="bg-gray-800 absolute top-full left-9 border border-gray-700 rounded-xl p-2 min-w-50 shadow-xl z-35">
             {currencies.map((currency) => (
               <div
                 key={currency.code}
@@ -131,14 +131,14 @@ const WalletPage = () => {
       <div className="grid grid-cols-2 gap-4 mb-8 mt-16">
         <button
           onClick={() => setShowDeposit(true)}
-          className="bg-gradient-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white py-4 rounded-xl transition-all shadow-lg hover:shadow-green-500/20 flex items-center justify-center gap-2"
+          className="bg-linear-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white py-4 rounded-xl transition-all shadow-lg hover:shadow-green-500/20 flex items-center justify-center gap-2"
         >
           <TrendingUp className="w-5 h-5" />
           <span className="font-semibold">Deposit</span>
         </button>
         <button
           onClick={() => setShowWithdraw(true)}
-          className="bg-gradient-to-b from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white py-4 rounded-xl transition-all shadow-lg hover:shadow-blue-500/20 flex items-center justify-center gap-2"
+          className="bg-linear-to-b from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white py-4 rounded-xl transition-all shadow-lg hover:shadow-blue-500/20 flex items-center justify-center gap-2"
         >
           <TrendingDown className="w-5 h-5" />
           <span className="font-semibold">Withdraw</span>
@@ -148,7 +148,7 @@ const WalletPage = () => {
       {/* Deposit Modal */}
       {showDeposit && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-6 max-w-md w-full border-2 border-gray-700">
+          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-2xl p-6 max-w-md w-full border-2 border-gray-700">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-2xl font-semibold">Deposit ZA Gold</h3>
               <button
@@ -238,7 +238,7 @@ const WalletPage = () => {
 
             <button
               onClick={handleDeposit}
-              className="w-full bg-gradient-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white py-4 rounded-xl transition-all shadow-lg"
+              className="w-full bg-linear-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white py-4 rounded-xl transition-all shadow-lg"
             >
               Confirm Deposit
             </button>
@@ -249,7 +249,7 @@ const WalletPage = () => {
       {/* Withdraw Modal */}
       {showWithdraw && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-6 max-w-md w-full border-2 border-gray-700">
+          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-2xl p-6 max-w-md w-full border-2 border-gray-700">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-2xl font-semibold">Withdraw ZA Gold</h3>
               <button
@@ -314,7 +314,7 @@ const WalletPage = () => {
             <button
               onClick={handleWithdraw}
               disabled={parseInt(withdrawAmount) > zaGold}
-              className="w-full bg-gradient-to-b from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 disabled:from-gray-700 disabled:to-gray-800 disabled:cursor-not-allowed text-white py-4 rounded-xl transition-all shadow-lg"
+              className="w-full bg-linear-to-b from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 disabled:from-gray-700 disabled:to-gray-800 disabled:cursor-not-allowed text-white py-4 rounded-xl transition-all shadow-lg"
             >
               Confirm Withdrawal
             </button>
@@ -323,7 +323,7 @@ const WalletPage = () => {
       )}
 
       {/* Transaction History */}
-      <div className="bg-gradient-to-b from-gray-800/60 to-gray-900/60 backdrop-blur rounded-2xl p-6 border border-gray-700/50">
+      <div className="bg-linear-to-b from-gray-800/60 to-gray-900/60 backdrop-blur rounded-2xl p-6 border border-gray-700/50">
         <div className="flex items-center gap-3 mb-6">
           <History className="w-6 h-6 text-gray-400" />
           <h3 className="text-xl font-semibold">Transaction History</h3>

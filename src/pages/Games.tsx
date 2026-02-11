@@ -102,7 +102,7 @@ const Games = () => {
 
   return (
     <div className=" pt-24 px-4 pb-24  max-w-6xl mx-auto">
-      <div className="bg-gradient-to-r from-gray-800/80 to-gray-800/60 backdrop-blur rounded-2xl p-5 mb-8 border border-gray-700/50 flex flex-wrap items-center justify-between gap-4">
+      <div className="bg-linear-to-r from-gray-800/80 to-gray-800/60 backdrop-blur rounded-2xl p-5 mb-8 border border-gray-700/50 flex flex-wrap items-center justify-between gap-4">
         <StatItem
           icon="💰"
           label="Today's Prize Pool:"
@@ -140,7 +140,7 @@ const Games = () => {
       {editMode && (
         <button
           onClick={addNewGame}
-          className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl overflow-hidden border-2 border-dashed border-gray-600 hover:border-gray-500 transition-all hover:scale-[1.02] min-h-[350px] flex flex-col items-center justify-center gap-3"
+          className="bg-linear-to-b from-gray-800 to-gray-900 rounded-2xl overflow-hidden border-2 border-dashed border-gray-600 hover:border-gray-500 transition-all hover:scale-[1.02] min-h-87.5 flex flex-col items-center justify-center gap-3"
         >
           <Plus className="w-12 h-12 text-gray-500" />
           <span className="text-gray-400">Add New Game</span>
