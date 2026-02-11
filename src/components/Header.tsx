@@ -1,6 +1,6 @@
 // import logoImage from "logoImage.png";
 
-import { useLocation } from "react-router";
+import { Link, useLocation } from "react-router";
 import { Button } from "./ui/button";
 import { ChevronRight, Wallet } from "lucide-react";
 
@@ -16,12 +16,14 @@ const Header = () => {
       {/* <div className="flex-1"></div> */}
       <div className="flex items-center justify-between max-w-6xl mx-auto">
         <div className="flex items-center gap-3 justify-center ">
-          <img
-            src="/logoImage.png"
-            alt="Playza Logo"
-            className="w-12 h-12 object-contain"
-          />
-          <h1 className="hidden md:block text-2xl">PLAYZA</h1>
+          <Link to={"/"}>
+            <img
+              src="/logoImage.png"
+              alt="Playza Logo"
+              className="w-12 h-12 object-contain"
+            />
+            <h1 className="hidden md:block text-2xl">PLAYZA</h1>
+          </Link>
         </div>
 
         <div className="flex items-center gap-3">
@@ -39,12 +41,14 @@ const Header = () => {
       {/* Other Pages Header */}
       <div className="flex items-center justify-between max-w-6xl mx-auto">
         <div className="flex items-center gap-3">
-          <img
-            src="/logoImage.png"
-            alt="Playza Logo"
-            className="w-12 h-12 object-contain"
-          />
-          <h1 className="hidden md:block text-2xl">PLAYZA</h1>
+          <Link to={"/"}>
+            <img
+              src="/logoImage.png"
+              alt="Playza Logo"
+              className="w-12 h-12 object-contain"
+            />
+            <h1 className="hidden md:block text-2xl">PLAYZA</h1>
+          </Link>
         </div>
 
         <div className="flex items-center gap-3">
