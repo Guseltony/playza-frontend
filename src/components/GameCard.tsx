@@ -24,7 +24,7 @@ const GameCard = ({
   };
 
   return (
-    <div className="relative bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl overflow-hidden border-2 border-gray-700 hover:border-green-500 transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-green-500/20">
+    <div className="relative bg-linear-to-b from-gray-800 to-gray-900 rounded-2xl overflow-hidden border-2 border-gray-700 hover:border-green-500 transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-green-500/20">
       {/* Remove Button */}
       {editMode && onRemove && (
         <button
@@ -37,7 +37,7 @@ const GameCard = ({
 
       {/* Top Game Badge */}
       {isTopGame && (
-        <div className="absolute top-4 left-4 z-10 bg-gradient-to-r from-yellow-500 to-yellow-600 px-4 py-1.5 rounded-lg shadow-lg">
+        <div className="absolute top-4 left-4 z-10 bg-linear-to-r from-yellow-500 to-yellow-600 px-4 py-1.5 rounded-lg shadow-lg">
           <span className="text-gray-900 font-semibold text-sm">Top Game</span>
         </div>
       )}
@@ -56,7 +56,7 @@ const GameCard = ({
       {editMode && isTopGame && onUpdate && (
         <button
           onClick={() => onUpdate({ isTopGame: false })}
-          className="absolute top-4 left-4 z-10 bg-gradient-to-r from-yellow-500 to-yellow-600 px-4 py-1.5 rounded-lg shadow-lg"
+          className="absolute top-4 left-4 z-10 bg-linear-to-r from-yellow-500 to-yellow-600 px-4 py-1.5 rounded-lg shadow-lg"
         >
           <span className="text-gray-900 font-semibold text-sm">Top Game</span>
         </button>
@@ -88,7 +88,7 @@ const GameCard = ({
               alt={title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-gray-900 via-gray-900/50 to-transparent"></div>
           </>
         )}
       </div>
@@ -110,7 +110,7 @@ const GameCard = ({
         {!editMode && !showGameOptions && (
           <button
             onClick={() => setShowGameOptions(true)}
-            className="w-full bg-gradient-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg hover:shadow-green-500/30"
+            className="w-full bg-linear-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg hover:shadow-green-500/30"
           >
             Choose Entry
           </button>
@@ -120,14 +120,14 @@ const GameCard = ({
           <div className="space-y-3">
             <button
               onClick={handlePlayDemo}
-              className="w-full bg-gradient-to-b from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-semibold py-3.5 rounded-xl transition-all shadow-lg hover:shadow-blue-500/30 flex items-center justify-center gap-2"
+              className="w-full bg-linear-to-b from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-semibold py-3.5 rounded-xl transition-all shadow-lg hover:shadow-blue-500/30 flex items-center justify-center gap-2"
             >
               <Eye className="w-5 h-5" />
               Play Demo (Free)
             </button>
             <button
               onClick={handlePlayLive}
-              className="w-full bg-gradient-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg hover:shadow-green-500/30 flex items-center justify-center gap-2"
+              className="w-full bg-linear-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg hover:shadow-green-500/30 flex items-center justify-center gap-2"
             >
               <Play className="w-5 h-5" />
               Play Live
@@ -142,7 +142,7 @@ const GameCard = ({
         )}
 
         {editMode && (
-          <button className="w-full bg-gradient-to-b from-green-600 to-green-700 text-white py-3.5 rounded-xl shadow-lg opacity-50 cursor-not-allowed">
+          <button className="w-full bg-linear-to-b from-green-600 to-green-700 text-white py-3.5 rounded-xl shadow-lg opacity-50 cursor-not-allowed">
             Choose Entry
           </button>
         )}
