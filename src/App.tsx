@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import NavFooter from "./components/NavFooter";
 import AppNotification from "./components/AppNotification";
 import LeaderBoard from "./pages/LeaderBoard";
+import WalletPage from "./pages/Wallet";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -14,6 +15,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/leaderboard" element={<LeaderBoard />} />
+        <Route path="/wallet" element={<WalletPage />} />
       </Routes>
       <NavFooter />
     </div>

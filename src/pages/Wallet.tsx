@@ -1,6 +1,14 @@
-import { currencies } from "@/constants/constants";
+import { currencies, transactions } from "@/constants/constants";
 import type { Currency } from "@/types/types";
-import { ChevronDown, Wallet } from "lucide-react";
+import {
+  ChevronDown,
+  Coins,
+  CreditCard,
+  History,
+  TrendingDown,
+  TrendingUp,
+  Wallet,
+} from "lucide-react";
 import { useState } from "react";
 
 const WalletPage = () => {
@@ -38,7 +46,7 @@ const WalletPage = () => {
 
   const quickAmounts = [100, 500, 1000, 2000, 5000];
   return (
-    <div className="px-4 py-6 pb-24 max-w-4xl mx-auto">
+    <div className="px-4 py-6 pb-24 pt-24 max-w-4xl mx-auto">
       {/* Header */}
       <div className="text-center mb-8">
         <div className="flex items-center justify-center gap-3 mb-3">
@@ -75,39 +83,8 @@ const WalletPage = () => {
               {selectedCurrency.code}
             </span>
             <ChevronDown className="w-4 h-4 text-gray-400" />
-
-            {/* Currency Dropdown */}
-            {showCurrencySelector && (
-              <div className="absolute top-full left-0 mt-2 bg-gray-800 border border-gray-700 rounded-xl p-2 min-w-[200px] shadow-xl z-10">
-                {currencies.map((currency) => (
-                  <button
-                    key={currency.code}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedCurrency(currency);
-                      setShowCurrencySelector(false);
-                    }}
-                    className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-700 transition-colors ${
-                      selectedCurrency.code === currency.code
-                        ? "bg-gray-700"
-                        : ""
-                    }`}
-                  >
-                    <span className="text-xl">{currency.flag}</span>
-                    <div className="flex-1 text-left">
-                      <div className="text-sm font-medium text-white">
-                        {currency.code}
-                      </div>
-                      <div className="text-xs text-gray-400">
-                        1 ZG = {currency.symbol}
-                        {currency.rate.toFixed(2)}
-                      </div>
-                    </div>
-                  </button>
-                ))}
-              </div>
-            )}
           </button>
+
           <span className="text-gray-300 text-sm">
             ≈ {selectedCurrency.symbol}
             {(zaGold * selectedCurrency.rate).toLocaleString(undefined, {
@@ -118,8 +95,40 @@ const WalletPage = () => {
         </div>
       </div>
 
+      {/* Currency Dropdown */}
+      <div className=" -mt-12 relative">
+        {showCurrencySelector && (
+          <div className="bg-gray-800 absolute top-full left-9 border border-gray-700 rounded-xl p-2 min-w-[200px] shadow-xl z-35">
+            {currencies.map((currency) => (
+              <div
+                key={currency.code}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedCurrency(currency);
+                  setShowCurrencySelector(false);
+                }}
+                className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-700 transition-colors ${
+                  selectedCurrency.code === currency.code ? "bg-gray-700" : ""
+                }`}
+              >
+                <span className="text-xl">{currency.flag}</span>
+                <div className="flex-1 text-left">
+                  <div className="text-sm font-medium text-white">
+                    {currency.code}
+                  </div>
+                  <div className="text-xs text-gray-400">
+                    1 ZG = {currency.symbol}
+                    {currency.rate.toFixed(2)}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
       {/* Action Buttons */}
-      <div className="grid grid-cols-2 gap-4 mb-8">
+      <div className="grid grid-cols-2 gap-4 mb-8 mt-16">
         <button
           onClick={() => setShowDeposit(true)}
           className="bg-gradient-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white py-4 rounded-xl transition-all shadow-lg hover:shadow-green-500/20 flex items-center justify-center gap-2"
@@ -382,4 +391,4 @@ const WalletPage = () => {
   );
 };
 
-export default Wallet;
+export default WalletPage;
