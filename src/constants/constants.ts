@@ -21,6 +21,7 @@ import {
   User,
 } from "lucide-react";
 
+
 export const navItems = [
   { icon: Home, label: "Home", active: true, path: "/" },
   { icon: Trophy, label: "Leaderboard", active: false, path: "/leaderboard" },
@@ -442,4 +443,11 @@ export const currencies: Currency[] = [
   { code: "GHS", symbol: "₵", rate: 1.13, flag: "🇬🇭" },
   { code: "KES", symbol: "KSh", rate: 8.66, flag: "🇰🇪" },
   { code: "ZAR", symbol: "R", rate: 1.22, flag: "🇿🇦" },
+];
+
+// Stats
+export const stats = [
+  { label: "Games Played", value: "48", icon: "🎮" },
+  { label: "Total Wins", value: "32", icon: "🏆" },
+  { label: "Win Rate", value: "66%", icon: "📊" },
 ];
