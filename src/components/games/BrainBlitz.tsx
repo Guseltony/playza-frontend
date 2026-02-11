@@ -14,6 +14,13 @@ export function BrainBlitz({ mode, onExit }: BrainBlitzProps) {
   const [gameOver, setGameOver] = useState(false);
   const [streak, setStreak] = useState(0);
 
+  const generateQuestion = () => {
+    const num1 = Math.floor(Math.random() * 20) + 1;
+    const num2 = Math.floor(Math.random() * 20) + 1;
+    setQuestion({ num1, num2, answer: num1 + num2 });
+    setUserAnswer("");
+  };
+  
   useEffect(() => {
     generateQuestion();
   }, []);
@@ -27,12 +34,6 @@ export function BrainBlitz({ mode, onExit }: BrainBlitzProps) {
     }
   }, [timeLeft, gameOver]);
 
-  const generateQuestion = () => {
-    const num1 = Math.floor(Math.random() * 20) + 1;
-    const num2 = Math.floor(Math.random() * 20) + 1;
-    setQuestion({ num1, num2, answer: num1 + num2 });
-    setUserAnswer('');
-  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,7 +49,7 @@ export function BrainBlitz({ mode, onExit }: BrainBlitzProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-slate-900 to-slate-800 text-white px-4 py-6">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-slate-900 to-slate-800 text-white px-4 py-24">
       {/* Header */}
       <div className="max-w-2xl mx-auto mb-6">
         <div className="flex items-center justify-between mb-4">
@@ -56,7 +57,9 @@ export function BrainBlitz({ mode, onExit }: BrainBlitzProps) {
             <div className="text-4xl">🧠</div>
             <div>
               <h2 className="text-2xl font-bold">Brain Blitz</h2>
-              <p className="text-sm text-gray-400">{mode === 'live' ? '🔴 LIVE MODE' : '🎮 DEMO MODE'}</p>
+              <p className="text-sm text-gray-400">
+                {mode === "live" ? "🔴 LIVE MODE" : "🎮 DEMO MODE"}
+              </p>
             </div>
           </div>
           <button
@@ -114,9 +117,11 @@ export function BrainBlitz({ mode, onExit }: BrainBlitzProps) {
           <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-8 border-2 border-yellow-600/50 text-center">
             <div className="text-6xl mb-4">🎉</div>
             <h3 className="text-3xl font-bold mb-2">Game Over!</h3>
-            <div className="text-5xl font-bold text-yellow-400 mb-4">{score}</div>
+            <div className="text-5xl font-bold text-yellow-400 mb-4">
+              {score}
+            </div>
             <p className="text-gray-400 mb-6">Final Score</p>
-            {mode === 'live' && (
+            {mode === "live" && (
               <div className="bg-green-900/40 border border-green-600/50 rounded-xl p-4 mb-6">
                 <p className="text-green-400 font-semibold">
                   💰 Earned: {Math.floor(score / 10)} ZG

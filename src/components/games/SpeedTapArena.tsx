@@ -59,14 +59,16 @@ export function SpeedTapArena({ mode, onExit }: SpeedTapArenaProps) {
   const tapsPerSecond = taps > 0 ? (taps / (30 - timeLeft)).toFixed(1) : '0.0';
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-slate-900 to-slate-800 text-white px-4 py-6">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-slate-900 to-slate-800 text-white px-4 py-24">
       <div className="max-w-2xl mx-auto">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
             <div className="text-4xl">🔥</div>
             <div>
               <h2 className="text-2xl font-bold">SpeedTap Arena</h2>
-              <p className="text-sm text-gray-400">{mode === 'live' ? '🔴 LIVE MODE' : '🎮 DEMO MODE'}</p>
+              <p className="text-sm text-gray-400">
+                {mode === "live" ? "🔴 LIVE MODE" : "🎮 DEMO MODE"}
+              </p>
             </div>
           </div>
           <button
@@ -105,18 +107,20 @@ export function SpeedTapArena({ mode, onExit }: SpeedTapArenaProps) {
           <div className="space-y-4">
             <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-6 border-2 border-gray-700 text-center">
               <p className="text-gray-400 mb-4">Tap as fast as you can!</p>
-              <p className="text-5xl font-bold text-yellow-400 mb-2">{tapsPerSecond}</p>
+              <p className="text-5xl font-bold text-yellow-400 mb-2">
+                {tapsPerSecond}
+              </p>
               <p className="text-sm text-gray-500">taps per second</p>
             </div>
-            
+
             <button
               onClick={handleTap}
               className={`w-full h-64 rounded-2xl font-bold text-3xl transition-all ${
                 combo > 10
-                  ? 'bg-gradient-to-b from-red-500 to-red-600 hover:from-red-400 hover:to-red-500 shadow-2xl shadow-red-500/50 scale-105'
+                  ? "bg-gradient-to-b from-red-500 to-red-600 hover:from-red-400 hover:to-red-500 shadow-2xl shadow-red-500/50 scale-105"
                   : combo > 5
-                  ? 'bg-gradient-to-b from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 shadow-xl shadow-orange-500/30'
-                  : 'bg-gradient-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 shadow-lg'
+                    ? "bg-gradient-to-b from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 shadow-xl shadow-orange-500/30"
+                    : "bg-gradient-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 shadow-lg"
               } active:scale-95`}
             >
               <div className="text-6xl mb-2">👆</div>
@@ -132,10 +136,14 @@ export function SpeedTapArena({ mode, onExit }: SpeedTapArenaProps) {
           <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-8 border-2 border-yellow-600/50 text-center">
             <div className="text-6xl mb-4">🔥</div>
             <h3 className="text-3xl font-bold mb-2">Blazing Fast!</h3>
-            <div className="text-5xl font-bold text-yellow-400 mb-2">{score}</div>
+            <div className="text-5xl font-bold text-yellow-400 mb-2">
+              {score}
+            </div>
             <p className="text-gray-400 mb-2">Final Score</p>
-            <p className="text-gray-500 mb-2">{taps} total taps • {tapsPerSecond} taps/sec</p>
-            {mode === 'live' && (
+            <p className="text-gray-500 mb-2">
+              {taps} total taps • {tapsPerSecond} taps/sec
+            </p>
+            {mode === "live" && (
               <div className="bg-green-900/40 border border-green-600/50 rounded-xl p-4 mb-6">
                 <p className="text-green-400 font-semibold">
                   💰 Earned: {Math.floor(score / 10)} ZG

@@ -28,3 +28,17 @@ export interface Currency {
   rate: number;
   flag: string;
 }
+
+export interface GameCardProps {
+  title: string;
+  image: string;
+  isTopGame: boolean;
+  editMode?: boolean;
+  onUpdate?: (updates: {
+    title?: string;
+    image?: string;
+    isTopGame?: boolean;
+  }) => void;
+  onRemove?: () => void;
+  onPlayGame?: (mode: "demo" | "live") => void;
+}

@@ -51,14 +51,16 @@ export function OneClickPrecision({ mode, onExit }: OneClickPrecisionProps) {
   const accuracy = hits + misses > 0 ? Math.round((hits / (hits + misses)) * 100) : 0;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-slate-900 to-slate-800 text-white px-4 py-6">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-slate-900 to-slate-800 text-white px-4 py-24">
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
             <div className="text-4xl">🎯</div>
             <div>
               <h2 className="text-2xl font-bold">One-Click Precision</h2>
-              <p className="text-sm text-gray-400">{mode === 'live' ? '🔴 LIVE MODE' : '🎮 DEMO MODE'}</p>
+              <p className="text-sm text-gray-400">
+                {mode === "live" ? "🔴 LIVE MODE" : "🎮 DEMO MODE"}
+              </p>
             </div>
           </div>
           <button
@@ -94,9 +96,9 @@ export function OneClickPrecision({ mode, onExit }: OneClickPrecisionProps) {
         </div>
 
         {!gameOver ? (
-          <div 
+          <div
             className="relative bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl border-2 border-gray-700 overflow-hidden"
-            style={{ height: '500px' }}
+            style={{ height: "500px" }}
             onClick={handleMissClick}
           >
             <div className="absolute inset-0 flex items-center justify-center text-gray-600 text-sm">
@@ -113,7 +115,7 @@ export function OneClickPrecision({ mode, onExit }: OneClickPrecisionProps) {
                 top: `${targetPosition.y}%`,
                 width: `${targetSize}px`,
                 height: `${targetSize}px`,
-                transform: 'translate(-50%, -50%)',
+                transform: "translate(-50%, -50%)",
               }}
             >
               <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-2xl">
@@ -125,10 +127,14 @@ export function OneClickPrecision({ mode, onExit }: OneClickPrecisionProps) {
           <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-8 border-2 border-yellow-600/50 text-center">
             <div className="text-6xl mb-4">🎯</div>
             <h3 className="text-3xl font-bold mb-2">Perfect!</h3>
-            <div className="text-5xl font-bold text-yellow-400 mb-2">{score}</div>
+            <div className="text-5xl font-bold text-yellow-400 mb-2">
+              {score}
+            </div>
             <p className="text-gray-400 mb-2">Final Score</p>
-            <p className="text-gray-500 mb-2">{hits} hits • {accuracy}% accuracy</p>
-            {mode === 'live' && (
+            <p className="text-gray-500 mb-2">
+              {hits} hits • {accuracy}% accuracy
+            </p>
+            {mode === "live" && (
               <div className="bg-green-900/40 border border-green-600/50 rounded-xl p-4 mb-6">
                 <p className="text-green-400 font-semibold">
                   💰 Earned: {Math.floor(score / 10)} ZG

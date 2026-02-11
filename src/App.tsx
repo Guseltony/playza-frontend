@@ -6,6 +6,7 @@ import AppNotification from "./components/AppNotification";
 import LeaderBoard from "./pages/LeaderBoard";
 import WalletPage from "./pages/Wallet";
 import Profile from "./pages/Profile";
+import Games from "./pages/Games";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/leaderboard" element={<LeaderBoard />} />
         <Route path="/wallet" element={<WalletPage />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/games" element={<Games />} />
       </Routes>
       <NavFooter />
     </div>
