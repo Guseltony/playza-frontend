@@ -15,16 +15,14 @@ const Header = () => {
       {/* Home Page Header */}
       {/* <div className="flex-1"></div> */}
       <div className="flex items-center justify-between max-w-6xl mx-auto">
-        <div className="flex items-center gap-3 justify-center ">
-          <Link to={"/"}>
-            <img
-              src="/logoImage.png"
-              alt="Playza Logo"
-              className="w-12 h-12 object-contain"
-            />
-            <h1 className="hidden md:block text-2xl">PLAYZA</h1>
-          </Link>
-        </div>
+        <Link to={"/"} className="flex items-center gap-3">
+          <img
+            src="/logoImage.png"
+            alt="Playza Logo"
+            className="w-12 h-12 object-contain"
+          />
+          <h1 className="hidden md:block text-2xl">PLAYZA</h1>
+        </Link>
 
         <div className="flex items-center gap-3">
           <Button
@@ -40,16 +38,14 @@ const Header = () => {
     <div className="px-4 bg-linear-to-r from-cyan-400 via-blue-500 to-magenta-500 w-full py-4 fixed z-50 top-0 right-0">
       {/* Other Pages Header */}
       <div className="flex items-center justify-between max-w-6xl mx-auto">
-        <div className="flex items-center gap-3">
-          <Link to={"/"}>
-            <img
-              src="/logoImage.png"
-              alt="Playza Logo"
-              className="w-12 h-12 object-contain"
-            />
-            <h1 className="hidden md:block text-2xl">PLAYZA</h1>
-          </Link>
-        </div>
+        <Link to={"/"} className="flex items-center gap-3">
+          <img
+            src="/logoImage.png"
+            alt="Playza Logo"
+            className="w-12 h-12 object-contain"
+          />
+          <h1 className="hidden md:block text-2xl">PLAYZA</h1>
+        </Link>
 
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 transition-colors px-4 py-2.5 rounded-full border border-gray-700">
