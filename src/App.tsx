@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Header from "./components/Header";
 import NavFooter from "./components/NavFooter";
 import AppNotification from "./components/AppNotification";
+import LeaderBoard from "./pages/LeaderBoard";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -12,6 +13,7 @@ const App = () => {
       {pathname === "/" && <AppNotification />}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/leaderboard" element={<LeaderBoard />} />
       </Routes>
       <NavFooter />
     </div>

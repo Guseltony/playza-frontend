@@ -2,7 +2,7 @@ import { Smartphone } from "lucide-react";
 
 const AppNotification = () => {
   return (
-    <div className="mt-24 md:mt-20">
+    <div className="mt-20 md:mt-20">
       {/* Mobile App Notification Banner */}
 
       <div className="bg-linear-to-r from-blue-600/20 to-purple-600/20 border-b border-blue-500/30 px-4 py-3">
