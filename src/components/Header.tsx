@@ -22,7 +22,7 @@ const Header = () => {
 
   return (
     <div className="sticky top-0 z-50 glass border-b border-primary/20">
-      <div className="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-360 mx-auto px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-12">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">

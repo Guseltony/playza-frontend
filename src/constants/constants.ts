@@ -15,19 +15,29 @@ import {
   Rocket,
   Target,
   Users,
-  Home,
+
+  // refactory
+  ChartBarIncreasing,
   Gamepad2,
+  Gift,
+  History,
+  Medal,
+  Settings,
+  UserPlus,
   Wallet,
-  User,
+  Home,
 } from "lucide-react";
 
-
 export const navItems = [
-  { icon: Home, label: "Home", active: true, path: "/" },
-  { icon: Trophy, label: "Leaderboard", active: false, path: "/leaderboard" },
-  { icon: Gamepad2, label: "Games", active: false, path: "/games" },
-  { icon: Wallet, label: "Wallet", active: false, path: "/wallet" },
-  { icon: User, label: "Profile", active: false, path: "/profile" },
+  { icon: Home, label: "PlayZa", path: "/" },
+  { icon: Gamepad2, label: "Games", path: "/games" },
+  { icon: Medal, label: "Tournaments", path: "/tournaments" },
+  { icon: ChartBarIncreasing, label: "Leaderboard", path: "/leaderboard" },
+  { icon: Gift, label: "Bonus", path: "/bonus" },
+  { icon: UserPlus, label: "Referral", path: "/referral" },
+  { icon: Wallet, label: "Wallet", path: "/wallet" },
+  { icon: History, label: "History", path: "/history" },
+  { icon: Settings, label: "Settings", path: "/settings" },
 ];
 
 export const steps = [

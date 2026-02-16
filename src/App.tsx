@@ -27,7 +27,7 @@ const App = () => {
           <Route path="/games" element={<Games />} />
         </Routes>
       </div>
-      <NavFooter />
+      {/* <NavFooter /> */}
     </div>
   );
 };
