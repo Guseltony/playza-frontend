@@ -32,9 +32,9 @@ const HeroBanner = () => {
             <div className="text-xs text-slate-400 uppercase font-bold tracking-widest mb-1">
               Current Game Pool
             </div>
-            <div className="flex items-center justify-center text-base md:text-xl lg:text-3xl font-display font-bold text-accent">
+            <div className="flex items-center text-base md:text-xl lg:text-3xl font-display font-bold text-accent">
               ₦250,000.00
-              <TrendingUp className=" text-green-400 ml-1" size={15}/>
+              <TrendingUp className=" text-green-400 ml-1" size={15} />
             </div>
           </div>
           <div className="h-10 w-px bg-white/20"></div>
