@@ -1,10 +1,12 @@
+import { TrendingUp } from "lucide-react";
+
 const HeroBanner = () => {
   return (
-    <section className="relative h-80 rounded-2xl overflow-hidden glass border-white/10">
+    <section className="relative h-64 md:h-72 lg:h-80 rounded-2xl overflow-hidden glass border-white/10">
       <img
         alt="Tournament Banner"
         className="absolute inset-0 w-full h-full object-cover"
-        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVkwduXuJjNi6O0Q_nsFaV5iTOE9C9AdO_rxrQiRwN8jePvtUKLBeFfnwdN_vJfdXSeEmQcENLRLSuWXf_6KxHPdNfDe-jLVwxDKKpAx0qoXRxAc1R0odZGfQM7D1vc26oYnptqwD5YISX9CaaozTx3QRt5qz8y6KaqE7fY_3OJA08RCS8gvgm_cirzlckf6nKrG4dqj28jTRatq5WT0O3c3EpyZftCiQyVGjylQ50y1mI7l6HBohJ-4wZ1eB1_sWt95bIsqkteQ8c"
+        src="/hero.png"
       />
       <div className="absolute inset-0 bg-linear-to-r from-black via-black/80 to-transparent"></div>
       <div className="relative h-full p-8 flex flex-col justify-center z-5">
@@ -17,18 +19,22 @@ const HeroBanner = () => {
             MATCHMAKING OPEN
           </div>
         </div>
-        <h1 className="text-5xl font-display font-black tracking-tight mb-4">
-          GRAND MASTER
-          <br />
-          <span className="text-primary">CHESS SERIES</span>
-        </h1>
+        <div className="flex flex-col  space-y-1 my-4">
+          <h1 className="text-lg md:text-2xl lg:text-5xl font-black tracking-tight uppercase">
+            Quantum Clash
+          </h1>
+          <span className="text-sm font-bold tracking-widest text-primary uppercase">
+            fighting arena
+          </span>
+        </div>
         <div className="flex items-center gap-12">
           <div>
             <div className="text-xs text-slate-400 uppercase font-bold tracking-widest mb-1">
-              Total Prize Pool
+              Current Game Pool
             </div>
-            <div className="text-3xl font-display font-bold text-accent">
+            <div className="flex items-center justify-center text-base md:text-xl lg:text-3xl font-display font-bold text-accent">
               ₦250,000.00
+              <TrendingUp className=" text-green-400 ml-1" size={15}/>
             </div>
           </div>
           <div className="h-10 w-px bg-white/20"></div>
@@ -36,7 +42,7 @@ const HeroBanner = () => {
             <div className="text-xs text-slate-400 uppercase font-bold tracking-widest mb-1">
               Time Remaining
             </div>
-            <div className="text-3xl font-display font-bold text-white tabular-nums">
+            <div className="text-base md:text-xl lg:text-3xl font-display font-bold text-white tabular-nums">
               00:42:15
             </div>
           </div>
