@@ -1,9 +1,11 @@
 // import React from 'react'
 import { AnimatedGrid } from "@/components/AnimatedGrid";
 import GameMode from "@/components/home/GameMode";
+import GamesGrid from "@/components/home/GamesGrid";
 import HeroBanner from "@/components/home/HeroBanner";
 import HowItWorks from "@/components/home/HowItWorks";
 import LeaderBoard from "@/components/home/LeaderBoard";
+import RecentWinners from "@/components/home/RecentWinners";
 import { WireframeHero } from "@/components/WireframeHero";
 import {
   // gameModes,
@@ -18,72 +20,68 @@ const Home = () => {
   return (
     <main className="flex-1 min-w-0 space-y-6">
       {/* Hero Section */}
-        <HeroBanner />
-        {/* Wireframe Background */}
-        {/* <WireframeHero /> */}
-
-        {/* Animated Grid */}
-        {/* <AnimatedGrid /> */}
-
-        {/* Dark gradient overlay for text readability */}
-        {/* <div className="absolute inset-0 bg-linear-to-r from-gray-900/95 via-gray-900/80 to-transparent"></div> */}
-
-        <div className="relative max-w-5xl mx-auto text-center z-10">
-          <div className="inline-flex items-center gap-2 bg-cyan-500/20 border border-cyan-400/50 rounded-full px-4 py-2 mb-6 backdrop-blur-sm shadow-lg shadow-cyan-500/20">
-            <Star className="w-4 h-4 text-cyan-400 fill-cyan-400 animate-pulse" />
-            <span className="text-cyan-300 text-sm font-medium">
-              Global Skill-Based Gaming Platform
-            </span>
-          </div>
-
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Play. Compete.
-            <br />
-            <span className="bg-linear-to-r from-cyan-400 via-blue-500 to-magenta-500 bg-clip-text text-transparent animate-pulse">
-              Win Real Rewards.
-            </span>
-          </h1>
-
-          <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto drop-shadow-lg">
-            Join thousands of players worldwide competing in skill-based games
-            and earning real rewards. Your talent deserves recognition.
-          </p>
-
-          <button
-            // onClick={onStartPlaying}
-            className="group relative bg-linear-to-r from-cyan-500 via-blue-600 to-magenta-600 hover:from-cyan-400 hover:via-blue-500 hover:to-magenta-500 text-white text-lg font-semibold px-10 py-5 rounded-full transition-all shadow-lg shadow-cyan-500/50 hover:shadow-cyan-500/80 hover:scale-105 inline-flex items-center gap-3 border border-cyan-400/30"
-          >
-            <span className="relative z-10">Start Playing</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
-            <div className="absolute inset-0 bg-linear-to-r from-cyan-500 to-magenta-500 rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
-          </button>
-
-          <div className="flex items-center justify-center gap-8 mt-12 text-gray-400">
-            <div className="bg-gray-900/60 backdrop-blur-sm border border-cyan-500/20 rounded-xl px-6 py-4 shadow-lg">
-              <div className="text-3xl font-bold text-cyan-400">1,275+</div>
-              <div className="text-sm">Active Players</div>
-            </div>
-            <div className="w-px h-16 bg-linear-to-b from-transparent via-cyan-500/50 to-transparent"></div>
-            <div className="bg-gray-900/60 backdrop-blur-sm border border-magenta-500/20 rounded-xl px-6 py-4 shadow-lg">
-              <div className="text-3xl font-bold text-magenta-400">₦250K+</div>
-              <div className="text-sm">Total Rewards</div>
-            </div>
-            <div className="w-px h-16 bg-linear-to-b from-transparent via-magenta-500/50 to-transparent"></div>
-            <div className="bg-gray-900/60 backdrop-blur-sm border border-blue-500/20 rounded-xl px-6 py-4 shadow-lg">
-              <div className="text-3xl font-bold text-blue-400">5,234+</div>
-              <div className="text-sm">Games Played</div>
-            </div>
-          </div>
+      <HeroBanner />
+      <RecentWinners />
+      <GamesGrid />
+      {/* Wireframe Background */}
+      {/* <WireframeHero /> */}
+      {/* Animated Grid */}
+      {/* <AnimatedGrid /> */}
+      {/* Dark gradient overlay for text readability */}
+      {/* <div className="absolute inset-0 bg-linear-to-r from-gray-900/95 via-gray-900/80 to-transparent"></div> */}
+      <div className="relative max-w-5xl mx-auto text-center z-10">
+        <div className="inline-flex items-center gap-2 bg-cyan-500/20 border border-cyan-400/50 rounded-full px-4 py-2 mb-6 backdrop-blur-sm shadow-lg shadow-cyan-500/20">
+          <Star className="w-4 h-4 text-cyan-400 fill-cyan-400 animate-pulse" />
+          <span className="text-cyan-300 text-sm font-medium">
+            Global Skill-Based Gaming Platform
+          </span>
         </div>
 
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          Play. Compete.
+          <br />
+          <span className="bg-linear-to-r from-cyan-400 via-blue-500 to-magenta-500 bg-clip-text text-transparent animate-pulse">
+            Win Real Rewards.
+          </span>
+        </h1>
+
+        <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto drop-shadow-lg">
+          Join thousands of players worldwide competing in skill-based games and
+          earning real rewards. Your talent deserves recognition.
+        </p>
+
+        <button
+          // onClick={onStartPlaying}
+          className="group relative bg-linear-to-r from-cyan-500 via-blue-600 to-magenta-600 hover:from-cyan-400 hover:via-blue-500 hover:to-magenta-500 text-white text-lg font-semibold px-10 py-5 rounded-full transition-all shadow-lg shadow-cyan-500/50 hover:shadow-cyan-500/80 hover:scale-105 inline-flex items-center gap-3 border border-cyan-400/30"
+        >
+          <span className="relative z-10">Start Playing</span>
+          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
+          <div className="absolute inset-0 bg-linear-to-r from-cyan-500 to-magenta-500 rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
+        </button>
+
+        <div className="flex items-center justify-center gap-8 mt-12 text-gray-400">
+          <div className="bg-gray-900/60 backdrop-blur-sm border border-cyan-500/20 rounded-xl px-6 py-4 shadow-lg">
+            <div className="text-3xl font-bold text-cyan-400">1,275+</div>
+            <div className="text-sm">Active Players</div>
+          </div>
+          <div className="w-px h-16 bg-linear-to-b from-transparent via-cyan-500/50 to-transparent"></div>
+          <div className="bg-gray-900/60 backdrop-blur-sm border border-magenta-500/20 rounded-xl px-6 py-4 shadow-lg">
+            <div className="text-3xl font-bold text-magenta-400">₦250K+</div>
+            <div className="text-sm">Total Rewards</div>
+          </div>
+          <div className="w-px h-16 bg-linear-to-b from-transparent via-magenta-500/50 to-transparent"></div>
+          <div className="bg-gray-900/60 backdrop-blur-sm border border-blue-500/20 rounded-xl px-6 py-4 shadow-lg">
+            <div className="text-3xl font-bold text-blue-400">5,234+</div>
+            <div className="text-sm">Games Played</div>
+          </div>
+        </div>
+      </div>
       {/* How It Works */}
       <HowItWorks />
       {/* Game Modes */}
       <GameMode />
-
       {/* Leaderboard Preview */}
       <LeaderBoard />
-
       {/* Roadmap */}
       <section className="relative px-4 py-16 overflow-hidden">
         {/* Background grid */}
@@ -197,7 +195,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* Trust Indicators */}
       <section className="relative px-4 py-16 bg-gray-800/30 overflow-hidden">
         {/* Background grid */}
@@ -243,7 +240,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* Final CTA */}
       <section className="relative px-4 py-20 overflow-hidden">
         {/* Animated background grid */}
@@ -298,7 +294,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="border-t border-gray-800 bg-gray-900/50 px-4 py-12">
         <div className="max-w-6xl mx-auto">

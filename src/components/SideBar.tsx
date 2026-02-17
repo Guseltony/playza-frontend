@@ -8,6 +8,7 @@ const SideBar = () => {
         {navItems.map(({ icon: Icon, label, path }) => (
           <NavLink
             to={path}
+            key={label}
             className={({ isActive }) =>
               `flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${isActive ? "bg-primary/20 border-l-4 border-primary font-medium  text-white" : "text-slate-400 hover:bg-white/5 hover:text-white"}`
             }

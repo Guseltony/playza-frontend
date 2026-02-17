@@ -42,3 +42,20 @@ export interface GameCardProps {
   onRemove?: () => void;
   onPlayGame?: (mode: "demo" | "live") => void;
 }
+
+export type Game = {
+  id: string;
+  title: string;
+  slug: string;
+  thumbnail: string;
+
+  category: "Trivia" | "Puzzle" | "Memory" | "Strategy" | "Reaction";
+  mode: "1v1" | "Tournament" | "Quick Match";
+
+  entryFee: number;
+  difficulty: "Easy" | "Medium" | "Hard";
+  durationInSeconds: number;
+
+  isActive: boolean;
+};
+

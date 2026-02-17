@@ -40,6 +40,115 @@ export const navItems = [
   { icon: Settings, label: "Settings", path: "/settings" },
 ];
 
+export const winners = [
+  {
+    id: 1,
+    username: "ProGamerX",
+    game: "Speed Math Clash",
+    amountWon: 25000,
+    wonAt: "2026-02-17T09:15:00Z",
+  },
+  {
+    id: 2,
+    username: "NaijaSharp",
+    game: "Quick Trivia Battle",
+    amountWon: 18000,
+    wonAt: "2026-02-17T08:40:00Z",
+  },
+  {
+    id: 3,
+    username: "BrainBoss",
+    game: "Word Arena",
+    amountWon: 32000,
+    wonAt: "2026-02-17T07:55:00Z",
+  },
+  {
+    id: 4,
+    username: "FastFinger",
+    game: "Reaction Rush",
+    amountWon: 12000,
+    wonAt: "2026-02-17T07:10:00Z",
+  },
+  {
+    id: 5,
+    username: "ClutchKing",
+    game: "Sudden Death Quiz",
+    amountWon: 45000,
+    wonAt: "2026-02-16T21:30:00Z",
+  },
+  {
+    id: 6,
+    username: "AcePlayer",
+    game: "Memory Grid",
+    amountWon: 15000,
+    wonAt: "2026-02-16T20:45:00Z",
+  },
+  {
+    id: 7,
+    username: "VictoryVibes",
+    game: "Battle IQ",
+    amountWon: 28000,
+    wonAt: "2026-02-16T19:20:00Z",
+  },
+  {
+    id: 8,
+    username: "SharpMind",
+    game: "Rapid Fire Trivia",
+    amountWon: 17000,
+    wonAt: "2026-02-16T18:05:00Z",
+  },
+  {
+    id: 9,
+    username: "GameLord",
+    game: "Strategy Showdown",
+    amountWon: 52000,
+    wonAt: "2026-02-16T16:50:00Z",
+  },
+  {
+    id: 10,
+    username: "EliteSniper",
+    game: "Precision Play",
+    amountWon: 21000,
+    wonAt: "2026-02-16T15:30:00Z",
+  },
+  {
+    id: 11,
+    username: "MindBlazer",
+    game: "Ultimate Quiz Arena",
+    amountWon: 39000,
+    wonAt: "2026-02-16T14:10:00Z",
+  },
+  {
+    id: 12,
+    username: "SwiftStrike",
+    game: "Lightning Round",
+    amountWon: 14000,
+    wonAt: "2026-02-16T12:55:00Z",
+  },
+  {
+    id: 13,
+    username: "ArenaKing",
+    game: "Champions Gauntlet",
+    amountWon: 60000,
+    wonAt: "2026-02-16T11:40:00Z",
+  },
+  {
+    id: 14,
+    username: "QuizTitan",
+    game: "Knowledge Knockout",
+    amountWon: 26000,
+    wonAt: "2026-02-16T10:25:00Z",
+  },
+  {
+    id: 15,
+    username: "SkillMaster",
+    game: "Logic Duel",
+    amountWon: 23000,
+    wonAt: "2026-02-16T09:05:00Z",
+  },
+];
+
+
 export const steps = [
   {
     number: "01",
