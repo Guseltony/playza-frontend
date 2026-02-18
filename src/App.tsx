@@ -8,6 +8,7 @@ import WalletPage from "./pages/Wallet";
 import Profile from "./pages/Profile";
 import Games from "./pages/Games";
 import SideBar from "./components/SideBar";
+import Footer from "./components/Footer";
 
 const App = () => {
   // const { pathname } = useLocation();
@@ -27,6 +28,8 @@ const App = () => {
           <Route path="/games" element={<Games />} />
         </Routes>
       </div>
+
+      <Footer />
       {/* <NavFooter /> */}
     </div>
   );

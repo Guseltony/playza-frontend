@@ -6,12 +6,12 @@ export interface Player {
   gamesPlayed: number;
 }
 
-export interface GameLeaderboard {
-  gameId: string;
-  gameName: string;
-  gameIcon: string;
-  players: Player[];
-}
+// export interface GameLeaderboard {
+//   gameId: string;
+//   gameName: string;
+//   gameIcon: string;
+//   players: Player[];
+// }
 
 export interface Transaction {
   id: number;
@@ -61,4 +61,24 @@ export type Game = {
   isActive: boolean;
   ctaLabel: string;
 };
+
+export type LeaderboardPlayer = {
+  id: string;
+  rank: number;
+  avatar: string;
+  username: string;
+  points: number;
+  prizeWon: string;
+};
+
+
+export type GameName =
+  | "Mystic Quest"
+  | "StormRider"
+  | "Battle Arena X"
+  | "Speed Drift Pro"
+  | "Treasure Hunt Royale";
+
+export type GameLeaderboard = Record<GameName, LeaderboardPlayer[]>;
+
 
