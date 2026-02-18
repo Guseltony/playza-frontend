@@ -1,7 +1,7 @@
 // import React from 'react'
 import { AnimatedGrid } from "@/components/AnimatedGrid";
 import GameMode from "@/components/home/GameMode";
-import GamesGrid from "@/components/home/GamesGrid";
+import GamesGrid from "@/components/home/PopularGames";
 import HeroBanner from "@/components/home/HeroBanner";
 import HowItWorks from "@/components/home/HowItWorks";
 import LeaderBoard from "@/components/home/LeaderBoard";
@@ -15,6 +15,8 @@ import {
   trustIndicators,
 } from "@/constants/constants";
 import { ArrowRight, Star } from "lucide-react";
+import PopularGames from "@/components/home/PopularGames";
+import HotGames from "@/components/home/HotGames";
 
 const Home = () => {
   return (
@@ -22,7 +24,8 @@ const Home = () => {
       {/* Hero Section */}
       <HeroBanner />
       <RecentWinners />
-      <GamesGrid />
+      <PopularGames />
+      <HotGames />
       {/* Wireframe Background */}
       {/* <WireframeHero /> */}
       {/* Animated Grid */}

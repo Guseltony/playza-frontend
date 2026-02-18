@@ -1,4 +1,5 @@
 import { navItems } from "@/constants/constants";
+import { Users } from "lucide-react";
 import { NavLink } from "react-router";
 
 const SideBar = () => {
@@ -42,7 +43,7 @@ const SideBar = () => {
           <div className="flex items-center gap-3 p-2 rounded-lg bg-white/5 border border-white/5">
             <div className="w-8 h-8 rounded bg-accent-purple/20 flex items-center justify-center">
               <span className="material-icons text-accent-purple text-sm">
-                groups
+                <Users />
               </span>
             </div>
             <div>

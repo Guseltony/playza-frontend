@@ -56,6 +56,9 @@ export type Game = {
   difficulty: "Easy" | "Medium" | "Hard";
   durationInSeconds: number;
 
+  activePlayers: number;
+
   isActive: boolean;
+  ctaLabel: string;
 };
 
