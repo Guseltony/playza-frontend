@@ -9,6 +9,7 @@ import Profile from "./pages/Profile";
 import Games from "./pages/Games";
 import SideBar from "./components/SideBar";
 import Footer from "./components/Footer";
+import RightSideBar from "./components/RightSideBar";
 
 const App = () => {
   // const { pathname } = useLocation();
@@ -27,6 +28,8 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/games" element={<Games />} />
         </Routes>
+
+        <RightSideBar />
       </div>
 
       <Footer />
