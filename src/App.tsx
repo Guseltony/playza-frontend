@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 import RightSideBar from "./components/RightSideBar";
 
 const App = () => {
-  // const { pathname } = useLocation();
+  const { pathname } = useLocation();
   return (
     <div className="min-h-screen bg-linear-to-b from-gray-900 via-slate-900 to-slate-800 text-white">
       <Header />
@@ -29,7 +29,7 @@ const App = () => {
           <Route path="/games" element={<Games />} />
         </Routes>
 
-        <RightSideBar />
+        {pathname !== "/games" && <RightSideBar />}
       </div>
 
       <Footer />

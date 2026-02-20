@@ -1,4 +1,5 @@
 import type { Game } from "@/types/types";
+import { FaUsers } from "react-icons/fa";
 
 const GamesCard = ({
   id,
@@ -12,7 +13,7 @@ const GamesCard = ({
   return (
     <div
       key={id}
-      className="glass rounded-lg overflow-hidden group border-slate-700 hover:border-primary transition-all w-58 h-46 md:w-72 md:h-52"
+      className="glass rounded-lg overflow-hidden group border-slate-700 hover:border-primary transition-all"
     >
       <div className="h-32 relative">
         <img
@@ -21,20 +22,23 @@ const GamesCard = ({
           src={thumbnail}
           alt={slug}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background-dark to-transparent"></div>
-        <div className="absolute bottom-2 left-2 flex gap-1">
-          <span className="bg-primary px-2 py-0.5 rounded text-[10px] font-bold text-white">
-            ₦{entryFee}
+        <div className="absolute inset-0 bg-linear-to-t from-muted to-transparent"></div>
+        <div className="absolute top-2 right-2 flex gap-1 bg-muted">
+          <span className="bg-primary px-2 py-0.5 rounded text-sm font-bold text-white">
+            ₦{entryFee.toLocaleString()}
           </span>
         </div>
-      </div>
-      <div className="p-2 md:p-4 flex flex-row justify-between items-end">
-        <div>
-          <h4 className="font-bold text-xs md:text-base text-white">{title}</h4>
-          <p className="text-xs text-slate-400">
-            {activePlayers} players active
+        <div className="bg-muted p-1 rounded-full flex gap-2 items-center absolute bottom-2 left-2">
+          <FaUsers />
+          <p className="text-xs text-chart-3 font-bold">
+            {activePlayers} players
           </p>
         </div>
+      </div>
+      <div className="p-2 flex flex-col overflow-x-hidden">
+        <h4 className="font-bold text-xs uppercase text-center text-white">
+          {title}
+        </h4>
         <button className="bg-slate-800 hover:bg-primary px-4 py-1.5 rounded text-xs font-bold transition-colors text-white">
           {ctaLabel}
         </button>

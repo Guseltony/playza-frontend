@@ -43,14 +43,15 @@ export interface GameCardProps {
   onPlayGame?: (mode: "demo" | "live") => void;
 }
 
+
 export type Game = {
   id: string;
   title: string;
   slug: string;
   thumbnail: string;
 
-  category: "Trivia" | "Puzzle" | "Memory" | "Strategy" | "Reaction";
-  mode: "1v1" | "Tournament" | "Quick Match";
+  category: "Trivia" | "Puzzle" | "Memory" | "Strategy" | "Reaction" | "Arcade";
+  mode: "1v1" | "Tournament" | "Quick Match" | "Multiplayer";
 
   entryFee: number;
   difficulty: "Easy" | "Medium" | "Hard";
@@ -60,6 +61,7 @@ export type Game = {
 
   isActive: boolean;
   ctaLabel: string;
+  badge?: "HOT" | "NEW" | "POPULAR" | "TRENDING" | "HIGH_STAKES" | null;
 };
 
 export type LeaderboardPlayer = {

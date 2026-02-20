@@ -12,7 +12,7 @@ const Footer = () => {
           </div>
 
           {/* Platform */}
-          <div className="pr-10 flex justify-between">
+          <div className="flex justify-between">
             <div>
               <h5 className="font-bold text-white mb-6 text-sm uppercase tracking-wide">
                 Platform

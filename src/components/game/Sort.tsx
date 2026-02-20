@@ -15,16 +15,18 @@ type FilterOption =
   | "Newest"
   | "Trending"
   | "Entry Fee"
-  | "Sort By";
+  | "Filter By"
+  | "Hottest";
 
 const Sort = () => {
-  const [sortBy, setSortBy] = useState<string>("");
+  const [filterBy, setFilterBy] = useState<string>("");
 
   const options: FilterOption[] = [
-    "Sort By",
+    "Filter By",
     "Most Played",
     "Highest Pool",
     "Newest",
+    "Hottest",
     "Trending",
     "Entry Fee",
   ];
@@ -32,8 +34,11 @@ const Sort = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" className="h-11 rounded-lg">
-          {sortBy === "" ? "Sort by" : sortBy}
+        <Button
+          variant="outline"
+          className={cn(filterBy && filterBy !== "Filter By" && "bg-secondary", `h-11 rounded-lg`)}
+        >
+          {filterBy === "" ? "filter by" : filterBy}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" sideOffset={8} className="w-40">
@@ -41,8 +46,8 @@ const Sort = () => {
           {options.map((option) => (
             <DropdownMenuItem
               key={option}
-              onClick={() => setSortBy(option)}
-              className={cn(sortBy === option && "bg-secondary")}
+              onClick={() => setFilterBy(option)}
+              className={cn(filterBy === option && "bg-secondary")}
             >
               {option}
             </DropdownMenuItem>
