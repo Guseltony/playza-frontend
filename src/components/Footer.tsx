@@ -1,5 +1,4 @@
-import About from "./home/About";
-import { BsDiscord, BsFacebook, BsTwitterX } from "react-icons/bs";
+import About from "./About";
 
 const Footer = () => {
   return (
@@ -12,7 +11,7 @@ const Footer = () => {
           </div>
 
           {/* Platform */}
-          <div className="flex justify-between">
+          <div className="flex justify-between md:justify-around">
             <div>
               <h5 className="font-bold text-white mb-6 text-sm uppercase tracking-wide">
                 Platform
@@ -59,30 +58,10 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-
-            {/* Social */}
-            <div>
-              <h5 className="font-bold text-white mb-6 text-sm uppercase tracking-wide">
-                Follow Us
-              </h5>
-              <div className="flex gap-4">
-                {[BsDiscord, BsFacebook, BsTwitterX].map((Icon, i) => (
-                  <a
-                    key={i}
-                    href="#"
-                    className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center
-                        hover:bg-primary transition-all duration-300 text-white
-                        hover:scale-110"
-                  >
-                    <Icon className="text-xl" />
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-slate-800 flex flex-col md:row justify-between items-center gap-4 text-xs text-slate-500">
+        <div className="pt-8 border-t border-slate-800 flex flex-col md:row justify-between items-center gap-4 text-xs text-slate-500 mb-10">
           <p>© 2024 PlayPeak Interactive. All rights reserved.</p>
           <div className="flex gap-6">
             <a className="hover:text-white transition-colors" href="#">

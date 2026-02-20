@@ -33,7 +33,7 @@ const App = () => {
       </div>
 
       <Footer />
-      {/* <NavFooter /> */}
+      <NavFooter />
     </div>
   );
 };

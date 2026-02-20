@@ -17,7 +17,7 @@ import {
 import { ArrowRight, Star } from "lucide-react";
 import PopularGames from "@/components/home/PopularGames";
 import HotGames from "@/components/home/HotGames";
-import About from "@/components/home/About";
+import About from "@/components/About";
 
 const Home = () => {
   return (

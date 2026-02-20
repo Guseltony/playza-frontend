@@ -29,15 +29,15 @@ import {
 } from "lucide-react";
 
 export const navItems = [
-  { icon: Home, label: "PlayZa", path: "/" },
-  { icon: Gamepad2, label: "Games", path: "/games" },
+  { icon: Home, label: "PlayZa", path: "/" , mobile: true},
+  { icon: Gamepad2, label: "Games", path: "/games" , mobile: true},
   { icon: Medal, label: "Tournaments", path: "/tournaments" },
-  { icon: ChartBarIncreasing, label: "Leaderboard", path: "/leaderboard" },
+  { icon: ChartBarIncreasing, label: "Leaderboard", path: "/leaderboard" , mobile: true},
   { icon: Gift, label: "Bonus", path: "/bonus" },
   { icon: UserPlus, label: "Referral", path: "/referral" },
-  { icon: Wallet, label: "Wallet", path: "/wallet" },
+  { icon: Wallet, label: "Wallet", path: "/wallet" , mobile: true},
   { icon: History, label: "History", path: "/history" },
-  { icon: Settings, label: "Settings", path: "/settings" },
+  { icon: Settings, label: "Settings", path: "/settings", mobile: true },
 ];
 
 export const winners = [

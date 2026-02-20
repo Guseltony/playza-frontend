@@ -1,4 +1,4 @@
-import React from "react";
+import { BsDiscord, BsFacebook, BsTwitterX } from "react-icons/bs";
 
 const About = () => {
   return (
@@ -13,7 +13,7 @@ const About = () => {
         turn their gaming passion into real-world profit. With real-time
         leaderboards and instant payouts, the arena is always live.
       </p>
-      <div className="flex gap-8">
+      <div className="flex gap-8 mb-4">
         <div className="text-center">
           <p className="text-2xl font-bold text-white">₦150M+</p>
           <p className="text-[10px] text-slate-500 uppercase font-bold tracking-widest">
@@ -25,6 +25,25 @@ const About = () => {
           <p className="text-[10px] text-slate-500 uppercase font-bold tracking-widest">
             Active Users
           </p>
+        </div>
+      </div>
+      {/* Social */}
+      <div>
+        <h5 className="font-bold text-white mb-6 text-sm uppercase tracking-wide">
+          Follow Us
+        </h5>
+        <div className="flex gap-4">
+          {[BsDiscord, BsFacebook, BsTwitterX].map((Icon, i) => (
+            <a
+              key={i}
+              href="#"
+              className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center
+                        hover:bg-primary transition-all duration-300 text-white
+                        hover:scale-110"
+            >
+              <Icon className="text-xl" />
+            </a>
+          ))}
         </div>
       </div>
     </div>

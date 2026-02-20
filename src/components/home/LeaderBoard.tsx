@@ -45,9 +45,6 @@ const LeaderBoard = () => {
               Rank
             </TableHead>
             <TableHead className="w-1/4 text-center text-secondary text-sm uppercase font-bold">
-              Game Played
-            </TableHead>
-            <TableHead className="w-1/4 text-center text-secondary text-sm uppercase font-bold">
               Player
             </TableHead>
             <TableHead className="w-1/4 text-center text-secondary text-sm uppercase font-bold">
@@ -71,11 +68,6 @@ const LeaderBoard = () => {
                 <TableCell className="font-medium flex justify-center">
                   <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold bg-muted text-accent text-center text-sm">
                     {rank}
-                  </div>
-                </TableCell>
-                <TableCell className="font-medium">
-                  <div className="text-center font-bold text-xs text-chart-3">
-                    {activeGame}
                   </div>
                 </TableCell>
                 <TableCell>
