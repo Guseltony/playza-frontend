@@ -2,27 +2,17 @@
 
 import { Link, useLocation } from "react-router";
 import { Button } from "./ui/button";
-import {
-  Bell,
-  BellDot,
-  BellDotIcon,
-  BellIcon,
-  BellRingIcon,
-  ChevronRight,
-  LucideBell,
-  Plus,
-  Wallet,
-} from "lucide-react";
+import { BellDot, Plus } from "lucide-react";
 
 const Header = () => {
   const walletBalance = "₦10,250";
 
-  const { pathname } = useLocation();
-  const isHome = pathname === "/";
+  // const { pathname } = useLocation();
+  // // const isHome = pathname === "/";
 
   return (
     <div className="sticky top-0 z-50 glass border-b border-primary/20">
-      <div className="max-w-360 mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-400 mx-auto px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-12">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
@@ -32,12 +22,6 @@ const Header = () => {
               PlayPeak
             </span>
           </div>
-          {/* <nav className="hidden lg:flex items-center gap-8">
-          <a className="text-sm font-medium hover:text-primary transition-colors text-white" href="#">Games</a>
-          <a className="text-sm font-medium text-slate-400 hover:text-primary transition-colors" href="#">Tournaments</a>
-          <a className="text-sm font-medium text-slate-400 hover:text-primary transition-colors" href="#">Leaderboards</a>
-          <a className="text-sm font-medium text-slate-400 hover:text-primary transition-colors" href="#">Support</a>
-        </nav> */}
         </div>
         <div className="flex items-center gap-3 md:gap-6">
           <div className="flex items-center gap-3 bg-white/5 px-4 py-1.5 rounded-full border border-white/10">

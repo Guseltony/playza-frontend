@@ -4,6 +4,7 @@ import LeaderBoard from "@/components/home/LeaderBoard";
 import RecentWinners from "@/components/home/RecentWinners";
 import { games } from "@/data/games";
 import HomeGames from "@/components/home/HomeGames";
+import { Flame, Star } from "lucide-react";
 
 const Home = () => {
   const popularGames = games.filter((game) => game.badge === "POPULAR");
@@ -16,8 +17,8 @@ const Home = () => {
     <main className="flex-1 min-w-0 space-y-6">
       <HeroBanner />
       <RecentWinners />
-      <HomeGames games={slicePopularGames} />
-      <HomeGames games={sliceHottestGames} />
+      <HomeGames games={slicePopularGames} Icon={Star} title="Popular Games" />
+      <HomeGames games={sliceHottestGames} Icon={Flame} title="Hottest Games" />
       <LeaderBoard />
       <HowItWorks />
     </main>

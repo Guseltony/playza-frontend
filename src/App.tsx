@@ -17,7 +17,7 @@ const App = () => {
     <div className="min-h-screen bg-linear-to-b from-gray-900 via-slate-900 to-slate-800 text-white">
       <Header />
       {/* {pathname === "/" && <AppNotification />} */}
-      <div className="max-w-[1600px] mx-auto flex gap-6 p-6">
+      <div className="max-w-400 mx-auto flex gap-6 p-6">
         <aside className="w-72 hidden lg:block sticky top-24 self-start h-[calc(100vh-8rem)]">
           <SideBar />
         </aside>

@@ -1,14 +1,16 @@
 import type { Game } from "@/types/types";
 import GamesCard from "@/utils/GamesCard";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star, type LucideIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
 
 type HomeGamesProps = {
   games: Game[];
+  Icon: LucideIcon;
+  title: string;
 };
 
-const HomeGames = ({ games }: HomeGamesProps) => {
+const HomeGames = ({ games, Icon, title }: HomeGamesProps) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -56,10 +58,10 @@ const HomeGames = ({ games }: HomeGamesProps) => {
   }, []);
 
   return (
-    <div>
+    <div className="mb-8">
       <div className="flex items-center justify-between mb-4">
         <h2 className="font-heading text-xl font-bold text-white flex gap-2 items-center">
-          <Star className="text-chart-4" /> Popular Games
+          <Icon className="text-chart-4" /> {title}
         </h2>
         <div className="flex gap-2 items-center justify-center">
           <Link

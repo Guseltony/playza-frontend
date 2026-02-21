@@ -220,8 +220,6 @@ html {
       border: 1px solid rgba(217, 119, 6, 0.4);
   }
 
-      width: 4px;
-  }
   .custom-scrollbar::-webkit-scrollbar-track {
       background: transparent;
   }
@@ -241,4 +239,18 @@ html {
 .scrollbar-hide {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+@keyframes scroll-winner {
+  from {
+    transform: translate3d(0,0,0);
+  }
+  to {
+    transform: translate3d(-50%,0,0);
+  }
+}
+
+.recent-winner {
+  animation: scroll-winner 45s linear infinite;
+  will-change: transform;
 }
