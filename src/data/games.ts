@@ -29,7 +29,7 @@ export const games: Game[] = [
     isActive: true,
     activePlayers: 89,
     ctaLabel: "Play Now",
-    badge: null,
+    badge: "POPULAR",
   },
   {
     id: "3",
@@ -89,7 +89,7 @@ export const games: Game[] = [
     isActive: true,
     activePlayers: 128,
     ctaLabel: "Play Now",
-    badge: null,
+    badge: "POPULAR",
   },
   {
     id: "7",
@@ -149,7 +149,7 @@ export const games: Game[] = [
     isActive: true,
     activePlayers: 76,
     ctaLabel: "Play Now",
-    badge: null,
+    badge: "POPULAR",
   },
   {
     id: "11",
@@ -179,7 +179,7 @@ export const games: Game[] = [
     isActive: true,
     activePlayers: 92,
     ctaLabel: "Play Now",
-    badge: null,
+    badge: "POPULAR",
   },
   {
     id: "13",
@@ -209,7 +209,7 @@ export const games: Game[] = [
     isActive: true,
     activePlayers: 133,
     ctaLabel: "Play Now",
-    badge: null,
+    badge: "POPULAR",
   },
   {
     id: "15",
@@ -224,7 +224,7 @@ export const games: Game[] = [
     isActive: true,
     activePlayers: 41,
     ctaLabel: "Play Now",
-    badge: null,
+    badge: "POPULAR",
   },
   {
     id: "16",
@@ -254,7 +254,7 @@ export const games: Game[] = [
     isActive: true,
     activePlayers: 156,
     ctaLabel: "Play Now",
-    badge: null,
+    badge: "HOT",
   },
   {
     id: "18",
@@ -284,7 +284,7 @@ export const games: Game[] = [
     isActive: true,
     activePlayers: 58,
     ctaLabel: "Play Now",
-    badge: null,
+    badge: "HOT",
   },
   {
     id: "20",
@@ -314,7 +314,7 @@ export const games: Game[] = [
     isActive: true,
     activePlayers: 214,
     ctaLabel: "Play Now",
-    badge: null,
+    badge: "HOT",
   },
   {
     id: "22",
@@ -329,7 +329,7 @@ export const games: Game[] = [
     isActive: true,
     activePlayers: 187,
     ctaLabel: "Play Now",
-    badge: null,
+    badge: "HOT",
   },
   {
     id: "23",
@@ -344,7 +344,7 @@ export const games: Game[] = [
     isActive: true,
     activePlayers: 98,
     ctaLabel: "Challenge Now",
-    badge: null,
+    badge: "HOT",
   },
   {
     id: "24",
@@ -374,6 +374,6 @@ export const games: Game[] = [
     isActive: true,
     activePlayers: 64,
     ctaLabel: "Play Now",
-    badge: null,
+    badge: "HOT",
   },
 ];

@@ -13,20 +13,6 @@ const About = () => {
         turn their gaming passion into real-world profit. With real-time
         leaderboards and instant payouts, the arena is always live.
       </p>
-      <div className="flex gap-8 mb-4">
-        <div className="text-center">
-          <p className="text-2xl font-bold text-white">₦150M+</p>
-          <p className="text-[10px] text-slate-500 uppercase font-bold tracking-widest">
-            Paid Out
-          </p>
-        </div>
-        <div className="text-center border-l border-slate-700 pl-8">
-          <p className="text-2xl font-bold text-white">250K+</p>
-          <p className="text-[10px] text-slate-500 uppercase font-bold tracking-widest">
-            Active Users
-          </p>
-        </div>
-      </div>
       {/* Social */}
       <div>
         <h5 className="font-bold text-white mb-6 text-sm uppercase tracking-wide">

@@ -39,7 +39,7 @@ const GamesCard = ({
         <h4 className="font-bold text-xs uppercase text-center text-white">
           {title}
         </h4>
-        <button className="bg-slate-800 hover:bg-primary px-4 py-1.5 rounded text-xs font-bold transition-colors text-white">
+        <button className="bg-primary/20 hover:bg-primary px-4 py-1.5 rounded text-xs font-bold transition-colors text-white">
           {ctaLabel}
         </button>
       </div>

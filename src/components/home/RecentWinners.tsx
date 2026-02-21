@@ -6,7 +6,7 @@ const RecentWinners = () => {
       <span className="text-xs font-bold text-primary uppercase tracking-widest">
         Winners Arena
       </span>
-      <div className="glass py-3 px-4 rounded-lg overflow-hidden flex items-center whitespace-nowrap mt-2">
+      <div className="glass py-3 px-4 rounded-lg overflow-hidden flex items-center whitespace-nowrap mt-2 recent-winner">
         <div className="flex items-center gap-4">
           {winners.map(({ id, username, game, amountWon }) => (
             <div className="flex gap-2 flex-col px-2 py-2 glass" key={id}>
