@@ -46,56 +46,6 @@ const FullGame = () => {
     [games],
   );
 
-  // const filteredGames = useMemo(() => {
-  //   if (activeTab === "All Games") return allGames;
-
-  //   if (activeTab === "All Games" && ["Most Played", "Highest Pool", "Entry Fee"].includes(filterBy)) return sortData(allGames, filterBy); 
-  //   if (activeTab !== "All Games" && ["Most Played", "Highest Pool", "Entry Fee"].includes(filterBy)) return [...allGames]
-  //     .filter((game) => game.category === activeTab)
-  //     .sort((a, b) => b.activePlayers - a.activePlayers); 
-    
-  //   if (activeTab === "All Games" && ["Newest", "Trending", "Hottest"].includes(filterBy)) return [...allGames].filter((game) => game.category === activeTab);
-
-  //   if (activeTab !== "All Games" && ["Most Played", "Highest Pool", "Entry Fee"].includes(filterBy)) return [...allGames]
-  //     .filter((game) => game.category === activeTab)
-  //     .sort((a, b) => b.activePlayers - a.activePlayers); 
-    
-
-  //   switch (filterBy) {
-  //     case "Most Played":
-  //       return [...allGames].sort((a, b) => b.activePlayers - a.activePlayers);
-  //       break;
-
-  //     case "Highest Pool":
-  //       return [...allGames].sort((a, b) => b.pricePool - a.pricePool);
-  //       break;
-
-  //     case "Newest":
-  //       return allGames.filter((g) => g.badge === "NEW");
-  //       break;
-
-  //     case "Hottest":
-  //       return allGames.filter((g) => g.badge === "HOT");
-  //       break;
-
-  //     case "Trending":
-  //       return allGames.filter((g) => g.badge === "TRENDING");
-  //       break;
-
-  //     case "Entry Fee":
-  //       return [...allGames].sort((a, b) => a.entryFee - b.entryFee);
-  //       break;
-
-  //     default:
-  //       break;
-  //   }
-  //   return games.filter((game) => game.category === activeTab);
-  // }, [activeTab, filterBy, allGames]);
-
-  // const handleFiltering = (option: FilterOption) => {
-  //   setFilterBy(option);
-  // };
-
   return (
     <main>
       {/* <!-- Header section --> */}
@@ -128,14 +78,14 @@ const FullGame = () => {
 
       {/* <!-- All Games Grid --> */}
       <section className="mb-12">
-        <div className="glass py-3 px-4 rounded-lg flex items-center whitespace-nowrap overflow-x-auto gap-4 scrollbar-hide scroll-smooth mb-4 md:gap-6 md:w-fit">
+        <div className="glass py-3 px-2 rounded-lg flex items-center whitespace-nowrap overflow-x-auto gap-2 scrollbar-hide scroll-smooth mb-4 md:gap-6 md:w-fit">
           {categories.map((t) => (
             <span
               key={t}
               onClick={() => setActiveTab(t)}
               className={cn(
                 activeTab === t ? "text-white bg-secondary" : "text-slate-600",
-                "sm:text-xs text-sm uppercase font-bold p-2 rounded-lg cursor-pointer",
+                "text-xs md:text-sm uppercase font-bold px-4 py-2 rounded-lg cursor-pointer",
               )}
             >
               {t}
