@@ -11,20 +11,17 @@ const Header = () => {
   // // const isHome = pathname === "/";
 
   return (
-    <div className="sticky top-0 z-50 glass border-b border-primary/20">
+    <div className="sticky top-0 z-50 glass border-b border-primary/20 overflow-hidden">
       <div className="max-w-400 mx-auto px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-12">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
               <span className="material-icons text-white text-xl">bolt</span>
             </div>
-            <span className="font-heading text-2xl font-bold tracking-tight text-white">
-              PlayPeak
-            </span>
           </div>
         </div>
-        <div className="flex items-center gap-3 md:gap-6">
-          <div className="flex items-center gap-3 bg-white/5 px-4 py-1.5 rounded-full border border-white/10">
+        <div className="flex items-center gap-2 md:gap-6">
+          <div className="flex items-center gap-3 bg-white/5 px-2 md:px-4 py-1.5 rounded-full border border-white/10">
             <span className="text-sm font-bold text-white">
               {walletBalance}
             </span>
@@ -38,7 +35,7 @@ const Header = () => {
             type="button"
             className="relative text-slate-400 hover:text-primary transition-colors"
           >
-            <span className="material-icons">
+            <span className="hidden md:block">
               <BellDot className="text-red-500" />
             </span>
             {/* <span className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full border-2 border-background-dark"></span> */}

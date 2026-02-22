@@ -25,11 +25,11 @@ const LeaderBoard = () => {
         <h2 className="font-heading text-xl font-bold text-white flex gap-2 items-center mb-4">
           <MdLeaderboard className="text-chart-4" /> Games LeaderBoard
         </h2>
-        <div className="flex gap-2 text-xs overflow-x-auto whitespace-nowrap mt-2">
+        <div className="flex gap-2 text-xs overflow-x-auto whitespace-nowrap mt-2 scroll-hidden scroll-smooth pb-2">
           {gameNames.map((game) => (
             <p
               key={game}
-              className={`truncate p-2 font-semibold rounded-full cursor-pointer ${activeGame === game ? "bg-primary" : "bg-border"}`}
+              className={` p-2 font-semibold rounded-full cursor-pointer ${activeGame === game ? "bg-primary" : "bg-border"}`}
               title={game}
               onClick={() => setActiveGame(game as GameName)}
             >

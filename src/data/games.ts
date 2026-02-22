@@ -15,6 +15,9 @@ export const games: Game[] = [
     activePlayers: 420,
     ctaLabel: "Join League",
     badge: "HOT",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "2",
@@ -30,6 +33,9 @@ export const games: Game[] = [
     activePlayers: 89,
     ctaLabel: "Play Now",
     badge: "POPULAR",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "3",
@@ -45,6 +51,9 @@ export const games: Game[] = [
     activePlayers: 512,
     ctaLabel: "Enter Tournament",
     badge: "HIGH_STAKES",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "4",
@@ -60,6 +69,9 @@ export const games: Game[] = [
     activePlayers: 342,
     ctaLabel: "Play Now",
     badge: "POPULAR",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "5",
@@ -75,6 +87,9 @@ export const games: Game[] = [
     activePlayers: 275,
     ctaLabel: "Claim Victory",
     badge: "TRENDING",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "6",
@@ -90,6 +105,9 @@ export const games: Game[] = [
     activePlayers: 128,
     ctaLabel: "Play Now",
     badge: "POPULAR",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "7",
@@ -105,6 +123,9 @@ export const games: Game[] = [
     activePlayers: 121,
     ctaLabel: "Accept Challenge",
     badge: "HIGH_STAKES",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "8",
@@ -120,6 +141,9 @@ export const games: Game[] = [
     activePlayers: 298,
     ctaLabel: "Play Now",
     badge: "POPULAR",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "9",
@@ -135,6 +159,9 @@ export const games: Game[] = [
     activePlayers: 188,
     ctaLabel: "Enter Arena",
     badge: "NEW",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "10",
@@ -150,6 +177,9 @@ export const games: Game[] = [
     activePlayers: 76,
     ctaLabel: "Play Now",
     badge: "POPULAR",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "11",
@@ -165,6 +195,9 @@ export const games: Game[] = [
     activePlayers: 154,
     ctaLabel: "Duel Now",
     badge: "TRENDING",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "12",
@@ -180,6 +213,9 @@ export const games: Game[] = [
     activePlayers: 92,
     ctaLabel: "Play Now",
     badge: "POPULAR",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "13",
@@ -195,6 +231,9 @@ export const games: Game[] = [
     activePlayers: 389,
     ctaLabel: "Join War",
     badge: "HOT",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "14",
@@ -210,6 +249,9 @@ export const games: Game[] = [
     activePlayers: 133,
     ctaLabel: "Play Now",
     badge: "POPULAR",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "15",
@@ -225,6 +267,9 @@ export const games: Game[] = [
     activePlayers: 41,
     ctaLabel: "Play Now",
     badge: "POPULAR",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "16",
@@ -240,6 +285,9 @@ export const games: Game[] = [
     activePlayers: 175,
     ctaLabel: "Play Now",
     badge: "POPULAR",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "17",
@@ -255,6 +303,9 @@ export const games: Game[] = [
     activePlayers: 156,
     ctaLabel: "Play Now",
     badge: "HOT",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "18",
@@ -270,6 +321,9 @@ export const games: Game[] = [
     activePlayers: 310,
     ctaLabel: "Join Battle",
     badge: "HOT",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "19",
@@ -285,6 +339,9 @@ export const games: Game[] = [
     activePlayers: 58,
     ctaLabel: "Play Now",
     badge: "HOT",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "20",
@@ -300,6 +357,9 @@ export const games: Game[] = [
     activePlayers: 121,
     ctaLabel: "Play Now",
     badge: "TRENDING",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "21",
@@ -315,6 +375,9 @@ export const games: Game[] = [
     activePlayers: 214,
     ctaLabel: "Play Now",
     badge: "HOT",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "22",
@@ -330,6 +393,9 @@ export const games: Game[] = [
     activePlayers: 187,
     ctaLabel: "Play Now",
     badge: "HOT",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "23",
@@ -345,6 +411,9 @@ export const games: Game[] = [
     activePlayers: 98,
     ctaLabel: "Challenge Now",
     badge: "HOT",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "24",
@@ -360,6 +429,9 @@ export const games: Game[] = [
     activePlayers: 201,
     ctaLabel: "Start Duel",
     badge: "POPULAR",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
   {
     id: "25",
@@ -375,5 +447,8 @@ export const games: Game[] = [
     activePlayers: 64,
     ctaLabel: "Play Now",
     badge: "HOT",
+    platformFeePercentage: 10,
+    createdAt: "2026-02-22T00:00:00Z",
+    updatedAt: "2026-02-22T00:00:00Z",
   },
 ];

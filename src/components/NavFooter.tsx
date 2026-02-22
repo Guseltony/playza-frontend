@@ -7,7 +7,7 @@ const NavFooter = () => {
   return (
     <div className=" md:hidden fixed bottom-0 left-0 right-0 bg-gray-900/95 backdrop-blur border-t border-gray-800 z-50">
       <nav>
-        <div className="flex items-center justify-around max-w-6xl mx-auto px-2 py-3">
+        <div className="flex items-center justify-between max-w-6xl mx-auto px-4 py-2">
           {navItems
             .filter((item) => item.mobile)
             .map((item, index) => {
@@ -29,26 +29,19 @@ const NavFooter = () => {
                   to={`${item.path}`}
                   key={index}
                   onClick={() => setCurrentView(view)}
-                  className={`flex flex-col items-center gap-1 px-2 py-2 rounded-lg transition-colors ${
+                  className={`flex items-center gap-1 px-2 py-2 rounded-lg transition-colors ${
                     isActive
                       ? "text-white"
                       : "text-gray-400 hover:text-gray-300"
                   }`}
                 >
-                  {/* <button
-                  key={index}
-                  // onClick={() => setCurrentView(view)}
-                  className={`flex flex-col items-center gap-1 px-2 py-2 rounded-lg transition-colors ${
-                    isActive ? "text-white" : "text-gray-400 hover:text-gray-300"
-                  }`}
-                > */}
-                  <div
-                    className={`flex flex-col gap-1 justify-center items-center ${isActive ? "bg-green-400/20 rounded-full px-4 py-2" : ""} `}
-                  >
+                  <div className="flex flex-col gap-1 justify-center items-center">
                     <item.icon
                       className={`w-6 h-6 ${isActive ? "text-green-500" : ""}`}
                     />
-                    {isActive && <span className="text-xs">{item.label}</span>}
+                    {isActive && (
+                      <span className="text-xs font-bold">{item.label}</span>
+                    )}
                   </div>
                   {/* </button> */}
                 </NavLink>

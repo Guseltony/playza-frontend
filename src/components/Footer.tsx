@@ -61,7 +61,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-slate-800 flex flex-col md:row justify-between items-center gap-4 text-xs text-slate-500 mb-10">
+        <div className="pt-8 border-t border-slate-800 flex flex-col md:row justify-between items-center gap-4 text-xs text-slate-500 mb-2">
           <p>© 2024 PlayPeak Interactive. All rights reserved.</p>
           <div className="flex gap-6">
             <a className="hover:text-white transition-colors" href="#">

@@ -2,7 +2,7 @@ import { BiSearch } from "react-icons/bi";
 
 const Search = () => {
   return (
-    <div className="relative flex-1 min-w-[300px]">
+    <div className="relative flex-1 min-w-67">
       <BiSearch className="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
 
       <input

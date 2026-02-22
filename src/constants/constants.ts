@@ -148,6 +148,11 @@ export const winners = [
   },
 ];
 
+export const badgeStyles = {
+  HOT: " text-red-600",
+  NEW: "text-purple-400",
+};
+
 
 export const steps = [
   {

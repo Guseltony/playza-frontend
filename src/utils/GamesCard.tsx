@@ -1,5 +1,7 @@
+import { badgeStyles } from "@/constants/constants";
 import type { Game } from "@/types/types";
 import { FaUsers } from "react-icons/fa";
+import { GiFlame } from "react-icons/gi";
 
 const GamesCard = ({
   id,
@@ -9,6 +11,7 @@ const GamesCard = ({
   title,
   activePlayers,
   ctaLabel,
+  badge,
 }: Game) => {
   return (
     <div
@@ -16,6 +19,13 @@ const GamesCard = ({
       className="glass rounded-lg overflow-hidden group border-slate-700 hover:border-primary transition-all"
     >
       <div className="h-32 relative">
+        <span className={`absolute top-2 left-2 z-10`}>
+          {(badge === "NEW" || badge === "HOT") && (
+            <GiFlame
+              className={` text-xl ${(badge === "NEW" || badge === "HOT") && badgeStyles[badge]}`}
+            />
+          )}
+        </span>
         <img
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           data-alt="Futuristic esports arena with neon lights"

@@ -43,7 +43,6 @@ export interface GameCardProps {
   onPlayGame?: (mode: "demo" | "live") => void;
 }
 
-
 export type Game = {
   id: string;
   title: string;
@@ -54,6 +53,7 @@ export type Game = {
   mode: "1v1" | "Tournament" | "Quick Match" | "Multiplayer";
 
   entryFee: number;
+  platformFeePercentage: number;
   difficulty: "Easy" | "Medium" | "Hard";
   durationInSeconds: number;
 
@@ -61,8 +61,19 @@ export type Game = {
 
   isActive: boolean;
   ctaLabel: string;
-  badge?: "HOT" | "NEW" | "POPULAR" | "TRENDING" | "HIGH_STAKES" | null;
+  badge: GameBadge;
+
+  createdAt: string;
+  updatedAt: string;
 };
+
+export type GameBadge =
+  | "HOT"
+  | "NEW"
+  | "POPULAR"
+  | "TRENDING"
+  | "HIGH_STAKES"
+  | null;
 
 export type LeaderboardPlayer = {
   id: string;
@@ -73,6 +84,14 @@ export type LeaderboardPlayer = {
   prizeWon: string;
 };
 
+export interface Player {
+  id: string;
+  username: string;
+  avatar: string;
+  totalWins: number;
+  totalEarnings: number;
+  rank: number;
+}
 
 export type GameName =
   | "Mystic Quest"
@@ -83,4 +102,11 @@ export type GameName =
 
 export type GameLeaderboard = Record<GameName, LeaderboardPlayer[]>;
 
-
+export interface Match {
+  id: string;
+  gameId: string;
+  playersJoined: number;
+  totalCollected: number;
+  platformFeeAmount: number;
+  prizePool: number;
+}
