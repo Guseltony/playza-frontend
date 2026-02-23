@@ -37,7 +37,7 @@ const Filter = ({ fn }: Props) => {
   ];
 
   const handleOnClick = async (option: FilterOption) => {
-    await fn(option);
+    fn(option);
     setFilterBy(option);
   };
 

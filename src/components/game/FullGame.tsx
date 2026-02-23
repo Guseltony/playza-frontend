@@ -95,7 +95,7 @@ const FullGame = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
           {/* <!-- Game Card Loop (10) --> */}
           {filteredGames.map((g) => (
-            <GamesCard {...g} />
+            <GamesCard {...g} key={g.id} />
           ))}
         </div>
       </section>

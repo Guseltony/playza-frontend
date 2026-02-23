@@ -254,3 +254,70 @@ html {
   animation: scroll-winner 45s linear infinite;
   will-change: transform;
 }
+
+
+.glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-card {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+        
+        .neon-border {
+            position: relative;
+        }
+        
+        .neon-border::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, #a855f7, #06b6d4);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #fff 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.3) 0%, rgba(15, 23, 42, 0.8) 60%, #0f172a 100%);
+        }
+        
+        .tab-active {
+            color: #a855f7;
+            border-bottom: 2px solid #a855f7;
+        }
+        
+        .live-indicator {
+            animation: pulse-red 2s infinite;
+        }
+        
+        @keyframes pulse-red {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .sticky-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+        
+        .prize-pool-glow {
+            text-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+        }

@@ -3,7 +3,7 @@ import About from "./About";
 const Footer = () => {
   return (
     <footer className="bg-background-dark border-t border-slate-800 py-12">
-      <div className="max-w-[1600px] mx-auto px-6">
+      <div className="max-w-[1600px] mx-auto px-2 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* About */}
           <div className="">

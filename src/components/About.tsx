@@ -2,7 +2,7 @@ import { BsDiscord, BsFacebook, BsTwitterX } from "react-icons/bs";
 
 const About = () => {
   return (
-    <div className="glass p-8 rounded-xl">
+    <div className="glass p-6 rounded-xl">
       <h3 className="font-heading text-xl font-bold text-white mb-4">
         About PlayPeak
       </h3>

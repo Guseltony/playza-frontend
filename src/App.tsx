@@ -10,6 +10,7 @@ import Games from "./pages/Games";
 import SideBar from "./components/SideBar";
 import Footer from "./components/Footer";
 import RightSideBar from "./components/RightSideBar";
+import Game from "./pages/Game";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -17,7 +18,7 @@ const App = () => {
     <div className="min-h-screen bg-linear-to-b from-gray-900 via-slate-900 to-slate-800 text-white">
       <Header />
       {/* {pathname === "/" && <AppNotification />} */}
-      <div className="max-w-400 mx-auto flex gap-6 p-6">
+      <div className="max-w-400 mx-auto flex gap-6 p-2 md:p-6">
         <aside className="w-72 hidden lg:block sticky top-24 self-start h-[calc(100vh-8rem)]">
           <SideBar />
         </aside>
@@ -27,9 +28,11 @@ const App = () => {
           <Route path="/wallet" element={<WalletPage />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/games" element={<Games />} />
+          <Route path="/games/:id" element={<Game />} />
         </Routes>
 
-        {pathname !== "/games" && <RightSideBar />}
+        {pathname === "/games" ||
+          (pathname === "/games/:id" && <RightSideBar />)}
       </div>
 
       <Footer />
