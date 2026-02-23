@@ -1,3 +1,5 @@
+import { AlertCircle, Check, Trophy } from "lucide-react";
+
 const GameInstructionTab = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -94,10 +96,7 @@ const GameInstructionTab = () => {
 
                 <div className="border-t border-white/10 pt-6">
                   <h3 className="font-display text-xl font-bold text-white mb-3 flex items-center gap-2">
-                    <i
-                      data-lucide="trophy"
-                      className="w-5 h-5 text-yellow-400"
-                    ></i>
+                    <Trophy className="w-5 h-5 text-yellow-400" />
                     Winning Rules
                   </h3>
                   <div className="grid md:grid-cols-2 gap-4">
@@ -124,39 +123,24 @@ const GameInstructionTab = () => {
 
                 <div className="border-t border-white/10 pt-6">
                   <h3 className="font-display text-xl font-bold text-white mb-3 flex items-center gap-2">
-                    <i
-                      data-lucide="alert-circle"
-                      className="w-5 h-5 text-red-400"
-                    ></i>
+                    <AlertCircle className="w-5 h-5 text-red-400" />
                     Entry Requirements
                   </h3>
                   <ul className="space-y-2 text-gray-300 text-sm">
                     <li className="flex items-center gap-2">
-                      <i
-                        data-lucide="check"
-                        className="w-4 h-4 text-green-400"
-                      ></i>
+                      <Check className="w-4 h-4 text-green-400" />
                       Verified Palyza account
                     </li>
                     <li className="flex items-center gap-2">
-                      <i
-                        data-lucide="check"
-                        className="w-4 h-4 text-green-400"
-                      ></i>
+                      <Check className="w-4 h-4 text-green-400" />
                       Sufficient balance ($5.00 entry fee)
                     </li>
                     <li className="flex items-center gap-2">
-                      <i
-                        data-lucide="check"
-                        className="w-4 h-4 text-green-400"
-                      ></i>
+                      <Check className="w-4 h-4 text-green-400" />
                       Stable internet connection (required)
                     </li>
                     <li className="flex items-center gap-2">
-                      <i
-                        data-lucide="check"
-                        className="w-4 h-4 text-green-400"
-                      ></i>
+                      <Check className="w-4 h-4 text-green-400" />
                       Join before match timer ends
                     </li>
                   </ul>

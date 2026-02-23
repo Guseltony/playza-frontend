@@ -1,3 +1,4 @@
+import GameInstructionTab from "@/components/GameInstructionTab";
 import { games } from "@/data/games";
 import { formatNaira } from "@/lib/formatNaira";
 import { calculatePrizePool } from "@/utils/calculatedPrizePool";
@@ -178,6 +179,8 @@ const Game = () => {
           </div>
         </div>
       </section>
+
+      <GameInstructionTab />
     </div>
   );
 };
