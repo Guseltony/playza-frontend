@@ -92,7 +92,11 @@ const HomeGames = ({ games, Icon, title }: HomeGamesProps) => {
           className="flex overflow-x-auto gap-4 scrollbar-hide scroll-smooth snap-x snap-mandatory"
         >
           {games.map((game) => (
-            <div data-card className="min-w-62 shrink-0 snap-start">
+            <div
+              key={game.id}
+              data-card
+              className="min-w-62 shrink-0 snap-start"
+            >
               <GamesCard {...game} />
             </div>
           ))}

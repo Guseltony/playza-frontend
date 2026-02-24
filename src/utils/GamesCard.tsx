@@ -15,8 +15,8 @@ const GamesCard = ({
   badge,
 }: Game) => {
   return (
-    <Link to={`/games/${slug}`} key={id}>
-      <div className="glass rounded-lg overflow-hidden group border-slate-700 hover:border-primary transition-all">
+    <div className="glass rounded-lg overflow-hidden group border-slate-700 hover:border-primary transition-all">
+      <Link to={`/games/${slug}`} key={id}>
         <div className="h-32 relative">
           <span className={`absolute top-2 left-2 z-10`}>
             {(badge === "NEW" || badge === "HOT") && (
@@ -49,14 +49,14 @@ const GamesCard = ({
           <h4 className="font-bold text-xs uppercase text-center text-white">
             {title}
           </h4>
-          <Link to={`/games/${slug}`}>
-            <button className="bg-primary/20 hover:bg-primary px-4 py-1.5 rounded text-xs font-bold transition-colors text-white cursor-pointer">
-              {ctaLabel}
-            </button>
-          </Link>
         </div>
-      </div>
-    </Link>
+      </Link>
+      <Link to={`/games/${slug}`}>
+        <button className="bg-primary/20 hover:bg-primary px-4 py-1.5 rounded text-xs font-bold transition-colors text-white cursor-pointer">
+          {ctaLabel}
+        </button>
+      </Link>
+    </div>
   );
 };
 

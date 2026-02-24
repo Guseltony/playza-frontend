@@ -1,10 +1,12 @@
-export interface Player {
-  rank: number;
-  name: string;
-  score: number;
-  avatar: string;
-  gamesPlayed: number;
-}
+// export interface Player {
+//   rank: number;
+//   name: string;
+//   score: number;
+//   avatar: string;
+//   gamesPlayed: number;
+// }
+
+import type { DAYS_OF_WEEK, MONTHS } from "@/constants/constants";
 
 // export interface GameLeaderboard {
 //   gameId: string;
@@ -84,13 +86,30 @@ export type LeaderboardPlayer = {
   prizeWon: string;
 };
 
+export type PlayerStatus =
+  | "waiting"
+  | "playing"
+  | "eliminated"
+  | "ended"
+  | "disconnected"
+  | "spectating";
+
+export type Team = "Red" | "Blue" | "Solo";
+
 export interface Player {
   id: string;
   username: string;
   avatar: string;
-  totalWins: number;
-  totalEarnings: number;
+  score: number;
+  status: PlayerStatus;
   rank: number;
+  kills: number;
+  level: number;
+  team: Team;
+  ping: number;
+  country: string;
+  joinedAt: string;
+  isHost: boolean;
 }
 
 export type GameName =
@@ -110,3 +129,6 @@ export interface Match {
   platformFeeAmount: number;
   prizePool: number;
 }
+
+export type Month = (typeof MONTHS)[number];
+export type DayOfWeek = (typeof DAYS_OF_WEEK)[number];
