@@ -8,6 +8,14 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+    font-family: "Inter", sans-serif;
+}
+
+h1,h2,h3 {
+   font-family: "Space Grotesk", sans-serif;
+}
+
 
 
 @theme inline {
@@ -257,16 +265,16 @@ html {
 
 
 .glass-panel {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(12px);
+            background: rgba(30, 41, 59, 0.8);
             -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .glass-card {
             background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
             border: 1px solid rgba(168, 85, 247, 0.2);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         }
@@ -320,4 +328,8 @@ html {
         
         .prize-pool-glow {
             text-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+        }
+
+         .glow-primary {
+            box-shadow: 0 0 15px var(--primary);
         }

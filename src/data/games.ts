@@ -452,3 +452,42 @@ export const games: Game[] = [
     updatedAt: "2026-02-22T00:00:00Z",
   },
 ];
+
+export const sessionLeaderboardData = [
+  {
+    rank: 1,
+    name: "ShadowSlayer99",
+    avatar:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuAL1x6QMovmyxz8X0Wm5sshIITqwUQwWgPCApwkKawZIWgr5PQC0JMyzJs92Ug-IEa5E0W2J_BmsJA0mLADFIaj7-HBKizJBDS6tM3OeKNXqofgm8t508EenbBJgrHRWLc0kR7BOJVAZqQ5kpOvoI73Tr55d_M6Vn2DwayDfcFFrS9rt9T_VMBDGxvReO6tHJFcXuiiPNHN4dLnnXkB4aOj4ZWjg3SMOV_XDA1A3jdK5JzwoST97lUZiSnzdnAS6vWvi7K773fgXXOz",
+    score: 94203,
+    time: "2m ago",
+    highlight: "gold",
+  },
+  {
+    rank: 2,
+    name: "CyberPanda",
+    avatar:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuC4LQkoMy_qg9_oGSa8VjJrOOCH0i550BHLrpLxDD_pqXr_GXVLxMMSkzPCq5qWiu-4IY8ANl5tn9Hv0JqWorHC6kz5LMMwpnwdJwI0CgoxmzmFqh_ALoH2gLzabVE0vKW7F_6sg_YKI0--__3B6M928NXVMvtYZaFcAr_qKo2G1b9b2zDcBz4NxKhJ09CwjxngLy36frKTkwtxTFkea5ffst-YfsqhYNrMALIrQ3l_SVrUpkT_L7AYtdjAk8Df8CjV4tgmYTW0FJwa",
+    score: 91050,
+    time: "5m ago",
+    highlight: "silver",
+  },
+  {
+    rank: 3,
+    name: "You (Felix)",
+    avatar:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuDn1FzQ2kmXQLCgw0R756rurENsH67TeJgchCC0QMLNKnHZSxXVkvV3MSjGy05Q_RWWJhN4MUGBQxwmKZxpg-BGwYANUpKXWtaRUTVRihGuMYdgcGu4lVETzC_fKyM4h9wVZH-DYw1fge936OplRvMklONYpQ271-mSdCORZKVadIceL4jzOgvrAXew76YLAVlaFy8XOljt56_XgF726j3ma9vHqNo8WT5CVHXhBkoZMQlA7NSGjTVUPdpiDiHsg-kmAZdBCdSY8gaY",
+    score: 89420,
+    time: "Just now",
+    highlight: "me",
+  },
+  {
+    rank: 4,
+    name: "IronViking",
+    avatar:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuDby5x00oJHYtjNOjEwEkSFyFeuLUvQnWzgDTXOC_hLQol2PT6arxe0i3JU-dKLx3lFaI4RlX4mJdc-j8Ga0nCBrmZpiwfNKKjD4h_6W2c82sLXVUFRwFK7h2RwBamIeHraOVw0ehcHFaHcZgLB62LuMB-KbpHvmZBwj-W0DNV8foa1mDNrOsPNzHYfDoQG_teBGCQMQ8KjNZfuxwx0FE-cmvQ8uYlKY2_n-7JTyJuDh2WOvtIDh5RyjekTNsKNmUbTxqorN3vK1vt_",
+    score: 85221,
+    time: "12m ago",
+    highlight: "normal",
+  },
+] as const;
