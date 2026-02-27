@@ -23,7 +23,7 @@ const App = () => {
   console.log(isGameDetailPage);
 
   return (
-    <div className="min-h-screen bg-linear-to-b from-gray-900 via-slate-900 to-slate-800 text-white">
+    <div className="min-h-screen bg-background text-white">
       <Header />
       {/* {pathname === "/" && <AppNotification />} */}
       <div className="max-w-400 mx-auto flex gap-6 p-2 md:p-6 ">
