@@ -24,7 +24,10 @@ const Registration = () => {
               </label>
               <div className="relative">
                 <Globe className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl" />
-                <select className="w-full bg-slate-900/50 border border-white/10 rounded-lg py-4 pl-12 pr-10 appearance-none focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none text-slate-100 transition-all">
+                <select
+                  required
+                  className="w-full bg-slate-900/50 border border-white/10 rounded-lg py-4 pl-12 pr-10 appearance-none focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none text-slate-100 transition-all"
+                >
                   <option value="NG">Nigeria (+234)</option>
                   <option value="US">United States (+1)</option>
                   <option value="UK">United Kingdom (+44)</option>
@@ -41,6 +44,7 @@ const Registration = () => {
               <div className="relative group">
                 <Smartphone className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl group-focus-within:text-primary transition-colors" />
                 <input
+                  required
                   className="w-full bg-slate-900/50 border border-white/10 rounded-lg py-4 pl-12 pr-4 focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none text-slate-100 placeholder:text-slate-600 transition-all"
                   placeholder="800 000 0000"
                   type="tel"
