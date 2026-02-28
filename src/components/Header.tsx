@@ -14,9 +14,11 @@ const Header = () => {
       <div className="max-w-400 mx-auto px-2 md:px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-12">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="material-icons text-white text-xl">PZ</span>
-            </div>
+            <Link to="/">
+              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                <span className="material-icons text-white text-xl">PZ</span>
+              </div>
+            </Link>
           </div>
         </div>
         <div className="flex gap-4 items-center">

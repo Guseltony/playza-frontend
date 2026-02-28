@@ -51,7 +51,9 @@ const App = () => {
           !isRegistrationPage && <RightSideBar />}
       </div>
 
-      <Footer />
+      {!isRegistrationPage && <Footer />}
+
+      {!isRegistrationPage && <NavFooter />}
 
       <NavFooter />
     </div>
