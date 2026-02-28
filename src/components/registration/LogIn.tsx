@@ -1,12 +1,18 @@
-const LogIn = () => {
+import { Lock, LockOpen, Phone } from "lucide-react";
+
+interface LoginProps {
+  // placeholder: string;
+  // value: string;
+  onClick: (value: string) => void;
+}
+
+const LogIn = ({ onClick }: LoginProps) => {
   return (
     <main className="flex-1 flex items-center justify-center px-4 py-12">
       <div className="glass-card w-full max-w-115 p-8 md:p-10 rounded-xl shadow-2xl border border-white/5">
         <div className="text-center mb-10">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 mb-6">
-            <span className="material-symbols-outlined text-primary text-3xl">
-              lock_open
-            </span>
+            <LockOpen className=" text-primary text-3xl" />
           </div>
           <h1 className="text-white text-3xl font-bold tracking-tight mb-2">
             Welcome Back
@@ -19,13 +25,13 @@ const LogIn = () => {
           {/* <!-- Identity Field --> */}
           <div className="space-y-2">
             <label className="text-slate-300 text-sm font-semibold ml-1">
-              Email or Phone
+              Phone
             </label>
             <div className="relative group">
-              <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-primary transition-colors text-[20px]">
-                alternate_email
-              </span>
+              <Phone className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-primary transition-colors text-[20px]" />
+
               <input
+                required
                 className="w-full bg-slate-900/50 border border-slate-800 focus:border-primary focus:ring-1 focus:ring-primary/50 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 outline-none transition-all"
                 placeholder="name@example.com"
                 type="text"
@@ -46,10 +52,9 @@ const LogIn = () => {
               </a>
             </div>
             <div className="relative group">
-              <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-primary transition-colors text-[20px]">
-                lock
-              </span>
+              <Lock className=" absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-primary transition-colors text-[20px]" />
               <input
+                required
                 className="w-full bg-slate-900/50 border border-slate-800 focus:border-primary focus:ring-1 focus:ring-primary/50 rounded-xl py-4 pl-12 pr-12 text-white placeholder:text-slate-600 outline-none transition-all"
                 placeholder="Enter your password"
                 type="password"
@@ -108,9 +113,12 @@ const LogIn = () => {
         <div className="mt-10 pt-8 border-t border-white/5 text-center">
           <p className="text-slate-500 text-sm">
             New to the platform?
-            <a className="text-primary font-bold hover:underline ml-1" href="#">
+            <button
+              onClick={() => onClick("signup")}
+              className="text-primary font-bold hover:underline ml-1"
+            >
               Create an account
-            </a>
+            </button>
           </p>
         </div>
       </div>

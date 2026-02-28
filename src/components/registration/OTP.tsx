@@ -1,6 +1,12 @@
 import { Edit } from "lucide-react";
 
-const OTP = () => {
+interface OtpProps {
+  // placeholder: string;
+  // value: string;
+  onClick: (value: string) => void;
+}
+
+const OTP = ({ onClick }: OtpProps) => {
   return (
     <div className="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen relative overflow-x-hidden">
       {/* <!-- Abstract Background Texture --> */}
@@ -81,7 +87,10 @@ const OTP = () => {
                 </fieldset>
               </div>
               <div className="flex flex-col gap-6">
-                <button className="w-full flex h-14 items-center justify-center rounded-lg bg-primary text-background-dark text-lg font-bold tracking-wide hover:shadow-[0_0_20px_rgba(13,242,242,0.4)] transition-all">
+                <button
+                  onClick={() => onClick("profile")}
+                  className="w-full flex h-14 items-center justify-center rounded-lg bg-primary text-background-dark text-lg font-bold tracking-wide hover:shadow-[0_0_20px_rgba(13,242,242,0.4)] transition-all"
+                >
                   Verify &amp; Continue
                 </button>
                 <div className="flex flex-col items-center gap-4">
@@ -100,7 +109,7 @@ const OTP = () => {
                     </button>
                   </div>
                   <button className="flex items-center gap-2 text-slate-500 hover:text-slate-300 text-sm font-normal transition-colors py-2 border-t border-slate-800 w-full justify-center mt-2">
-                    <Edit className="text-sm"/>
+                    <Edit className="text-sm" />
                     Change phone number
                   </button>
                 </div>

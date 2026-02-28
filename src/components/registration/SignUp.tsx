@@ -1,7 +1,13 @@
 import { Expand, Globe, Shield, Smartphone, Verified } from "lucide-react";
 import { MdOutlineEnhancedEncryption } from "react-icons/md";
 
-const Registration = () => {
+interface SignUpProps {
+  // placeholder: string;
+  // value: string;
+  onClick: (value: string) => void;
+}
+
+const SignUp = ({ onClick }: SignUpProps) => {
   return (
     <main className="grow flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-120">
@@ -74,6 +80,7 @@ const Registration = () => {
             </div>
             {/* <!-- Submit Button --> */}
             <button
+              onClick={() => onClick("otp")}
               className="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-4 rounded-lg neon-glow transition-all transform active:scale-[0.98]"
               type="submit"
             >
@@ -96,12 +103,12 @@ const Registration = () => {
               </div>
               <p className="text-slate-400 text-sm">
                 Already have an account?
-                <a
+                <button
+                  onClick={() => onClick("login")}
                   className="text-slate-100 font-bold hover:underline"
-                  href="#"
                 >
                   Log in
-                </a>
+                </button>
               </p>
             </div>
           </form>
@@ -134,4 +141,4 @@ const Registration = () => {
   );
 };
 
-export default Registration;
+export default SignUp;
