@@ -6,6 +6,7 @@ export function filterGames(
   games: Game[],
   activeTab: string,
   filterBy: FilterOption | "",
+  query: string,
 ): Game[] {
   const allGames = games.map((g) => ({
     ...g,
@@ -22,6 +23,17 @@ export function filterGames(
   if (activeTab !== "All Games") {
     result = result.filter((game) => game.category === activeTab);
   }
+
+  // search by query
+  if (query) {
+    const q = query.toLowerCase();
+  
+    result = result.filter((game) =>
+      game.title.toLowerCase().includes(q) ||
+      game.category.toLowerCase().includes(q)
+    );
+  } else {return result};
+
 
   // Secondary filtering
   switch (filterBy) {

@@ -17,25 +17,28 @@ const FullGame = () => {
 
   const [filterBy, setFilterBy] = useState<FilterOption | "">("");
   const [activeTab, setActiveTab] = useState("All Games");
+  const [query, setQuery] = useState("");
 
-   const allGames = games.map((g) => ({
-     ...g,
-     pricePool: calculatePrizePool(
-       g.entryFee,
-       g.activePlayers,
-       g.platformFeePercentage,
-     ),
-   }));
+  const allGames = games.map((g) => ({
+    ...g,
+    pricePool: calculatePrizePool(
+      g.entryFee,
+      g.activePlayers,
+      g.platformFeePercentage,
+    ),
+  }));
 
   const filteredGames = useMemo(() => {
-    return filterGames(allGames, activeTab, filterBy);
-  }, [allGames, activeTab, filterBy]);
+    return filterGames(allGames, activeTab, filterBy, query);
+  }, [query, allGames, activeTab, filterBy]);
 
   const handleFiltering = (option: FilterOption) => {
     setFilterBy(option);
   };
 
-  const biggestPoolGame = [...allGames].sort((a, b) => b.pricePool - a.pricePool)[0];
+  const biggestPoolGame = [...allGames].sort(
+    (a, b) => b.pricePool - a.pricePool,
+  )[0];
 
   console.log("biggestGameprize:", biggestPoolGame);
 
@@ -71,7 +74,11 @@ const FullGame = () => {
       </section>
       {/* <!-- Search & Filters --> */}
       <div className="glass rounded-lg p-3 mb-8 flex gap-4 items-center mt-4">
-        <Search />
+        <Search
+          placeholder="Search by game name, category..."
+          value={query}
+          onChange={setQuery}
+        />
         {/* <Filter /> */}
         <Filter fn={handleFiltering} />
       </div>

@@ -52,7 +52,7 @@ const GamesCard = ({
         </div>
       </Link>
       <Link to={`/games/${slug}`}>
-        <button className="bg-primary/20 hover:bg-primary px-4 py-1.5 rounded text-xs font-bold transition-colors text-white cursor-pointer">
+        <button className="bg-accent/40 w-full hover:bg-primary px-4 py-1.5 rounded text-xs font-bold transition-colors text-white cursor-pointer">
           {ctaLabel}
         </button>
       </Link>

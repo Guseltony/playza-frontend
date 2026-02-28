@@ -298,3 +298,48 @@ h1,h2,h3 {
          .glow-primary {
             box-shadow: 0 0 15px var(--primary);
         }
+
+/* ============================= */
+/* DARK NAVY STAR BACKGROUND */
+/* ============================= */
+
+@keyframes starsDrift {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-600px);
+  }
+}
+
+.stars-bg {
+  position: absolute;
+  inset: 0;
+  background: #020617; /* your exact color */
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Fine grain */
+.stars-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px, rgba(255,255,255,0.3) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.25;
+  animation: starsDrift 180s linear infinite;
+}
+
+/* Brighter stars */
+.stars-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(2px 2px, rgba(255,255,255,0.8) 1px, transparent 1px);
+  background-size: 150px 150px;
+  opacity: 0.6;
+  animation: starsDrift 300s linear infinite;
+}

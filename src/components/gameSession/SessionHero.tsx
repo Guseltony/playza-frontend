@@ -1,5 +1,6 @@
 import { formatNaira } from "@/lib/formatNaira";
 import { Gamepad2, PlayCircle, Users } from "lucide-react";
+import { Link } from "react-router";
 
 type SessionHeroProps = {
   title: string;
@@ -19,6 +20,8 @@ const SessionHero = ({
   entryFee,
 }: SessionHeroProps) => {
   const splitTitle = title?.split(" ") ?? "";
+
+  // const playDemoGame = () => <TempleRunFrame />;
   return (
     <section className="bg-surface-dark rounded-xl pr-1 py-4 overflow-hidden relative">
       <div className="absolute top-0 right-0 w-1/3 h-full bg-linear-to-l from-primary/10 to-transparent pointer-events-none"></div>
@@ -87,14 +90,16 @@ const SessionHero = ({
           </div>
 
           <div className="flex gap-3 w-full sm:w-auto">
-            <button className="sm:flex-none bg-primary hover:bg-primary/90 text-background-dark font-bold px-2 md:px-4 lg:px-8 py-3 rounded-lg transition-all active:scale-95 flex items-center text-sm sm:text-base justify-center gap-2 cursor-pointer">
+            <button className="sm:flex-none bg-primary hover:bg-primary/90 text-background-dark font-bold px-2 md:px-4 lg:px-8 py-3 rounded-lg transition-all active:scale-95 flex items-center text-xs sm:text-base justify-center gap-2 cursor-pointer">
               <PlayCircle className="md:text-xl" />
               Enter Live Game
             </button>
-            <button className="sm:flex-none bg-accent hover:bg-accent/80 text-white font-bold px-2 md:px-4 lg:px-8 py-3 rounded-lg border border-white/10 transition-all flex items-center text-sm sm:text-base justify-center gap-2 cursor-pointer">
-              <Gamepad2 className="md:text-xl" />
-              Play Demo
-            </button>
+            <Link to="/gameSession/Session">
+              <button className="sm:flex-none bg-accent hover:bg-accent/80 text-white font-bold px-2 md:px-4 lg:px-8 py-3 rounded-lg border border-white/10 transition-all flex items-center text-xs sm:text-base justify-center gap-2 cursor-pointer">
+                <Gamepad2 className="md:text-xl" />
+                Play Demo
+              </button>
+            </Link>
           </div>
         </div>
       </div>
