@@ -7,7 +7,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import React from "react";
 import {
   MdAccountBalance,
   MdAddCircle,
@@ -18,7 +17,7 @@ import {
 
 const Transactions = () => {
   return (
-    <main className="flex-1 max-w-7xl mx-auto w-full px-2 md:px-6 py-2 md:py-8">
+    <main className="flex-1 max-w-7xl mx-auto w-full px-2 md:px-6">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 md:gap-6 mb-8">
         <div className="space-y-1">
           <h1 className="text-4xl font-black tracking-tight text-slate-100">

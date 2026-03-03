@@ -22,11 +22,12 @@ import {
   MdSportsEsports,
   MdUpload,
 } from "react-icons/md";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 
 const Wallet = () => {
+  const location = useLocation();
   return (
-    <main className="flex-1 min-w-0 md:p-8 flex flex-col gap-2 md:gap-8">
+    <main className="flex-1 min-w-0 flex flex-col gap-2 md:gap-8">
       {/* <!-- Hero Balance Section --> */}
       <section className="grid grid-cols-1 lg:grid-cols-3 gap-2 md:gap-8">
         <div className="lg:col-span-2 glass-card rounded-xl p-8 flex flex-col justify-between relative overflow-hidden group">
@@ -44,10 +45,14 @@ const Wallet = () => {
             </h2>
           </div>
           <div className="flex gap-4 mt-8">
-            <button className="flex-1 bg-primary hover:bg-primary/90 text-background-dark font-bold py-2 md:py-4 rounded-xl transition-all neon-glow flex items-center justify-center gap-2 text-xs md:text-base">
+            <Link
+              to={"/wallet/deposit"}
+              state={{ background: location }}
+              className="flex-1 bg-primary hover:bg-primary/90 text-background-dark font-bold py-2 md:py-4 rounded-xl transition-all neon-glow flex items-center justify-center gap-2 text-xs md:text-base"
+            >
               <PlusCircle className="font-bold" />
               Deposit Funds
-            </button>
+            </Link>
             <button className="flex-1 bg-transparent border border-white/20 hover:border-primary/50 text-white font-bold py-2 md:py-4 rounded-xl transition-all flex items-center justify-center gap-2 text-xs md:text-base">
               <MdPayments />
               Withdraw

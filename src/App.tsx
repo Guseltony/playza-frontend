@@ -14,9 +14,13 @@ import TempleRunFrame from "./components/gameFrame/TempleRunFrame";
 import Registration from "./pages/Registration";
 import Wallet from "./pages/Wallet";
 import Transactions from "./pages/Transactions";
+import Deposit from "./pages/Deposit";
 
 const App = () => {
   const { pathname } = useLocation();
+
+  const location = useLocation();
+  const state = location.state as { background?: Location };
 
   // const isGameDetailPage = !!useMatch("/games/:id");
   const isGameSessionPage = !!useMatch("/games/:id/session");
@@ -35,18 +39,31 @@ const App = () => {
             <SideBar />
           </aside>
         )}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/leaderboard" element={<LeaderBoard />} />
-          <Route path="/wallet" element={<Wallet />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/games" element={<Games />} />
-          <Route path="/games/:id" element={<Game />} />
-          <Route path="/games/:id/session" element={<MatchSession />} />
-          <Route path="/gameSession/Session" element={<TempleRunFrame />} />
-          <Route path="/registration" element={<Registration />} />
-          <Route path="/transactions" element={<Transactions />} />
-        </Routes>
+
+        <>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/leaderboard" element={<LeaderBoard />} />
+            <Route path="/wallet" element={<Wallet />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/games" element={<Games />} />
+            <Route path="/games/:id" element={<Game />} />
+            <Route path="/games/:id/session" element={<MatchSession />} />
+            <Route path="/gameSession/Session" element={<TempleRunFrame />} />
+            <Route path="/registration" element={<Registration />} />
+            <Route path="/transactions" element={<Transactions />} />
+          </Routes>
+
+          {state?.background && (
+            <Routes>
+              <Route path="/wallet/deposit" element={<Deposit />} />
+              {/* <Route
+              path="/wallet/withdraw"
+              element={<WithdrawModal />}
+            /> */}
+            </Routes>
+          )}
+        </>
 
         {pathname === "/" && <RightSideBar />}
       </div>
