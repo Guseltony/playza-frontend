@@ -13,6 +13,7 @@ import MatchSession from "./pages/MatchSession";
 import TempleRunFrame from "./components/gameFrame/TempleRunFrame";
 import Registration from "./pages/Registration";
 import Wallet from "./pages/Wallet";
+import Transactions from "./pages/Transactions";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -44,7 +45,7 @@ const App = () => {
           <Route path="/games/:id/session" element={<MatchSession />} />
           <Route path="/gameSession/Session" element={<TempleRunFrame />} />
           <Route path="/registration" element={<Registration />} />
-          <Route path="/transactions" element={<Registration />} />
+          <Route path="/transactions" element={<Transactions />} />
         </Routes>
 
         {pathname === "/" && <RightSideBar />}
