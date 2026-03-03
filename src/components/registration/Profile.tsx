@@ -1,31 +1,32 @@
 import { LockIcon, Rocket, Shield, User } from "lucide-react";
-import { MdEmail } from "react-icons/md";
+import { MdEmail, MdVisibility } from "react-icons/md";
+import { Link } from "react-router";
 
 
 const Profile = () => {
   return (
-    <div className="flex-1 flex flex-col items-center justify-center px-4 py-12">
+    <div className="flex-1 flex flex-col items-center justify-center">
       <div className="max-w-140 w-full">
         {/* <!-- Title Section --> */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-4 md:mb-10">
           <h1 className="text-slate-100 text-4xl md:text-5xl font-black leading-tight tracking-tight mb-3">
             Complete Your Profile
           </h1>
-          <p className="text-slate-400 text-lg">
+          <p className="text-slate-400 text-sm md:text-lg">
             Secure your account with fintech-level encryption to start
             competing.
           </p>
         </div>
         {/* <!-- Profile Form Card --> */}
-        <div className="glass-card rounded-xl p-8 shadow-2xl border border-primary/20">
-          <div className="space-y-6">
+        <div className="glass-card rounded-xl p-2 md:p-8 shadow-2xl border border-primary/20">
+          <div className="space-y-3 md:space-y-6">
             {/* <!-- Username Field --> */}
             <div className="flex flex-col gap-2">
               <label className="text-slate-200 text-sm font-semibold uppercase tracking-wider">
                 Username
               </label>
               <div className="relative">
-                <User className=" absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-xl"/>
+                <User className=" absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-xl" />
                 <input
                   required
                   className="w-full pl-12 pr-4 py-4 rounded-lg bg-background-dark/60 border border-primary/20 text-slate-100 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-slate-600"
@@ -40,12 +41,12 @@ const Profile = () => {
                 Email
               </label>
               <div className="relative">
-                <MdEmail className=" absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-xl"/>
+                <MdEmail className=" absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-xl" />
                 <input
                   required
                   className="w-full pl-12 pr-4 py-4 rounded-lg bg-background-dark/60 border border-primary/20 text-slate-100 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-slate-600"
-                  placeholder="Enter your gaming handle"
-                  type="text"
+                  placeholder="Enter your email address"
+                  type="email"
                 />
               </div>
             </div>
@@ -55,19 +56,17 @@ const Profile = () => {
                 Password
               </label>
               <div className="relative">
-                <LockIcon className=" absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-xl"/>
+                <LockIcon className=" absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-xl" />
                 <input
                   required
                   className="w-full pl-12 pr-12 py-4 rounded-lg bg-background-dark/60 border border-primary/20 text-slate-100 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-slate-600"
                   type="password"
-                  value="cybersecurity101"
+                  placeholder="cybersecurity101"
                 />
-                <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 cursor-pointer hover:text-primary transition-colors">
-                  visibility
-                </span>
+                <MdVisibility className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 cursor-pointer hover:text-primary transition-colors"/>
               </div>
               {/* <!-- Strength Indicator --> */}
-              <div className="mt-3">
+              {/* <div className="mt-3">
                 <div className="flex gap-2 h-1.5 mb-2">
                   <div className="flex-1 bg-primary rounded-full"></div>
                   <div className="flex-1 bg-primary rounded-full"></div>
@@ -82,7 +81,7 @@ const Profile = () => {
                     Add a special character
                   </span>
                 </div>
-              </div>
+              </div> */}
             </div>
             {/* <!-- Confirm Password Field --> */}
             <div className="flex flex-col gap-2">
@@ -90,7 +89,7 @@ const Profile = () => {
                 Confirm Password
               </label>
               <div className="relative">
-                <Shield className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-xl"/>
+                <Shield className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-xl" />
                 <input
                   required
                   className="w-full pl-12 pr-4 py-4 rounded-lg bg-background-dark/60 border border-primary/20 text-slate-100 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-slate-600"
@@ -100,7 +99,7 @@ const Profile = () => {
               </div>
             </div>
             {/* <!-- Validation Hints --> */}
-            <div className="bg-primary/5 rounded-lg p-4 border border-primary/10 space-y-2">
+            {/* <div className="bg-primary/5 rounded-lg p-4 border border-primary/10 space-y-2">
               <div className="flex items-center gap-2 text-xs text-primary">
                 <span className="material-symbols-outlined text-sm">
                   check_circle
@@ -119,7 +118,7 @@ const Profile = () => {
                 </span>
                 <span>At least one special character (@, #, $, etc.)</span>
               </div>
-            </div>
+            </div> */}
             {/* <!-- Optional Referral --> */}
             <div className="flex flex-col gap-2">
               <label className="text-slate-200 text-sm font-semibold uppercase tracking-wider flex justify-between">
@@ -137,10 +136,10 @@ const Profile = () => {
             </div>
             {/* <!-- Submit Button --> */}
             <div className="pt-4">
-              <button className="w-full h-14 bg-primary text-background-dark font-bold text-lg rounded-lg shadow-[0_0_20px_rgba(6,249,249,0.3)] hover:shadow-[0_0_30px_rgba(6,249,249,0.5)] hover:scale-[1.01] transition-all flex items-center justify-center gap-2">
+              <Link to={"/"} className="w-full h-14 bg-primary text-background-dark font-bold text-lg rounded-lg shadow-[0_0_20px_rgba(6,249,249,0.3)] hover:shadow-[0_0_30px_rgba(6,249,249,0.5)] hover:scale-[1.01] transition-all flex items-center justify-center gap-2">
                 Complete Profile
                 <Rocket />
-              </button>
+              </Link>
               <p className="text-center text-slate-500 text-xs mt-4">
                 By completing your profile, you agree to our
                 <a

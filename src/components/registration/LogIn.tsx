@@ -1,4 +1,5 @@
 import { Lock, LockOpen, Phone } from "lucide-react";
+import { MdVisibility } from "react-icons/md";
 
 interface LoginProps {
   // placeholder: string;
@@ -8,8 +9,8 @@ interface LoginProps {
 
 const LogIn = ({ onClick }: LoginProps) => {
   return (
-    <main className="flex-1 flex items-center justify-center px-4 py-12">
-      <div className="glass-card w-full max-w-115 p-8 md:p-10 rounded-xl shadow-2xl border border-white/5">
+    <main className=" h-full flex items-center justify-center">
+      <div className="glass-card w-full md:min-w-120 p-2 md:p-10 rounded-xl shadow-2xl border border-white/5">
         <div className="text-center mb-10">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 mb-6">
             <LockOpen className=" text-primary text-3xl" />
@@ -21,7 +22,7 @@ const LogIn = ({ onClick }: LoginProps) => {
             Secure access to your competitive gaming assets
           </p>
         </div>
-        <form className="space-y-6">
+        <form className="space-y-3 md:space-y-6">
           {/* <!-- Identity Field --> */}
           <div className="space-y-2">
             <label className="text-slate-300 text-sm font-semibold ml-1">
@@ -29,11 +30,10 @@ const LogIn = ({ onClick }: LoginProps) => {
             </label>
             <div className="relative group">
               <Phone className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-primary transition-colors text-[20px]" />
-
               <input
                 required
                 className="w-full bg-slate-900/50 border border-slate-800 focus:border-primary focus:ring-1 focus:ring-primary/50 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 outline-none transition-all"
-                placeholder="name@example.com"
+                placeholder="07000509001"
                 type="text"
               />
             </div>
@@ -44,12 +44,12 @@ const LogIn = ({ onClick }: LoginProps) => {
               <label className="text-slate-300 text-sm font-semibold">
                 Password
               </label>
-              <a
+              <div
+              onClick={() => onClick("forgot")}
                 className="text-primary text-xs font-bold hover:underline"
-                href="#"
               >
                 Forgot Password?
-              </a>
+              </div>
             </div>
             <div className="relative group">
               <Lock className=" absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-primary transition-colors text-[20px]" />
@@ -63,28 +63,26 @@ const LogIn = ({ onClick }: LoginProps) => {
                 className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300"
                 type="button"
               >
-                <span className="material-symbols-outlined text-[20px]">
-                  visibility
-                </span>
+                <MdVisibility className="material-symbols-outlined text-[20px]" />
               </button>
             </div>
           </div>
           {/* <!-- Action Buttons --> */}
           <div className="space-y-4 pt-2">
             <button className="w-full bg-primary hover:bg-primary/90 text-slate-950 font-bold py-4 rounded-xl transition-all shadow-lg shadow-primary/20 active:scale-[0.98]">
-              Login to Dashboard
+              Enter PlayZa
             </button>
-            <div className="relative py-2">
-              <div className="absolute inset-0 flex items-center">
+            {/* <div className="relative py-2"> */}
+              {/* <div className="absolute inset-0 flex items-center">
                 <div className="w-full border-t border-slate-800"></div>
-              </div>
-              <div className="relative flex justify-center text-xs uppercase">
+              </div> */}
+              {/* <div className="relative flex justify-center text-xs uppercase">
                 <span className="bg-[#101f22] px-3 text-slate-500 font-medium">
                   Or continue with
                 </span>
-              </div>
-            </div>
-            <button
+              </div> */}
+            {/* </div> */}
+            {/* <button
               className="w-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold py-3.5 rounded-xl transition-all flex items-center justify-center gap-3"
               type="button"
             >
@@ -107,10 +105,10 @@ const LogIn = ({ onClick }: LoginProps) => {
                 ></path>
               </svg>
               Google Account
-            </button>
+            </button> */}
           </div>
         </form>
-        <div className="mt-10 pt-8 border-t border-white/5 text-center">
+        <div className=" py-4 border-t border-white/5 text-center">
           <p className="text-slate-500 text-sm">
             New to the platform?
             <button

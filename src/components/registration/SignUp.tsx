@@ -9,9 +9,9 @@ interface SignUpProps {
 
 const SignUp = ({ onClick }: SignUpProps) => {
   return (
-    <main className="grow flex items-center justify-center px-4 py-12">
-      <div className="w-full max-w-120">
-        <div className="glass-card rounded-xl p-8 lg:p-10 shadow-2xl relative overflow-hidden">
+    <main className=" h-full flex items-center justify-center">
+      <div className="w-full md:min-w-120">
+        <div className="glass-card px-2 py-4 md:p-8 xl:p-10 rounded-xl shadow-2xl relative overflow-hidden">
           {/* <!-- Subtle Neon Accent --> */}
           <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-primary to-transparent opacity-50"></div>
           <div className="text-center mb-10">
@@ -22,7 +22,7 @@ const SignUp = ({ onClick }: SignUpProps) => {
               Experience elite competitive gaming with rewards.
             </p>
           </div>
-          <form className="space-y-6">
+          <form className="space-y-3 md:space-y-6">
             {/* <!-- Country Selector --> */}
             <div className="space-y-2">
               <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 ml-1">
@@ -60,7 +60,7 @@ const SignUp = ({ onClick }: SignUpProps) => {
             {/* <!-- reCAPTCHA Placeholder --> */}
             <div className="flex items-center justify-center p-4 rounded-lg bg-slate-900/30 border border-white/5">
               <div className="flex items-center gap-3">
-                <div className="w-6 h-6 border-2 border-slate-700 rounded-sm"></div>
+                <input type="checkbox" className="w-6 h-6 border-2 border-slate-700 rounded-sm" required/>
                 <span className="text-xs text-slate-500 font-medium">
                   I'm not a robot
                 </span>
@@ -94,18 +94,18 @@ const SignUp = ({ onClick }: SignUpProps) => {
               >
                 Sign up with Email instead
               </a> */}
-              <div className="relative flex items-center py-2">
+              <div className="relative flex items-center">
                 <div className="grow border-t border-white/5"></div>
                 <span className="shrink mx-4 text-xs text-slate-600 uppercase tracking-widest font-bold">
                   OR
                 </span>
                 <div className="grow border-t border-white/5"></div>
               </div>
-              <p className="text-slate-400 text-sm">
+              <p className="text-slate-400 text-xs md:text-sm">
                 Already have an account?
                 <button
                   onClick={() => onClick("login")}
-                  className="text-slate-100 font-bold hover:underline"
+                  className="ml-2 text-slate-100 font-bold hover:underline"
                 >
                   Log in
                 </button>
@@ -114,7 +114,7 @@ const SignUp = ({ onClick }: SignUpProps) => {
           </form>
         </div>
         {/* <!-- Trust Badges --> */}
-        <div className="mt-12 flex items-center justify-center gap-8 opacity-60">
+        <div className="mt-4 md:mt-10 flex items-center justify-center gap-4 md:gap-8 opacity-60">
           <div className="flex items-center gap-2">
             <Shield className="material-symbols-outlined text-primary text-xl" />
             <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
@@ -128,13 +128,13 @@ const SignUp = ({ onClick }: SignUpProps) => {
               End-to-End Encrypted
             </span>
           </div>
-          <div className="w-px h-4 bg-white/10"></div>
-          <div className="flex items-center gap-2">
+          {/* <div className="w-px h-4 bg-white/10"></div> */}
+          {/* <div className="flex items-center gap-2">
             <Verified className="material-symbols-outlined text-primary text-xl" />
             <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
               Fintech Certified
             </span>
-          </div>
+          </div> */}
         </div>
       </div>
     </main>
