@@ -1,180 +1,171 @@
-<div className="flex-1 overflow-y-auto px-4 pb-32">
-  {/* <!-- Rank 1 --> */}
-  <div className="mb-2 p-4 rounded-xl bg-white/5 border border-primary/30 flex items-center justify-between winning-zone-glow">
-    <div className="flex items-center gap-4">
-      <div className="w-8 flex justify-center">
-        <span className="material-icons text-yellow-400 text-3xl">
-          emoji_events
-        </span>
-      </div>
-      <img
-        className="w-10 h-10 rounded-lg object-cover"
-        data-alt="Avatar of the tournament leader"
-        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH8URigXDLYUtE0iM3QXg_jTaWo5D4rzN_4DbgTYYEsWz8FdBdbgd45Elc6abWH5oUSJkDoX0kYDMw_QuUdRxNE8NNT31GOyAbU2R79Mp8BCkMGj5dfZPamAxHnACunTjIP9B3qj0-46x4345Ih_ZvenTnmkmKKvr2Ykuql5LoNNNV7QRTIgNj4BZshGU6tPJqbBhjDqdwwlI5GVr8hrrxEXPrusVxD-9mhxeeSPvxoG6P-CP9FiU5pZKiEs-BRy04X2yNMxpla4c"
-      />
-      <div>
-        <p className="font-bold text-white leading-tight">ShadowNinja</p>
-        <p className="text-primary text-xs font-medium">84,290 pts</p>
-      </div>
-    </div>
-    <div className="text-right">
-      <p className="text-xl font-black text-white">$250</p>
-    </div>
-  </div>
-  {/* <!-- Rank 2 --> */}
-  <div className="mb-2 p-4 rounded-xl bg-white/5 border border-slate-700/50 flex items-center justify-between">
-    <div className="flex items-center gap-4">
-      <div className="w-8 flex justify-center">
-        <span className="material-icons text-slate-300 text-2xl">
-          workspace_premium
-        </span>
-      </div>
-      <img
-        className="w-10 h-10 rounded-lg object-cover"
-        data-alt="Avatar of the second place player"
-        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuIVR8ZDWsBDnySj1myKojWV2BX7N0r8LPJdW26LLfnnvRSheVHjBf-QKVo9HBLub9WReKuDH1KPVDBDmB13BKv4VQxt9nh1t6uaor8PLQdyLeiO6AHFzepF8TdAU4SPOfxmwFlJ43Ay2hI4NXkmT8A6qB7kkLQ7J88ZK1CGlodbkdOmPGaGb4xpYZjy8tnJwOuA8CRfWsIPkyf9cvLjHPjYohlY7Hu9WmzIYUB9WjDyXcRldH-8g_sVfBHHCDd12RQceIfUSJ1qQ"
-      />
-      <div>
-        <p className="font-bold text-white leading-tight">FruitMaster_99</p>
-        <p className="text-slate-400 text-xs font-medium">82,150 pts</p>
-      </div>
-    </div>
-    <div className="text-right">
-      <p className="text-xl font-black text-white">$150</p>
-    </div>
-  </div>
-  {/* <!-- Rank 3 --> */}
-  <div className="mb-2 p-4 rounded-xl bg-white/5 border border-slate-700/50 flex items-center justify-between">
-    <div className="flex items-center gap-4">
-      <div className="w-8 flex justify-center">
-        <span className="material-icons text-orange-400 text-2xl">
-          military_tech
-        </span>
-      </div>
-      <img
-        className="w-10 h-10 rounded-lg object-cover"
-        data-alt="Avatar of the third place player"
-        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLvR_xVyTXXGYpkjDvoZK-1TVeNtVhch_hwpS6Hgt9TbMeFCOOIYUy6efnY5wyFZ5yDHT0KtQGr_hgkjLoX6jPh-Osp9LW151VtZbXS2fsMapT5W64brLqyR-nxOp4Lmzz1eKNLIp0_U5JORXV8k3eVGKoHlvrkypszkmajE_THnxE3iBJHBAYj0kj1IReokKkoTbr8sN4iKg5jQaBFKz8-z9CCZKz9Q6o_uK5JzDYaCj708D0M_nQwBmWwhsF2sbT7KrHDg_Msq8"
-      />
-      <div>
-        <p className="font-bold text-white leading-tight">KatanaZero</p>
-        <p className="text-slate-400 text-xs font-medium">79,800 pts</p>
-      </div>
-    </div>
-    <div className="text-right">
-      <p className="text-xl font-black text-white">$100</p>
-    </div>
-  </div>
-  {/* <!-- Rank Divider - Winning Zone Cutoff --> */}
-  <div className="my-4 flex items-center gap-4 px-2">
-    <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
-    <span className="text-[9px] font-black tracking-[0.2em] text-primary/60 uppercase">
-      Runner Ups
-    </span>
-    <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
-  </div>
-  {/* <!-- Rank 4-10 --> */}
-  <div className="space-y-1">
-    {/* <!-- Row 4 --> */}
-    <div className="px-4 py-3 rounded-lg hover:bg-white/5 transition-colors flex items-center justify-between border-b border-white/5">
-      <div className="flex items-center gap-4">
-        <span className="w-6 text-sm font-bold text-slate-500">04</span>
-        <img
-          className="w-8 h-8 rounded-full object-cover"
-          data-alt="Player profile thumbnail"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhh7qMshLgrdzO96hWqwQhduita48YCj4WZGokhy2oq3HH2GJTuW5MZJKjpCT6JrTcazua-Nt6ph0jchYUiwclgYhCZt04NjhHjMNJC5Xh3iVnAechj2UdqaKawZl4x8qh5oAfPO4_VodhbmQPWGqptZ01-IiKbzV-aERa7dYIIZhxvSjVCA3E_zZPskYtDwuuPfsXXhyU5CgFxky0Djq8Oxic2wio5KSwecWRQLJfUKNZ-DQM1dNdo7DhzO8mmPdiBMI3EgubK38"
-        />
-        <p className="text-sm font-medium text-slate-300">QuickSlicer</p>
-      </div>
-      <div className="flex gap-6 items-center">
-        <p className="text-xs font-bold text-slate-400">75,400</p>
-        <p className="w-12 text-right text-sm font-bold text-white">$75</p>
-      </div>
-    </div>
-    {/* <!-- Row 5 --> */}
-    <div className="px-4 py-3 rounded-lg hover:bg-white/5 transition-colors flex items-center justify-between border-b border-white/5">
-      <div className="flex items-center gap-4">
-        <span className="w-6 text-sm font-bold text-slate-500">05</span>
-        <img
-          className="w-8 h-8 rounded-full object-cover"
-          data-alt="Player profile thumbnail"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuADyj9PtXeDdwBrWPZACK1uRQeox4MR0IY1BSJp-KDf3XebFDXiCt2OL7LokkSiiKrMUh-0j6ebEwOo58FTP87ysI7HiJQ53woZIE7ZE8OM79mEEilFUl-L3goLB2f3Uhqr46k1S3-QCpp-woBCP6MMgeFprDVDmHYlCILEsJdQGXAmzIKPibz9YaHtzjw49754Muj6NjSIC6UlCDJdalu6cvJJVHaHXD4yOV2gVUPmlUCCvu0nfJ4KtZlg6xzE8LlGtrH5x3mFbTA"
-        />
-        <p className="text-sm font-medium text-slate-300">MelonManiac</p>
-      </div>
-      <div className="flex gap-6 items-center">
-        <p className="text-xs font-bold text-slate-400">72,100</p>
-        <p className="w-12 text-right text-sm font-bold text-white">$60</p>
-      </div>
-    </div>
-    {/* <!-- Row 6 --> */}
-    <div className="px-4 py-3 rounded-lg hover:bg-white/5 transition-colors flex items-center justify-between border-b border-white/5">
-      <div className="flex items-center gap-4">
-        <span className="w-6 text-sm font-bold text-slate-500">06</span>
-        <img
-          className="w-8 h-8 rounded-full object-cover"
-          data-alt="Player profile thumbnail"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8H1Kk-jiLEE2W5LrUQ2byYY5TxI1E-SgR2gFSSsZD0QimJfjCZcZgmUSG7sVedJ5fU9RTgN44EBP7Dja-BY6m4gQ0FStr1RG3P-mIicx985CX8iTfGQT2n656VcRNDJHnvaQjmSph4bJg67mdKMwjHuhhcTBmHQv7yPJLoH9CDWGNl4spglyguIJPxVfkutHGkFnpKrFSxy7VWnL3ZaIZleM33G9aP5Rw6WDc9oklhNFFOHbHwZSpXoZyODX5NbY-vImcEVgkIjk"
-        />
-        <p className="text-sm font-medium text-slate-300">SliceAndDice</p>
-      </div>
-      <div className="flex gap-6 items-center">
-        <p className="text-xs font-bold text-slate-400">70,050</p>
-        <p className="w-12 text-right text-sm font-bold text-white">$50</p>
-      </div>
-    </div>
-    {/* <!-- Row 7 (Highlighted User) --> */}
-    <div className="px-4 py-3 rounded-lg bg-primary/10 border-l-4 border-primary flex items-center justify-between">
-      <div className="flex items-center gap-4">
-        <span className="w-6 text-sm font-bold text-primary">07</span>
-        <img
-          className="w-8 h-8 rounded-full border border-primary/50 object-cover"
-          data-alt="Your profile thumbnail"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgLtlnzpFpSf365hllO9njnNDCiBiMLrfejhFDePg_s0nOeBsGvzr81ZA8yFLLYDdHdDLbFin6rH2VSt0B71Fna1xyzEgvK4VqWMNnUB2ovR60ff2TwQvrqmGIuzt67uRoyhokzOxKqdRkvDEGWAU3_OuvpJ51Z4jxgGEH6Qvcd2qS4zc_WMJfBM7JzHsTC20U7TkVFQJBuFdJagbfIU7-wUih13l0k1ls8XQWHNx6Eiac-bCPUQgw-dnbvIKf3nQEHSvIB_T8hXo"
-        />
-        <p className="text-sm font-bold text-white">You (Alex)</p>
-      </div>
-      <div className="flex gap-6 items-center">
-        <p className="text-xs font-bold text-primary">68,920</p>
-        <p className="w-12 text-right text-sm font-bold text-white">$45</p>
-      </div>
-    </div>
-    {/* <!-- Row 8 --> */}
-    <div className="px-4 py-3 rounded-lg hover:bg-white/5 transition-colors flex items-center justify-between border-b border-white/5">
-      <div className="flex items-center gap-4">
-        <span className="w-6 text-sm font-bold text-slate-500">08</span>
-        <img
-          className="w-8 h-8 rounded-full object-cover"
-          data-alt="Player profile thumbnail"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3dZ2UvvYEEUJm4oCIJtjismZGpGa5Bds5luFfMiWu-BMl6-celgrbRDZWoG__QcsM0WS-JNBLXI_PR2WbYElRQiALLpQg1pMu0bE2WhCCfta4h3pyX3oWI_H6pTPpoGH_RI0E6dpB26KzWLyTNtaxjlq-JT0Mww93CwxgFxhiILUV8uaZa-lQ8T52__APFoh1CPPU_Xv0xlzUmGHZckgKCbzW3ZIhfTzZWvzFd1ZbQvQ3FOJHqVZlVKVr5PyK5oMETe-M0KFBFTQ"
-        />
-        <p className="text-sm font-medium text-slate-300">BladeRunner</p>
-      </div>
-      <div className="flex gap-6 items-center">
-        <p className="text-xs font-bold text-slate-400">65,200</p>
-        <p className="w-12 text-right text-sm font-bold text-white">$30</p>
-      </div>
-    </div>
-  </div>
-  {/* <!-- Out of Winning Zone Divider --> */}
-  <div className="mt-8 mb-4 flex flex-col items-center gap-2">
-    <div className="w-full h-[1px] bg-red-500/30"></div>
-    <p className="text-[9px] font-bold text-red-500 uppercase tracking-widest">
-      Winning Zone Cutoff
-    </p>
-  </div>
-  {/* <!-- Rank 11 (Out of money example) --> */}
-  <div className="px-4 py-3 rounded-lg opacity-50 flex items-center justify-between">
-    <div className="flex items-center gap-4">
-      <span className="w-6 text-sm font-bold text-slate-600">11</span>
-      <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center">
-        <span className="material-icons text-slate-600 text-sm">person</span>
-      </div>
-      <p className="text-sm font-medium text-slate-400">SlowSlicer</p>
-    </div>
-    <div className="flex gap-6 items-center">
-      <p className="text-xs font-bold text-slate-600">54,100</p>
-      <p className="w-12 text-right text-sm font-bold text-slate-600">$0</p>
-    </div>
-  </div>
-</div>;
+<main className="max-w-7xl mx-auto w-full px-6 md:px-12 py-8 flex flex-col gap-8">
+{/* <!-- Hero Balance Section --> */}
+<section className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div className="lg:col-span-2 glass-card rounded-xl p-8 flex flex-col justify-between relative overflow-hidden group">
+<div className="absolute -top-24 -right-24 size-64 bg-primary/10 rounded-full blur-[100px] group-hover:bg-primary/20 transition-all"></div>
+<div>
+<div className="flex items-center justify-between mb-2">
+<p className="text-slate-400 font-medium tracking-wide uppercase text-xs">Available Balance</p>
+<span className="material-symbols-outlined text-primary/50">info</span>
+</div>
+<h2 className="text-5xl font-extrabold text-white tracking-tight flex items-baseline gap-2">
+                            ₦42,500<span className="text-lg font-normal text-slate-500">.00</span>
+</h2>
+</div>
+<div className="flex gap-4 mt-8">
+<button className="flex-1 bg-primary hover:bg-primary/90 text-background-dark font-bold py-4 rounded-xl transition-all neon-glow flex items-center justify-center gap-2">
+<span className="material-symbols-outlined font-bold">add_circle</span>
+                            Deposit Funds
+                        </button>
+<button className="flex-1 bg-transparent border border-white/20 hover:border-primary/50 text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2">
+<span className="material-symbols-outlined">payments</span>
+                            Withdraw
+                        </button>
+</div>
+</div>
+{/* <!-- Bank Info Card --> */}
+<div className="glass-card rounded-xl p-8 border-l-4 border-l-primary/50">
+<div className="flex justify-between items-start mb-6">
+<h3 className="text-lg font-bold text-white">Bank Information</h3>
+<span className="bg-primary/10 text-primary text-[10px] px-2 py-1 rounded-full font-bold uppercase tracking-wider border border-primary/20 flex items-center gap-1">
+<span className="material-symbols-outlined text-[12px]">verified</span> Verified
+                        </span>
+</div>
+<div className="space-y-4">
+<div className="flex items-center gap-4 p-3 rounded-lg bg-white/5 border border-white/5">
+<div className="size-10 bg-white rounded-lg flex items-center justify-center p-1" data-alt="Zenith Bank Logo">
+<img alt="Bank Logo" className="w-full h-auto" data-alt="Zenith Bank corporate red logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxuRGEeXDIAhTZaRM5cIUhBBwMLqQLItgWx2Ps7uw78Sk2druQ6AnGFk2zttkm1xHbuuxq3rjnIH9NXr5DyLEANUZ_EVccv2xRf14eqXzqRM9M2sd58HOUFTGkSt304ko0OOSm2A4u4gNErVoIXhglSEFG5jxc6aFjYuqyfD2mcYTHvWNxBE83qodOpdT4nzMlLaaqRYGM7iM2hlMd62R7W_UuzdBAdtZvCsmfpf86dvBY_SpYksA4Dn1s5aws_d4QqR-ez-oa6myP"/>
+</div>
+<div>
+<p className="text-xs text-slate-500">Bank Name</p>
+<p className="text-sm font-bold text-white">Zenith Bank PLC</p>
+</div>
+</div>
+<div className="grid grid-cols-2 gap-4">
+<div>
+<p className="text-xs text-slate-500">Account Name</p>
+<p className="text-sm font-medium text-white">John Doe</p>
+</div>
+<div>
+<p className="text-xs text-slate-500">Account Number</p>
+<p className="text-sm font-medium text-white">**** 8841</p>
+</div>
+</div>
+<button className="w-full mt-2 text-xs text-primary font-bold hover:underline text-left">Edit Bank Details</button>
+</div>
+</div>
+</section>
+{/* <!-- Summary Statistics --> */}
+<section className="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div className="glass-card p-6 rounded-xl border border-white/5">
+<div className="flex items-center gap-3 mb-3">
+<div className="size-10 rounded-lg bg-green-500/10 flex items-center justify-center text-green-500">
+<span className="material-symbols-outlined">trending_up</span>
+</div>
+<p className="text-sm text-slate-400 font-medium">Total Deposited</p>
+</div>
+<p className="text-2xl font-bold text-white">₦150,000.00</p>
+<p className="text-xs text-green-500 mt-2 font-medium">+12.5% from last month</p>
+</div>
+<div className="glass-card p-6 rounded-xl border border-white/5">
+<div className="flex items-center gap-3 mb-3">
+<div className="size-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-500">
+<span className="material-symbols-outlined">trending_down</span>
+</div>
+<p className="text-sm text-slate-400 font-medium">Total Withdrawn</p>
+</div>
+<p className="text-2xl font-bold text-white">₦100,000.00</p>
+<p className="text-xs text-red-500 mt-2 font-medium">-4.2% from last month</p>
+</div>
+<div className="glass-card p-6 rounded-xl border border-white/5">
+<div className="flex items-center gap-3 mb-3">
+<div className="size-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-500">
+<span className="material-symbols-outlined">pending_actions</span>
+</div>
+<p className="text-sm text-slate-400 font-medium">Pending</p>
+</div>
+<p className="text-2xl font-bold text-white">₦7,500.00</p>
+<p className="text-xs text-amber-500 mt-2 font-medium">2 Transactions in process</p>
+</div>
+</section>
+{/* <!-- Transaction History --> */}
+<section className="glass-card rounded-xl overflow-hidden">
+<div className="px-8 py-6 border-b border-white/10 flex items-center justify-between">
+<h3 className="text-lg font-bold text-white">Transaction History</h3>
+<button className="text-sm font-bold text-primary hover:text-primary/80 transition-colors flex items-center gap-1">
+                        View All <span className="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div className="overflow-x-auto">
+<table className="w-full text-left">
+<thead className="bg-white/5 text-slate-400 text-xs uppercase tracking-wider">
+<tr>
+<th className="px-8 py-4 font-semibold">Type</th>
+<th className="px-8 py-4 font-semibold">Amount</th>
+<th className="px-8 py-4 font-semibold">Status</th>
+<th className="px-8 py-4 font-semibold">Date</th>
+<th className="px-8 py-4 font-semibold">ID</th>
+</tr>
+</thead>
+<tbody className="divide-y divide-white/5 text-sm">
+<tr className="hover:bg-white/5 transition-colors">
+<td className="px-8 py-4">
+<div className="flex items-center gap-3">
+<span className="material-symbols-outlined text-green-500">download</span>
+<span className="font-medium text-white">Deposit</span>
+</div>
+</td>
+<td className="px-8 py-4 font-bold text-white">₦25,000.00</td>
+<td className="px-8 py-4">
+<span className="px-2.5 py-1 rounded-full bg-green-500/10 text-green-500 text-[10px] font-bold uppercase tracking-wider">Completed</span>
+</td>
+<td className="px-8 py-4 text-slate-400">Oct 24, 2023 • 14:22</td>
+<td className="px-8 py-4 text-slate-500 font-mono text-xs">#TRX-99421</td>
+</tr>
+<tr className="hover:bg-white/5 transition-colors">
+<td className="px-8 py-4">
+<div className="flex items-center gap-3">
+<span className="material-symbols-outlined text-red-500">upload</span>
+<span className="font-medium text-white">Withdrawal</span>
+</div>
+</td>
+<td className="px-8 py-4 font-bold text-white">₦10,000.00</td>
+<td className="px-8 py-4">
+<span className="px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-500 text-[10px] font-bold uppercase tracking-wider">Pending</span>
+</td>
+<td className="px-8 py-4 text-slate-400">Oct 23, 2023 • 09:15</td>
+<td className="px-8 py-4 text-slate-500 font-mono text-xs">#TRX-99418</td>
+</tr>
+<tr className="hover:bg-white/5 transition-colors">
+<td className="px-8 py-4">
+<div className="flex items-center gap-3">
+<span className="material-symbols-outlined text-primary">sports_esports</span>
+<span className="font-medium text-white">Tournament Fee</span>
+</div>
+</td>
+<td className="px-8 py-4 font-bold text-white">₦5,000.00</td>
+<td className="px-8 py-4">
+<span className="px-2.5 py-1 rounded-full bg-green-500/10 text-green-500 text-[10px] font-bold uppercase tracking-wider">Completed</span>
+</td>
+<td className="px-8 py-4 text-slate-400">Oct 21, 2023 • 18:45</td>
+<td className="px-8 py-4 text-slate-500 font-mono text-xs">#TRX-99405</td>
+</tr>
+<tr className="hover:bg-white/5 transition-colors">
+<td className="px-8 py-4">
+<div className="flex items-center gap-3">
+<span className="material-symbols-outlined text-green-500">military_tech</span>
+<span className="font-medium text-white">Reward Payout</span>
+</div>
+</td>
+<td className="px-8 py-4 font-bold text-white">₦12,500.00</td>
+<td className="px-8 py-4">
+<span className="px-2.5 py-1 rounded-full bg-green-500/10 text-green-500 text-[10px] font-bold uppercase tracking-wider">Completed</span>
+</td>
+<td className="px-8 py-4 text-slate-400">Oct 19, 2023 • 11:30</td>
+<td className="px-8 py-4 text-slate-500 font-mono text-xs">#TRX-99382</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>

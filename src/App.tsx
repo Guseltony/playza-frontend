@@ -3,7 +3,6 @@ import Home from "./pages/Home";
 import Header from "./components/Header";
 import NavFooter from "./components/NavFooter";
 import LeaderBoard from "./pages/LeaderBoard";
-import WalletPage from "./pages/Wallet";
 import Profile from "./pages/Profile";
 import Games from "./pages/Games";
 import SideBar from "./components/SideBar";
@@ -13,11 +12,12 @@ import Game from "./pages/Game";
 import MatchSession from "./pages/MatchSession";
 import TempleRunFrame from "./components/gameFrame/TempleRunFrame";
 import Registration from "./pages/Registration";
+import Wallet from "./pages/Wallet";
 
 const App = () => {
   const { pathname } = useLocation();
 
-  const isGameDetailPage = !!useMatch("/games/:id");
+  // const isGameDetailPage = !!useMatch("/games/:id");
   const isGameSessionPage = !!useMatch("/games/:id/session");
   const isRegistrationPage = !!useMatch("/registration");
   // const { id } = useParams();
@@ -37,19 +37,17 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/leaderboard" element={<LeaderBoard />} />
-          <Route path="/wallet" element={<WalletPage />} />
+          <Route path="/wallet" element={<Wallet />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/games" element={<Games />} />
           <Route path="/games/:id" element={<Game />} />
           <Route path="/games/:id/session" element={<MatchSession />} />
           <Route path="/gameSession/Session" element={<TempleRunFrame />} />
           <Route path="/registration" element={<Registration />} />
+          <Route path="/transactions" element={<Registration />} />
         </Routes>
 
-        {pathname !== "/games" &&
-          !isGameDetailPage &&
-          !isGameSessionPage &&
-          !isRegistrationPage && <RightSideBar />}
+        {pathname === "/" && <RightSideBar />}
       </div>
 
       {!isRegistrationPage && <Footer />}
@@ -57,6 +55,6 @@ const App = () => {
       {!isRegistrationPage && <NavFooter />}
     </div>
   );
-};
+};;
 
 export default App;

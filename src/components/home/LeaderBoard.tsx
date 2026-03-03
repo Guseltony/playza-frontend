@@ -11,6 +11,7 @@ import { leaderboard } from "@/data/leaderboard";
 import type { GameName, LeaderboardPlayer } from "@/types/types";
 import { useState } from "react";
 import { MdLeaderboard } from "react-icons/md";
+import { formatNaira } from "../../lib/formatNaira";
 
 const LeaderBoard = () => {
   const gameNames = Object.keys(leaderboard);
@@ -38,7 +39,96 @@ const LeaderBoard = () => {
           ))}
         </div>
       </div>
-      <Table className="mt-4">
+
+      <Table className="w-full text-left">
+        <TableHeader className="bg-accent/20 text-slate-400 text-[10px] uppercase font-bold">
+          <TableRow>
+            <TableHead className="px-2 sm:px-6 py-3 text-slate-400 text-[10px] uppercase font-bold">
+              Rank
+            </TableHead>
+            <TableHead className="px-2 sm:px-6 py-3 text-slate-400 text-[10px] uppercase font-bold">
+              Username
+            </TableHead>
+            <TableHead className="px-2 sm:px-6 py-3 text-slate-400 text-[10px] uppercase font-bold">
+              Score
+            </TableHead>
+            <TableHead className="px-2 sm:px-6 py-3 text-slate-400 text-[10px] uppercase font-bold text-right">
+              Time
+            </TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody className="divide-y divide-accent-dark">
+          {leaderBoardData.map(
+            ({
+              id,
+              rank,
+              avatar,
+              username,
+              points,
+              prizeWon,
+            }: LeaderboardPlayer) => {
+              const isGold = rank === 1;
+              const isSilver = rank === 2;
+              const isMe = rank === 4;
+
+              return (
+                <TableRow
+                  key={id}
+                  className={
+                    isMe
+                      ? "bg-primary/10 border-l-4 border-l-primary"
+                      : "hover:bg-accent-dark/20 transition-colors"
+                  }
+                >
+                  <TableCell className="px-2 sm:px-6 py-4">
+                    <div
+                      className={`flex items-center justify-center w-6 h-6 rounded font-bold text-xs ${
+                        isGold
+                          ? "bg-yellow-500/20 text-yellow-500"
+                          : isSilver
+                            ? "bg-slate-400/20 text-slate-300"
+                            : isMe
+                              ? "bg-primary text-background-dark"
+                              : "text-slate-400"
+                      }`}
+                    >
+                      {rank}
+                    </div>
+                  </TableCell>
+
+                  <TableCell className="px-2 sm:px-6 py-4 flex items-center gap-3">
+                    <div className="h-8 w-8 rounded-full bg-slate-700 overflow-hidden">
+                      <img src={avatar} alt={username} />
+                    </div>
+                    <span
+                      className={
+                        isMe
+                          ? "font-bold text-white"
+                          : "font-medium text-white text-sm"
+                      }
+                    >
+                      {username}
+                    </span>
+                  </TableCell>
+
+                  <TableCell
+                    className={`px-2 sm:px-6 py-4 font-bold ${
+                      isGold || isMe ? "text-primary" : "text-white"
+                    }`}
+                  >
+                    {points.toLocaleString()}
+                  </TableCell>
+
+                  <TableCell className="px-2 sm:px-6 py-4 text-right text-slate-400 text-sm">
+                    {formatNaira(Number(prizeWon) * 100).toLocaleString()}
+                  </TableCell>
+                </TableRow>
+              );
+            },
+          )}
+        </TableBody>
+      </Table>
+      {/* <Table className="mt-4">
         <TableHeader>
           <TableRow>
             <TableHead className="w-1/4 text-center text-secondary text-sm uppercase font-bold">
@@ -54,7 +144,6 @@ const LeaderBoard = () => {
         </TableHeader>
 
         <TableBody>
-          {/* first row */}
           {leaderBoardData.map(
             ({
               id,
@@ -94,7 +183,7 @@ const LeaderBoard = () => {
             ),
           )}
         </TableBody>
-      </Table>
+      </Table> */}
     </section>
   );
 };
