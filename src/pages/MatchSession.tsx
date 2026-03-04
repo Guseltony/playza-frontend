@@ -12,9 +12,11 @@ import SessionActivities from "@/components/gameSession/SessionActivities";
 import SessionInfo from "@/components/gameSession/SessionInfo";
 import SessionRules from "@/components/gameSession/SessionRules";
 import SessionHero from "@/components/gameSession/SessionHero";
+import LiveEntryModal from "@/components/gameSession/LiveEntryModal";
 
 const MatchSession = () => {
   const [activeTab, setActiveTab] = useState("Live Leaderboard");
+  const [liveEntry, setLiveEntry] = useState(false);
 
   const param = useParams();
 
@@ -57,7 +59,8 @@ const MatchSession = () => {
   // console.log(splitTitle);
 
   return (
-    <main className="flex-1 max-w-400 mx-auto overflow-x-hidden ">
+    <main className="relative flex-1 max-w-400 mx-auto overflow-x-hidden ">
+      {liveEntry && <LiveEntryModal />}
       <div className="flex flex-col lg:flex-row gap-8">
         <div className="w-full lg:w-[70%] flex flex-col gap-4">
           <Link
@@ -74,6 +77,7 @@ const MatchSession = () => {
             activePlayers={game?.activePlayers}
             entryFee={game?.entryFee}
             pricePool={game?.pricePool}
+            onClick={setLiveEntry}
           />
 
           <section className="bg-surface-dark rounded-xl overflow-hidden">

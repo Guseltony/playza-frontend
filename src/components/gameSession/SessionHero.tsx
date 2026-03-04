@@ -9,6 +9,7 @@ type SessionHeroProps = {
   activePlayers: number;
   entryFee: number;
   pricePool?: number;
+  onClick: (value: boolean) => void;
 };
 
 const SessionHero = ({
@@ -18,6 +19,7 @@ const SessionHero = ({
   pricePool,
   activePlayers,
   entryFee,
+  onClick,
 }: SessionHeroProps) => {
   const splitTitle = title?.split(" ") ?? "";
 
@@ -89,8 +91,11 @@ const SessionHero = ({
             </div>
           </div>
 
-          <div className="flex gap-3 w-full sm:w-auto">
-            <button className="sm:flex-none bg-primary hover:bg-primary/90 text-background-dark font-bold px-2 md:px-4 lg:px-8 py-3 rounded-lg transition-all active:scale-95 flex items-center text-xs sm:text-base justify-center gap-2 cursor-pointer">
+          <div className="flex items-center justify-center gap-3 w-full sm:w-auto">
+            <button
+              onClick={() => onClick(true)}
+              className="sm:flex-none bg-primary hover:bg-primary/90 text-background-dark font-bold px-2 md:px-4 lg:px-8 py-3 rounded-lg transition-all active:scale-95 flex items-center text-xs sm:text-base justify-center gap-2 cursor-pointer"
+            >
               <PlayCircle className="md:text-xl" />
               Enter Live Game
             </button>
