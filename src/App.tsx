@@ -15,6 +15,7 @@ import Registration from "./pages/Registration";
 import Wallet from "./pages/Wallet";
 import Transactions from "./pages/Transactions";
 import Deposit from "./pages/Deposit";
+import Withdrawal from "./pages/Withdrawal";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -57,10 +58,7 @@ const App = () => {
           {state?.background && (
             <Routes>
               <Route path="/wallet/deposit" element={<Deposit />} />
-              {/* <Route
-              path="/wallet/withdraw"
-              element={<WithdrawModal />}
-            /> */}
+              <Route path="/wallet/withdraw" element={<Withdrawal />} />
             </Routes>
           )}
         </>

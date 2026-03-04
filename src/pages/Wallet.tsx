@@ -6,19 +6,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import {
-  ArrowBigRight,
-  Info,
-  PlusCircle,
-  TrendingDown,
-  TrendingUp,
-  VerifiedIcon,
-} from "lucide-react";
+import { ArrowBigRight, Info, PlusCircle, VerifiedIcon } from "lucide-react";
 import {
   MdDownload,
   MdMilitaryTech,
   MdPayments,
-  MdPendingActions,
   MdSportsEsports,
   MdUpload,
 } from "react-icons/md";
@@ -29,6 +21,16 @@ const Wallet = () => {
   return (
     <main className="flex-1 min-w-0 flex flex-col gap-2 md:gap-8">
       {/* <!-- Hero Balance Section --> */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <h2 className="text-3xl font-black text-slate-100 tracking-tight">
+            Wallet &amp; Finances
+          </h2>
+          <p className="text-slate-400 text-sm mt-1">
+            Manage your tournament earnings and transaction limits.
+          </p>
+        </div>
+      </div>
       <section className="grid grid-cols-1 lg:grid-cols-3 gap-2 md:gap-8">
         <div className="lg:col-span-2 glass-card rounded-xl p-8 flex flex-col justify-between relative overflow-hidden group">
           <div className="absolute -top-24 -right-24 size-64 bg-primary/10 rounded-full blur-[100px] group-hover:bg-primary/20 transition-all"></div>
@@ -39,7 +41,7 @@ const Wallet = () => {
               </p>
               <Info className="text-primary/50" />
             </div>
-            <h2 className="text-5xl font-extrabold text-white tracking-tight flex items-baseline gap-2">
+            <h2 className="text-xl md:text-2xl xl:text-5xl font-extrabold text-white tracking-tight flex items-baseline gap-2">
               ₦42,500
               <span className="text-lg font-normal text-slate-500">.00</span>
             </h2>
@@ -53,10 +55,14 @@ const Wallet = () => {
               <PlusCircle className="font-bold" />
               Deposit Funds
             </Link>
-            <button className="flex-1 bg-transparent border border-white/20 hover:border-primary/50 text-white font-bold py-2 md:py-4 rounded-xl transition-all flex items-center justify-center gap-2 text-xs md:text-base">
+            <Link
+              to={"/wallet/withdraw"}
+              state={{ background: location }}
+              className="flex-1 bg-transparent border border-white/20 hover:border-primary/50 text-white font-bold py-2 md:py-4 rounded-xl transition-all flex items-center justify-center gap-2 text-xs md:text-base"
+            >
               <MdPayments />
               Withdraw
-            </button>
+            </Link>
           </div>
         </div>
         {/* <!-- Bank Info Card --> */}
@@ -102,7 +108,7 @@ const Wallet = () => {
         </div>
       </section>
       {/* <!-- Summary Statistics --> */}
-      <section className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6">
+      {/* <section className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6">
         <div className="glass-card py-2 px-4 md:p-6 rounded-xl border border-white/5">
           <div className="flex items-center gap-3 mb-3">
             <div className="size-10 rounded-lg bg-green-500/10 flex items-center justify-center text-green-500">
@@ -143,7 +149,7 @@ const Wallet = () => {
             2 Transactions in process
           </p>
         </div>
-      </section>
+      </section> */}
       {/* <!-- Transaction History --> */}
       <section className="glass-card rounded-xl overflow-hidden">
         <div className="px-2 md:px-8 py-6 border-b border-white/10 flex items-center justify-between">

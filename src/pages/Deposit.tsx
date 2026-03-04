@@ -1,19 +1,35 @@
 import { CreditCard } from "lucide-react";
-import { MdAccountBalanceWallet, MdArrowForward, MdClose } from "react-icons/md";
+import { useEffect } from "react";
+import {
+  MdAccountBalanceWallet,
+  MdArrowForward,
+  MdClose,
+} from "react-icons/md";
 import { useNavigate } from "react-router";
 
 const Deposit = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // lock scroll
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      // restore scroll
+      document.body.style.overflow = "";
+    };
+  }, []);
+
   return (
-    <div className="fixed inset-0 bg-black z-40 border-2 border-red-800">
-      <div className="bg-background font-display text-slate-900 dark:text-slate-100 min-h-screen flex items-center justify-center relative overflow-hidden border-2 border-green-800">
+    <div className="fixed inset-0 bg-background z-40 px-2 md:p-0 ">
+      <div className=" font-display text-slate-900 dark:text-slate-100 min-h-screen flex items-center justify-center relative overflow-hidden">
         {/* <!-- Background Decoration --> */}
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full"></div>
         <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-primary/5 blur-[100px] rounded-full"></div>
         {/* <!-- Modal Container --> */}
         <div className="relative w-full max-w-130 glass-effect rounded-xl shadow-2xl overflow-hidden border border-primary/20">
           {/* <!-- Modal Header --> */}
-          <div className="p-6 border-b border-white/5 flex justify-between items-start">
+          <div className="p-2 md:p-6 border-b border-white/5 flex justify-between items-start">
             <div className="flex flex-col gap-1">
               <h1 className="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
                 <MdAccountBalanceWallet className="text-primary" />
@@ -31,7 +47,7 @@ const Deposit = () => {
             </button>
           </div>
           {/* <!-- Modal Body --> */}
-          <div className="p-6 flex flex-col gap-6">
+          <div className="p-2 md:p-6 flex flex-col gap-3 md:gap-6">
             {/* <!-- Amount Input Section --> */}
             <div className="flex flex-col gap-3">
               <label className="text-sm font-medium text-slate-300">
@@ -109,7 +125,7 @@ const Deposit = () => {
               </div>
             </div>
             {/* <!-- Order Summary Box --> */}
-            <div className="bg-black/40 rounded-lg p-4 border border-white/5 flex flex-col gap-2">
+            {/* <div className="bg-black/40 rounded-lg p-4 border border-white/5 flex flex-col gap-2">
               <div className="flex justify-between text-sm">
                 <span className="text-slate-400">Deposit Amount</span>
                 <span className="text-white font-medium">₦0.00</span>
@@ -123,12 +139,12 @@ const Deposit = () => {
                 <span className="text-slate-200 font-bold">Total Payable</span>
                 <span className="text-primary text-lg font-black">₦0.00</span>
               </div>
-            </div>
+            </div> */}
             {/* <!-- Primary Action --> */}
             <div className="flex flex-col gap-4 mt-2">
               <button className="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-4 rounded-lg transition-all shadow-[0_0_20px_rgba(19,236,236,0.3)] flex items-center justify-center gap-2">
                 Proceed to Payment
-                <MdArrowForward className="text-xl"/>
+                <MdArrowForward className="text-xl" />
               </button>
               <div className="flex flex-col items-center gap-4">
                 <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-slate-500 font-bold">
@@ -137,7 +153,10 @@ const Deposit = () => {
                   </span>
                   Secure 256-bit SSL Encrypted Payment
                 </div>
-                <button className="text-slate-400 hover:text-white text-sm font-medium transition-colors underline underline-offset-4 decoration-slate-700">
+                <button
+                  onClick={() => navigate(-1)}
+                  className="text-slate-400 hover:text-white text-sm font-medium transition-colors underline underline-offset-4 decoration-slate-700"
+                >
                   Cancel and return
                 </button>
               </div>
