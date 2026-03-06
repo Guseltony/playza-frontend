@@ -60,7 +60,7 @@ const MatchSession = () => {
 
   return (
     <main className="relative flex-1 max-w-400 mx-auto overflow-x-hidden ">
-      {liveEntry && <LiveEntryModal />}
+      {liveEntry && <LiveEntryModal onClick={setLiveEntry} />}
       <div className="flex flex-col lg:flex-row gap-8">
         <div className="w-full lg:w-[70%] flex flex-col gap-4">
           <Link

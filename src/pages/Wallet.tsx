@@ -19,7 +19,7 @@ import { Link, useLocation } from "react-router";
 const Wallet = () => {
   const location = useLocation();
   return (
-    <main className="flex-1 min-w-0 flex flex-col gap-2 md:gap-8">
+    <main className="flex-1 min-w-0  flex flex-col gap-2 md:gap-8">
       {/* <!-- Hero Balance Section --> */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
