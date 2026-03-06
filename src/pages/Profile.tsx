@@ -1,3 +1,4 @@
+import Overview from "@/components/profile/Overview";
 import { MdLocationOn } from "react-icons/md";
 
 const Profile = () => {
@@ -71,6 +72,7 @@ const Profile = () => {
           </div>
         ))}
       </div>
+      <Overview />
     </div>
   );
 };
