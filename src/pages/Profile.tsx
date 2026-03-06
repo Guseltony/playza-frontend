@@ -1,419 +1,325 @@
-import { stats } from "@/constants/constants";
+import { TrendingUp } from "lucide-react";
+import React from "react";
 import {
-  Camera,
-  Check,
-  ChevronRight,
-  Copy,
-  CreditCard,
-  History,
-  Lock,
-  Shield,
-  User,
-  Wallet,
-  X,
-} from "lucide-react";
-import { useState } from "react";
+  MdAdsClick,
+  MdAnalytics,
+  MdCancel,
+  MdCheckCircle,
+  MdEmojiEvents,
+  MdFavorite,
+  MdGrade,
+  MdHistory,
+  MdLocalFireDepartment,
+  MdLocationOn,
+  MdMilitaryTech,
+  MdVerified,
+} from "react-icons/md";
 
 const Profile = () => {
-  const [showBankModal, setShowBankModal] = useState(false);
-  const [showWalletModal, setShowWalletModal] = useState(false);
-  const [showPersonalModal, setShowPersonalModal] = useState(false);
-  const [copied, setCopied] = useState(false);
-
-  // Profile Information
-  const [username, setUsername] = useState("Alex Thunder");
-  const [email, setEmail] = useState("alex.thunder@email.com");
-  const [phone, setPhone] = useState("+234 801 234 5678");
-  const [location, setLocation] = useState("Lagos, Nigeria");
-  // const [joinDate] = useState("January 2024");
-
-  // Bank Information
-  const [bankName, setBankName] = useState("First Bank Nigeria");
-  const [accountNumber, setAccountNumber] = useState("1234567890");
-  const [accountName, setAccountName] = useState("Alex Thunder");
-
-  // EVM Wallet
-  const [evmWallet, setEvmWallet] = useState(
-    "0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb",
-  );
-  const [tempEvmWallet, setTempEvmWallet] = useState(evmWallet);
-
-  const copyToClipboard = (text: string) => {
-    navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  const menuItems = [
-    {
-      icon: User,
-      title: "Personal Information",
-      description: "Update your profile details",
-      onClick: () => setShowPersonalModal(true),
-      status: "Complete",
-    },
-    {
-      icon: CreditCard,
-      title: "Bank Information",
-      description: "Manage withdrawal account",
-      onClick: () => setShowBankModal(true),
-      status: bankName ? "Complete" : "Incomplete",
-    },
-    {
-      icon: Wallet,
-      title: "EVM Wallet Address",
-      description: "Add crypto wallet for rewards",
-      onClick: () => setShowWalletModal(true),
-      status: evmWallet ? "Complete" : "Not Set",
-    },
-    {
-      icon: Lock,
-      title: "Change Password",
-      description: "Update your password",
-      onClick: () => {},
-      status: "",
-    },
-    {
-      icon: Shield,
-      title: "Two-Factor Authentication",
-      description: "Secure your account",
-      onClick: () => {},
-      status: "Not Enabled",
-    },
-    {
-      icon: History,
-      title: "Login History",
-      description: "View recent activities",
-      onClick: () => {},
-      status: "",
-    },
-  ];
-
   return (
-    <div className="px-4 py-6 pb-24 pt-24 max-w-4xl mx-auto">
-      {/* Profile Card */}
-      <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 mb-6">
-        <div className="flex flex-col md:flex-row items-center gap-6 mb-8">
-          {/* Avatar */}
+    <div className="flex-1 max-w-7xl mx-auto w-full px-6 md:px-10 py-8">
+      {/* <!-- Profile Header --> */}
+      <div className="glass-card rounded-2xl p-8 mb-8 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full -mr-32 -mt-32"></div>
+        <div className="flex flex-col md:flex-row gap-8 items-center md:items-start relative z-10">
           <div className="relative">
-            <div className="w-32 h-32 rounded-full bg-linear-to-br from-green-500 to-blue-600 flex items-center justify-center text-white text-4xl font-bold shadow-lg">
-              AT
-            </div>
-            <button className="absolute bottom-0 right-0 bg-green-600 hover:bg-green-500 rounded-full p-3 shadow-lg transition-colors">
-              <Camera className="w-5 h-5 text-white" />
-            </button>
-          </div>
-
-          {/* User Info */}
-          <div className="flex-1 text-center md:text-left">
-            <h3 className="text-3xl font-bold mb-2">{username}</h3>
-            <p className="text-gray-400 mb-4">{email}</p>
-            <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-              <span className="bg-green-600/20 text-green-400 px-3 py-1 rounded-full text-sm border border-green-600/30">
-                ✓ Verified
-              </span>
-              <span className="bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-600/30">
-                Level 12
-              </span>
-              <span className="bg-purple-600/20 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-600/30">
-                Premium
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* Stats Grid */}
-        <div className="grid grid-cols-3 gap-4">
-          {stats.map((stat, index) => (
             <div
-              key={index}
-              className="bg-gray-800/50 rounded-xl p-4 text-center border border-gray-700"
-            >
-              <div className="text-sm md:text-2xl mb-2">{stat.icon}</div>
-              <div className="text-sm md:text-2xl font-bold text-white mb-1">
-                {stat.value}
-              </div>
-              <div className="text-xs md:text-sm text-gray-400">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Menu Items */}
-      <div className="space-y-3">
-        {menuItems.map(
-          ({ onClick, description, title, status, icon: Icon }, index) => (
-            <button
-              key={index}
-              onClick={onClick}
-              className="w-full bg-linear-to-b from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 border border-gray-700 hover:border-gray-600 rounded-xl p-5 transition-all group"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center group-hover:bg-green-600/20 transition-colors">
-                  <Icon className="w-6 h-6 text-gray-400 group-hover:text-green-400 transition-colors" />
-                </div>
-                <div className="flex-1 text-left">
-                  <div className="text-sm md:text-base font-semibold mb-1">
-                    {title}
-                  </div>
-                  <div className="text-xs md:text-sm text-gray-400">
-                    {description}
-                  </div>
-                </div>
-                {status && (
-                  <div
-                    className={`px-3 py-1 rounded-full text-sm ${
-                      status === "Complete"
-                        ? "bg-green-600/20 text-green-400 border border-green-600/30"
-                        : status === "Not Enabled" || status === "Not Set"
-                          ? "bg-yellow-600/20 text-yellow-400 border border-yellow-600/30"
-                          : "bg-red-600/20 text-red-400 border border-red-600/30"
-                    }`}
-                  >
-                    {status}
-                  </div>
-                )}
-                <ChevronRight className="w-5 h-5 text-gray-600 group-hover:text-gray-400 transition-colors" />
-              </div>
-            </button>
-          ),
-        )}
-      </div>
-
-      {/* Personal Information Modal */}
-      {showPersonalModal && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-2xl p-6 max-w-md w-full border-2 border-gray-700">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-2xl font-semibold flex items-center gap-2">
-                <User className="w-6 h-6 text-green-400" />
-                Personal Information
-              </h3>
-              <button
-                onClick={() => setShowPersonalModal(false)}
-                className="text-gray-400 hover:text-white"
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-
-            <div className="space-y-4">
-              <div>
-                <label className="text-sm text-gray-400 block mb-2">
-                  Username
-                </label>
-                <input
-                  type="text"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  className="bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 w-full outline-none focus:border-green-500"
-                />
-              </div>
-
-              <div>
-                <label className="text-sm text-gray-400 block mb-2">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 w-full outline-none focus:border-green-500"
-                />
-              </div>
-
-              <div>
-                <label className="text-sm text-gray-400 block mb-2">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  className="bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 w-full outline-none focus:border-green-500"
-                />
-              </div>
-
-              <div>
-                <label className="text-sm text-gray-400 block mb-2">
-                  Location
-                </label>
-                <input
-                  type="text"
-                  value={location}
-                  onChange={(e) => setLocation(e.target.value)}
-                  className="bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 w-full outline-none focus:border-green-500"
-                />
-              </div>
-            </div>
-
-            <button
-              onClick={() => setShowPersonalModal(false)}
-              className="w-full bg-linear-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white py-4 rounded-xl transition-all shadow-lg mt-6"
-            >
-              Save Changes
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* Bank Information Modal */}
-      {showBankModal && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-2xl p-6 max-w-md w-full border-2 border-gray-700">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-2xl font-semibold flex items-center gap-2">
-                <CreditCard className="w-6 h-6 text-green-400" />
-                Bank Information
-              </h3>
-              <button
-                onClick={() => setShowBankModal(false)}
-                className="text-gray-400 hover:text-white"
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-
-            <div className="space-y-4">
-              <div>
-                <label className="text-sm text-gray-400 block mb-2">
-                  Bank Name
-                </label>
-                <select
-                  value={bankName}
-                  onChange={(e) => setBankName(e.target.value)}
-                  className="bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 w-full outline-none focus:border-green-500"
-                >
-                  <option>First Bank Nigeria</option>
-                  <option>GTBank</option>
-                  <option>Access Bank</option>
-                  <option>UBA</option>
-                  <option>Zenith Bank</option>
-                  <option>Stanbic IBTC</option>
-                  <option>Kuda Bank</option>
-                  <option>Opay</option>
-                  <option>Palmpay</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="text-sm text-gray-400 block mb-2">
-                  Account Number
-                </label>
-                <input
-                  type="text"
-                  value={accountNumber}
-                  onChange={(e) => setAccountNumber(e.target.value)}
-                  className="bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 w-full outline-none focus:border-green-500"
-                  placeholder="1234567890"
-                />
-              </div>
-
-              <div>
-                <label className="text-sm text-gray-400 block mb-2">
-                  Account Name
-                </label>
-                <input
-                  type="text"
-                  value={accountName}
-                  onChange={(e) => setAccountName(e.target.value)}
-                  className="bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 w-full outline-none focus:border-green-500"
-                  placeholder="Your Full Name"
-                />
-              </div>
-            </div>
-
-            <div className="mt-4 bg-blue-900/30 border border-blue-700/50 rounded-lg p-3">
-              <p className="text-blue-300 text-sm">
-                💡 This bank account will be used for withdrawals. Ensure
-                details are accurate.
-              </p>
-            </div>
-
-            <button
-              onClick={() => setShowBankModal(false)}
-              className="w-full bg-linear-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white py-4 rounded-xl transition-all shadow-lg mt-6"
-            >
-              Save Bank Details
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* EVM Wallet Modal */}
-      {showWalletModal && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-linear-to-b from-gray-800 to-gray-900 rounded-2xl p-6 max-w-md w-full border-2 border-gray-700">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-2xl font-semibold flex items-center gap-2">
-                <Wallet className="w-6 h-6 text-green-400" />
-                EVM Wallet Address
-              </h3>
-              <button
-                onClick={() => setShowWalletModal(false)}
-                className="text-gray-400 hover:text-white"
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-
-            <div className="mb-4">
-              <label className="text-sm text-gray-400 block mb-2">
-                Wallet Address (Ethereum, BSC, Polygon, etc.)
-              </label>
-              <input
-                type="text"
-                value={tempEvmWallet}
-                onChange={(e) => setTempEvmWallet(e.target.value)}
-                className="bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 w-full outline-none focus:border-green-500 font-mono text-sm"
-                placeholder="0x..."
-              />
-            </div>
-
-            {evmWallet && (
-              <div className="mb-4 bg-gray-800/50 rounded-lg px-4 py-3 border border-gray-700">
-                <label className="text-sm text-gray-400 block mb-2">
-                  Current Wallet
-                </label>
-                <div className="flex items-center justify-between gap-2">
-                  <p className="text-white font-mono text-xs break-all">
-                    {evmWallet}
-                  </p>
-                  <button
-                    onClick={() => copyToClipboard(evmWallet)}
-                    className="text-gray-400 hover:text-white transition-colors shrink-0"
-                  >
-                    {copied ? (
-                      <Check className="w-4 h-4 text-green-400" />
-                    ) : (
-                      <Copy className="w-4 h-4" />
-                    )}
-                  </button>
-                </div>
-              </div>
-            )}
-
-            <div className="mb-6 bg-yellow-900/30 border border-yellow-700/50 rounded-lg p-3">
-              <p className="text-yellow-300 text-sm">
-                ⚠️ Double-check your wallet address. Sending to wrong address
-                cannot be reversed.
-              </p>
-            </div>
-
-            <button
-              onClick={() => {
-                setEvmWallet(tempEvmWallet);
-                setShowWalletModal(false);
+              className="bg-center bg-no-repeat aspect-square bg-cover rounded-2xl size-32 border-4 border-primary/20 glow-accent"
+              data-alt="Main profile picture of AnthonyGamer"
+              style={{
+                backgroundImage:
+                  "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBj713r4_AP0JQgmPFYnmzRh1SV79sZbpL4MICPWQs9hBCqUTk2PisA4wbOCgB8ALSP4IpFKuovZHLcdzP0gflxdAbwM9sZsKHOr08E8cwmztSU6P6BZEyEYl0aXjHFaxd5iCMr_ZeatpKGFtUNw7KNe6Zi1ImYA2nVtjSqbcdJTYzpKvs2JvwjRpFcr2mmGQ5pNvu5r_u6Q145YXSiIY98EfLGAnrC_QfzbgQrD0xEjGGKPyEgXb9e1uvQJ66VKtSbQWGMjjWR-Wv-')",
               }}
-              className="w-full bg-linear-to-b from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white py-4 rounded-xl transition-all shadow-lg"
-            >
-              Save Wallet Address
+            ></div>
+            <div className="absolute -bottom-2 -right-2 bg-primary text-background-dark text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider">
+              PRO
+            </div>
+          </div>
+          <div className="flex flex-col flex-1 text-center md:text-left">
+            <div className="flex flex-col md:flex-row md:items-center gap-3 mb-2">
+              <h1 className="text-slate-100 text-3xl font-bold">
+                AnthonyGamer
+              </h1>
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold border border-primary/30 uppercase tracking-widest">
+                Gold III Rank
+              </span>
+            </div>
+            <p className="text-slate-400 text-sm font-medium mb-4">
+              ID #A92011 • Member since Jan 2024
+            </p>
+            <div className="flex flex-wrap justify-center md:justify-start gap-6">
+              <div>
+                <p className="text-slate-500 text-xs uppercase font-bold tracking-widest mb-1">
+                  Total Earnings
+                </p>
+                <p className="text-slate-100 text-xl font-bold">₦18,300</p>
+              </div>
+              <div className="w-px h-10 bg-white/10 hidden md:block"></div>
+              <div>
+                <p className="text-slate-500 text-xs uppercase font-bold tracking-widest mb-1">
+                  Country
+                </p>
+                <p className="text-slate-100 text-xl font-bold flex items-center gap-2">
+                  <MdLocationOn className="text-primary text-lg" /> Nigeria
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="flex gap-3 w-full md:w-auto">
+            <button className="flex-1 md:flex-none px-6 py-2.5 bg-white/5 border border-white/10 rounded-xl text-slate-100 text-sm font-bold hover:bg-white/10 transition-all">
+              Edit Profile
+            </button>
+            <button className="flex-1 md:flex-none px-6 py-2.5 bg-primary text-background-dark rounded-xl text-sm font-bold hover:bg-primary/90 transition-all">
+              Share Profile
             </button>
           </div>
         </div>
-      )}
+      </div>
+      {/* <!-- Tabs --> */}
+      <div className="flex border-b border-white/5 mb-8 gap-10 overflow-x-auto">
+        {["Overview", "Game History", "Achievements", "Settings"].map((tab) => (
+          <div
+            key={tab}
+            className="flex flex-col items-center justify-center border-b-2 border-primary text-primary pb-4 px-2"
+          >
+            <p className="text-sm font-bold tracking-wide">{tab}</p>
+          </div>
+        ))}
+      </div>
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
+        {/* <!-- Left Stats Content --> */}
+        <div className="xl:col-span-2 space-y-8">
+          {/* <!-- Stat Cards --> */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="glass-card p-5 rounded-2xl flex flex-col gap-1">
+              <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">
+                Total Games
+              </p>
+              <p className="text-slate-100 text-3xl font-bold">124</p>
+              <div className="mt-2 text-primary text-[10px] flex items-center gap-1 font-bold">
+                <TrendingUp className="text-xs" /> +12% this week
+              </div>
+            </div>
+            <div className="glass-card p-5 rounded-2xl flex flex-col gap-1">
+              <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">
+                Wins
+              </p>
+              <p className="text-slate-100 text-3xl font-bold">52</p>
+              <div className="mt-2 text-primary text-[10px] flex items-center gap-1 font-bold">
+                <MdEmojiEvents className="text-xs" /> Win rate stable
+              </div>
+            </div>
+            <div className="glass-card p-5 rounded-2xl flex flex-col gap-1">
+              <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">
+                Win Rate
+              </p>
+              <p className="text-slate-100 text-3xl font-bold">41%</p>
+              <div className="mt-2 text-primary text-[10px] flex items-center gap-1 font-bold">
+                <MdAnalytics className="text-xs" /> Above average
+              </div>
+            </div>
+            <div className="glass-card p-5 rounded-2xl flex flex-col gap-1">
+              <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">
+                Highest Score
+              </p>
+              <p className="text-slate-100 text-3xl font-bold">14,250</p>
+              <div className="mt-2 text-primary text-[10px] flex items-center gap-1 font-bold">
+                <MdGrade className="text-xs" /> Personal Best
+              </div>
+            </div>
+          </div>
+          {/* <!-- Favorite Games --> */}
+          <section>
+            <h3 className="text-slate-100 text-lg font-bold mb-4 flex items-center gap-2">
+              <MdFavorite className="text-primary" /> Favorite Games
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="glass-card p-4 rounded-2xl flex items-center gap-4 hover:border-primary/40 transition-all cursor-pointer group">
+                <div
+                  className="size-16 rounded-xl bg-cover bg-center overflow-hidden"
+                  data-alt="Temple Run game cover image thumbnail"
+                  style={{
+                    backgroundImage:
+                      "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDfsqo-akdTkNKEpycuZB61Vl2PFxKM7HgzSctnLLVlA0saC8hb69kCNTjFu8ZRe5FIrI09osOQOmHxEOLp74aNetIQxT5m3gMD2eUr40grD9KX6BwEI5-e7vUugHC04n1kDkEU43v6-Kf1pZuJNUvBI_y9le1Fd73gxQwvgsf3VrLdJg785TutIkg1mkxsc4c9_tu26wdP4TdlY-mWl4jxMjELWmRvhsqhgup5c7-_caZT5i0Gv9Qs8gkePYBFAwnuKEQy22poiNA9')",
+                  }}
+                ></div>
+                <div className="flex-1">
+                  <h4 className="text-slate-100 font-bold group-hover:text-primary transition-colors">
+                    Temple Run
+                  </h4>
+                  <p className="text-slate-400 text-xs">48 Matches Played</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-primary text-xs font-bold">LVL 24</p>
+                </div>
+              </div>
+              <div className="glass-card p-4 rounded-2xl flex items-center gap-4 hover:border-primary/40 transition-all cursor-pointer group">
+                <div
+                  className="size-16 rounded-xl bg-cover bg-center overflow-hidden"
+                  data-alt="Candy Crush game cover art thumbnail"
+                  style={{
+                    backgroundImage:
+                      "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCrmZ6adxLAsoYEz-FxBoI4cFvoNEVS4QUin6y4dk2GH6gBMM8wcDUahZcVvTv9MCEEYjdNZND6PNm95QbwfNV_KkU-RNff_KFCWSIPfZzazEiHBxbwYjwzVpFGL1qqmyIzcR42cHMHuH8jL75SzjCShlBX9x-bycvLS-KwhTiPv6n9ySHn5CikD3mems4gfD-xOF3YSt2prcM-mGoE1OkgFUtaEJYe3IqQTXKOvokIazP3QNwl2njuj78uNBkIsgQrMTA9qty5qaOz')",
+                  }}
+                ></div>
+                <div className="flex-1">
+                  <h4 className="text-slate-100 font-bold group-hover:text-primary transition-colors">
+                    Candy Crush
+                  </h4>
+                  <p className="text-slate-400 text-xs">76 Matches Played</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-primary text-xs font-bold">LVL 82</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          {/* <!-- Recent Matches --> */}
+          <section>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-slate-100 text-lg font-bold flex items-center gap-2">
+                <MdHistory className="text-primary" /> Recent Matches
+              </h3>
+              <a
+                className="text-primary text-xs font-bold hover:underline"
+                href="#"
+              >
+                View All
+              </a>
+            </div>
+            <div className="space-y-3">
+              <div className="glass-card p-4 rounded-xl flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="size-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                    <MdCheckCircle className="text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-slate-100 text-sm font-bold">
+                      Temple Run - Tournament #203
+                    </p>
+                    <p className="text-slate-500 text-[10px] uppercase font-bold tracking-wider">
+                      12 Minutes Ago
+                    </p>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <p className="text-primary font-bold">+₦2,500</p>
+                  <p className="text-slate-500 text-xs">Win</p>
+                </div>
+              </div>
+              <div className="glass-card p-4 rounded-xl flex items-center justify-between border-l-4 border-l-red-500/50">
+                <div className="flex items-center gap-4">
+                  <div className="size-10 rounded-lg bg-red-500/10 flex items-center justify-center">
+                    <MdCancel className="text-red-500" />
+                  </div>
+                  <div>
+                    <p className="text-slate-100 text-sm font-bold">
+                      Candy Crush - Challenge Match
+                    </p>
+                    <p className="text-slate-500 text-[10px] uppercase font-bold tracking-wider">
+                      2 Hours Ago
+                    </p>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <p className="text-slate-400 font-bold">-₦500</p>
+                  <p className="text-slate-500 text-xs">Loss</p>
+                </div>
+              </div>
+              <div className="glass-card p-4 rounded-xl flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="size-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                    <MdCheckCircle className="text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-slate-100 text-sm font-bold">
+                      Subway Surfers - Sprint
+                    </p>
+                    <p className="text-slate-500 text-[10px] uppercase font-bold tracking-wider">
+                      Yesterday
+                    </p>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <p className="text-primary font-bold">+₦1,200</p>
+                  <p className="text-slate-500 text-xs">Win</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        {/* <!-- Right Sidebar Content --> */}
+        <div className="space-y-8">
+          {/* <!-- Current Streak --> */}
+          <div className="glass-card p-6 rounded-2xl relative overflow-hidden text-center">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-50"></div>
+            <MdLocalFireDepartment className="text-primary text-5xl mb-2" />
+            <h3 className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-1">
+              Current Win Streak
+            </h3>
+            <p className="text-slate-100 text-5xl font-bold mb-2">5</p>
+            <p className="text-primary text-sm font-medium">Matches in a row</p>
+            <div className="mt-6 flex justify-center gap-2">
+              <div className="size-2 rounded-full bg-primary glow-accent"></div>
+              <div className="size-2 rounded-full bg-primary glow-accent"></div>
+              <div className="size-2 rounded-full bg-primary glow-accent"></div>
+              <div className="size-2 rounded-full bg-primary glow-accent"></div>
+              <div className="size-2 rounded-full bg-primary glow-accent"></div>
+              <div className="size-2 rounded-full bg-white/10"></div>
+              <div className="size-2 rounded-full bg-white/10"></div>
+            </div>
+          </div>
+          {/* <!-- Progress Section --> */}
+          <div className="glass-card p-6 rounded-2xl">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-slate-100 font-bold">Rank Progress</h3>
+              <span className="text-primary text-xs font-bold">
+                PLATINUM IV
+              </span>
+            </div>
+            <div className="space-y-4">
+              <div className="relative h-2 w-full bg-white/5 rounded-full overflow-hidden">
+                <div className="absolute h-full bg-primary rounded-full w-[70%] shadow-[0_0_10px_rgba(19,236,236,0.5)]"></div>
+              </div>
+              <div className="flex justify-between text-[10px] font-bold uppercase tracking-widest text-slate-500">
+                <span>2,450 / 3,000 XP</span>
+                <span>75%</span>
+              </div>
+            </div>
+            <div className="mt-6 pt-6 border-t border-white/5">
+              <p className="text-slate-400 text-xs leading-relaxed">
+                Win{" "}
+                <span className="text-slate-100 font-bold">3 more matches</span>{" "}
+                to reach Platinum tier and unlock exclusive tournament rewards.
+              </p>
+            </div>
+          </div>
+          {/* <!-- Top Achievements Preview --> */}
+          <div className="glass-card p-6 rounded-2xl">
+            <h3 className="text-slate-100 font-bold mb-4">Top Achievements</h3>
+            <div className="grid grid-cols-3 gap-3">
+              <div
+                className="aspect-square bg-primary/10 rounded-xl flex items-center justify-center border border-primary/20 hover:scale-105 transition-transform cursor-help"
+                title="Early Adopter"
+              >
+                <MdVerified className="text-primary text-2xl" />
+              </div>
+              <div
+                className="aspect-square bg-amber-500/10 rounded-xl flex items-center justify-center border border-amber-500/20 hover:scale-105 transition-transform cursor-help"
+                title="Top 100 Leaderboard"
+              >
+                <MdMilitaryTech className="text-amber-500 text-2xl" />
+              </div>
+              <div
+                className="aspect-square bg-blue-500/10 rounded-xl flex items-center justify-center border border-blue-500/20 hover:scale-105 transition-transform cursor-help"
+                title="Sharpshooter"
+              >
+                <MdAdsClick className="text-blue-500 text-2xl" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

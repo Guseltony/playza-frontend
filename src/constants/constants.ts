@@ -1,9 +1,4 @@
-import type {
-  Currency,
-  GameLeaderboard,
-  Player,
-  Transaction,
-} from "@/types/types";
+import type { Currency, Player } from "@/types/types";
 import {
   // refactory
   ChartBarIncreasing,
@@ -11,7 +6,6 @@ import {
   Gift,
   History,
   Medal,
-  Settings,
   UserPlus,
   Wallet,
   Home,
@@ -31,7 +25,7 @@ export const navItems = [
   { icon: UserPlus, label: "Referral", path: "/referral" },
   { icon: Wallet, label: "Wallet", path: "/wallet", mobile: true },
   { icon: History, label: "History", path: "/history" },
-  { icon: Settings, label: "Settings", path: "/settings", mobile: true },
+  { icon: ImProfile, label: "Profile", path: "/profile", mobile: true },
 ];
 
 export const winners = [
@@ -438,6 +432,7 @@ export const gameSession = [
 
 import { GiMedal } from "react-icons/gi";
 import { BiMedal, BiStar } from "react-icons/bi";
+import { ImProfile } from "react-icons/im";
 
 export const statsCards = [
   {
@@ -488,7 +483,6 @@ export const leaderboardTop = [
   { rank: 2, name: "Sarah Chen", points: 11820, avatar: "SC" },
   { rank: 3, name: "Marcus Rey", points: 10990, avatar: "MR" },
 ];
-
 
 export const currencies: Currency[] = [
   { code: "NGN", symbol: "₦", rate: 100, flag: "🇳🇬" },
