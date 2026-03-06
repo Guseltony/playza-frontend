@@ -1,3 +1,5 @@
+import { MdLocationOn } from "react-icons/md";
+
 const Profile = () => {
   return (
     <div className="flex-1 max-w-7xl mx-auto w-full px-6 md:px-10 py-8">
