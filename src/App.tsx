@@ -16,6 +16,9 @@ import Wallet from "./pages/Wallet";
 import Transactions from "./pages/Transactions";
 import Deposit from "./pages/Deposit";
 import Withdrawal from "./pages/Withdrawal";
+import Overview from "./components/profile/Overview";
+import History from "./components/profile/History";
+import Settings from "./components/profile/Settings";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -46,13 +49,20 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/leaderboard" element={<LeaderBoard />} />
             <Route path="/wallet" element={<Wallet />} />
-            <Route path="/profile" element={<Profile />} />
             <Route path="/games" element={<Games />} />
             <Route path="/games/:id" element={<Game />} />
             <Route path="/games/:id/session" element={<MatchSession />} />
             <Route path="/gameSession/Session" element={<TempleRunFrame />} />
             <Route path="/registration" element={<Registration />} />
             <Route path="/transactions" element={<Transactions />} />
+            <Route path="/profile" element={<Profile />}>
+              <Route index element={<Overview />} />
+              <Route path="overview" element={<Overview />} />
+              {/* <Route path="performance" element={<Performance />} /> */}
+              <Route path="history" element={<History />} />
+              {/* <Route path="achievements" element={<Achievements />} /> */}
+              <Route path="settings" element={<Settings />} />
+            </Route>
           </Routes>
 
           {state?.background && (

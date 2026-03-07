@@ -1,5 +1,5 @@
-import Overview from "@/components/profile/Overview";
 import { MdLocationOn } from "react-icons/md";
+import { NavLink, Outlet } from "react-router";
 
 const Profile = () => {
   return (
@@ -63,16 +63,21 @@ const Profile = () => {
       </div>
       {/* <!-- Tabs --> */}
       <div className="flex border-b border-white/5 mb-8 gap-10 overflow-x-auto">
-        {["Overview", "Game History", "Achievements", "Settings"].map((tab) => (
-          <div
+        {["Overview", "History", "Achievements", "Settings"].map((tab) => (
+          <NavLink
+            to={tab.toLowerCase()}
             key={tab}
-            className="flex flex-col items-center justify-center border-b-2 border-primary text-primary pb-4 px-2"
+            className={({ isActive }) =>
+              `flex flex-col items-center justify-center text-primary pb-4 px-2 ${isActive ? "border-b-2 border-primary" : ""}`
+            }
           >
             <p className="text-sm font-bold tracking-wide">{tab}</p>
-          </div>
+          </NavLink>
         ))}
       </div>
-      <Overview />
+      <div>
+        <Outlet />
+      </div>
     </div>
   );
 };
