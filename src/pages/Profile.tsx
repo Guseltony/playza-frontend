@@ -3,11 +3,11 @@ import { NavLink, Outlet } from "react-router";
 
 const Profile = () => {
   return (
-    <div className="flex-1 max-w-7xl mx-auto w-full px-6 md:px-10 py-8">
+    <div className="flex-1 max-w-7xl mx-auto w-full md:px-10">
       {/* <!-- Profile Header --> */}
-      <div className="glass-card rounded-2xl p-8 mb-8 relative overflow-hidden">
+      <div className="glass-card rounded-2xl p-2.5 md:p-8 mb-4 md:mb-8 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full -mr-32 -mt-32"></div>
-        <div className="flex flex-col md:flex-row gap-8 items-center md:items-start relative z-10">
+        <div className="flex flex-col md:flex-row gap-2 md:gap-8 items-center md:items-start relative z-10">
           <div className="relative">
             <div
               className="bg-center bg-no-repeat aspect-square bg-cover rounded-2xl size-32 border-4 border-primary/20 glow-accent"
@@ -22,11 +22,11 @@ const Profile = () => {
             </div>
           </div>
           <div className="flex flex-col flex-1 text-center md:text-left">
-            <div className="flex flex-col md:flex-row md:items-center gap-3 mb-2">
-              <h1 className="text-slate-100 text-3xl font-bold">
+            <div className="flex flex-col md:flex-row items-center gap-3 mb-2">
+              <h1 className="text-slate-100 text-xl md:text-3xl font-bold">
                 AnthonyGamer
               </h1>
-              <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold border border-primary/30 uppercase tracking-widest">
+              <span className="w-fit inline-flex items-center px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold border border-primary/30 uppercase tracking-widest">
                 Gold III Rank
               </span>
             </div>
@@ -38,15 +38,16 @@ const Profile = () => {
                 <p className="text-slate-500 text-xs uppercase font-bold tracking-widest mb-1">
                   Total Earnings
                 </p>
-                <p className="text-slate-100 text-xl font-bold">₦18,300</p>
+                <p className="text-slate-100 md:text-xl font-bold">₦18,300</p>
               </div>
               <div className="w-px h-10 bg-white/10 hidden md:block"></div>
               <div>
                 <p className="text-slate-500 text-xs uppercase font-bold tracking-widest mb-1">
                   Country
                 </p>
-                <p className="text-slate-100 text-xl font-bold flex items-center gap-2">
-                  <MdLocationOn className="text-primary text-lg" /> Nigeria
+                <p className="text-slate-100 md:text-xl font-bold flex items-center gap-2">
+                  <MdLocationOn className="text-primary text-sm md:text-lg" />{" "}
+                  Nigeria
                 </p>
               </div>
             </div>
@@ -62,7 +63,7 @@ const Profile = () => {
         </div>
       </div>
       {/* <!-- Tabs --> */}
-      <div className="flex border-b border-white/5 mb-8 gap-10 overflow-x-auto">
+      <div className="flex border-b border-white/5 mb-8 gap-6 md:gap-10 overflow-x-auto">
         {["Overview", "History", "Achievements", "Settings"].map((tab) => (
           <NavLink
             to={tab.toLowerCase()}
