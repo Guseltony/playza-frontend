@@ -19,7 +19,7 @@ const NavFooter = () => {
                 Games: "games",
                 Leaderboard: "leaderboard",
                 Wallet: "wallet",
-                Settings: "settings",
+                Profile: "profile",
               };
               const view = viewMap[item.label];
               const isActive = currentView === view;
