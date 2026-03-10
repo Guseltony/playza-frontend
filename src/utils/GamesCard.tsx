@@ -14,7 +14,7 @@ const GamesCard = ({
   badge,
 }: Game) => {
   return (
-    <div className=" w-56 min-h-44 relative glass overflow-hidden group border-slate-700 hover:border-primary transition-all">
+    <div className=" w-max-56 min-h-44 relative glass overflow-hidden group border-slate-700 hover:border-primary transition-all">
       {/* <div className="w-full h-full absolute inset-0 bg-linear-to-t z-12 from-[#091f00] to-transparent"></div> */}
       <Link to={`/games/${slug}`} key={id} className="z-15">
         <div className="h-44 w-full relative">
