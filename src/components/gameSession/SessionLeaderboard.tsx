@@ -26,14 +26,14 @@ const SessionLeaderboard = () => {
           <div className="my-4 flex items-center gap-4">
             <div className="h-px flex-1 bg-linear-to-r from-transparent via-green-500/60 to-transparent" />
             <span className="text-[9px] font-black tracking-[0.2em] uppercase text-green-500/60">
-              Leaders
+              Winners
             </span>
             <div className="h-px flex-1 bg-linear-to-r from-transparent via-green-500/60 to-transparent" />
           </div>
           {LEADERBOARD_DATA.slice(0, 3).map((item, i) => (
             <div
               key={i}
-              className="mb-2 p-2 md:p-4 rounded-xl bg-white/5 border border-primary/30 flex items-center justify-between winning-zone-glow"
+              className="mb-2 p-2 md:p-4 rounded-xl bg-background/50 dark:bg-white/5 border border-primary/30 flex items-center justify-between winning-zone-glow"
             >
               <div className="flex items-center gap-4">
                 <div className="w-8 flex justify-center">
@@ -51,7 +51,7 @@ const SessionLeaderboard = () => {
                   src={item.avatar}
                 />
                 <div>
-                  <p className="text-sm md:text-base font-bold text-white leading-tight">
+                  <p className="text-sm md:text-base font-bold  leading-tight">
                     {item.name}
                   </p>
                   <p className="text-primary text-xs font-medium">
@@ -60,7 +60,7 @@ const SessionLeaderboard = () => {
                 </div>
               </div>
               <div className="text-right">
-                <p className=" text-sm md:text-xl font-black text-white">
+                <p className=" text-sm md:text-xl font-black dark:text-white">
                   ${item.prize}
                 </p>
               </div>
@@ -87,7 +87,7 @@ const SessionLeaderboard = () => {
               }`}
             >
               <div className="flex items-center gap-4">
-                <span className="w-6 text-sm font-bold text-slate-500">
+                <span className="w-6 text-sm font-bold dark:text-slate-500">
                   {item.rank}
                 </span>
                 {item.avatar ? (
@@ -100,15 +100,15 @@ const SessionLeaderboard = () => {
                     <BsPerson className="text-slate-600 text-sm" />
                   </div>
                 )}
-                <p className="text-sm font-medium text-slate-300">
+                <p className="text-sm font-medium dark:text-slate-300">
                   {item.name}
                 </p>
               </div>
               <div className="flex gap-6 items-center">
-                <p className="text-xs font-bold text-slate-400">
+                <p className="text-xs font-bold dark:text-slate-400">
                   {item.points.toLocaleString()}
                 </p>
-                <p className="w-12 text-right text-sm font-bold text-white">
+                <p className="w-12 text-right text-sm font-bold ">
                   ${item.prize}
                 </p>
               </div>
@@ -145,15 +145,15 @@ const SessionLeaderboard = () => {
                       <BsPerson className="text-slate-600 text-sm" />
                     </div>
                   )}
-                  <p className="text-sm font-medium text-slate-300">
+                  <p className="text-sm font-medium text-slate-400">
                     {item.name}
                   </p>
                 </div>
                 <div className="flex gap-6 items-center">
-                  <p className="text-xs font-bold text-slate-400">
+                  <p className="text-xs font-bold text-slate-500">
                     {item.points.toLocaleString()}
                   </p>
-                  <p className="w-12 text-right text-sm font-bold text-white">
+                  <p className="w-12 text-right text-sm font-bold dark:text-white">
                     ${item.prize}
                   </p>
                 </div>

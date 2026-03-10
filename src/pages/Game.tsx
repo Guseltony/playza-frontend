@@ -54,7 +54,7 @@ const Game = () => {
             className="w-full h-full object-cover"
           />
 
-          <div className="absolute inset-0 bg-linear-to-b from-muted/40 from-0% via-muted/80 via-80% to-secondary/40 to-100%"></div>
+          <div className="absolute inset-0 bg-linear-to-b from-accent-foreground/40 dark:from-muted/40 from-0% via-accent-foreground/80 dark:via-muted/80 via-80% to-secondary/40 to-100%"></div>
 
           {/* <!-- Hero Content --> */}
           <div className="absolute inset-0 flex flex-col justify-center pb-4 md:mb-0  items-center gap-4">

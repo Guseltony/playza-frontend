@@ -9,7 +9,7 @@ const SessionActivities = () => {
     <main className="flex-1 mx-auto w-full py-2 md:py-4">
       <div className="md:px-4 mb-6 flex items-center justify-between">
         <div>
-          <h1 className="text-white tracking-tight text-lg lg:text-4xl font-bold leading-tight">
+          <h1 className=" tracking-tight text-lg lg:text-4xl font-bold leading-tight">
             Live Activity
           </h1>
           <p className="text-slate-400 text-sm">

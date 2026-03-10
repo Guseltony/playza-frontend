@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router";
 import { ArrowBigLeft, Info, Laptop, Smartphone } from "lucide-react";
 
 import { BiTrendingUp, BiTrophy } from "react-icons/bi";
-import { MdSupportAgent } from "react-icons/md";
+import { MdArrowForward, MdSupportAgent } from "react-icons/md";
 import { useState } from "react";
 import SessionLeaderboard from "@/components/gameSession/SessionLeaderboard";
 import SessionPerformance from "@/components/gameSession/SessionPerformance";
@@ -109,31 +109,31 @@ const MatchSession = () => {
 
         <div className="hidden lg:w-[30%] md:flex flex-col gap-6">
           <div className="bg-surface-dark rounded-xl border border-accent-dark p-5">
-            <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+            <h3 className="text-lg font-bold  mb-4 flex items-center gap-2">
               <BiTrophy className="text-primary text-xl" />
               Prize Distribution
             </h3>
             <div className="space-y-3">
-              <div className="flex items-center justify-between p-3 rounded-lg bg-accent-dark/40 border border-white/5">
+              <div className="flex items-center justify-between p-3 rounded-lg bg-accent/50 border border-white/5">
                 <div className="flex items-center gap-3">
                   <span className="text-yellow-500 font-bold">1st</span>
                   <span className="text-sm font-medium">Grand Prize</span>
                 </div>
-                <span className="text-white font-bold">₦75,000</span>
+                <span className=" font-bold">₦75,000</span>
               </div>
-              <div className="flex items-center justify-between p-3 rounded-lg bg-accent-dark/40 border border-white/5">
+              <div className="flex items-center justify-between p-3 rounded-lg bg-accent/50 border border-white/5">
                 <div className="flex items-center gap-3">
                   <span className="text-slate-300 font-bold">2nd</span>
                   <span className="text-sm font-medium">Runner Up</span>
                 </div>
-                <span className="text-white font-bold">₦45,000</span>
+                <span className=" font-bold">₦45,000</span>
               </div>
-              <div className="flex items-center justify-between p-3 rounded-lg bg-accent-dark/40 border border-white/5">
+              <div className="flex items-center justify-between p-3 rounded-lg bg-accent/50 border border-white/5">
                 <div className="flex items-center gap-3">
                   <span className="text-orange-400 font-bold">3rd</span>
                   <span className="text-sm font-medium">Finalist</span>
                 </div>
-                <span className="text-white font-bold">₦30,000</span>
+                <span className=" font-bold">₦30,000</span>
               </div>
               <div className="text-center pt-2">
                 <p className="text-[10px] text-slate-500 italic">
@@ -143,7 +143,7 @@ const MatchSession = () => {
             </div>
           </div>
           <div className="bg-surface-dark rounded-xl border border-accent-dark p-5">
-            <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+            <h3 className="text-lg font-bold  mb-4 flex items-center gap-2">
               <BiTrendingUp className="text-primary" />
               Your Session Stats
             </h3>
@@ -158,44 +158,44 @@ const MatchSession = () => {
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-muted p-3 rounded-lg">
+                <div className="bg-muted/80 p-3 rounded-lg">
                   <p className="text-[10px] text-slate-500 uppercase font-bold">
                     Best Score
                   </p>
-                  <p className="text-lg font-bold text-white">89,420</p>
+                  <p className="text-lg font-bold ">89,420</p>
                 </div>
-                <div className="bg-muted p-3 rounded-lg">
+                <div className="bg-muted/80 p-3 rounded-lg">
                   <p className="text-[10px] text-slate-500 uppercase font-bold">
                     Game Time
                   </p>
-                  <p className="text-lg font-bold text-white">45m</p>
+                  <p className="text-lg font-bold ">45m</p>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="bg-surface-dark rounded-xl border border-accent-dark p-5">
-            <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+            <h3 className="text-lg font-bold  mb-4 flex items-center gap-2">
               <Info className="text-primary" />
               Session Meta
             </h3>
             <div className="space-y-3">
               <div className="flex justify-between text-sm py-2 border-b border-white/5">
-                <span className="text-slate-400">Game Type</span>
-                <span className="text-white font-medium">
+                <span className="dark:text-slate-400">Game Type</span>
+                <span className=" font-medium">
                   Single Player FPS
                 </span>
               </div>
               <div className="flex justify-between text-sm py-2 border-b border-white/5">
-                <span className="text-slate-400">Difficulty</span>
+                <span className="dark:text-slate-400">Difficulty</span>
                 <span className="text-yellow-500 font-medium">Competitive</span>
               </div>
               <div className="flex justify-between text-sm py-2 border-b border-white/5">
-                <span className="text-slate-400">Region</span>
-                <span className="text-white font-medium">West Africa</span>
+                <span className="dark:text-slate-400">Region</span>
+                <span className=" font-medium">West Africa</span>
               </div>
               <div className="flex justify-between text-sm py-2">
-                <span className="text-slate-400">Platform</span>
+                <span className="dark:text-slate-400">Platform</span>
                 <div className="flex gap-2">
                   <Laptop className="text-sm" />
                   <Smartphone className="text-sm" />
@@ -209,15 +209,13 @@ const MatchSession = () => {
                 <MdSupportAgent />
               </div>
               <div>
-                <h4 className="text-white font-bold text-sm">Need Help?</h4>
+                <h4 className=" font-bold text-sm">Need Help?</h4>
                 <p className="text-xs text-slate-400 mb-3">
                   Our support team is active for this tournament.
                 </p>
                 <button className="text-xs font-bold text-primary flex items-center gap-1 hover:underline">
                   Open Live Chat{" "}
-                  <span className="material-symbols-outlined text-xs">
-                    arrow_forward
-                  </span>
+                  <MdArrowForward className="text-xs"/>
                 </button>
               </div>
             </div>

@@ -1,5 +1,4 @@
-import { Expand, Globe, Shield, Smartphone, Verified } from "lucide-react";
-import { MdOutlineEnhancedEncryption } from "react-icons/md";
+import { Expand, Globe, Smartphone } from "lucide-react";
 
 interface SignUpProps {
   // placeholder: string;
@@ -60,7 +59,11 @@ const SignUp = ({ onClick }: SignUpProps) => {
             {/* <!-- reCAPTCHA Placeholder --> */}
             <div className="flex items-center justify-center p-4 rounded-lg bg-slate-900/30 border border-white/5">
               <div className="flex items-center gap-3">
-                <input type="checkbox" className="w-6 h-6 border-2 border-slate-700 rounded-sm" required/>
+                <input
+                  type="checkbox"
+                  className="w-6 h-6 border-2 border-slate-700 rounded-sm"
+                  required
+                />
                 <span className="text-xs text-slate-500 font-medium">
                   I'm not a robot
                 </span>
@@ -114,8 +117,8 @@ const SignUp = ({ onClick }: SignUpProps) => {
           </form>
         </div>
         {/* <!-- Trust Badges --> */}
-        <div className="mt-4 md:mt-10 flex items-center justify-center gap-4 md:gap-8 opacity-60">
-          <div className="flex items-center gap-2">
+        {/* <div className="mt-4 md:mt-10 flex items-center justify-center gap-4 md:gap-8 opacity-60"> */}
+        {/* <div className="flex items-center gap-2">
             <Shield className="material-symbols-outlined text-primary text-xl" />
             <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
               Secure Platform
@@ -127,15 +130,15 @@ const SignUp = ({ onClick }: SignUpProps) => {
             <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
               End-to-End Encrypted
             </span>
-          </div>
-          {/* <div className="w-px h-4 bg-white/10"></div> */}
-          {/* <div className="flex items-center gap-2">
+          </div> */}
+        {/* <div className="w-px h-4 bg-white/10"></div> */}
+        {/* <div className="flex items-center gap-2">
             <Verified className="material-symbols-outlined text-primary text-xl" />
             <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
               Fintech Certified
             </span>
           </div> */}
-        </div>
+        {/* </div> */}
       </div>
     </main>
   );

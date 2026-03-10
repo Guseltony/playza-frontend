@@ -21,13 +21,13 @@ const Deposit = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 bg-background z-40 px-2 md:p-0 ">
-      <div className=" font-display text-slate-900 dark:text-slate-100 min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div className="fixed inset-0 bg-background/50 backdrop-blur-md z-40 px-2 pb-4 md:p-0  flex items-center justify-center overflow-y-auto">
+      <div className=" font-display text-slate-100 relative pt-20 md:pt-0">
         {/* <!-- Background Decoration --> */}
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full"></div>
         <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-primary/5 blur-[100px] rounded-full"></div>
         {/* <!-- Modal Container --> */}
-        <div className="relative w-full max-w-130 glass-effect rounded-xl shadow-2xl overflow-hidden border border-primary/20">
+        <div className="relative w-full max-w-130 glass-effect rounded-xl shadow-2xl overflow-hidden border border-primary/20 pb-10">
           {/* <!-- Modal Header --> */}
           <div className="p-2 md:p-6 border-b border-white/5 flex justify-between items-start">
             <div className="flex flex-col gap-1">
@@ -147,12 +147,6 @@ const Deposit = () => {
                 <MdArrowForward className="text-xl" />
               </button>
               <div className="flex flex-col items-center gap-4">
-                <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-slate-500 font-bold">
-                  <span className="material-symbols-outlined text-xs">
-                    lock
-                  </span>
-                  Secure 256-bit SSL Encrypted Payment
-                </div>
                 <button
                   onClick={() => navigate(-1)}
                   className="text-slate-400 hover:text-white text-sm font-medium transition-colors underline underline-offset-4 decoration-slate-700"

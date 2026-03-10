@@ -11,14 +11,14 @@ const GamesCard = ({
   entryFee,
   title,
   activePlayers,
-  ctaLabel,
   badge,
 }: Game) => {
   return (
-    <div className="glass rounded-lg overflow-hidden group border-slate-700 hover:border-primary transition-all">
-      <Link to={`/games/${slug}`} key={id}>
-        <div className="h-32 relative">
-          <span className={`absolute top-2 left-2 z-10`}>
+    <div className=" w-56 min-h-44 relative glass overflow-hidden group border-slate-700 hover:border-primary transition-all">
+      {/* <div className="w-full h-full absolute inset-0 bg-linear-to-t z-12 from-[#091f00] to-transparent"></div> */}
+      <Link to={`/games/${slug}`} key={id} className="z-15">
+        <div className="h-44 w-full relative">
+          <span className={`absolute top-2 left-2 z-15`}>
             {(badge === "NEW" || badge === "HOT") && (
               <GiFlame
                 className={` text-xl ${(badge === "NEW" || badge === "HOT") && badgeStyles[badge]}`}
@@ -32,30 +32,24 @@ const GamesCard = ({
             alt={slug}
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-muted to-transparent"></div>
-          <div className="absolute top-2 right-2 flex gap-1 bg-muted">
-            <span className="bg-primary px-2 py-0.5 rounded text-sm font-bold text-white">
+          <div className="bg-secondary absolute top-2 right-2 flex gap-1">
+            <span className="px-2 py-0.5 rounded text-sm font-bold ">
               ₦{entryFee.toLocaleString()}
             </span>
           </div>
-          <div className="bg-muted p-1 rounded-full flex gap-2 items-center absolute bottom-2 left-2">
+          <div className="bg-muted p-1 rounded-full flex gap-2 items-center absolute bottom-2 left-2 z-15">
             <FaUsers />
             <p className="text-xs text-chart-3 font-bold">
               {activePlayers} players
             </p>
           </div>
         </div>
-        <div className="p-2 flex flex-col overflow-x-hidden">
-          <h4 className="font-bold text-xs uppercase text-center text-white">
-            {title}
-          </h4>
-        </div>
       </Link>
-      <Link to={`/games/${slug}`}>
-        <button className="bg-accent/40 w-full hover:bg-primary px-4 py-1.5 rounded text-xs font-bold transition-colors text-white cursor-pointer">
-          {ctaLabel}
-        </button>
-      </Link>
+      <div className="p-2 flex flex-col overflow-x-hidden z-15">
+        <h4 className="font-bold text-xs uppercase text-center text-white z-15">
+          {title}
+        </h4>
+      </div>
     </div>
   );
 };

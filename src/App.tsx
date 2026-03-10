@@ -20,6 +20,7 @@ import Overview from "./components/profile/Overview";
 import History from "./components/profile/History";
 import Settings from "./components/profile/Settings";
 import Achievements from "./components/profile/Achievements";
+import { ThemeProvider } from "./components/theme/ThemeProvider";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -34,53 +35,55 @@ const App = () => {
   // const isGameDetailPage = pathname.startsWith(`/games/${id}`);
 
   return (
-    <div className="relative min-h-screen bg-background text-white">
-      {!isRegistrationPage && <Header />}
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <div className="relative min-h-screen bg-background">
+        {!isRegistrationPage && <Header />}
 
-      {/* {pathname === "/" && <AppNotification />} */}
-      <div className="max-w-400 mx-auto flex gap-6 p-2 md:p-6">
-        {!isGameSessionPage && !isRegistrationPage && (
-          <aside className="w-72 hidden lg:block sticky top-24 self-start h-[calc(100vh-8rem)]">
-            <SideBar />
-          </aside>
-        )}
-
-        <>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/leaderboard" element={<LeaderBoard />} />
-            <Route path="/wallet" element={<Wallet />} />
-            <Route path="/games" element={<Games />} />
-            <Route path="/games/:id" element={<Game />} />
-            <Route path="/games/:id/session" element={<MatchSession />} />
-            <Route path="/gameSession/Session" element={<TempleRunFrame />} />
-            <Route path="/registration" element={<Registration />} />
-            <Route path="/wallet/transactions" element={<Transactions />} />
-            <Route path="/profile" element={<Profile />}>
-              <Route index element={<Overview />} />
-              <Route path="overview" element={<Overview />} />
-              {/* <Route path="performance" element={<Performance />} /> */}
-              <Route path="history" element={<History />} />
-              <Route path="achievements" element={<Achievements />} />
-              <Route path="settings" element={<Settings />} />
-            </Route>
-          </Routes>
-
-          {state?.background && (
-            <Routes>
-              <Route path="/wallet/deposit" element={<Deposit />} />
-              <Route path="/wallet/withdraw" element={<Withdrawal />} />
-            </Routes>
+        {/* {pathname === "/" && <AppNotification />} */}
+        <div className="max-w-400 mx-auto flex gap-6 p-2 md:p-6">
+          {!isGameSessionPage && !isRegistrationPage && (
+            <aside className="w-72 hidden lg:block sticky top-24 self-start h-[calc(100vh-8rem)]">
+              <SideBar />
+            </aside>
           )}
-        </>
 
-        {pathname === "/" && <RightSideBar />}
+          <>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/leaderboard" element={<LeaderBoard />} />
+              <Route path="/wallet" element={<Wallet />} />
+              <Route path="/games" element={<Games />} />
+              <Route path="/games/:id" element={<Game />} />
+              <Route path="/games/:id/session" element={<MatchSession />} />
+              <Route path="/gameSession/Session" element={<TempleRunFrame />} />
+              <Route path="/registration" element={<Registration />} />
+              <Route path="/wallet/transactions" element={<Transactions />} />
+              <Route path="/profile" element={<Profile />}>
+                <Route index element={<Overview />} />
+                <Route path="overview" element={<Overview />} />
+                {/* <Route path="performance" element={<Performance />} /> */}
+                <Route path="history" element={<History />} />
+                <Route path="achievements" element={<Achievements />} />
+                <Route path="settings" element={<Settings />} />
+              </Route>
+            </Routes>
+
+            {state?.background && (
+              <Routes>
+                <Route path="/wallet/deposit" element={<Deposit />} />
+                <Route path="/wallet/withdraw" element={<Withdrawal />} />
+              </Routes>
+            )}
+          </>
+
+          {pathname === "/" && <RightSideBar />}
+        </div>
+
+        {!isRegistrationPage && <Footer />}
+
+        {!isRegistrationPage && <NavFooter />}
       </div>
-
-      {!isRegistrationPage && <Footer />}
-
-      {!isRegistrationPage && <NavFooter />}
-    </div>
+    </ThemeProvider>
   );
 };;
 

@@ -11,8 +11,11 @@ const SideBar = () => {
             to={path}
             key={label}
             className={({ isActive }) =>
-              `flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${isActive ? "bg-primary/20 border-l-4 border-primary font-medium  text-white" : "text-slate-400 hover:bg-white/5 hover:text-white"}`
+              `flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${isActive ? "bg-primary/30 text-primary border-l-4 border-primary font-medium" : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"}`
             }
+            // className={({ isActive }) =>
+            //   `flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${isActive ? "bg-primary/50 border-l-4 border-primary font-medium  text-white" : "text-slate-600 hover:bg-white/5 hover:text-white"}`
+            // }
           >
             {({ isActive }) => (
               <>
@@ -30,7 +33,7 @@ const SideBar = () => {
       </nav>
 
       <div className="glass rounded-lg p-5">
-        <h3 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">
+        <h3 className="text-xs font-bold dark:text-slate-500 uppercase tracking-widest mb-4">
           Live Network
         </h3>
         <div className="flex items-center gap-3 mb-4">
@@ -40,15 +43,15 @@ const SideBar = () => {
           </p>
         </div>
         <div className="space-y-3">
-          <div className="flex items-center gap-3 p-2 rounded-lg bg-white/5 border border-white/5">
-            <div className="w-8 h-8 rounded bg-accent-purple/20 flex items-center justify-center">
-              <span className="material-icons text-accent-purple text-sm">
+          <div className="flex items-center gap-3 p-2 rounded-lg dark:bg-white/5 border border-white/5">
+            <div className="w-8 h-8 rounded bg-accent/20 flex items-center justify-center">
+              <span className="material-icons text-accent text-sm">
                 <Users />
               </span>
             </div>
             <div>
-              <p className="text-xs font-bold text-white">Global Event</p>
-              <p className="text-[10px] text-slate-400">Starts in 45m</p>
+              <p className="text-xs font-bold">Global Event</p>
+              <p className="text-[10px] text-slate-300">Starts in 45m</p>
             </div>
           </div>
         </div>

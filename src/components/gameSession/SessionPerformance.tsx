@@ -11,7 +11,7 @@ const SessionPerformance = () => {
           {/* <!-- Header Section --> */}
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div className="flex flex-col gap-2">
-              <h1 className="text-white tracking-tight text-lg lg:text-4xl font-bold leading-tight">
+              <h1 className=" tracking-tight text-lg lg:text-4xl font-bold leading-tight">
                 My Game Performance
               </h1>
               <div className="flex items-center gap-2 text-primary">
@@ -49,7 +49,7 @@ const SessionPerformance = () => {
                 <div className="flex items-end gap-2">
                   <p
                     className={`tracking-tight text-3xl font-bold leading-tight ${
-                      card.valueColor ?? "text-white"
+                      card.valueColor ?? ""
                     }`}
                   >
                     {card.value}
@@ -81,7 +81,7 @@ const SessionPerformance = () => {
           <div className=" @container">
             <div className="flex flex-1 flex-col items-start justify-between gap-6 rounded-2xl border border-primary/30 bg-linear-to-r from-card-dark to-background-dark p-8 @[480px]:flex-row @[480px]:items-center shadow-lg">
               <div className="flex flex-col gap-2">
-                <p className="text-white text-sm md:text-xl font-bold leading-tight">
+                <p className=" text-sm md:text-xl font-bold leading-tight">
                   Ready to climb the leaderboard?
                 </p>
                 <p className="text-slate-400 text-xs md:text-base font-normal leading-normal">
@@ -97,7 +97,7 @@ const SessionPerformance = () => {
           {/* <!-- Recent Activity --> */}
           <div className="mt-4">
             <div className="flex items-center justify-between pb-4">
-              <h2 className="text-white text-[22px] font-bold leading-tight tracking-tight">
+              <h2 className=" text-[22px] font-bold leading-tight tracking-tight">
                 Recent Session Activity
               </h2>
               <button className="text-primary text-sm font-bold flex items-center gap-1 hover:underline">
@@ -112,12 +112,12 @@ const SessionPerformance = () => {
                     <PlusCircle className="text-green-500" />
                   </div>
                   <div>
-                    <p className="text-white font-bold">New High Score</p>
+                    <p className=" font-bold">New High Score</p>
                     <p className="text-slate-500 text-xs">2 hours ago</p>
                   </div>
                 </div>
                 <div className="text-right">
-                  <p className="text-white font-bold">+1,450 pts</p>
+                  <p className=" font-bold">+1,450 pts</p>
                   <p className="text-primary text-xs font-medium">
                     Rank Up: #15 → #12
                   </p>
@@ -130,12 +130,12 @@ const SessionPerformance = () => {
                     <History className="text-primary" />
                   </div>
                   <div>
-                    <p className="text-white font-bold">Entry Purchased</p>
+                    <p className=" font-bold">Entry Purchased</p>
                     <p className="text-slate-500 text-xs">3 hours ago</p>
                   </div>
                 </div>
                 <div className="text-right">
-                  <p className="text-white font-bold">-$5.00</p>
+                  <p className=" font-bold">-$5.00</p>
                   <p className="text-slate-500 text-xs uppercase tracking-widest font-bold">
                     Slot #5
                   </p>

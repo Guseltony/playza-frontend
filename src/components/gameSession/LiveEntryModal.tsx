@@ -19,7 +19,7 @@ const LiveEntryModal = ({ onClick }: { onClick: (value: boolean) => void }) => {
     };
   }, []);
   return (
-    <main className="fixed inset-0 backdrop-blur-md overflow-y-auto flex-1 flex items-center justify-center bg-black/40 z-40 pb-20 md:pb-0 pt-20">
+    <main className="fixed inset-0 backdrop-blur-md overflow-y-auto flex-1 flex items-center justify-center bg-black/70 z-40 pb-20 md:pb-0 pt-60 md:pt-20">
       <div className="glass-modal w-full max-w-130 rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
         <div className="p-2 md:p-6 max-h-fit">
           <div className="text-center md-2 md:mb-8">
@@ -121,7 +121,7 @@ const LiveEntryModal = ({ onClick }: { onClick: (value: boolean) => void }) => {
               <MdAddCard className="group-hover:scale-110 transition-transform" />
               <span>Deposit Funds Now</span>
             </button> */}
-            <button className="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-4 rounded-xl shadow-[0_0_20px_rgba(19,236,236,0.3)] transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+            <button className="w-full bg-primary dark:bg-primary/60 hover:bg-primary/60 dark:hover:bg-primary/40 font-bold py-4 rounded-xl shadow-[0_0_20px_rgba(19,236,236,0.3)] transition-all active:scale-[0.98] flex items-center justify-center gap-2">
               Confirm &amp; Enter Game
               <MdBolt />
             </button>

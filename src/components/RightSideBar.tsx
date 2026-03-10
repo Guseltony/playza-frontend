@@ -11,7 +11,7 @@ const RightSideBar = () => {
   return (
     <aside className="hidden lg:block col-span-3 space-y-6">
       {/* <!-- Payout Countdown --> */}
-      <div className="bg-white/5 rounded-lg border border-red-500/30 p-5 text-center">
+      <div className="glass rounded-lg border border-red-500/30 p-5 text-center">
         <p className="text-[10px] font-bold text-red-400 uppercase tracking-widest mb-3">
           Next Daily Payout
         </p>

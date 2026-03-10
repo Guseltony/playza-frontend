@@ -6,24 +6,25 @@ const RecentWinners = () => {
       <span className="text-xs font-bold text-primary uppercase tracking-widest">
         Winners Arena
       </span>
-      <div className="glass w-full py-3 px-4 rounded-lg overflow-hidden flex items-center whitespace-nowrap mt-2 ">
-        <div className="flex w-max items-center gap-4 recent-winner">
+      <div className="w-full rounded-lg overflow-hidden flex items-center whitespace-nowrap mt-2 ">
+        <div className="flex w-max items-center gap-2 recent-winner">
           {[...winners, ...winners].map(
             ({ id, username, game, amountWon }, i) => (
-              <div className="flex gap-2 flex-col px-2 py-2 glass" key={id + i}>
-                <span className="text-[10px] text-slate-500">2m ago</span>
-                <div className="flex text-xs gap-2">
+              <div
+                className="flex gap-px flex-col text-slate-400 px-4 py-px rounded-full glass"
+                key={id + i}
+              >
+                <span className="text-xs font-semibold ">2m ago</span>
+                <div className="flex text-xs text-secondary-foreground gap-2">
                   <span className="text-xs text-primary font-bold">
                     {username}
                   </span>
                   won
-                  <span className="text-chart-3 font-semibold">
+                  <span className="text-secondary font-semibold">
                     ₦{amountWon}
                   </span>
                 </div>
-                <span className="text-xs text-muted-foreground">
-                  playing {game}
-                </span>
+                <span className="text-xs font-semibold">in {game}</span>
               </div>
             ),
           )}

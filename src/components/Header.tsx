@@ -2,6 +2,7 @@
 import { BellDot, Plus } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router";
+import { ModeToggle } from "./ModeToggle";
 
 const Header = () => {
   const walletBalance = "₦10,250";
@@ -36,16 +37,17 @@ const Header = () => {
                 <span className="hidden md:inline text-white">Top Up</span>
               </button>
             </div>
+            <ModeToggle />
             <button
               type="button"
-              className="relative text-slate-400 hover:text-primary transition-colors"
+              className="relative text-slate-400 hover:text-primary transition-colors hidden md:block"
             >
-              <span className="hidden md:block">
+              <span>
                 <BellDot className="text-red-500" />
               </span>
-              {/* <span className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full border-2 border-background-dark"></span> */}
             </button>
-            <div className="flex items-center gap-4 pl-3 md:pl-6 border-l border-slate-700">
+            <div className="hidden lg:flex items-center gap-4 pl-3 md:pl-6 border-l border-slate-700">
+              <ModeToggle />
               <div className="text-right hidden sm:block">
                 <p className="text-xs text-white font-bold">Gusel_Toti</p>
                 <p className="text-xs font-medium text-primary">

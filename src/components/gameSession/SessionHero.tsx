@@ -38,15 +38,15 @@ const SessionHero = ({
               #{splitTitle[0]}-2024-001
             </span>
           </div>
-          <h2 className=" text-lg md:text-5xl font-bold text-white  ">
+          <h2 className=" text-lg md:text-5xl font-bold dark:text-white  ">
             {title}
           </h2>
-          <p className="text-xs md:text-md text-slate-400">
+          <p className="text-xs md:text-md dark:text-slate-400">
             Join 1,240 players competing for glory
           </p>
         </div>
         <div className="text-right">
-          <p className="text-slate-400 text-xs uppercase tracking-widest font-bold mb-1">
+          <p className="dark:text-slate-400 text-xs uppercase tracking-widest font-bold mb-1">
             Prize Pool
           </p>
           <p className="flex items-baseline md:text-4xl font-black text-primary glow-primary">
@@ -100,7 +100,7 @@ const SessionHero = ({
               Enter Live Game
             </button>
             <Link to="/gameSession/Session">
-              <button className="sm:flex-none bg-accent hover:bg-accent/80 text-white font-bold px-2 md:px-4 lg:px-8 py-3 rounded-lg border border-white/10 transition-all flex items-center text-xs sm:text-base justify-center gap-2 cursor-pointer">
+              <button className="sm:flex-none bg-accent hover:bg-accent/80 dark:text-white font-bold px-2 md:px-4 lg:px-8 py-3 rounded-lg border border-white/10 transition-all flex items-center text-xs sm:text-base justify-center gap-2 cursor-pointer">
                 <Gamepad2 className="md:text-xl" />
                 Play Demo
               </button>

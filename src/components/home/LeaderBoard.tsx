@@ -23,7 +23,7 @@ const LeaderBoard = () => {
   return (
     <section>
       <div className="mb-2">
-        <h2 className="font-heading text-xl font-bold text-white flex gap-2 items-center mb-4">
+        <h2 className="font-heading text-xl font-bold flex gap-2 items-center mb-4">
           <MdLeaderboard className="text-chart-4" /> Games LeaderBoard
         </h2>
         <div className="flex gap-2 text-xs overflow-x-auto whitespace-nowrap mt-2 scroll-hidden scroll-smooth pb-2">
@@ -41,18 +41,18 @@ const LeaderBoard = () => {
       </div>
 
       <Table className="w-full text-left">
-        <TableHeader className="bg-accent/20 text-slate-400 text-[10px] uppercase font-bold">
+        <TableHeader className="bg-accent/20 text-[10px] uppercase font-bold">
           <TableRow>
-            <TableHead className="px-2 sm:px-6 py-3 text-slate-400 text-[10px] uppercase font-bold">
+            <TableHead className="px-2 sm:px-6 py-3 text-[10px] uppercase font-bold">
               Rank
             </TableHead>
-            <TableHead className="px-2 sm:px-6 py-3 text-slate-400 text-[10px] uppercase font-bold">
+            <TableHead className="px-2 sm:px-6 py-3 text-[10px] uppercase font-bold">
               Username
             </TableHead>
-            <TableHead className="px-2 sm:px-6 py-3 text-slate-400 text-[10px] uppercase font-bold">
+            <TableHead className="px-2 sm:px-6 py-3 text-[10px] uppercase font-bold">
               Score
             </TableHead>
-            <TableHead className="px-2 sm:px-6 py-3 text-slate-400 text-[10px] uppercase font-bold text-right">
+            <TableHead className="px-2 sm:px-6 py-3 text-[10px] uppercase font-bold text-right">
               Time
             </TableHead>
           </TableRow>
@@ -103,8 +103,8 @@ const LeaderBoard = () => {
                     <span
                       className={
                         isMe
-                          ? "font-bold text-white"
-                          : "font-medium text-white text-sm"
+                          ? "font-bold "
+                          : "font-medium text-sm"
                       }
                     >
                       {username}
@@ -113,13 +113,13 @@ const LeaderBoard = () => {
 
                   <TableCell
                     className={`px-2 sm:px-6 py-4 font-bold ${
-                      isGold || isMe ? "text-primary" : "text-white"
+                      isGold || isMe ? "text-primary" : ""
                     }`}
                   >
                     {points.toLocaleString()}
                   </TableCell>
 
-                  <TableCell className="px-2 sm:px-6 py-4 text-right text-slate-400 text-sm">
+                  <TableCell className="px-2 sm:px-6 py-4 text-right text-sm">
                     {formatNaira(Number(prizeWon) * 100).toLocaleString()}
                   </TableCell>
                 </TableRow>

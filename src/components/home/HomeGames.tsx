@@ -1,6 +1,6 @@
 import type { Game } from "@/types/types";
 import GamesCard from "@/utils/GamesCard";
-import { ChevronLeft, ChevronRight, Star, type LucideIcon } from "lucide-react";
+import { ChevronLeft, ChevronRight, type LucideIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
 
@@ -60,7 +60,7 @@ const HomeGames = ({ games, Icon, title }: HomeGamesProps) => {
   return (
     <div className="mb-8">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="font-heading text-xl font-bold text-white flex gap-2 items-center">
+        <h2 className="font-heading text-xl font-bold flex gap-2 items-center">
           <Icon className="text-chart-4" /> {title}
         </h2>
         <div className="flex gap-2 items-center justify-center">
@@ -86,7 +86,7 @@ const HomeGames = ({ games, Icon, title }: HomeGamesProps) => {
           </button>
         </div>
       </div>
-      <div className="glass py-3 px-4 rounded-lg overflow-hidden flex items-center whitespace-nowrap mt-2">
+      <div className="overflow-hidden flex items-center whitespace-nowrap mt-2">
         <div
           ref={scrollRef}
           className="flex overflow-x-auto gap-4 scrollbar-hide scroll-smooth snap-x snap-mandatory"
@@ -95,7 +95,7 @@ const HomeGames = ({ games, Icon, title }: HomeGamesProps) => {
             <div
               key={game.id}
               data-card
-              className="min-w-62 shrink-0 snap-start"
+              className=" shrink-0 snap-start"
             >
               <GamesCard {...game} />
             </div>

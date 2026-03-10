@@ -16,7 +16,7 @@ const Withdrawal = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0  bg-background z-40 px-2 md:p-0 flex items-center justify-center">
+    <div className="fixed inset-0  bg-background z-40 p-2 md:p-0 flex items-center justify-center overflow-y-auto ">
       {reqWithdraw ? <OtpPin /> : <ReqWithdraw onClick={setReqWithdraw} />}
     </div>
   );

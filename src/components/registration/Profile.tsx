@@ -8,14 +8,10 @@ const Profile = () => {
     <div className="flex-1 flex flex-col items-center justify-center">
       <div className="max-w-140 w-full">
         {/* <!-- Title Section --> */}
-        <div className="text-center mb-4 md:mb-10">
-          <h1 className="text-slate-100 text-4xl md:text-5xl font-black leading-tight tracking-tight mb-3">
+        <div className="text-center mb-2 md:mb-10">
+          <h1 className="text-slate-100 text-xl md:text-4xl  font-black leading-tight tracking-tight">
             Complete Your Profile
           </h1>
-          <p className="text-slate-400 text-sm md:text-lg">
-            Secure your account with fintech-level encryption to start
-            competing.
-          </p>
         </div>
         {/* <!-- Profile Form Card --> */}
         <div className="glass-card rounded-xl p-2 md:p-8 shadow-2xl border border-primary/20">
@@ -63,7 +59,7 @@ const Profile = () => {
                   type="password"
                   placeholder="cybersecurity101"
                 />
-                <MdVisibility className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 cursor-pointer hover:text-primary transition-colors"/>
+                <MdVisibility className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 cursor-pointer hover:text-primary transition-colors" />
               </div>
               {/* <!-- Strength Indicator --> */}
               {/* <div className="mt-3">
@@ -136,7 +132,10 @@ const Profile = () => {
             </div>
             {/* <!-- Submit Button --> */}
             <div className="pt-4">
-              <Link to={"/"} className="w-full h-14 bg-primary text-background-dark font-bold text-lg rounded-lg shadow-[0_0_20px_rgba(6,249,249,0.3)] hover:shadow-[0_0_30px_rgba(6,249,249,0.5)] hover:scale-[1.01] transition-all flex items-center justify-center gap-2">
+              <Link
+                to={"/"}
+                className="w-full h-14 bg-primary text-background-dark font-bold text-lg rounded-lg shadow-[0_0_20px_rgba(6,249,249,0.3)] hover:shadow-[0_0_30px_rgba(6,249,249,0.5)] hover:scale-[1.01] transition-all flex items-center justify-center gap-2"
+              >
                 Complete Profile
                 <Rocket />
               </Link>

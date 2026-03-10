@@ -439,7 +439,7 @@ export const statsCards = [
     id: "score",
     title: "Your Score",
     value: "1,450",
-    valueColor: "text-white",
+    valueColor: "text-foreground",
     icon: GiMedal,
   },
   {
@@ -453,7 +453,7 @@ export const statsCards = [
     id: "best-score",
     title: "Best Score",
     value: "1,820",
-    valueColor: "text-white",
+    valueColor: "text-foreground",
     icon: BiStar,
   },
   {
@@ -467,7 +467,7 @@ export const statsCards = [
     id: "spent",
     title: "Total Spent",
     value: "$25.00",
-    valueColor: "text-white",
+    valueColor: "text-foreground",
   },
   {
     id: "behind",
