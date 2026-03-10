@@ -15,7 +15,7 @@ const FullGame = () => {
 
   // const [filterBy, setFilterBy] = useState("");
 
-  const [filterBy, setFilterBy] = useState<FilterOption | "">("");
+  const [filterBy, setFilterBy] = useState<FilterOption | "">("Filter By");
   const [activeTab, setActiveTab] = useState("All Games");
   const [query, setQuery] = useState("");
 
@@ -28,21 +28,24 @@ const FullGame = () => {
     ),
   }));
 
+  
+  const handleFiltering = (option: FilterOption) => {
+    setFilterBy(option);
+  };
+  
+  const biggestPoolGame = [...allGames].sort(
+    (a, b) => b.pricePool - a.pricePool,
+  )[0];
+  
+  console.log("biggestGameprize:", biggestPoolGame);
+  
+  // const gameCategories = [...new Set(games.map((game) => game.category))];
+
   const filteredGames = useMemo(() => {
     return filterGames(allGames, activeTab, filterBy, query);
   }, [query, allGames, activeTab, filterBy]);
 
-  const handleFiltering = (option: FilterOption) => {
-    setFilterBy(option);
-  };
-
-  const biggestPoolGame = [...allGames].sort(
-    (a, b) => b.pricePool - a.pricePool,
-  )[0];
-
-  console.log("biggestGameprize:", biggestPoolGame);
-
-  // const gameCategories = [...new Set(games.map((game) => game.category))];
+  console.log("filterGame:",filteredGames)
 
   const categories = useMemo(
     () => ["All Games", ...new Set(games.map((game) => game.category))],

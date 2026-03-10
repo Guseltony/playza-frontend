@@ -24,7 +24,7 @@ type Props = {
 };
 
 const Filter = ({ fn }: Props) => {
-  const [filterBy, setFilterBy] = useState<string>("");
+  const [filterBy, setFilterBy] = useState<string>("Filter By");
 
   const options: FilterOption[] = [
     "Filter By",
@@ -37,9 +37,10 @@ const Filter = ({ fn }: Props) => {
   ];
 
   const handleOnClick = async (option: FilterOption) => {
-    fn(option);
+    await fn(option);
     setFilterBy(option);
   };
+
 
   return (
     <DropdownMenu>

@@ -32,13 +32,16 @@ export function filterGames(
       game.title.toLowerCase().includes(q) ||
       game.category.toLowerCase().includes(q)
     );
-  } else {return result};
+  } 
+  // else {return result};
 
 
   // Secondary filtering
   switch (filterBy) {
     case "Most Played":
-      return result.sort((a, b) => b.activePlayers - a.activePlayers);
+      result = result.sort((a, b) => b.activePlayers - a.activePlayers);
+      return result
+      // return result.sort((a, b) => b.activePlayers - a.activePlayers);
 
     case "Highest Pool":
       return result.sort((a, b) => b.pricePool - a.pricePool);
