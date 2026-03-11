@@ -22,7 +22,7 @@ const Deposit = () => {
 
   return (
     <div className="fixed inset-0 bg-background/50 backdrop-blur-md z-40 px-2 pb-4 md:p-0  flex items-center justify-center overflow-y-auto">
-      <div className=" font-display text-slate-100 relative pt-20 md:pt-0">
+      <div className=" font-display  relative pt-20 md:pt-0">
         {/* <!-- Background Decoration --> */}
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full"></div>
         <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-primary/5 blur-[100px] rounded-full"></div>
@@ -31,17 +31,17 @@ const Deposit = () => {
           {/* <!-- Modal Header --> */}
           <div className="p-2 md:p-6 border-b border-white/5 flex justify-between items-start">
             <div className="flex flex-col gap-1">
-              <h1 className="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+              <h1 className="text-2xl font-bold tracking-tight  flex items-center gap-2">
                 <MdAccountBalanceWallet className="text-primary" />
                 Deposit Funds
               </h1>
-              <p className="text-slate-400 text-sm">
+              <p className=" text-sm">
                 Add funds to your gaming wallet instantly.
               </p>
             </div>
             <button
               onClick={() => navigate(-1)}
-              className="text-slate-400 hover:text-white transition-colors"
+              className=" transition-colors"
             >
               <MdClose />
             </button>
@@ -50,7 +50,7 @@ const Deposit = () => {
           <div className="p-2 md:p-6 flex flex-col gap-3 md:gap-6">
             {/* <!-- Amount Input Section --> */}
             <div className="flex flex-col gap-3">
-              <label className="text-sm font-medium text-slate-300">
+              <label className="text-sm font-medium ">
                 Amount (₦)
               </label>
               <div className="relative">
@@ -58,7 +58,7 @@ const Deposit = () => {
                   ₦
                 </span>
                 <input
-                  className="w-full bg-black/40 border border-primary/20 rounded-lg py-4 pl-10 pr-4 text-white text-xl font-bold focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-slate-600"
+                  className="w-full bg-black/40 border border-primary/20 rounded-lg py-4 pl-10 pr-4  text-xl font-bold focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-slate-600"
                   placeholder="0.00"
                   type="number"
                 />
@@ -81,7 +81,7 @@ const Deposit = () => {
             </div>
             {/* <!-- Payment Method Selection --> */}
             <div className="flex flex-col gap-3">
-              <h3 className="text-sm font-medium text-slate-300">
+              <h3 className="text-sm font-medium ">
                 Select Payment Method
               </h3>
               <div className="grid grid-cols-1 gap-3">
@@ -96,10 +96,10 @@ const Deposit = () => {
                     <CreditCard />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-white font-semibold text-sm">
+                    <span className=" font-semibold text-sm">
                       Debit/Credit Card
                     </span>
-                    <span className="text-slate-400 text-xs leading-tight">
+                    <span className=" text-xs leading-tight">
                       Visa, Mastercard, Verve
                     </span>
                   </div>
@@ -110,11 +110,11 @@ const Deposit = () => {
                     name="payment"
                     type="radio"
                   />
-                  <div className="flex shrink-0 h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-slate-400 group-hover:text-slate-200">
+                  <div className="flex shrink-0 h-10 w-10 items-center justify-center rounded-full bg-slate-800  group-hover:text-slate-200">
                     <MdAccountBalanceWallet />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-slate-300 font-semibold text-sm">
+                    <span className=" font-semibold text-sm">
                       Bank Transfer
                     </span>
                     <span className="text-slate-500 text-xs leading-tight">
@@ -127,11 +127,11 @@ const Deposit = () => {
             {/* <!-- Order Summary Box --> */}
             {/* <div className="bg-black/40 rounded-lg p-4 border border-white/5 flex flex-col gap-2">
               <div className="flex justify-between text-sm">
-                <span className="text-slate-400">Deposit Amount</span>
-                <span className="text-white font-medium">₦0.00</span>
+                <span className="">Deposit Amount</span>
+                <span className=" font-medium">₦0.00</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-slate-400">Processing Fee</span>
+                <span className="">Processing Fee</span>
                 <span className="text-primary font-medium">₦0.00</span>
               </div>
               <div className="h-px bg-white/5 my-1"></div>
@@ -149,7 +149,7 @@ const Deposit = () => {
               <div className="flex flex-col items-center gap-4">
                 <button
                   onClick={() => navigate(-1)}
-                  className="text-slate-400 hover:text-white text-sm font-medium transition-colors underline underline-offset-4 decoration-slate-700"
+                  className=" text-sm font-medium transition-colors underline underline-offset-4 decoration-slate-700"
                 >
                   Cancel and return
                 </button>

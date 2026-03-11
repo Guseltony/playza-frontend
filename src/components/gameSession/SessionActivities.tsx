@@ -29,16 +29,16 @@ const SessionActivities = () => {
       {/* <!-- Live Feed List --> */}
       <div className="space-y-3">
         {/* <!-- Activity Card 1 --> */}
-        <div className="flex items-center gap-4 bg-neutral-900/50 border border-neutral-800 p-4 rounded-xl hover:border-primary/30 transition-all group">
+        <div className="flex items-center gap-4 bg-card/40 border border-neutral-800 p-4 rounded-xl hover:border-primary/30 transition-all group">
           <div className="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-12 border border-primary/20">
             <BsPersonAdd />
           </div>
           <div className="flex flex-col justify-center flex-1">
-            <p className="text-slate-100 text-sm md:text-base font-semibold leading-normal group-hover:text-primary transition-colors">
+            <p className=" text-sm md:text-base font-semibold leading-normal group-hover:text-primary transition-colors">
               Player entered the lobby
             </p>
             <p className="text-slate-400 text-xs md:text-sm font-normal line-clamp-1">
-              User <span className="text-slate-200">DarkKnight</span> joined the
+              User <span>DarkKnight</span> joined the
               match session
             </p>
           </div>
@@ -49,16 +49,16 @@ const SessionActivities = () => {
           </div>
         </div>
         {/* <!-- Activity Card 2 --> */}
-        <div className="flex items-center gap-4 bg-neutral-900/50 border border-neutral-800 p-4 rounded-xl hover:border-primary/30 transition-all group">
+        <div className="flex items-center gap-4 bg-card/40 border border-neutral-800 p-4 rounded-xl hover:border-primary/30 transition-all group">
           <div className="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-12 border border-primary/20">
             <MdLeaderboard />
           </div>
           <div className="flex flex-col justify-center flex-1">
-            <p className="text-slate-100 text-sm md:text-base font-semibold leading-normal group-hover:text-primary transition-colors">
+            <p className=" text-sm md:text-base font-semibold leading-normal group-hover:text-primary transition-colors">
               Rank changed
             </p>
             <p className="text-slate-400 text-xs md:text-sm font-normal line-clamp-1">
-              <span className="text-slate-200">ShadowMaster</span> moved up to{" "}
+              <span>ShadowMaster</span> moved up to{" "}
               <span className="text-primary font-medium">Rank #2</span>
             </p>
           </div>
@@ -69,16 +69,16 @@ const SessionActivities = () => {
           </div>
         </div>
         {/* <!-- Activity Card 3 --> */}
-        <div className="flex items-center gap-4 bg-neutral-900/50 border border-neutral-800 p-4 rounded-xl hover:border-primary/30 transition-all group">
+        <div className="flex items-center gap-4 bg-card/40 border border-neutral-800 p-4 rounded-xl hover:border-primary/30 transition-all group">
           <div className="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-12 border border-primary/20">
             <Trophy />
           </div>
           <div className="flex flex-col justify-center flex-1">
-            <p className="text-slate-100 text-sm md:text-base font-semibold leading-normal group-hover:text-primary transition-colors">
+            <p className=" text-sm md:text-base font-semibold leading-normal group-hover:text-primary transition-colors">
               Score submitted
             </p>
             <p className="text-slate-400 text-xs md:text-sm font-normal line-clamp-1">
-              <span className="text-slate-200">ProGamer_X</span> finished with a
+              <span>ProGamer_X</span> finished with a
               score of <span className="text-primary font-bold">12,450</span>
             </p>
           </div>
@@ -89,16 +89,16 @@ const SessionActivities = () => {
           </div>
         </div>
         {/* <!-- Activity Card 4 --> */}
-        <div className="flex items-center gap-4 bg-neutral-900/50 border border-neutral-800 p-4 rounded-xl hover:border-primary/30 transition-all group">
+        <div className="flex items-center gap-4 bg-card/40 border border-neutral-800 p-4 rounded-xl hover:border-primary/30 transition-all group">
           <div className="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-12 border border-primary/20">
             <GiMedal />
           </div>
           <div className="flex flex-col justify-center flex-1">
-            <p className="text-slate-100 text-sm md:text-base font-semibold leading-normal group-hover:text-primary transition-colors">
+            <p className=" text-sm md:text-base font-semibold leading-normal group-hover:text-primary transition-colors">
               Achievement Unlocked
             </p>
             <p className="text-slate-400 text-xs md:text-sm font-normal line-clamp-1">
-              <span className="text-slate-200">AceHunter</span> earned the
+              <span>AceHunter</span> earned the
               "Flawless Execution" badge
             </p>
           </div>
@@ -109,16 +109,16 @@ const SessionActivities = () => {
           </div>
         </div>
         {/* <!-- Activity Card 5 --> */}
-        <div className="flex items-center gap-4 bg-neutral-900/50 border border-neutral-800 p-4 rounded-xl hover:border-primary/30 transition-all group opacity-80">
+        <div className="flex items-center gap-4 bg-card/40 border border-neutral-800 p-4 rounded-xl hover:border-primary/30 transition-all group">
           <div className="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-12 border border-primary/20">
             <LogOut />
           </div>
           <div className="flex flex-col justify-center flex-1">
-            <p className="text-slate-100 text-sm md:text-base font-semibold leading-normal group-hover:text-primary transition-colors">
+            <p className=" text-sm md:text-base font-semibold leading-normal group-hover:text-primary transition-colors">
               Player left
             </p>
             <p className="text-slate-400 text-sm font-normal line-clamp-1">
-              User <span className="text-slate-200">SilentWolf</span> has
+              User <span>SilentWolf</span> has
               disconnected
             </p>
           </div>

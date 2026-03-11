@@ -25,10 +25,10 @@ const SessionInfo = ({ title, pricePool }: sessionInfoProps) => {
               <span className="text-primary text-xs font-bold uppercase tracking-widest">
                 Active Tournament
               </span>
-              <h1 className="text-white tracking-tight text-lg lg:text-4xl font-bold leading-tight">
+              <h1 className=" tracking-tight text-lg lg:text-4xl font-bold leading-tight">
                 {title}
               </h1>
-              <p className="text-slate-500 dark:text-slate-400 text-base">
+              <p className=" text-base">
                 Skill-based competitive gaming session details and prize pool
                 distribution.
               </p>
@@ -46,56 +46,56 @@ const SessionInfo = ({ title, pricePool }: sessionInfoProps) => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
           <div className="md:col-span-3">
-            <h2 className=" text-white text-xl font-bold mb-4 flex items-center gap-2">
+            <h2 className="  text-xl font-bold mb-4 flex items-center gap-2">
               <MdPayment className="text-primary" /> Prize Distribution
             </h2>
           </div>
-          <div className="flex flex-col gap-3 rounded-xl p-6 bg-card  relative overflow-hidden group hover:border-primary/50 transition-all">
+          <div className="flex flex-col gap-3 rounded-xl p-6 bg-card/40 border border-border-muted  relative overflow-hidden group hover:border-primary/50 transition-all">
             <div className="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity">
               <GiMedal className="text-8xl" />
             </div>
-            <p className="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">
+            <p className=" text-sm font-medium uppercase tracking-wider">
               1st Place
             </p>
-            <p className=" text-white text-4xl font-black">50%</p>
+            <p className="  text-4xl font-black">50%</p>
             <p className="text-primary font-bold text-sm">$2,500 USD</p>
           </div>
-          <div className="flex flex-col gap-3 rounded-xl p-6  bg-card dark:border-slate-800 relative overflow-hidden group hover:border-primary/50 transition-all">
+          <div className="flex flex-col gap-3 rounded-xl p-6  bg-card/40 border border-border-muted dark:border-slate-800 relative overflow-hidden group hover:border-primary/50 transition-all">
             <div className="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity">
               <BiMedal className="text-8xl" />
             </div>
-            <p className="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">
+            <p className=" text-sm font-medium uppercase tracking-wider">
               2nd Place
             </p>
-            <p className=" text-white text-4xl font-black">30%</p>
+            <p className="  text-4xl font-black">30%</p>
             <p className="text-primary font-bold text-sm">$1,500 USD</p>
           </div>
-          <div className="flex flex-col gap-3 rounded-xl p-6  bg-card dark:border-slate-800 relative overflow-hidden group hover:border-primary/50 transition-all">
+          <div className="flex flex-col gap-3 rounded-xl p-6  bg-card/40 border border-border-muted dark:border-slate-800 relative overflow-hidden group hover:border-primary/50 transition-all">
             <div className="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity">
               <BiStar className="text-8xl" />
             </div>
-            <p className="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">
+            <p className=" text-sm font-medium uppercase tracking-wider">
               3rd Place
             </p>
-            <p className=" text-white text-4xl font-black">20%</p>
+            <p className="  text-4xl font-black">20%</p>
             <p className="text-primary font-bold text-sm">$1,000 USD</p>
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
           <div className="lg:col-span-3 space-y-6">
             <section>
-              <h2 className=" text-white text-xl font-bold mb-4 flex items-center gap-2">
+              <h2 className="  text-xl font-bold mb-4 flex items-center gap-2">
                 <MdDescription className="text-primary" /> How It Works
               </h2>
-              <div className=" bg-card dark:border-slate-800 rounded-xl px-2 md:px-4 py-4 space-y-4">
+              <div className=" bg-card/40 border border-border-muted dark:border-slate-800 rounded-xl px-2 md:px-4 py-4 space-y-4">
                 <ul className="space-y-4">
                   <li className="flex gap-4">
                     <div className="size-6 rounded-full bg-primary/20 text-primary shrink-0 flex items-center justify-center text-xs font-bold">
                       1
                     </div>
-                    <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                    <p className=" text-sm leading-relaxed">
                       Entry fee of{" "}
-                      <span className="text-white font-bold">10 Credits</span>{" "}
+                      <span className=" font-bold">10 Credits</span>{" "}
                       required per session attempt.
                     </p>
                   </li>
@@ -103,9 +103,9 @@ const SessionInfo = ({ title, pricePool }: sessionInfoProps) => {
                     <div className="size-6 rounded-full bg-primary/20 text-primary shrink-0 flex items-center justify-center text-xs font-bold">
                       2
                     </div>
-                    <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                    <p className=" text-sm leading-relaxed">
                       Players are matched based on their{" "}
-                      <span className="text-white font-bold">
+                      <span className=" font-bold">
                         Skill Rating (SR)
                       </span>{" "}
                       to ensure fair competition.
@@ -115,7 +115,7 @@ const SessionInfo = ({ title, pricePool }: sessionInfoProps) => {
                     <div className="size-6 rounded-full bg-primary/20 text-primary shrink-0 flex items-center justify-center text-xs font-bold">
                       3
                     </div>
-                    <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                    <p className=" text-sm leading-relaxed">
                       Highest score achieved during the session window will be
                       used for final leaderboard ranking.
                     </p>
@@ -124,7 +124,7 @@ const SessionInfo = ({ title, pricePool }: sessionInfoProps) => {
                     <div className="size-6 rounded-full bg-primary/20 text-primary shrink-0 flex items-center justify-center text-xs font-bold">
                       4
                     </div>
-                    <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                    <p className=" text-sm leading-relaxed">
                       Anti-cheat measures are active. Any suspicious activity
                       will result in immediate disqualification and account
                       review.
@@ -136,34 +136,34 @@ const SessionInfo = ({ title, pricePool }: sessionInfoProps) => {
           </div>
           <div className="lg:col-span-2 space-y-6">
             <section>
-              <h2 className=" text-white text-xl font-bold mb-4 flex items-center gap-2">
+              <h2 className="  text-xl font-bold mb-4 flex items-center gap-2">
                 <GrSchedule className="text-primary" /> Session Timing
               </h2>
-              <div className=" bg-card dark:border-slate-800 rounded-xl p-6 flex flex-col gap-6">
+              <div className=" bg-card/40 border border-border-muted dark:border-slate-800 rounded-xl p-6 flex flex-col gap-6">
                 <div className="flex items-center justify-between group">
                   <div className="flex items-center gap-3">
-                    <div className="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                    <div className="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-primary group-hover:bg-primary group-hover: transition-colors">
                       <PlayCircle />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs font-bold uppercase">
                         Session Start
                       </p>
-                      <p className=" text-white font-bold">Today, 14:00 GMT</p>
+                      <p className="  font-bold">Today, 14:00 GMT</p>
                     </div>
                   </div>
                 </div>
                 <div className="h-px bg-slate-200 dark:bg-slate-800"></div>
                 <div className="flex items-center justify-between group">
                   <div className="flex items-center gap-3">
-                    <div className="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                    <div className="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-primary group-hover:bg-primary group-hover: transition-colors">
                       <MdLockClock />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs font-bold uppercase">
                         Entry Closes
                       </p>
-                      <p className=" text-white font-bold">Today, 22:00 GMT</p>
+                      <p className="  font-bold">Today, 22:00 GMT</p>
                     </div>
                   </div>
                   <span className="text-xs bg-red-500/10 text-red-500 px-2 py-1 rounded font-bold uppercase">
@@ -173,14 +173,14 @@ const SessionInfo = ({ title, pricePool }: sessionInfoProps) => {
                 <div className="h-px bg-slate-200 dark:bg-slate-800"></div>
                 <div className="flex items-center justify-between group">
                   <div className="flex items-center gap-3">
-                    <div className="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                    <div className="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-primary group-hover:bg-primary group-hover: transition-colors">
                       <MdEventBusy />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs font-bold uppercase">
                         Session Ends
                       </p>
-                      <p className=" text-white font-bold">
+                      <p className="  font-bold">
                         Tomorrow, 02:00 GMT
                       </p>
                     </div>
@@ -191,14 +191,14 @@ const SessionInfo = ({ title, pricePool }: sessionInfoProps) => {
             <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 flex flex-col gap-4">
               <div className="flex items-center gap-3">
                 <Users />
-                <span className=" text-white font-bold">
+                <span className="  font-bold">
                   1,248 Registered Players
                 </span>
               </div>
               <div className="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
                 <div className="bg-primary h-full w-[85%] rounded-full"></div>
               </div>
-              <p className="text-xs text-slate-500 dark:text-slate-400 font-medium italic">
+              <p className="text-xs  font-medium italic">
                 85% of available slots filled. Register now to secure your spot.
               </p>
             </div>

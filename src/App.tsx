@@ -42,7 +42,7 @@ const App = () => {
         {/* {pathname === "/" && <AppNotification />} */}
         <div className="max-w-400 mx-auto flex gap-6 p-2 md:p-6">
           {!isGameSessionPage && !isRegistrationPage && (
-            <aside className="w-72 hidden lg:block sticky top-24 self-start h-[calc(100vh-8rem)]">
+            <aside className="w-72 hidden lg:block sticky self-start h-[calc(100vh-8rem)]">
               <SideBar />
             </aside>
           )}

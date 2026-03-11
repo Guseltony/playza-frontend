@@ -1,5 +1,5 @@
 // import logoImage from "logoImage.png";
-import { BellDot, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router";
 import { ModeToggle } from "./ModeToggle";
@@ -27,27 +27,20 @@ const Header = () => {
             <Button variant={"secondary"}>Sign Up</Button>
           </Link>
           <div className="flex items-center gap-2 md:gap-6">
-            <div className="flex items-center gap-3 bg-white/5 px-2 md:px-4 py-1.5 rounded-full border border-white/10">
-              <span className="text-sm font-bold text-white">
-                {walletBalance}
-              </span>
-              <button className="font-bold uppercase bg-primary hover:bg-primary/90 rounded-full flex items-center justify-center w-8 h-8 md:w-auto md:h-auto md:px-3 md:py-1">
-                <Plus className="md:hidden text-white text-sm font-bold" />
-
-                <span className="hidden md:inline text-white">Top Up</span>
-              </button>
-            </div>
             <ModeToggle />
-            <button
-              type="button"
-              className="relative text-slate-400 hover:text-primary transition-colors hidden md:block"
-            >
-              <span>
-                <BellDot className="text-red-500" />
-              </span>
-            </button>
             <div className="hidden lg:flex items-center gap-4 pl-3 md:pl-6 border-l border-slate-700">
-              <ModeToggle />
+              <div className="flex items-center gap-3 bg-white/5 px-2 md:px-4 py-1.5 rounded-full border border-white/10">
+                <span className="text-sm font-bold text-white">
+                  {walletBalance}
+                </span>
+                <button className="font-bold uppercase bg-primary hover:bg-primary/90 rounded-full flex items-center justify-center w-8 h-8 md:w-auto md:h-auto md:px-3 md:py-1">
+                  <Plus className="md:hidden text-white text-sm font-bold" />
+                  <span className="hidden md:inline text-white">Top Up</span>
+                </button>
+              </div>
+              <div className="block md:hidden">
+                <ModeToggle />
+              </div>
               <div className="text-right hidden sm:block">
                 <p className="text-xs text-white font-bold">Gusel_Toti</p>
                 <p className="text-xs font-medium text-primary">
