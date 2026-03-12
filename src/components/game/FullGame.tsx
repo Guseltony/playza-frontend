@@ -37,7 +37,6 @@ const FullGame = () => {
     (a, b) => b.pricePool - a.pricePool,
   )[0];
   
-  console.log("biggestGameprize:", biggestPoolGame);
   
   // const gameCategories = [...new Set(games.map((game) => game.category))];
 
@@ -45,7 +44,6 @@ const FullGame = () => {
     return filterGames(allGames, activeTab, filterBy, query);
   }, [query, allGames, activeTab, filterBy]);
 
-  console.log("filterGame:",filteredGames)
 
   const categories = useMemo(
     () => ["All Games", ...new Set(games.map((game) => game.category))],

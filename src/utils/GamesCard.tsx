@@ -14,7 +14,7 @@ const GamesCard = ({
   badge,
 }: Game) => {
   return (
-    <div className=" w-max-56 min-h-44 relative glass overflow-hidden group border-slate-700 hover:border-primary transition-all">
+    <div className=" max-w-58 border-2 border-red-800 min-h-44 relative glass overflow-hidden group hover:border-primary transition-all">
       {/* <div className="w-full h-full absolute inset-0 bg-linear-to-t z-12 from-[#091f00] to-transparent"></div> */}
       <Link to={`/games/${slug}`} key={id} className="z-15">
         <div className="h-44 w-full relative">
@@ -39,14 +39,14 @@ const GamesCard = ({
           </div>
           <div className="bg-muted p-1 rounded-full flex gap-2 items-center absolute bottom-2 left-2 z-15">
             <FaUsers />
-            <p className="text-xs text-chart-3 font-bold">
+            <p className="text-xs text-primary font-bold">
               {activePlayers} players
             </p>
           </div>
         </div>
       </Link>
       <div className="p-2 flex flex-col overflow-x-hidden z-15">
-        <h4 className="font-bold text-xs uppercase text-center text-white z-15">
+        <h4 className="font-bold text-xs uppercase text-center z-15">
           {title}
         </h4>
       </div>

@@ -73,14 +73,14 @@ const HomeGames = ({ games, Icon, title }: HomeGamesProps) => {
           <button
             onClick={() => scroll("left")}
             disabled={!canScrollLeft}
-            className={`p-2 rounded-lg transition ${canScrollLeft ? "bg-border hover:bg-primary text-white" : "bg-border/40 text-gray-500 cursor-not-allowed"}`}
+            className={`p-2 rounded-lg transition ${canScrollLeft ? "bg-border hover:bg-primary " : "bg-border/40 cursor-not-allowed"}`}
           >
             <ChevronLeft />
           </button>
           <button
             onClick={() => scroll("right")}
             disabled={!canScrollRight}
-            className={`p-2 rounded-lg transition ${canScrollRight ? "bg-border hover:bg-primary text-white" : "bg-border/40 text-gray-500 cursor-not-allowed"}`}
+            className={`p-2 rounded-lg transition ${canScrollRight ? "bg-border hover:bg-primary " : "bg-border/40 cursor-not-allowed"}`}
           >
             <ChevronRight />
           </button>

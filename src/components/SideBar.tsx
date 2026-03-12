@@ -33,17 +33,17 @@ const SideBar = () => {
       </nav>
 
       <div className="glass rounded-lg p-5">
-        <h3 className="text-xs font-bold dark:text-slate-500 uppercase tracking-widest mb-4">
+        <h3 className="text-xs font-bold uppercase tracking-widest mb-4">
           Live Network
         </h3>
         <div className="flex items-center gap-3 mb-4">
           <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-          <p className="text-sm text-slate-300">
-            <span className="text-white font-bold">1.2k</span> Players Online
+          <p className="text-sm ">
+            <span className=" font-bold">1.2k</span> Players Online
           </p>
         </div>
         <div className="space-y-3">
-          <div className="flex items-center gap-3 p-2 rounded-lg dark:bg-white/5 border border-white/5">
+          <div className="flex items-center gap-3 p-2 rounded-lg border border-white/5 bg-accent/30">
             <div className="w-8 h-8 rounded bg-accent/20 flex items-center justify-center">
               <span className="material-icons text-accent text-sm">
                 <Users />
@@ -51,7 +51,7 @@ const SideBar = () => {
             </div>
             <div>
               <p className="text-xs font-bold">Global Event</p>
-              <p className="text-[10px] text-slate-300">Starts in 45m</p>
+              <p className="text-[10px]">Starts in 45m</p>
             </div>
           </div>
         </div>

@@ -128,62 +128,6 @@ const LeaderBoard = () => {
           )}
         </TableBody>
       </Table>
-      {/* <Table className="mt-4">
-        <TableHeader>
-          <TableRow>
-            <TableHead className="w-1/4 text-center text-secondary text-sm uppercase font-bold">
-              Rank
-            </TableHead>
-            <TableHead className="w-1/4 text-center text-secondary text-sm uppercase font-bold">
-              Player
-            </TableHead>
-            <TableHead className="w-1/4 text-center text-secondary text-sm uppercase font-bold">
-              Amount Won
-            </TableHead>
-          </TableRow>
-        </TableHeader>
-
-        <TableBody>
-          {leaderBoardData.map(
-            ({
-              id,
-              rank,
-              avatar,
-              username,
-              points,
-              prizeWon,
-            }: LeaderboardPlayer) => (
-              <TableRow key={id}>
-                <TableCell className="font-medium flex justify-center">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold bg-muted text-accent text-center text-sm">
-                    {rank}
-                  </div>
-                </TableCell>
-                <TableCell>
-                  <div className="flex items-center gap-2 justify-center">
-                    <img
-                      className="w-8 h-8 rounded border border-accent-400/50"
-                      data-alt={`User avatar for ${username}`}
-                      src={avatar}
-                    />
-                    <div>
-                      <p className="text-xs font-bold text-accent leading-tight ">
-                        {username}
-                      </p>
-                      <p className="text-xs text-slate-400">{points} Za</p>
-                    </div>
-                  </div>
-                </TableCell>
-                <TableCell className="font-medium flex justify-center">
-                  <span className="text-sm text-center font-bold text-primary">
-                    {(Number(prizeWon) * 100).toLocaleString()}
-                  </span>
-                </TableCell>
-              </TableRow>
-            ),
-          )}
-        </TableBody>
-      </Table> */}
     </section>
   );
 };
