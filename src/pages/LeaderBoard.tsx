@@ -21,7 +21,7 @@ const LeaderBoard = () => {
   const leaderBoardData = leaderboard[activeGame];
 
   return (
-    <section className="flex-1 flex flex-col">
+    <section className="flex-1 gap-2 flex flex-col overflow-hidden">
       <div className="mb-2">
         <h2 className="font-heading text-xl font-bold flex gap-2 items-center mb-4">
           <MdLeaderboard className="text-chart-4" /> Games LeaderBoard
@@ -53,7 +53,7 @@ const LeaderBoard = () => {
               Score
             </TableHead>
             <TableHead className="px-2 sm:px-6 py-3 text-[10px] uppercase font-bold text-right">
-              Time
+              Prize Won
             </TableHead>
           </TableRow>
         </TableHeader>
@@ -80,7 +80,7 @@ const LeaderBoard = () => {
                       : "hover:bg-accent-dark/20 transition-colors"
                   }
                 >
-                  <TableCell className="px-2 sm:px-6 py-4">
+                  <TableCell className="px-2 md:px-6 py-4">
                     <div
                       className={`flex items-center justify-center w-6 h-6 rounded font-bold text-xs ${
                         isGold
@@ -96,30 +96,26 @@ const LeaderBoard = () => {
                     </div>
                   </TableCell>
 
-                  <TableCell className="px-2 sm:px-6 py-4 flex items-center gap-3">
+                  <TableCell className="px-2 md:px-6 py-4 flex items-center gap-3">
                     <div className="h-8 w-8 rounded-full bg-slate-700 overflow-hidden">
                       <img src={avatar} alt={username} />
                     </div>
                     <span
-                      className={
-                        isMe
-                          ? "font-bold "
-                          : "font-medium text-sm"
-                      }
+                      className={isMe ? "font-bold " : "font-medium text-sm"}
                     >
                       {username}
                     </span>
                   </TableCell>
 
                   <TableCell
-                    className={`px-2 sm:px-6 py-4 font-bold ${
+                    className={`px-2 md:px-6 py-4 font-bold ${
                       isGold || isMe ? "text-primary" : ""
                     }`}
                   >
                     {points.toLocaleString()}
                   </TableCell>
 
-                  <TableCell className="px-2 sm:px-6 py-4 text-right text-sm">
+                  <TableCell className="px-2 md:px-6 py-4 text-right text-sm">
                     {formatNaira(Number(prizeWon) * 100).toLocaleString()}
                   </TableCell>
                 </TableRow>

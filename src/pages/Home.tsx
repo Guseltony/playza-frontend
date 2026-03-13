@@ -1,6 +1,6 @@
 import HeroBanner from "@/components/home/HeroBanner";
 import HowItWorks from "@/components/home/HowItWorks";
-import LeaderBoard from "@/components/home/LeaderBoard";
+// import LeaderBoard from "@/components/home/LeaderBoard";
 import RecentWinners from "@/components/home/RecentWinners";
 import { games } from "@/data/games";
 import HomeGames from "@/components/home/HomeGames";
@@ -18,7 +18,7 @@ const Home = () => {
       <HomeGames games={newestGames} Icon={BadgePlus} title="Newest Games" />
       <HomeGames games={popularGames} Icon={Star} title="Popular Games" />
       <HomeGames games={hottestGames} Icon={Flame} title="Hottest Games" />
-      <LeaderBoard />
+      {/* <LeaderBoard /> */}
       <HowItWorks />
     </main>
   );
