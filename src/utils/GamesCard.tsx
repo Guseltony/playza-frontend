@@ -32,11 +32,12 @@ const GamesCard = ({
             alt={slug}
             loading="lazy"
           />
-          <div className="bg-secondary absolute top-2 right-2 flex gap-1">
-            <span className="px-2 py-0.5 rounded text-sm font-bold ">
+          <div className="bg-secondary/30 absolute top-2 right-2 flex gap-1 z-15 backdrop-blur-md">
+            <span className="px-2 py-0.5 rounded text-sm font-extrabold ">
               ₦{entryFee.toLocaleString()}
             </span>
           </div>
+          <div className="absolute w-16 h-6 bg-black top-2 right-2"></div>
           <div className="bg-muted p-1 rounded-full flex gap-2 items-center absolute bottom-2 left-2 z-15">
             <FaUsers />
             <p className="text-xs text-primary font-bold">
