@@ -5,11 +5,14 @@ import RecentWinners from "@/components/home/RecentWinners";
 import { games } from "@/data/games";
 import HomeGames from "@/components/home/HomeGames";
 import { Flame, Star, BadgePlus } from "lucide-react";
+import CTAReferral from "@/components/home/CTAReferral";
 
 const Home = () => {
-  const popularGames = games.filter((game) => game.badge === "POPULAR").slice(0, 8);
+  const popularGames = games
+    .filter((game) => game.badge === "POPULAR")
+    .slice(0, 8);
   const hottestGames = games.filter((game) => game.badge === "HOT").slice(0, 8);
-  const newestGames = games.filter((game) => game.badge === "HOT").slice(0,6);
+  const newestGames = games.filter((game) => game.badge === "HOT").slice(0, 6);
 
   return (
     <main className="flex-1 min-w-0 space-y-6">
@@ -18,6 +21,7 @@ const Home = () => {
       <HomeGames games={newestGames} Icon={BadgePlus} title="Newest Games" />
       <HomeGames games={popularGames} Icon={Star} title="Popular Games" />
       <HomeGames games={hottestGames} Icon={Flame} title="Hottest Games" />
+      <CTAReferral />
       {/* <LeaderBoard /> */}
       <HowItWorks />
     </main>
