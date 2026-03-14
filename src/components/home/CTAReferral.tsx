@@ -51,9 +51,9 @@ const CTAReferral = () => {
 
             {/* <!-- Decor / Visual element (Right side) --> */}
             <div className="hidden lg:flex justify-center relative">
-                <div className="relative w-50 h-50">
+                <div className="relative w-44 h-44">
                     <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl animate-pulse" />
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 border border-white/10 rounded-3xl rotate-12 backdrop-blur-xl flex items-center justify-center">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 border border-white/10 rounded-3xl rotate-12 backdrop-blur-xl flex items-center justify-center">
                         <span className="text-6xl">🎁</span>
                     </div>
                 </div>

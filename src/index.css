@@ -520,4 +520,14 @@ h1,h2,h3 {
     @apply absolute -top-24 -right-24 w-64 h-64 rounded-full blur-[100px] opacity-20 pointer-events-none;
     background: var(--primary);
 }
+
+.step-badge {
+    @apply flex items-center justify-center rounded-full font-black text-[10px] uppercase tracking-tighter border border-white/10;
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.glow-secondary {
+    box-shadow: 0 0 15px var(--secondary);
+}
 
