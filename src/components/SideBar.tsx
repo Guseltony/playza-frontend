@@ -14,7 +14,7 @@ const SideBar = () => {
               `flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${isActive ? "bg-primary/30 text-primary border-l-4 border-primary font-medium" : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"}`
             }
             // className={({ isActive }) =>
-            //   `flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${isActive ? "bg-primary/50 border-l-4 border-primary font-medium  text-white" : "text-slate-600 hover:bg-white/5 hover:text-white"}`
+            //   `flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${isActive ? "bg-primary/50 border-l-4 border-primary font-medium  text-slate-900 dark:text-white" : "text-slate-600 hover:bg-slate-900/5 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white"}`
             // }
           >
             {({ isActive }) => (

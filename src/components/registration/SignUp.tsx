@@ -14,10 +14,10 @@ const SignUp = ({ onClick }: SignUpProps) => {
           {/* <!-- Subtle Neon Accent --> */}
           <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-primary to-transparent opacity-50"></div>
           <div className="text-center mb-10">
-            <h1 className="text-3xl font-bold text-slate-100 mb-3">
+            <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-3">
               Create Account
             </h1>
-            <p className="text-slate-400 text-sm">
+            <p className="text-slate-600 dark:text-slate-400 text-sm">
               Experience elite competitive gaming with rewards.
             </p>
           </div>
@@ -28,17 +28,17 @@ const SignUp = ({ onClick }: SignUpProps) => {
                 Country
               </label>
               <div className="relative">
-                <Globe className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl" />
+                <Globe className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-400 text-xl" />
                 <select
                   required
-                  className="w-full bg-slate-900/50 border border-white/10 rounded-lg py-4 pl-12 pr-10 appearance-none focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none text-slate-100 transition-all"
+                  className="w-full bg-slate-100 dark:bg-slate-900/50 border border-slate-900/10 dark:border-white/10 rounded-lg py-4 pl-12 pr-10 appearance-none focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none text-slate-900 dark:text-slate-100 transition-all"
                 >
                   <option value="NG">Nigeria (+234)</option>
                   <option value="US">United States (+1)</option>
                   <option value="UK">United Kingdom (+44)</option>
                   <option value="ZA">South Africa (+27)</option>
                 </select>
-                <Expand className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
+                <Expand className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-400 pointer-events-none" />
               </div>
             </div>
             {/* <!-- Phone Number Input --> */}
@@ -47,21 +47,21 @@ const SignUp = ({ onClick }: SignUpProps) => {
                 Phone Number
               </label>
               <div className="relative group">
-                <Smartphone className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl group-focus-within:text-primary transition-colors" />
+                <Smartphone className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-400 text-xl group-focus-within:text-primary transition-colors" />
                 <input
                   required
-                  className="w-full bg-slate-900/50 border border-white/10 rounded-lg py-4 pl-12 pr-4 focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none text-slate-100 placeholder:text-slate-600 transition-all"
+                  className="w-full bg-slate-100 dark:bg-slate-900/50 border border-slate-900/10 dark:border-white/10 rounded-lg py-4 pl-12 pr-4 focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none text-slate-900 dark:text-slate-100 placeholder:text-slate-600 transition-all"
                   placeholder="800 000 0000"
                   type="tel"
                 />
               </div>
             </div>
             {/* <!-- reCAPTCHA Placeholder --> */}
-            <div className="flex items-center justify-center p-4 rounded-lg bg-slate-900/30 border border-white/5">
+            <div className="flex items-center justify-center p-4 rounded-lg bg-slate-100 dark:bg-slate-900/30 border border-white/5">
               <div className="flex items-center gap-3">
                 <input
                   type="checkbox"
-                  className="w-6 h-6 border-2 border-slate-700 rounded-sm"
+                  className="w-6 h-6 border-2 border-slate-300 dark:border-slate-700 rounded-sm"
                   required
                 />
                 <span className="text-xs text-slate-500 font-medium">
@@ -104,11 +104,11 @@ const SignUp = ({ onClick }: SignUpProps) => {
                 </span>
                 <div className="grow border-t border-white/5"></div>
               </div>
-              <p className="text-slate-400 text-xs md:text-sm">
+              <p className="text-slate-600 dark:text-slate-400 text-xs md:text-sm">
                 Already have an account?
                 <button
                   onClick={() => onClick("login")}
-                  className="ml-2 text-slate-100 font-bold hover:underline"
+                  className="ml-2 text-slate-900 dark:text-slate-100 font-bold hover:underline"
                 >
                   Log in
                 </button>
@@ -120,21 +120,21 @@ const SignUp = ({ onClick }: SignUpProps) => {
         {/* <div className="mt-4 md:mt-10 flex items-center justify-center gap-4 md:gap-8 opacity-60"> */}
         {/* <div className="flex items-center gap-2">
             <Shield className="material-symbols-outlined text-primary text-xl" />
-            <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">
               Secure Platform
             </span>
           </div>
-          <div className="w-px h-4 bg-white/10"></div>
+          <div className="w-px h-4 bg-slate-900/10 dark:bg-white/10"></div>
           <div className="flex items-center gap-2">
             <MdOutlineEnhancedEncryption className="material-symbols-outlined text-primary text-xl" />
-            <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">
               End-to-End Encrypted
             </span>
           </div> */}
-        {/* <div className="w-px h-4 bg-white/10"></div> */}
+        {/* <div className="w-px h-4 bg-slate-900/10 dark:bg-white/10"></div> */}
         {/* <div className="flex items-center gap-2">
             <Verified className="material-symbols-outlined text-primary text-xl" />
-            <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">
               Fintech Certified
             </span>
           </div> */}

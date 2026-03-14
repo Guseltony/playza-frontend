@@ -6,7 +6,7 @@ const InstructionTab = () => {
       <div id="content-instructions" className="tab-content space-y-6">
         <div className="glass-panel rounded-xl p-6 space-y-6">
           <div>
-            <h3 className="font-display text-xl font-bold text-white mb-3 flex items-center gap-2">
+            <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
               <i
                 data-lucide="book-open"
                 className="w-5 h-5 text-purple-400"
@@ -42,8 +42,8 @@ const InstructionTab = () => {
             </ul>
           </div>
 
-          <div className="border-t border-white/10 pt-6">
-            <h3 className="font-display text-xl font-bold text-white mb-3 flex items-center gap-2">
+          <div className="border-t border-slate-900/10 dark:border-white/10 pt-6">
+            <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
               <Trophy className="w-5 h-5 text-yellow-400" />
               Winning Rules
             </h3>
@@ -58,16 +58,16 @@ const InstructionTab = () => {
                   desc: " If tied, player with faster total completion time wins If still tied, split prize.",
                 },
               ].map(({ rule, desc }) => (
-                <div className="bg-white/5 rounded-lg p-4">
-                  <h4 className="font-semibold text-white mb-2">{rule}</h4>
+                <div className="bg-slate-900/5 dark:bg-white/5 rounded-lg p-4">
+                  <h4 className="font-semibold text-slate-900 dark:text-white mb-2">{rule}</h4>
                   <p className="text-sm text-gray-400">{desc}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-6">
-            <h3 className="font-display text-xl font-bold text-white mb-3 flex items-center gap-2">
+          <div className="border-t border-slate-900/10 dark:border-white/10 pt-6">
+            <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
               <AlertCircle className="w-5 h-5 text-red-400" />
               Entry Requirements
             </h3>

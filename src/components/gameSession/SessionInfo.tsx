@@ -146,7 +146,7 @@ const SessionInfo = ({ title, pricePool }: sessionInfoProps) => {
                       <PlayCircle />
                     </div>
                     <div>
-                      <p className="text-slate-400 text-xs font-bold uppercase">
+                      <p className="text-slate-600 dark:text-slate-400 text-xs font-bold uppercase">
                         Session Start
                       </p>
                       <p className="  font-bold">Today, 14:00 GMT</p>
@@ -160,7 +160,7 @@ const SessionInfo = ({ title, pricePool }: sessionInfoProps) => {
                       <MdLockClock />
                     </div>
                     <div>
-                      <p className="text-slate-400 text-xs font-bold uppercase">
+                      <p className="text-slate-600 dark:text-slate-400 text-xs font-bold uppercase">
                         Entry Closes
                       </p>
                       <p className="  font-bold">Today, 22:00 GMT</p>
@@ -177,7 +177,7 @@ const SessionInfo = ({ title, pricePool }: sessionInfoProps) => {
                       <MdEventBusy />
                     </div>
                     <div>
-                      <p className="text-slate-400 text-xs font-bold uppercase">
+                      <p className="text-slate-600 dark:text-slate-400 text-xs font-bold uppercase">
                         Session Ends
                       </p>
                       <p className="  font-bold">

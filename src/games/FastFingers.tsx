@@ -49,7 +49,7 @@ export function FastFingers({ mode, onExit }: FastFingersProps) {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-b from-gray-900 via-slate-900 to-slate-800 text-white px-4 py-24">
+    <div className="min-h-screen bg-linear-to-b from-gray-900 via-slate-900 to-slate-800 text-slate-900 dark:text-white px-4 py-24">
       <div className="max-w-2xl mx-auto mb-6">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
@@ -141,7 +141,7 @@ export function FastFingers({ mode, onExit }: FastFingersProps) {
             )}
             <button
               onClick={onExit}
-              className="w-full bg-linear-to-b from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold py-4 rounded-xl transition-all"
+              className="w-full bg-linear-to-b from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-slate-900 dark:text-white font-bold py-4 rounded-xl transition-all"
             >
               Back to Games
             </button>

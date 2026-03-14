@@ -23,14 +23,14 @@ const LiveEntryModal = ({ onClick }: { onClick: (value: boolean) => void }) => {
       <div className="glass-modal w-full max-w-130 rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
         <div className="p-2 md:p-6 max-h-fit">
           <div className="text-center md-2 md:mb-8">
-            <h1 className="text-slate-100 text-3xl font-extrabold tracking-tight mb-2">
+            <h1 className="text-slate-900 dark:text-slate-100 text-3xl font-extrabold tracking-tight mb-2">
               Confirm Entry
             </h1>
-            <p className="text-slate-400 text-sm">
+            <p className="text-slate-600 dark:text-slate-400 text-sm">
               You are about to join a live competitive match.
             </p>
           </div>
-          <div className="bg-slate-900/50 rounded-xl border border-white/5 overflow-hidden mb-3 md:mb-6 group hover:border-primary/30 transition-colors">
+          <div className="bg-slate-100 dark:bg-slate-900/50 rounded-xl border border-white/5 overflow-hidden mb-3 md:mb-6 group hover:border-primary/30 transition-colors">
             <div
               className="h-32 w-full bg-cover bg-center relative"
               data-alt="High speed futuristic racing game landscape"
@@ -48,7 +48,7 @@ const LiveEntryModal = ({ onClick }: { onClick: (value: boolean) => void }) => {
             </div>
             <div className="p-2 md:p-4 flex justify-between items-center">
               <div>
-                <h3 className="text-slate-100 text-xl font-bold">Speed Rush</h3>
+                <h3 className="text-slate-900 dark:text-slate-100 text-xl font-bold">Speed Rush</h3>
                 <p className="text-slate-500 text-xs mt-1">
                   Global Tournament #402
                 </p>
@@ -61,21 +61,21 @@ const LiveEntryModal = ({ onClick }: { onClick: (value: boolean) => void }) => {
               </div>
             </div>
             <div className="px-4 pb-4 flex items-center gap-2">
-              <FaTrophy className=" text-slate-400 text-sm" />
-              <p className="text-slate-300 text-xs">
+              <FaTrophy className=" text-slate-600 dark:text-slate-400 text-sm" />
+              <p className="text-slate-700 dark:text-slate-300 text-xs">
                 Prize Pool:{" "}
-                <span className="text-slate-100 font-semibold">₦250,000</span>
+                <span className="text-slate-900 dark:text-slate-100 font-semibold">₦250,000</span>
               </p>
             </div>
           </div>
           <div className="space-y-4 mb-2 md:mb-6">
-            <h4 className="text-slate-100 text-sm font-bold uppercase tracking-wider px-1">
+            <h4 className="text-slate-900 dark:text-slate-100 text-sm font-bold uppercase tracking-wider px-1">
               Wallet Breakdown
             </h4>
-            <div className="bg-slate-900/40 rounded-xl p-2 md:p-5 space-y-3 border border-white/5">
+            <div className="bg-slate-100 dark:bg-slate-900/40 rounded-xl p-2 md:p-5 space-y-3 border border-white/5">
               <div className="flex justify-between items-center">
-                <span className="text-slate-400 text-sm">Current Balance</span>
-                <span className="text-slate-100 font-medium">₦1,250.00</span>
+                <span className="text-slate-600 dark:text-slate-400 text-sm">Current Balance</span>
+                <span className="text-slate-900 dark:text-slate-100 font-medium">₦1,250.00</span>
               </div>
               <div className="flex justify-between items-center text-primary">
                 <div className="flex items-center gap-2">
@@ -85,10 +85,10 @@ const LiveEntryModal = ({ onClick }: { onClick: (value: boolean) => void }) => {
                 <span className="font-bold">-₦100.00</span>
               </div>
               <div className="pt-3 border-t border-white/5 flex justify-between items-center">
-                <span className="text-slate-400 text-sm">
+                <span className="text-slate-600 dark:text-slate-400 text-sm">
                   Balance After Entry
                 </span>
-                <span className="text-slate-100 font-bold">₦1,150.00</span>
+                <span className="text-slate-900 dark:text-slate-100 font-bold">₦1,150.00</span>
               </div>
             </div>
           </div>
@@ -109,9 +109,9 @@ const LiveEntryModal = ({ onClick }: { onClick: (value: boolean) => void }) => {
               <p className="text-red-400 text-sm font-bold uppercase tracking-wide">
                 Insufficient Wallet Balance
               </p>
-              <p className="text-slate-300 text-sm leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
                 You need an additional{" "}
-                <span className="text-white font-bold">₦455</span> to enter this
+                <span className="text-slate-900 dark:text-white font-bold">₦455</span> to enter this
                 tournament. Please top up your wallet.
               </p>
             </div>
@@ -127,7 +127,7 @@ const LiveEntryModal = ({ onClick }: { onClick: (value: boolean) => void }) => {
             </button>
             <button
               onClick={() => onClick(false)}
-              className="w-full bg-white/5 hover:bg-white/10 text-slate-300 font-semibold py-3 rounded-xl transition-all"
+              className="w-full bg-slate-900/5 dark:bg-white/5 hover:bg-slate-900/10 dark:hover:bg-white/10 text-slate-700 dark:text-slate-300 font-semibold py-3 rounded-xl transition-all"
             >
               Cancel
             </button>

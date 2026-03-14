@@ -2,7 +2,7 @@ import { TrendingUp } from "lucide-react";
 
 const HeroBanner = () => {
   return (
-    <section className="relative h-64 md:h-72 lg:h-80 rounded-2xl overflow-hidden glass border-white/10">
+    <section className="relative h-64 md:h-72 lg:h-80 rounded-2xl overflow-hidden glass border-slate-900/10 dark:border-white/10">
       <img
         alt="Tournament Banner"
         className="absolute inset-0 w-full h-full object-cover"
@@ -11,7 +11,7 @@ const HeroBanner = () => {
       <div className="absolute inset-0 bg-linear-to-r from-black via-black/80 to-transparent"></div>
       <div className="relative h-full p-8 flex flex-col justify-center z-5">
         {/* <div className="flex items-center gap-3 mb-2">
-          <span className="bg-primary/80 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest text-white">
+          <span className="bg-primary/80 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest text-slate-900 dark:text-white">
             Live Tournament
           </span>
           <div className="flex items-center gap-2 text-green-400 text-xs font-bold">
@@ -29,7 +29,7 @@ const HeroBanner = () => {
         </div>
         <div className="flex items-center gap-12">
           <div>
-            <div className="text-xs text-slate-400 uppercase font-bold tracking-widest mb-1">
+            <div className="text-xs text-slate-600 dark:text-slate-400 uppercase font-bold tracking-widest mb-1">
               Current Game Pool
             </div>
             <div className="flex items-center text-base md:text-xl lg:text-3xl font-display font-bold text-accent">
@@ -37,12 +37,12 @@ const HeroBanner = () => {
               <TrendingUp className=" text-green-400 ml-1" size={15} />
             </div>
           </div>
-          <div className="h-10 w-px bg-white/20"></div>
+          <div className="h-10 w-px bg-slate-900/20 dark:bg-white/20"></div>
           <div>
-            <div className="text-xs text-slate-400 uppercase font-bold tracking-widest mb-1">
+            <div className="text-xs text-slate-600 dark:text-slate-400 uppercase font-bold tracking-widest mb-1">
               Time Remaining
             </div>
-            <div className="text-base md:text-xl lg:text-3xl font-display font-bold text-white tabular-nums">
+            <div className="text-base md:text-xl lg:text-3xl font-display font-bold text-slate-900 dark:text-white tabular-nums">
               00:42:15
             </div>
           </div>

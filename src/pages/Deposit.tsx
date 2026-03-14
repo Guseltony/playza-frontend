@@ -104,13 +104,13 @@ const Deposit = () => {
                     </span>
                   </div>
                 </label>
-                <label className="flex items-center gap-4 p-4 rounded-lg border border-white/5 bg-white/5 cursor-pointer hover:bg-white/10 transition-all group">
+                <label className="flex items-center gap-4 p-4 rounded-lg border border-white/5 bg-slate-900/5 dark:bg-white/5 cursor-pointer hover:bg-slate-900/10 dark:hover:bg-white/10 transition-all group">
                   <input
                     className="custom-radio h-5 w-5 border-2 border-slate-600 bg-transparent text-transparent checked:border-primary focus:ring-0"
                     name="payment"
                     type="radio"
                   />
-                  <div className="flex shrink-0 h-10 w-10 items-center justify-center rounded-full bg-slate-800  group-hover:text-slate-200">
+                  <div className="flex shrink-0 h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-slate-800  group-hover:text-slate-200">
                     <MdAccountBalanceWallet />
                   </div>
                   <div className="flex flex-col">
@@ -134,9 +134,9 @@ const Deposit = () => {
                 <span className="">Processing Fee</span>
                 <span className="text-primary font-medium">₦0.00</span>
               </div>
-              <div className="h-px bg-white/5 my-1"></div>
+              <div className="h-px bg-slate-900/5 dark:bg-white/5 my-1"></div>
               <div className="flex justify-between items-center pt-1">
-                <span className="text-slate-200 font-bold">Total Payable</span>
+                <span className="text-slate-800 dark:text-slate-200 font-bold">Total Payable</span>
                 <span className="text-primary text-lg font-black">₦0.00</span>
               </div>
             </div> */}

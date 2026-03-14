@@ -92,7 +92,7 @@ const MatchSession = () => {
                 <button
                   onClick={() => setActiveTab(tab)}
                   key={i}
-                  className={` ${activeTab === tab ? "text-primary border-b-2 border-primary" : "text-slate-400"}  px-3.5 md:px-6 py-4 whitespace-nowrap text-xs md:text-sm font-bold bg-primary/5`}
+                  className={` ${activeTab === tab ? "text-primary border-b-2 border-primary" : "text-slate-600 dark:text-slate-400"}  px-3.5 md:px-6 py-4 whitespace-nowrap text-xs md:text-sm font-bold bg-primary/5`}
                 >
                   {tab}
                 </button>
@@ -123,7 +123,7 @@ const MatchSession = () => {
               </div>
               <div className="flex items-center justify-between p-3 rounded-lg bg-accent/50 border border-white/5">
                 <div className="flex items-center gap-3">
-                  <span className="text-slate-300 font-bold">2nd</span>
+                  <span className="text-slate-700 dark:text-slate-300 font-bold">2nd</span>
                   <span className="text-sm font-medium">Runner Up</span>
                 </div>
                 <span className=" font-bold">₦45,000</span>
@@ -149,7 +149,7 @@ const MatchSession = () => {
             </h3>
             <div className="space-y-4">
               <div>
-                <div className="flex justify-between text-xs text-slate-400 mb-2">
+                <div className="flex justify-between text-xs text-slate-600 dark:text-slate-400 mb-2">
                   <span>Skill Progress</span>
                   <span className="text-primary">82%</span>
                 </div>
@@ -210,7 +210,7 @@ const MatchSession = () => {
               </div>
               <div>
                 <h4 className=" font-bold text-sm">Need Help?</h4>
-                <p className="text-xs text-slate-400 mb-3">
+                <p className="text-xs text-slate-600 dark:text-slate-400 mb-3">
                   Our support team is active for this tournament.
                 </p>
                 <button className="text-xs font-bold text-primary flex items-center gap-1 hover:underline">

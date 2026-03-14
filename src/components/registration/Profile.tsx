@@ -9,7 +9,7 @@ const Profile = () => {
       <div className="max-w-140 w-full">
         {/* <!-- Title Section --> */}
         <div className="text-center mb-2 md:mb-10">
-          <h1 className="text-slate-100 text-xl md:text-4xl  font-black leading-tight tracking-tight">
+          <h1 className="text-slate-900 dark:text-slate-100 text-xl md:text-4xl  font-black leading-tight tracking-tight">
             Complete Your Profile
           </h1>
         </div>
@@ -18,14 +18,14 @@ const Profile = () => {
           <div className="space-y-3 md:space-y-6">
             {/* <!-- Username Field --> */}
             <div className="flex flex-col gap-2">
-              <label className="text-slate-200 text-sm font-semibold uppercase tracking-wider">
+              <label className="text-slate-800 dark:text-slate-200 text-sm font-semibold uppercase tracking-wider">
                 Username
               </label>
               <div className="relative">
                 <User className=" absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-xl" />
                 <input
                   required
-                  className="w-full pl-12 pr-4 py-4 rounded-lg bg-background-dark/60 border border-primary/20 text-slate-100 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-slate-600"
+                  className="w-full pl-12 pr-4 py-4 rounded-lg bg-background-dark/60 border border-primary/20 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-slate-600"
                   placeholder="Enter your gaming handle"
                   type="text"
                 />
@@ -33,14 +33,14 @@ const Profile = () => {
             </div>
             {/* Email field */}
             <div className="flex flex-col gap-2">
-              <label className="text-slate-200 text-sm font-semibold uppercase tracking-wider">
+              <label className="text-slate-800 dark:text-slate-200 text-sm font-semibold uppercase tracking-wider">
                 Email
               </label>
               <div className="relative">
                 <MdEmail className=" absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-xl" />
                 <input
                   required
-                  className="w-full pl-12 pr-4 py-4 rounded-lg bg-background-dark/60 border border-primary/20 text-slate-100 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-slate-600"
+                  className="w-full pl-12 pr-4 py-4 rounded-lg bg-background-dark/60 border border-primary/20 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-slate-600"
                   placeholder="Enter your email address"
                   type="email"
                 />
@@ -48,14 +48,14 @@ const Profile = () => {
             </div>
             {/* <!-- Password Field --> */}
             <div className="flex flex-col gap-2">
-              <label className="text-slate-200 text-sm font-semibold uppercase tracking-wider">
+              <label className="text-slate-800 dark:text-slate-200 text-sm font-semibold uppercase tracking-wider">
                 Password
               </label>
               <div className="relative">
                 <LockIcon className=" absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-xl" />
                 <input
                   required
-                  className="w-full pl-12 pr-12 py-4 rounded-lg bg-background-dark/60 border border-primary/20 text-slate-100 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-slate-600"
+                  className="w-full pl-12 pr-12 py-4 rounded-lg bg-background-dark/60 border border-primary/20 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-slate-600"
                   type="password"
                   placeholder="cybersecurity101"
                 />
@@ -81,14 +81,14 @@ const Profile = () => {
             </div>
             {/* <!-- Confirm Password Field --> */}
             <div className="flex flex-col gap-2">
-              <label className="text-slate-200 text-sm font-semibold uppercase tracking-wider">
+              <label className="text-slate-800 dark:text-slate-200 text-sm font-semibold uppercase tracking-wider">
                 Confirm Password
               </label>
               <div className="relative">
                 <Shield className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-xl" />
                 <input
                   required
-                  className="w-full pl-12 pr-4 py-4 rounded-lg bg-background-dark/60 border border-primary/20 text-slate-100 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-slate-600"
+                  className="w-full pl-12 pr-4 py-4 rounded-lg bg-background-dark/60 border border-primary/20 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-slate-600"
                   placeholder="Repeat your password"
                   type="password"
                 />
@@ -117,7 +117,7 @@ const Profile = () => {
             </div> */}
             {/* <!-- Optional Referral --> */}
             <div className="flex flex-col gap-2">
-              <label className="text-slate-200 text-sm font-semibold uppercase tracking-wider flex justify-between">
+              <label className="text-slate-800 dark:text-slate-200 text-sm font-semibold uppercase tracking-wider flex justify-between">
                 Referral Code
                 <span className="text-[10px] text-slate-500 font-normal">
                   OPTIONAL
@@ -125,7 +125,7 @@ const Profile = () => {
               </label>
               <input
                 required
-                className="w-full px-4 py-3 rounded-lg bg-background-dark/40 border border-slate-800 text-slate-100 focus:border-primary/50 transition-all placeholder:text-slate-700"
+                className="w-full px-4 py-3 rounded-lg bg-background-dark/40 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 focus:border-primary/50 transition-all placeholder:text-slate-700"
                 placeholder="e.g. CYBER-2024"
                 type="text"
               />

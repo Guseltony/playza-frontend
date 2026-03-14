@@ -60,7 +60,7 @@ const FullGame = () => {
           </a>
           <span>/</span>
 
-          <span className="text-slate-300">Games</span>
+          <span className="text-slate-700 dark:text-slate-300">Games</span>
         </nav>
         <h1 className="text-4xl font-display font-bold tracking-tight">
           Explore Games
@@ -92,7 +92,7 @@ const FullGame = () => {
               key={t}
               onClick={() => setActiveTab(t)}
               className={cn(
-                activeTab === t ? "text-white bg-secondary" : "text-slate-600",
+                activeTab === t ? "text-slate-900 dark:text-white bg-secondary" : "text-slate-600",
                 "text-xs md:text-sm uppercase font-bold px-4 py-2 rounded-lg cursor-pointer",
               )}
             >

@@ -12,7 +12,7 @@ const ForgotPassword = ({ onClick }: { onClick: (value: string) => void }) => {
           <div className="bg-primary/10 p-4 rounded-full mb-6">
             <RxReset className="material-symbols-outlined text-primary text-4xl" />
           </div>
-          <h1 className="text-white text-3xl font-bold leading-tight mb-3">
+          <h1 className="text-slate-900 dark:text-white text-3xl font-bold leading-tight mb-3">
             Forgot Password?
           </h1>
           <p className="text-slate-600 dark:text-slate-400 text-base font-normal">
@@ -22,13 +22,13 @@ const ForgotPassword = ({ onClick }: { onClick: (value: string) => void }) => {
         </div>
         <form className="space-y-6">
           <div className="flex flex-col gap-2">
-            <label className="text-slate-200 text-sm font-semibold flex items-center gap-2">
+            <label className="text-slate-800 dark:text-slate-200 text-sm font-semibold flex items-center gap-2">
               <MdAlternateEmail className="material-symbols-outlined text-xs text-primary" />
               Email or Phone Number
             </label>
             <div className="relative">
               <input
-                className="w-full rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-primary/20 bg-white/5 dark:bg-background-dark/50 h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 px-4 transition-all"
+                className="w-full rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-primary/20 bg-slate-900/5 dark:bg-white/5 dark:bg-background-dark/50 h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 px-4 transition-all"
                 placeholder="e.g. gamer@platform.com"
                 type="text"
               />

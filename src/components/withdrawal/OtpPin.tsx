@@ -14,10 +14,10 @@ const OtpPin = () => {
       </div>
       <div className="w-full max-w-lg">
         {/* <div className="mb-4 md:mb-8 text-center">
-          <h2 className="text-xl md:text-4xl font-black text-white mb-2">
+          <h2 className="text-xl md:text-4xl font-black text-slate-900 dark:text-white mb-2">
             Security Verification
           </h2>
-          <p className="text-slate-400">
+          <p className="text-slate-600 dark:text-slate-400">
             Confirm your withdrawal request to proceed
           </p>
         </div> */}
@@ -32,17 +32,17 @@ const OtpPin = () => {
             </div>
             <div className="space-y-2 md:space-y-4">
               <div className="flex justify-between items-center py-2 border-b border-white/5">
-                <span className="text-slate-400 text-sm">
+                <span className="text-slate-600 dark:text-slate-400 text-sm">
                   Amount to Withdraw
                 </span>
-                <span className="text-white text-xl font-bold tracking-tight">
+                <span className="text-slate-900 dark:text-white text-xl font-bold tracking-tight">
                   $1,250.00
                 </span>
               </div>
               <div className="flex justify-between items-center py-2 border-b border-white/5">
-                <span className="text-slate-400 text-sm">Destination Bank</span>
+                <span className="text-slate-600 dark:text-slate-400 text-sm">Destination Bank</span>
                 <div className="text-right">
-                  <p className="text-white text-sm font-medium">Opay</p>
+                  <p className="text-slate-900 dark:text-white text-sm font-medium">Opay</p>
                   <p className="text-slate-500 text-xs">Ending in •••• 4291</p>
                 </div>
               </div>
@@ -51,44 +51,44 @@ const OtpPin = () => {
           {/* <!-- OTP Section --> */}
           <div className="mt-4 md:mt-10">
             <div>
-              <label className="block text-center text-sm font-medium text-slate-300 mb-3 md:mb-6">
+              <label className="block text-center text-sm font-medium text-slate-700 dark:text-slate-300 mb-3 md:mb-6">
                 Enter 6-digit 2FA Code
               </label>
               <div className="flex justify-between gap-2 mb-3 md:mb-6">
                 <input
-                  className="w-12 h-14 bg-white/5 border border-white/10 rounded-lg text-center text-2xl font-bold text-primary focus:outline-none focus:ring-0 otp-input transition-all"
+                  className="w-12 h-14 bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-lg text-center text-2xl font-bold text-primary focus:outline-none focus:ring-0 otp-input transition-all"
                   maxLength={1}
                   type="text"
                 />
                 <input
-                  className="w-12 h-14 bg-white/5 border border-white/10 rounded-lg text-center text-2xl font-bold text-primary focus:outline-none focus:ring-0 otp-input transition-all"
+                  className="w-12 h-14 bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-lg text-center text-2xl font-bold text-primary focus:outline-none focus:ring-0 otp-input transition-all"
                   maxLength={1}
                   type="text"
                 />
                 <input
-                  className="w-12 h-14 bg-white/5 border border-white/10 rounded-lg text-center text-2xl font-bold text-primary focus:outline-none focus:ring-0 otp-input transition-all"
+                  className="w-12 h-14 bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-lg text-center text-2xl font-bold text-primary focus:outline-none focus:ring-0 otp-input transition-all"
                   maxLength={1}
                   type="text"
                 />
                 <input
-                  className="w-12 h-14 bg-white/5 border border-white/10 rounded-lg text-center text-2xl font-bold text-primary focus:outline-none focus:ring-0 otp-input transition-all"
+                  className="w-12 h-14 bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-lg text-center text-2xl font-bold text-primary focus:outline-none focus:ring-0 otp-input transition-all"
                   maxLength={1}
                   type="text"
                 />
                 <input
-                  className="w-12 h-14 bg-white/5 border border-white/10 rounded-lg text-center text-2xl font-bold text-primary focus:outline-none focus:ring-0 otp-input transition-all"
+                  className="w-12 h-14 bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-lg text-center text-2xl font-bold text-primary focus:outline-none focus:ring-0 otp-input transition-all"
                   maxLength={1}
                   type="text"
                 />
                 <input
-                  className="w-12 h-14 bg-white/5 border border-white/10 rounded-lg text-center text-2xl font-bold text-primary focus:outline-none focus:ring-0 otp-input transition-all"
+                  className="w-12 h-14 bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-lg text-center text-2xl font-bold text-primary focus:outline-none focus:ring-0 otp-input transition-all"
                   maxLength={1}
                   type="text"
                 />
               </div>
             </div>
 
-            <div className="flex items-center justify-center gap-2 mb-3 md:mb-6 text-slate-400 text-sm">
+            <div className="flex items-center justify-center gap-2 mb-3 md:mb-6 text-slate-600 dark:text-slate-400 text-sm">
               <MdSchedule className="text-sm" />
               <span>
                 Code expires in{" "}
@@ -97,27 +97,27 @@ const OtpPin = () => {
             </div>
 
             <div>
-              <label className="block text-center text-sm font-medium text-slate-300 mb-3 md:mb-6">
+              <label className="block text-center text-sm font-medium text-slate-700 dark:text-slate-300 mb-3 md:mb-6">
                 Enter Your Withdrawal Pin
               </label>
               <div className="flex justify-center gap-2 mb-3 md:mb-6">
                 <input
-                  className="w-12 h-14 bg-white/5 border border-white/10 rounded-lg text-center text-2xl font-bold text-primary focus:outline-none focus:ring-0 otp-input transition-all"
+                  className="w-12 h-14 bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-lg text-center text-2xl font-bold text-primary focus:outline-none focus:ring-0 otp-input transition-all"
                   maxLength={1}
                   type="text"
                 />
                 <input
-                  className="w-12 h-14 bg-white/5 border border-white/10 rounded-lg text-center text-2xl font-bold text-primary focus:outline-none focus:ring-0 otp-input transition-all"
+                  className="w-12 h-14 bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-lg text-center text-2xl font-bold text-primary focus:outline-none focus:ring-0 otp-input transition-all"
                   maxLength={1}
                   type="text"
                 />
                 <input
-                  className="w-12 h-14 bg-white/5 border border-white/10 rounded-lg text-center text-2xl font-bold text-primary focus:outline-none focus:ring-0 otp-input transition-all"
+                  className="w-12 h-14 bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-lg text-center text-2xl font-bold text-primary focus:outline-none focus:ring-0 otp-input transition-all"
                   maxLength={1}
                   type="text"
                 />
                 <input
-                  className="w-12 h-14 bg-white/5 border border-white/10 rounded-lg text-center text-2xl font-bold text-primary focus:outline-none focus:ring-0 otp-input transition-all"
+                  className="w-12 h-14 bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-lg text-center text-2xl font-bold text-primary focus:outline-none focus:ring-0 otp-input transition-all"
                   maxLength={1}
                   type="text"
                 />
@@ -130,7 +130,7 @@ const OtpPin = () => {
               </button>
               <button
                 onClick={() => navigate(-1)}
-                className="w-full py-2 text-slate-400 font-bold rounded-xl hover:text-white transition-all text-sm"
+                className="w-full py-2 text-slate-600 dark:text-slate-400 font-bold rounded-xl hover:text-slate-900 dark:hover:text-white transition-all text-sm"
               >
                 Cancel Transaction
               </button>

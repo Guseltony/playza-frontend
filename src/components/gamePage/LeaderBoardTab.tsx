@@ -7,8 +7,8 @@ const LeaderBoardTab = () => {
   return (
     <div id="content-leaderboard" className="tab-content space-y-4">
       <div className="glass-panel rounded-xl overflow-hidden">
-        <div className="p-6 border-b border-white/10 flex items-center justify-between">
-          <h3 className="font-display text-xl font-bold text-white">
+        <div className="p-6 border-b border-slate-900/10 dark:border-white/10 flex items-center justify-between">
+          <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white">
             Live Leaderboard
           </h3>
           <span className="text-xs text-gray-500">Updates every 5 seconds</span>
@@ -16,7 +16,7 @@ const LeaderBoardTab = () => {
 
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className="bg-white/5 text-left">
+            <thead className="bg-slate-900/5 dark:bg-white/5 text-left">
               <tr>
                 <th className="px-6 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
                   Rank
@@ -36,7 +36,7 @@ const LeaderBoardTab = () => {
               {/* <!-- Leaderboard rows injected via JS --> */}
               {topPlayers.map(
                 ({ rank, status, username, score, avatar }: Player) => (
-                  <tr className="hover:bg-white/5 transition-colors ">
+                  <tr className="hover:bg-slate-900/5 dark:hover:bg-white/5 transition-colors ">
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span
                         className={`inline-flex items-center justify-center w-8 h-8 rounded-full  font-display font-bold text-sm`}
@@ -52,14 +52,14 @@ const LeaderBoardTab = () => {
                           alt=""
                         />
                         <div>
-                          <div className={`text-sm font-medium text-white`}>
+                          <div className={`text-sm font-medium text-slate-900 dark:text-white`}>
                             {username}
                           </div>
                         </div>
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-right">
-                      <div className="text-sm font-display font-bold text-white">
+                      <div className="text-sm font-display font-bold text-slate-900 dark:text-white">
                         {score.toLocaleString()}
                       </div>
                       <div className="text-xs text-gray-500">points</div>

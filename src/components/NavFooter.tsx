@@ -31,7 +31,7 @@ const NavFooter = () => {
                   onClick={() => setCurrentView(view)}
                   className={`flex items-center gap-1 px-2 py-2 rounded-lg transition-colors ${
                     isActive
-                      ? "text-white"
+                      ? "text-slate-900 dark:text-white"
                       : "text-gray-400 hover:text-gray-300"
                   }`}
                 >

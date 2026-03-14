@@ -7,7 +7,7 @@ const PlayersTab = () => {
       <div id="content-players" className="tab-content space-y-4">
         <div className="glass-panel rounded-xl p-6">
           <div className="flex items-center justify-between mb-6">
-            <h3 className="font-display text-xl font-bold text-white">
+            <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white">
               Active Players
             </h3>
             <div className="flex items-center gap-2 text-sm text-gray-400">
@@ -21,7 +21,7 @@ const PlayersTab = () => {
             className="grid grid-cols-1 sm:grid-cols-2 gap-3"
           >
             {slicePlayers.map(({ username, avatar, status, score, rank }) => (
-              <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border ${isCurrentUser ? 'border-purple-500/50 bg-purple-500/10' : 'border-white/5'} hover:bg-white/10 transition-colors">
+              <div className="flex items-center gap-3 p-3 rounded-lg bg-slate-900/5 dark:bg-white/5 border ${isCurrentUser ? 'border-purple-500/50 bg-purple-500/10' : 'border-white/5'} hover:bg-slate-900/10 dark:hover:bg-white/10 transition-colors">
                 <div className="relative">
                   <img
                     src={avatar}
@@ -31,7 +31,7 @@ const PlayersTab = () => {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
-                    <span className="font-medium text-white text-sm truncate ${isCurrentUser ? 'text-purple-400' : ''}">
+                    <span className="font-medium text-slate-900 dark:text-white text-sm truncate ${isCurrentUser ? 'text-purple-400' : ''}">
                       ${username}
                     </span>
                   </div>
@@ -43,7 +43,7 @@ const PlayersTab = () => {
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="font-display font-bold text-white text-sm">
+                  <div className="font-display font-bold text-slate-900 dark:text-white text-sm">
                     ${score.toLocaleString()}
                   </div>
                   <div className="text-xs text-gray-500">pts</div>

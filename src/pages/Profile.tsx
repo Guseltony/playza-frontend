@@ -23,14 +23,14 @@ const Profile = () => {
           </div>
           <div className="flex flex-col flex-1 text-center md:text-left">
             <div className="flex flex-col md:flex-row items-center gap-3 mb-2">
-              <h1 className="text-slate-100 text-xl md:text-3xl font-bold">
+              <h1 className="text-slate-900 dark:text-slate-100 text-xl md:text-3xl font-bold">
                 AnthonyGamer
               </h1>
               <span className="w-fit inline-flex items-center px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold border border-primary/30 uppercase tracking-widest">
                 Gold III Rank
               </span>
             </div>
-            <p className="text-slate-400 text-sm font-medium mb-4">
+            <p className="text-slate-600 dark:text-slate-400 text-sm font-medium mb-4">
               ID #A92011 • Member since Jan 2024
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-6">
@@ -38,14 +38,14 @@ const Profile = () => {
                 <p className="text-slate-500 text-xs uppercase font-bold tracking-widest mb-1">
                   Total Earnings
                 </p>
-                <p className="text-slate-100 md:text-xl font-bold">₦18,300</p>
+                <p className="text-slate-900 dark:text-slate-100 md:text-xl font-bold">₦18,300</p>
               </div>
-              <div className="w-px h-10 bg-white/10 hidden md:block"></div>
+              <div className="w-px h-10 bg-slate-900/10 dark:bg-white/10 hidden md:block"></div>
               <div>
                 <p className="text-slate-500 text-xs uppercase font-bold tracking-widest mb-1">
                   Country
                 </p>
-                <p className="text-slate-100 md:text-xl font-bold flex items-center gap-2">
+                <p className="text-slate-900 dark:text-slate-100 md:text-xl font-bold flex items-center gap-2">
                   <MdLocationOn className="text-primary text-sm md:text-lg" />{" "}
                   Nigeria
                 </p>
@@ -53,9 +53,12 @@ const Profile = () => {
             </div>
           </div>
           <div className="flex gap-3 w-full md:w-auto">
-            <button className="flex-1 md:flex-none px-6 py-2.5 bg-white/5 border border-white/10 rounded-xl text-slate-100 text-sm font-bold hover:bg-white/10 transition-all">
+            <button className="flex-1 md:flex-none px-6 py-2.5 bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-xl text-slate-900 dark:text-slate-100 text-sm font-bold hover:bg-slate-900/10 dark:hover:bg-white/10 transition-all">
               Edit Profile
             </button>
+            <NavLink to="/referral" className="flex-1 md:flex-none px-6 py-2.5 bg-primary/20 border border-primary/30 rounded-xl text-primary text-sm font-bold hover:bg-primary/30 transition-all text-center">
+              Referral Earns
+            </NavLink>
             <button className="flex-1 md:flex-none px-6 py-2.5 bg-primary text-background-dark rounded-xl text-sm font-bold hover:bg-primary/90 transition-all">
               Share Profile
             </button>

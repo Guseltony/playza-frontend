@@ -40,7 +40,7 @@ const SessionLeaderboard = () => {
                   {item.rank === 1 ? (
                     <Trophy className="text-yellow-400 text-3xl" />
                   ) : item.rank === 2 ? (
-                    <BiMedal className="text-slate-400 text-xl" />
+                    <BiMedal className="text-slate-600 dark:text-slate-400 text-xl" />
                   ) : (
                     <GiMedal className="text-orange-400 text-xl" />
                   )}
@@ -83,7 +83,7 @@ const SessionLeaderboard = () => {
               className={`px-4 py-3 rounded-lg flex items-center justify-between ${
                 item.highlight === "me"
                   ? "bg-primary/10 border-l-4 border-primary"
-                  : "hover:bg-white/5"
+                  : "hover:bg-slate-900/5 dark:hover:bg-white/5"
               }`}
             >
               <div className="flex items-center gap-4">
@@ -96,7 +96,7 @@ const SessionLeaderboard = () => {
                     className="w-8 h-8 rounded-full object-cover"
                   />
                 ) : (
-                  <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center">
                     <BsPerson className="text-slate-600 text-sm" />
                   </div>
                 )}
@@ -141,11 +141,11 @@ const SessionLeaderboard = () => {
                       className="w-8 h-8 rounded-full object-cover"
                     />
                   ) : (
-                    <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center">
                       <BsPerson className="text-slate-600 text-sm" />
                     </div>
                   )}
-                  <p className="text-sm font-medium text-slate-400">
+                  <p className="text-sm font-medium text-slate-600 dark:text-slate-400">
                     {item.name}
                   </p>
                 </div>

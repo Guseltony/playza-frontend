@@ -41,7 +41,7 @@ const SessionPerformance = () => {
                 )}
 
                 {/* Title */}
-                <p className="text-slate-400 text-sm font-medium uppercase tracking-wider">
+                <p className="text-slate-600 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">
                   {card.title}
                 </p>
 
@@ -84,7 +84,7 @@ const SessionPerformance = () => {
                 <p className=" text-sm md:text-xl font-bold leading-tight">
                   Ready to climb the leaderboard?
                 </p>
-                <p className="text-slate-400 text-xs md:text-base font-normal leading-normal">
+                <p className="text-slate-600 dark:text-slate-400 text-xs md:text-base font-normal leading-normal">
                   Improve your score and claim the top spot before the session
                   ends.
                 </p>

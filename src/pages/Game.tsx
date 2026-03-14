@@ -116,11 +116,11 @@ const Game = () => {
                   >
                     <div className="tab-content space-y-6">
                       <div className="flex items-center justify-between mb-6">
-                        <h3 className="font-display text-xl font-bold text-white">
+                        <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white">
                           Live Sessions
                         </h3>
                         <div
-                          className="text-sm text-slate-400"
+                          className="text-sm text-slate-600 dark:text-slate-400"
                           id="current-date"
                         >
                           {fullDate}
@@ -132,20 +132,20 @@ const Game = () => {
                           <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
                           LIVE NOW
                         </span>
-                        <div className="flex items-center gap-2 text-slate-400 text-sm">
+                        <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 text-sm">
                           <Clock className="w-4 h-4" />
                           8:00 - 11:00
                         </div>
                       </div>
 
                       <div className="space-y-4 mb-6">
-                        <div className="flex justify-between items-center p-3 bg-white/5 rounded-lg">
+                        <div className="flex justify-between items-center p-3 bg-slate-900/5 dark:bg-white/5 rounded-lg">
                           <span className="text-gray-400 text-sm">
                             Session Players
                           </span>
                           <span
                             id="activePlayers"
-                            className="font-display text-lg font-bold text-white"
+                            className="font-display text-lg font-bold text-slate-900 dark:text-white"
                           >
                             {activePlayers}
                           </span>
@@ -163,7 +163,7 @@ const Game = () => {
                           </span>
                         </div>
 
-                        <div className="flex justify-between items-center p-3 bg-white/5 rounded-lg">
+                        <div className="flex justify-between items-center p-3 bg-slate-900/5 dark:bg-white/5 rounded-lg">
                           <span className="text-gray-400 text-sm">
                             Session Top Score
                           </span>
@@ -174,7 +174,7 @@ const Game = () => {
                       </div>
 
                       <Link to={`/games/${gameSlug}/session`}>
-                        <button className="w-full bg-linear-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 text-white font-bold py-4 rounded-xl transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-purple-500/25 font-display text-lg tracking-wide">
+                        <button className="w-full bg-linear-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 text-slate-900 dark:text-white font-bold py-4 rounded-xl transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-purple-500/25 font-display text-lg tracking-wide">
                           ENTER SESSION ARENA
                         </button>
                       </Link>

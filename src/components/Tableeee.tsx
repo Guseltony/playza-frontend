@@ -11,18 +11,18 @@ import { sessionLeaderboardData } from "@/data/games";
 const Tableeee = () => {
   return (
     <Table className="w-full text-left">
-      <TableHeader className="bg-accent/20 text-slate-400 text-[10px] uppercase font-bold">
+      <TableHeader className="bg-accent/20 text-slate-600 dark:text-slate-400 text-[10px] uppercase font-bold">
         <TableRow>
-          <TableHead className="px-2 sm:px-6 py-3 text-slate-400 text-[10px] uppercase font-bold">
+          <TableHead className="px-2 sm:px-6 py-3 text-slate-600 dark:text-slate-400 text-[10px] uppercase font-bold">
             Rank
           </TableHead>
-          <TableHead className="px-2 sm:px-6 py-3 text-slate-400 text-[10px] uppercase font-bold">
+          <TableHead className="px-2 sm:px-6 py-3 text-slate-600 dark:text-slate-400 text-[10px] uppercase font-bold">
             Username
           </TableHead>
-          <TableHead className="px-2 sm:px-6 py-3 text-slate-400 text-[10px] uppercase font-bold">
+          <TableHead className="px-2 sm:px-6 py-3 text-slate-600 dark:text-slate-400 text-[10px] uppercase font-bold">
             Score
           </TableHead>
-          <TableHead className="px-2 sm:px-6 py-3 text-slate-400 text-[10px] uppercase font-bold text-right">
+          <TableHead className="px-2 sm:px-6 py-3 text-slate-600 dark:text-slate-400 text-[10px] uppercase font-bold text-right">
             Time
           </TableHead>
         </TableRow>
@@ -48,10 +48,10 @@ const Tableeee = () => {
                     isGold
                       ? "bg-yellow-500/20 text-yellow-500"
                       : isSilver
-                        ? "bg-slate-400/20 text-slate-300"
+                        ? "bg-slate-400/20 text-slate-700 dark:text-slate-300"
                         : isMe
                           ? "bg-primary text-background-dark"
-                          : "text-slate-400"
+                          : "text-slate-600 dark:text-slate-400"
                   }`}
                 >
                   {user.rank}
@@ -59,14 +59,14 @@ const Tableeee = () => {
               </TableCell>
 
               <TableCell className="px-2 sm:px-6 py-4 flex items-center gap-3">
-                <div className="h-8 w-8 rounded-full bg-slate-700 overflow-hidden">
+                <div className="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
                   <img src={user.avatar} alt={user.name} />
                 </div>
                 <span
                   className={
                     isMe
-                      ? "font-bold text-white"
-                      : "font-medium text-white text-sm"
+                      ? "font-bold text-slate-900 dark:text-white"
+                      : "font-medium text-slate-900 dark:text-white text-sm"
                   }
                 >
                   {user.name}
@@ -75,13 +75,13 @@ const Tableeee = () => {
 
               <TableCell
                 className={`px-2 sm:px-6 py-4 font-bold ${
-                  isGold || isMe ? "text-primary" : "text-white"
+                  isGold || isMe ? "text-primary" : "text-slate-900 dark:text-white"
                 }`}
               >
                 {user.score.toLocaleString()}
               </TableCell>
 
-              <TableCell className="px-2 sm:px-6 py-4 text-right text-slate-400 text-sm">
+              <TableCell className="px-2 sm:px-6 py-4 text-right text-slate-600 dark:text-slate-400 text-sm">
                 {user.time}
               </TableCell>
             </TableRow>

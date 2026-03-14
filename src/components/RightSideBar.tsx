@@ -78,7 +78,7 @@ const RightSideBar = () => {
             </div>
           </div>
           <div className="flex gap-3">
-            <div className="shrink-0 w-8 h-8 bg-white/10 rounded flex items-center justify-center">
+            <div className="shrink-0 w-8 h-8 bg-slate-900/10 dark:bg-white/10 rounded flex items-center justify-center">
               <BiUserPlus className="  text-sm" />
             </div>
             <div>
@@ -97,15 +97,15 @@ const RightSideBar = () => {
         </h3>
         <div className="space-y-4">
           <div className="flex justify-between items-center">
-            <span className="text-xs text-slate-400">Total Players</span>
+            <span className="text-xs text-slate-600 dark:text-slate-400">Total Players</span>
             <span className="text-sm font-bold ">4,102</span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-xs text-slate-400">Matches (24h)</span>
+            <span className="text-xs text-slate-600 dark:text-slate-400">Matches (24h)</span>
             <span className="text-sm font-bold ">12,854</span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-xs text-slate-400">Paid Out Today</span>
+            <span className="text-xs text-slate-600 dark:text-slate-400">Paid Out Today</span>
             <span className="text-sm font-bold text-green-400">₦1.2M</span>
           </div>
         </div>
@@ -127,9 +127,9 @@ const RightSideBar = () => {
         </div>
       </div>
       {/* <!-- Support/Action --> */}
-      <button className="w-full glass hover:bg-white/5  p-4 rounded-lg flex items-center justify-between group">
+      <button className="w-full glass hover:bg-slate-900/5 dark:hover:bg-white/5  p-4 rounded-lg flex items-center justify-between group">
         <div className="flex items-center gap-3">
-          <HelpCircle className=" text-slate-400 text-sm group-hover:text-primary" />
+          <HelpCircle className=" text-slate-600 dark:text-slate-400 text-sm group-hover:text-primary" />
           <span className="text-xs font-bold">Player Support</span>
         </div>
         <ChevronRight className=" text-slate-600 text-sm group-hover:text-white" />

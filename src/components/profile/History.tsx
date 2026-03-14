@@ -49,12 +49,12 @@ const History = () => {
         ].map(({ label, slug }) => (
           <button
             onClick={() => setFilterBy(slug)}
-            className={`flex h-10 items-center justify-center gap-x-2 rounded-xl  px-5 font-bold text-sm transition-all glow-accent ${filterBy === slug ? "bg-primary" : "bg-slate-800/50 border border-border text-slate-100 hover:bg-slate-700"}`}
+            className={`flex h-10 items-center justify-center gap-x-2 rounded-xl  px-5 font-bold text-sm transition-all glow-accent ${filterBy === slug ? "bg-primary" : "bg-white dark:bg-slate-800/50 border border-border text-slate-900 dark:text-slate-100 hover:bg-slate-300 dark:hover:bg-slate-700"}`}
           >
             {label}
           </button>
         ))}
-        {/* <button className="flex h-10 items-center justify-center gap-x-2 rounded-xl bg-slate-800/50 border border-border-dark text-slate-100 px-5 font-bold text-sm hover:bg-slate-700 transition-all ml-auto">
+        {/* <button className="flex h-10 items-center justify-center gap-x-2 rounded-xl bg-white dark:bg-slate-800/50 border border-border-dark text-slate-900 dark:text-slate-100 px-5 font-bold text-sm hover:bg-slate-300 dark:hover:bg-slate-700 transition-all ml-auto">
           <span>Filter by Game</span>
           <span className="material-symbols-outlined text-[18px]">
             filter_list
@@ -67,22 +67,22 @@ const History = () => {
           <Table className="w-full text-left border-collapse">
             <TableHeader>
               <TableRow className="bg-surface-dark/80 border-b border-border-dark">
-                <TableHead className="px-6 py-4 text-slate-400 text-xs font-bold uppercase tracking-wider">
+                <TableHead className="px-6 py-4 text-slate-600 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">
                   Date
                 </TableHead>
-                <TableHead className="px-6 py-4 text-slate-400 text-xs font-bold uppercase tracking-wider">
+                <TableHead className="px-6 py-4 text-slate-600 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">
                   Game
                 </TableHead>
-                <TableHead className="px-6 py-4 text-slate-400 text-xs font-bold uppercase tracking-wider">
+                <TableHead className="px-6 py-4 text-slate-600 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">
                   Score
                 </TableHead>
-                <TableHead className="px-6 py-4 text-slate-400 text-xs font-bold uppercase tracking-wider">
+                <TableHead className="px-6 py-4 text-slate-600 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">
                   Rank
                 </TableHead>
-                <TableHead className="px-6 py-4 text-slate-400 text-xs font-bold uppercase tracking-wider">
+                <TableHead className="px-6 py-4 text-slate-600 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">
                   Entry Fee
                 </TableHead>
-                <TableHead className="px-6 py-4 text-slate-400 text-xs font-bold uppercase tracking-wider text-right">
+                <TableHead className="px-6 py-4 text-slate-600 dark:text-slate-400 text-xs font-bold uppercase tracking-wider text-right">
                   Result
                 </TableHead>
               </TableRow>
@@ -102,9 +102,9 @@ const History = () => {
                 }) => (
                   <TableRow
                     key={id}
-                    className="hover:bg-slate-800/30 transition-colors group"
+                    className="hover:bg-slate-200 dark:hover:bg-slate-800/30 transition-colors group"
                   >
-                    <TableCell className="px-6 py-5 text-slate-300 text-sm font-medium">
+                    <TableCell className="px-6 py-5 text-slate-700 dark:text-slate-300 text-sm font-medium">
                       {date}
                     </TableCell>
                     <TableCell className="px-6 py-5">
@@ -113,25 +113,25 @@ const History = () => {
                           src={banner}
                           className="size-10 rounded object-cover"
                         />
-                        <span className="text-slate-100 text-sm font-bold">
+                        <span className="text-slate-900 dark:text-slate-100 text-sm font-bold">
                           {game}
                         </span>
                       </div>
                     </TableCell>
                     <TableCell className="px-6 py-5">
-                      <span className="text-slate-100 font-mono text-sm bg-slate-800/50 px-2 py-1 rounded">
+                      <span className="text-slate-900 dark:text-slate-100 font-mono text-sm bg-white dark:bg-slate-800/50 px-2 py-1 rounded">
                         {score.toLocaleString()}pts
                       </span>
                     </TableCell>
                     <TableCell className="px-6 py-5">
                       <div className="flex items-center gap-2">
                         <div className="size-2 rounded-full bg-primary animate-pulse"></div>
-                        <span className="text-slate-300 text-sm">
+                        <span className="text-slate-700 dark:text-slate-300 text-sm">
                           {leaderboardRank}
                         </span>
                       </div>
                     </TableCell>
-                    <TableCell className="px-6 py-5 text-slate-400 text-sm">
+                    <TableCell className="px-6 py-5 text-slate-600 dark:text-slate-400 text-sm">
                       {entryFee}
                     </TableCell>
                     <TableCell className="px-6 py-5 text-right">
@@ -160,7 +160,7 @@ const History = () => {
             <button
               onClick={() => setPage((p) => Math.max(p - 1, 1))}
               disabled={page === 1}
-              className="size-10 rounded-xl bg-slate-800/50 border border-border-dark text-slate-400 flex items-center justify-center hover:text-primary transition-all"
+              className="size-10 rounded-xl bg-white dark:bg-slate-800/50 border border-border-dark text-slate-600 dark:text-slate-400 flex items-center justify-center hover:text-primary transition-all"
             >
               <MdChevronLeft />
             </button>
@@ -172,7 +172,7 @@ const History = () => {
                 className={`size-10 rounded-xl flex items-center justify-center ${
                   page === i + 1
                     ? " bg-primary text-background-dark font-bold text-sm shadow-lg glow-accent"
-                    : " bg-slate-800/50 border border-border-dark text-slate-400 hover:text-primary transition-all font-bold text-sm"
+                    : " bg-white dark:bg-slate-800/50 border border-border-dark text-slate-600 dark:text-slate-400 hover:text-primary transition-all font-bold text-sm"
                 }`}
               >
                 {i + 1}
@@ -181,7 +181,7 @@ const History = () => {
             <button
               onClick={() => setPage((p) => Math.max(p - 1, 1))}
               disabled={page === 1}
-              className="size-10 rounded-xl bg-slate-800/50 border border-border-dark text-slate-400 flex items-center justify-center hover:text-primary transition-all"
+              className="size-10 rounded-xl bg-white dark:bg-slate-800/50 border border-border-dark text-slate-600 dark:text-slate-400 flex items-center justify-center hover:text-primary transition-all"
             >
               <MdChevronRight />
             </button>

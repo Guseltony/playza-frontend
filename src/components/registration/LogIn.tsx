@@ -15,24 +15,24 @@ const LogIn = ({ onClick }: LoginProps) => {
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 mb-6">
             <LockOpen className=" text-primary text-3xl" />
           </div>
-          <h1 className="text-white text-3xl font-bold tracking-tight mb-2">
+          <h1 className="text-slate-900 dark:text-white text-3xl font-bold tracking-tight mb-2">
             Welcome Back
           </h1>
-          <p className="text-slate-400 text-sm">
+          <p className="text-slate-600 dark:text-slate-400 text-sm">
             Secure access to your competitive gaming assets
           </p>
         </div>
         <form className="space-y-3 md:space-y-6">
           {/* <!-- Identity Field --> */}
           <div className="space-y-2">
-            <label className="text-slate-300 text-sm font-semibold ml-1">
+            <label className="text-slate-700 dark:text-slate-300 text-sm font-semibold ml-1">
               Phone
             </label>
             <div className="relative group">
               <Phone className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-primary transition-colors text-[20px]" />
               <input
                 required
-                className="w-full bg-slate-900/50 border border-slate-800 focus:border-primary focus:ring-1 focus:ring-primary/50 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 outline-none transition-all"
+                className="w-full bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 focus:border-primary focus:ring-1 focus:ring-primary/50 rounded-xl py-4 pl-12 pr-4 text-slate-900 dark:text-white placeholder:text-slate-600 outline-none transition-all"
                 placeholder="07000509001"
                 type="text"
               />
@@ -41,7 +41,7 @@ const LogIn = ({ onClick }: LoginProps) => {
           {/* <!-- Password Field --> */}
           <div className="space-y-2">
             <div className="flex justify-between items-center px-1">
-              <label className="text-slate-300 text-sm font-semibold">
+              <label className="text-slate-700 dark:text-slate-300 text-sm font-semibold">
                 Password
               </label>
               <div
@@ -55,7 +55,7 @@ const LogIn = ({ onClick }: LoginProps) => {
               <Lock className=" absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-primary transition-colors text-[20px]" />
               <input
                 required
-                className="w-full bg-slate-900/50 border border-slate-800 focus:border-primary focus:ring-1 focus:ring-primary/50 rounded-xl py-4 pl-12 pr-12 text-white placeholder:text-slate-600 outline-none transition-all"
+                className="w-full bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 focus:border-primary focus:ring-1 focus:ring-primary/50 rounded-xl py-4 pl-12 pr-12 text-slate-900 dark:text-white placeholder:text-slate-600 outline-none transition-all"
                 placeholder="Enter your password"
                 type="password"
               />
@@ -74,7 +74,7 @@ const LogIn = ({ onClick }: LoginProps) => {
             </button>
             {/* <div className="relative py-2"> */}
               {/* <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-slate-800"></div>
+                <div className="w-full border-t border-slate-200 dark:border-slate-800"></div>
               </div> */}
               {/* <div className="relative flex justify-center text-xs uppercase">
                 <span className="bg-[#101f22] px-3 text-slate-500 font-medium">
@@ -83,7 +83,7 @@ const LogIn = ({ onClick }: LoginProps) => {
               </div> */}
             {/* </div> */}
             {/* <button
-              className="w-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold py-3.5 rounded-xl transition-all flex items-center justify-center gap-3"
+              className="w-full bg-slate-900/5 dark:bg-white/5 hover:bg-slate-900/10 dark:hover:bg-white/10 border border-slate-900/10 dark:border-white/10 text-slate-900 dark:text-white font-semibold py-3.5 rounded-xl transition-all flex items-center justify-center gap-3"
               type="button"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24">

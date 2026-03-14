@@ -12,7 +12,7 @@ const SessionActivities = () => {
           <h1 className=" tracking-tight text-lg lg:text-4xl font-bold leading-tight">
             Live Activity
           </h1>
-          <p className="text-slate-400 text-sm">
+          <p className="text-slate-600 dark:text-slate-400 text-sm">
             Real-time updates from Global Session #402
           </p>
         </div>
@@ -37,7 +37,7 @@ const SessionActivities = () => {
             <p className=" text-sm md:text-base font-semibold leading-normal group-hover:text-primary transition-colors">
               Player entered the lobby
             </p>
-            <p className="text-slate-400 text-xs md:text-sm font-normal line-clamp-1">
+            <p className="text-slate-600 dark:text-slate-400 text-xs md:text-sm font-normal line-clamp-1">
               User <span>DarkKnight</span> joined the
               match session
             </p>
@@ -57,7 +57,7 @@ const SessionActivities = () => {
             <p className=" text-sm md:text-base font-semibold leading-normal group-hover:text-primary transition-colors">
               Rank changed
             </p>
-            <p className="text-slate-400 text-xs md:text-sm font-normal line-clamp-1">
+            <p className="text-slate-600 dark:text-slate-400 text-xs md:text-sm font-normal line-clamp-1">
               <span>ShadowMaster</span> moved up to{" "}
               <span className="text-primary font-medium">Rank #2</span>
             </p>
@@ -77,7 +77,7 @@ const SessionActivities = () => {
             <p className=" text-sm md:text-base font-semibold leading-normal group-hover:text-primary transition-colors">
               Score submitted
             </p>
-            <p className="text-slate-400 text-xs md:text-sm font-normal line-clamp-1">
+            <p className="text-slate-600 dark:text-slate-400 text-xs md:text-sm font-normal line-clamp-1">
               <span>ProGamer_X</span> finished with a
               score of <span className="text-primary font-bold">12,450</span>
             </p>
@@ -97,7 +97,7 @@ const SessionActivities = () => {
             <p className=" text-sm md:text-base font-semibold leading-normal group-hover:text-primary transition-colors">
               Achievement Unlocked
             </p>
-            <p className="text-slate-400 text-xs md:text-sm font-normal line-clamp-1">
+            <p className="text-slate-600 dark:text-slate-400 text-xs md:text-sm font-normal line-clamp-1">
               <span>AceHunter</span> earned the
               "Flawless Execution" badge
             </p>
@@ -117,7 +117,7 @@ const SessionActivities = () => {
             <p className=" text-sm md:text-base font-semibold leading-normal group-hover:text-primary transition-colors">
               Player left
             </p>
-            <p className="text-slate-400 text-sm font-normal line-clamp-1">
+            <p className="text-slate-600 dark:text-slate-400 text-sm font-normal line-clamp-1">
               User <span>SilentWolf</span> has
               disconnected
             </p>
@@ -130,7 +130,7 @@ const SessionActivities = () => {
         </div>
         {/* <!-- Load More Button --> */}
         <div className="pt-6 flex justify-center">
-          <button className="flex items-center gap-2 px-6 py-2.5 rounded-lg border border-neutral-800 hover:border-primary/50 text-slate-400 hover:text-primary transition-all text-sm font-semibold">
+          <button className="flex items-center gap-2 px-6 py-2.5 rounded-lg border border-neutral-800 hover:border-primary/50 text-slate-600 dark:text-slate-400 hover:text-primary transition-all text-sm font-semibold">
             <span className="material-symbols-outlined text-lg">
               expand_more
             </span>

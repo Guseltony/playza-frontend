@@ -86,10 +86,10 @@ const LeaderBoard = () => {
                         isGold
                           ? "bg-yellow-500/20 text-yellow-500"
                           : isSilver
-                            ? "bg-slate-400/20 text-slate-300"
+                            ? "bg-slate-400/20 text-slate-700 dark:text-slate-300"
                             : isMe
                               ? "bg-primary text-background-dark"
-                              : "text-slate-400"
+                              : "text-slate-600 dark:text-slate-400"
                       }`}
                     >
                       {rank}
@@ -97,7 +97,7 @@ const LeaderBoard = () => {
                   </TableCell>
 
                   <TableCell className="px-2 sm:px-6 py-4 flex items-center gap-3">
-                    <div className="h-8 w-8 rounded-full bg-slate-700 overflow-hidden">
+                    <div className="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
                       <img src={avatar} alt={username} />
                     </div>
                     <span

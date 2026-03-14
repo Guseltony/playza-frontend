@@ -32,7 +32,7 @@ const FeatureGameCard = ({
         </div>
         <div className="flex items-center gap-12">
           <div>
-            <div className="text-xs text-slate-400 uppercase font-bold tracking-widest mb-1">
+            <div className="text-xs text-slate-600 dark:text-slate-400 uppercase font-bold tracking-widest mb-1">
               Current Game Pool
             </div>
             <div className="flex items-center text-base md:text-xl lg:text-3xl font-display font-bold text-accent">
@@ -40,12 +40,12 @@ const FeatureGameCard = ({
               <TrendingUp className=" text-green-400 ml-1" size={15} />
             </div>
           </div>
-          <div className="h-10 w-px bg-white/20"></div>
+          <div className="h-10 w-px bg-slate-900/20 dark:bg-white/20"></div>
           <div>
-            <div className="text-xs text-slate-400 uppercase font-bold tracking-widest mb-1">
+            <div className="text-xs text-slate-600 dark:text-slate-400 uppercase font-bold tracking-widest mb-1">
               Time Remaining
             </div>
-            <div className="text-base md:text-xl lg:text-3xl font-display font-bold text-white tabular-nums">
+            <div className="text-base md:text-xl lg:text-3xl font-display font-bold text-slate-900 dark:text-white tabular-nums">
               00:42:15
             </div>
           </div>

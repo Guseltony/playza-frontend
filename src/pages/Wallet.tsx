@@ -23,10 +23,10 @@ const Wallet = () => {
       {/* <!-- Hero Balance Section --> */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <h2 className="text-3xl font-black text-slate-100 tracking-tight">
+          <h2 className="text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
             Wallet &amp; Finances
           </h2>
-          <p className="text-slate-400 text-sm mt-1">
+          <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
             Manage your tournament earnings and transaction limits.
           </p>
         </div>
@@ -36,12 +36,12 @@ const Wallet = () => {
           <div className="absolute -top-24 -right-24 size-64 bg-primary/10 rounded-full blur-[100px] group-hover:bg-primary/20 transition-all"></div>
           <div>
             <div className="flex items-center justify-between mb-2">
-              <p className="text-slate-400 font-medium tracking-wide uppercase text-xs">
+              <p className="text-slate-600 dark:text-slate-400 font-medium tracking-wide uppercase text-xs">
                 Available Balance
               </p>
               <Info className="text-primary/50" />
             </div>
-            <h2 className="text-xl md:text-2xl xl:text-5xl font-extrabold text-white tracking-tight flex items-baseline gap-2">
+            <h2 className="text-xl md:text-2xl xl:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-baseline gap-2">
               ₦42,500
               <span className="text-lg font-normal text-slate-500">.00</span>
             </h2>
@@ -58,7 +58,7 @@ const Wallet = () => {
             <Link
               to={"/wallet/withdraw"}
               state={{ background: location }}
-              className="flex-1 bg-transparent border border-white/20 hover:border-primary/50 text-white font-bold py-2 md:py-4 rounded-xl transition-all flex items-center justify-center gap-2 text-xs md:text-base"
+              className="flex-1 bg-transparent border border-slate-900/20 dark:border-white/20 hover:border-primary/50 text-slate-900 dark:text-white font-bold py-2 md:py-4 rounded-xl transition-all flex items-center justify-center gap-2 text-xs md:text-base"
             >
               <MdPayments />
               Withdraw
@@ -68,13 +68,13 @@ const Wallet = () => {
         {/* <!-- Bank Info Card --> */}
         <div className="glass-card rounded-xl p-8 border-l-4 border-l-primary/50">
           <div className="flex justify-between items-start mb-6">
-            <h3 className="text-lg font-bold text-white">Bank Information</h3>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-white">Bank Information</h3>
             <span className="bg-primary/10 text-primary text-[10px] px-2 py-1 rounded-full font-bold uppercase tracking-wider border border-primary/20 flex items-center gap-1">
               <VerifiedIcon className="text-[12px]" /> Verified
             </span>
           </div>
           <div className="space-y-4">
-            <div className="flex items-center gap-4 p-3 rounded-lg bg-white/5 border border-white/5">
+            <div className="flex items-center gap-4 p-3 rounded-lg bg-slate-900/5 dark:bg-white/5 border border-white/5">
               <div
                 className="size-10 bg-white rounded-lg flex items-center justify-center p-1"
                 data-alt="Zenith Bank Logo"
@@ -88,17 +88,17 @@ const Wallet = () => {
               </div>
               <div>
                 <p className="text-xs text-slate-500">Bank Name</p>
-                <p className="text-sm font-bold text-white">Zenith Bank PLC</p>
+                <p className="text-sm font-bold text-slate-900 dark:text-white">Zenith Bank PLC</p>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <p className="text-xs text-slate-500">Account Name</p>
-                <p className="text-sm font-medium text-white">John Doe</p>
+                <p className="text-sm font-medium text-slate-900 dark:text-white">John Doe</p>
               </div>
               <div>
                 <p className="text-xs text-slate-500">Account Number</p>
-                <p className="text-sm font-medium text-white">**** 8841</p>
+                <p className="text-sm font-medium text-slate-900 dark:text-white">**** 8841</p>
               </div>
             </div>
             <button className="w-fit mt-2 text-xs text-primary font-bold hover:underline text-left cursor-pointer border p-2">
@@ -114,11 +114,11 @@ const Wallet = () => {
             <div className="size-10 rounded-lg bg-green-500/10 flex items-center justify-center text-green-500">
               <TrendingUp />
             </div>
-            <p className="text-sm text-slate-400 font-medium">
+            <p className="text-sm text-slate-600 dark:text-slate-400 font-medium">
               Total Deposited
             </p>
           </div>
-          <p className="text-2xl font-bold text-white">₦150,000.00</p>
+          <p className="text-2xl font-bold text-slate-900 dark:text-white">₦150,000.00</p>
           <p className="text-xs text-green-500 mt-2 font-medium">
             +12.5% from last month
           </p>
@@ -128,11 +128,11 @@ const Wallet = () => {
             <div className="size-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-500">
               <TrendingDown />
             </div>
-            <p className="text-sm text-slate-400 font-medium">
+            <p className="text-sm text-slate-600 dark:text-slate-400 font-medium">
               Total Withdrawn
             </p>
           </div>
-          <p className="text-2xl font-bold text-white">₦100,000.00</p>
+          <p className="text-2xl font-bold text-slate-900 dark:text-white">₦100,000.00</p>
           <p className="text-xs text-red-500 mt-2 font-medium">
             -4.2% from last month
           </p>
@@ -142,9 +142,9 @@ const Wallet = () => {
             <div className="size-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-500">
               <MdPendingActions />
             </div>
-            <p className="text-sm text-slate-400 font-medium">Pending</p>
+            <p className="text-sm text-slate-600 dark:text-slate-400 font-medium">Pending</p>
           </div>
-          <p className="text-2xl font-bold text-white">₦7,500.00</p>
+          <p className="text-2xl font-bold text-slate-900 dark:text-white">₦7,500.00</p>
           <p className="text-xs text-amber-500 mt-2 font-medium">
             2 Transactions in process
           </p>
@@ -152,8 +152,8 @@ const Wallet = () => {
       </section> */}
       {/* <!-- Transaction History --> */}
       <section className="glass-card rounded-xl overflow-hidden">
-        <div className="px-2 md:px-8 py-6 border-b border-white/10 flex items-center justify-between">
-          <h3 className="text-lg font-bold text-white">Transaction History</h3>
+        <div className="px-2 md:px-8 py-6 border-b border-slate-900/10 dark:border-white/10 flex items-center justify-between">
+          <h3 className="text-lg font-bold text-slate-900 dark:text-white">Transaction History</h3>
           <Link
             to={"/wallet/transactions"}
             className="text-sm font-bold text-primary hover:text-primary/80 transition-colors flex items-center gap-1 cursor-pointer"
@@ -163,7 +163,7 @@ const Wallet = () => {
         </div>
         <div className="overflow-x-auto">
           <Table className="w-full text-left">
-            <TableHeader className="bg-white/5 text-slate-400 text-xs uppercase tracking-wider">
+            <TableHeader className="bg-slate-900/5 dark:bg-white/5 text-slate-600 dark:text-slate-400 text-xs uppercase tracking-wider">
               <TableRow>
                 <TableHead className="px-8 py-4 font-semibold">Type</TableHead>
                 <TableHead className="px-8 py-4 font-semibold">
@@ -177,14 +177,14 @@ const Wallet = () => {
               </TableRow>
             </TableHeader>
             <TableBody className="divide-y divide-white/5 text-sm">
-              <TableRow className="hover:bg-white/5 transition-colors">
+              <TableRow className="hover:bg-slate-900/5 dark:hover:bg-white/5 transition-colors">
                 <TableCell className="px-8 py-4">
                   <div className="flex items-center gap-3">
                     <MdDownload className=" text-green-500" />
-                    <span className="font-medium text-white">Deposit</span>
+                    <span className="font-medium text-slate-900 dark:text-white">Deposit</span>
                   </div>
                 </TableCell>
-                <TableCell className="px-8 py-4 font-bold text-white">
+                <TableCell className="px-8 py-4 font-bold text-slate-900 dark:text-white">
                   ₦25,000.00
                 </TableCell>
                 <TableCell className="px-8 py-4">
@@ -192,21 +192,21 @@ const Wallet = () => {
                     Completed
                   </span>
                 </TableCell>
-                <TableCell className="px-8 py-4 text-slate-400">
+                <TableCell className="px-8 py-4 text-slate-600 dark:text-slate-400">
                   Oct 24, 2023 • 14:22
                 </TableCell>
                 <TableCell className="px-8 py-4 text-slate-500 font-mono text-xs">
                   #TRX-99421
                 </TableCell>
               </TableRow>
-              <TableRow className="hover:bg-white/5 transition-colors">
+              <TableRow className="hover:bg-slate-900/5 dark:hover:bg-white/5 transition-colors">
                 <TableCell className="px-8 py-4">
                   <div className="flex items-center gap-3">
                     <MdUpload className=" text-red-500" />
-                    <span className="font-medium text-white">Withdrawal</span>
+                    <span className="font-medium text-slate-900 dark:text-white">Withdrawal</span>
                   </div>
                 </TableCell>
-                <TableCell className="px-8 py-4 font-bold text-white">
+                <TableCell className="px-8 py-4 font-bold text-slate-900 dark:text-white">
                   ₦10,000.00
                 </TableCell>
                 <TableCell className="px-8 py-4">
@@ -214,23 +214,23 @@ const Wallet = () => {
                     Pending
                   </span>
                 </TableCell>
-                <TableCell className="px-8 py-4 text-slate-400">
+                <TableCell className="px-8 py-4 text-slate-600 dark:text-slate-400">
                   Oct 23, 2023 • 09:15
                 </TableCell>
                 <TableCell className="px-8 py-4 text-slate-500 font-mono text-xs">
                   #TRX-99418
                 </TableCell>
               </TableRow>
-              <TableRow className="hover:bg-white/5 transition-colors">
+              <TableRow className="hover:bg-slate-900/5 dark:hover:bg-white/5 transition-colors">
                 <TableCell className="px-8 py-4">
                   <div className="flex items-center gap-3">
                     <MdSportsEsports className=" text-primary" />
-                    <span className="font-medium text-white">
+                    <span className="font-medium text-slate-900 dark:text-white">
                       Tournament Fee
                     </span>
                   </div>
                 </TableCell>
-                <TableCell className="px-8 py-4 font-bold text-white">
+                <TableCell className="px-8 py-4 font-bold text-slate-900 dark:text-white">
                   ₦5,000.00
                 </TableCell>
                 <TableCell className="px-8 py-4">
@@ -238,23 +238,23 @@ const Wallet = () => {
                     Completed
                   </span>
                 </TableCell>
-                <TableCell className="px-8 py-4 text-slate-400">
+                <TableCell className="px-8 py-4 text-slate-600 dark:text-slate-400">
                   Oct 21, 2023 • 18:45
                 </TableCell>
                 <TableCell className="px-8 py-4 text-slate-500 font-mono text-xs">
                   #TRX-99405
                 </TableCell>
               </TableRow>
-              <TableRow className="hover:bg-white/5 transition-colors">
+              <TableRow className="hover:bg-slate-900/5 dark:hover:bg-white/5 transition-colors">
                 <TableCell className="px-8 py-4">
                   <div className="flex items-center gap-3">
                     <MdMilitaryTech className=" text-green-500" />
-                    <span className="font-medium text-white">
+                    <span className="font-medium text-slate-900 dark:text-white">
                       Reward Payout
                     </span>
                   </div>
                 </TableCell>
-                <TableCell className="px-8 py-4 font-bold text-white">
+                <TableCell className="px-8 py-4 font-bold text-slate-900 dark:text-white">
                   ₦12,500.00
                 </TableCell>
                 <TableCell className="px-8 py-4">
@@ -262,7 +262,7 @@ const Wallet = () => {
                     Completed
                   </span>
                 </TableCell>
-                <TableCell className="px-8 py-4 text-slate-400">
+                <TableCell className="px-8 py-4 text-slate-600 dark:text-slate-400">
                   Oct 19, 2023 • 11:30
                 </TableCell>
                 <TableCell className="px-8 py-4 text-slate-500 font-mono text-xs">

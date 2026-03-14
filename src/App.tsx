@@ -21,6 +21,7 @@ import History from "./components/profile/History";
 import Settings from "./components/profile/Settings";
 import Achievements from "./components/profile/Achievements";
 import { ThemeProvider } from "./components/theme/ThemeProvider";
+import Referral from "./pages/Referral";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -58,6 +59,7 @@ const App = () => {
               <Route path="/gameSession/Session" element={<TempleRunFrame />} />
               <Route path="/registration" element={<Registration />} />
               <Route path="/wallet/transactions" element={<Transactions />} />
+              <Route path="/referral" element={<Referral />} />
               <Route path="/profile" element={<Profile />}>
                 <Route index element={<Overview />} />
                 <Route path="overview" element={<Overview />} />

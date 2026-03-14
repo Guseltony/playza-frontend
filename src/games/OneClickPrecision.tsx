@@ -51,7 +51,7 @@ export function OneClickPrecision({ mode, onExit }: OneClickPrecisionProps) {
   const accuracy = hits + misses > 0 ? Math.round((hits / (hits + misses)) * 100) : 0;
 
   return (
-    <div className="min-h-screen bg-linear-to-b from-gray-900 via-slate-900 to-slate-800 text-white px-4 py-24">
+    <div className="min-h-screen bg-linear-to-b from-gray-900 via-slate-900 to-slate-800 text-slate-900 dark:text-white px-4 py-24">
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
@@ -118,7 +118,7 @@ export function OneClickPrecision({ mode, onExit }: OneClickPrecisionProps) {
                 transform: "translate(-50%, -50%)",
               }}
             >
-              <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-2xl">
+              <div className="absolute inset-0 flex items-center justify-center text-slate-900 dark:text-white font-bold text-2xl">
                 🎯
               </div>
             </button>
@@ -143,7 +143,7 @@ export function OneClickPrecision({ mode, onExit }: OneClickPrecisionProps) {
             )}
             <button
               onClick={onExit}
-              className="w-full bg-linear-to-b from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold py-4 rounded-xl transition-all"
+              className="w-full bg-linear-to-b from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-slate-900 dark:text-white font-bold py-4 rounded-xl transition-all"
             >
               Back to Games
             </button>
