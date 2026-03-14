@@ -1,8 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { 
-  Trophy, 
-  Gamepad2, 
-  Users, 
   ChevronLeft, 
   ChevronRight, 
   Play,
@@ -10,6 +7,10 @@ import {
   Swords
 } from "lucide-react";
 import { Link } from "react-router";
+import { games } from "@/data/games";
+
+const tournamentGame = games.find((g) => g.mode === "Tournament") || games[1];
+const newReleaseGame = games.find((g) => g.badge === "NEW" || g.category === "Arcade") || games[1];
 
 const slides = [
   {
@@ -20,57 +21,32 @@ const slides = [
     description: "Join competitive arcade games, climb the leaderboard, and earn rewards based on your performance. Challenge other players and prove your skills.",
     primaryAction: { label: "Play Games", href: "/games" },
     secondaryAction: { label: "View Leaderboard", href: "/leaderboard" },
-    visual: (
-      <div className="relative w-full h-full min-h-50 flex items-center justify-center">
-        <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full animate-pulse"></div>
-        <div className="relative z-10 glass-card p-6 rounded-2xl border border-primary/30 flex flex-col items-center gap-4 transform rotate-2 hover:rotate-0 transition-transform duration-500">
-          <Gamepad2 size={64} className="text-primary drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]" />
-          <div className="flex gap-2">
-            <span className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></span>
-            <span className="text-xs font-bold text-green-400 tracking-widest uppercase">Live Matchmaking</span>
-          </div>
-        </div>
-      </div>
-    )
+    visual: null,
+    backgroundImage: null
   },
   {
     id: 2,
     badge: "Live Tournament",
-    title: "Temple Run",
-    subtitle: "Tournament",
-    description: "Compete against other players in the upcoming Temple Run tournament. Top players take home the prize. Start Time: Saturday 7PM.",
+    title: tournamentGame.title,
+    subtitle: null,
+    description: `Compete against other players in the upcoming ${tournamentGame.title} tournament. Top players take home the prize. Duration: ${Math.floor(tournamentGame.durationInSeconds / 60)} mins.`,
     stats: [
       { label: "Prize Pool", value: "₦50,000" },
-      { label: "Entry Fee", value: "₦200" }
+      { label: "Entry Fee", value: `₦${tournamentGame.entryFee.toLocaleString()}` }
     ],
-    primaryAction: { label: "Join Tournament", href: "/tournaments" },
-    visual: (
-      <div className="relative w-full h-full min-h-50 flex justify-center items-center">
-        <div className="absolute inset-0 bg-yellow-500/20 blur-3xl rounded-full"></div>
-        <div className="relative z-10 glass-card p-8 rounded-2xl neon-gold flex flex-col items-center gap-2 transform -rotate-2 hover:rotate-0 transition-transform duration-500">
-           <Trophy size={72} className="text-yellow-400 drop-shadow-[0_0_20px_rgba(251,191,36,0.6)]" />
-           <div className="text-2xl font-display font-black text-white mt-2">₦50,000</div>
-           <div className="text-xs text-yellow-400 font-bold uppercase tracking-widest">Prize Pool</div>
-        </div>
-      </div>
-    )
+    primaryAction: { label: "Join Tournament", href: `/tournaments/${tournamentGame.slug}` },
+    visual: null,
+    backgroundImage: tournamentGame.thumbnail
   },
   {
     id: 3,
     badge: "New Release",
-    title: "New Game Now Live",
-    subtitle: "Candy Dash",
-    description: "Candy Dash is now available on Playza. Jump into the game, beat the high score, and climb the leaderboard.",
-    primaryAction: { label: "Play Now", href: "/games/candy-dash" },
-    visual: (
-      <div className="relative w-full h-full min-h-50 flex items-center justify-center">
-        <div className="absolute inset-0 bg-pink-500/20 blur-3xl rounded-full"></div>
-        <div className="relative z-10 glass-card p-6 rounded-2xl border border-pink-500/30 w-48 h-48 flex flex-col items-center justify-center hover:scale-105 transition-transform duration-500">
-           <div className="text-pink-400 font-display text-4xl font-black mb-2">9,999</div>
-           <div className="text-xs text-slate-300 font-bold uppercase tracking-widest text-center">High Score <br/> To Beat</div>
-        </div>
-      </div>
-    )
+    title: newReleaseGame.title,
+    subtitle: null,
+    description: `${newReleaseGame.title} is now available on Playza. Jump into the game, set a high score, and climb the leaderboard.`,
+    primaryAction: { label: "Play Now", href: `/games/${newReleaseGame.slug}` },
+    visual: null,
+    backgroundImage: newReleaseGame.thumbnail
   },
   {
     id: 4,
@@ -79,14 +55,8 @@ const slides = [
     subtitle: "Earn Bonuses.",
     description: "Share your referral link and earn bonuses when your friends join and start playing games on Playza.",
     primaryAction: { label: "Invite Friends", href: "/referral" },
-    visual: (
-      <div className="relative w-full h-full min-h-50 flex items-center justify-center">
-         <div className="absolute inset-0 bg-cyan-500/20 blur-3xl rounded-full"></div>
-         <div className="relative z-10 glass-card p-6 rounded-2xl neon-border flex items-center justify-center group">
-            <Users size={64} className="text-cyan-400 group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_15px_rgba(6,182,212,0.5)]" />
-         </div>
-      </div>
-    )
+    visual: null,
+    backgroundImage: null
   }
 ];
 
@@ -130,7 +100,7 @@ const HeroBanner = () => {
 
   return (
     <section 
-      className="relative w-full rounded-3xl overflow-hidden glass border-slate-900/10 dark:border-white/10 group min-h-112.5 lg:min-h-100"
+      className="relative w-full rounded-3xl overflow-hidden glass border-slate-900/10 dark:border-white/10 group flex flex-col min-h-100"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onFocus={() => setIsHovered(true)}
@@ -139,21 +109,38 @@ const HeroBanner = () => {
       {/* Background with stars animation */}
       <div className="stars-bg"></div>
       
-      {/* Overlay gradient */}
-      <div className="absolute inset-0 bg-linear-to-r from-[#020617] via-[#020617]/80 to-transparent z-0"></div>
+      {/* Overlay gradient (Only for slides WITHOUT background image) */}
+      <div className="absolute inset-0 bg-linear-to-b from-[#020617]/40 via-[#020617]/80 to-[#020617] z-0"></div>
 
       {/* Main Content Area */}
-      <div className="relative z-10 w-full h-full">
+      <div className="relative z-10 w-full flex-1 flex flex-col">
         {slides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`absolute inset-0 w-full h-full p-6 md:p-10 lg:p-12 transition-opacity duration-700 ease-in-out flex flex-col-reverse lg:flex-row items-center gap-8 ${
-              index === currentSlide ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+            className={`absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out flex flex-col lg:flex-row items-center justify-center ${
+              index === currentSlide ? "opacity-100 pointer-events-auto z-10" : "opacity-0 pointer-events-none z-0"
             }`}
             // aria-hidden={index !== currentSlide ? "true" : "false"}
           >
-            {/* Left Content Column */}
-            <div className="w-full lg:w-1/2 flex flex-col justify-center h-full space-y-4 md:space-y-6">
+            {/* Slide Background Image */}
+            {slide.backgroundImage && (
+              <>
+                <div 
+                  className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat transition-transform duration-10000 ease-linear transform scale-105"
+                  style={{ 
+                    backgroundImage: `url(${slide.backgroundImage})`,
+                    transform: index === currentSlide ? 'scale(1)' : 'scale(1.05)'
+                  }}
+                />
+                <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px] z-0"></div>
+                {/* Specific glow based on badge */}
+                {slide.badge === "Live Tournament" && <div className="absolute inset-0 bg-yellow-500/10 z-0"></div>}
+                {slide.badge === "New Release" && <div className="absolute inset-0 bg-pink-500/10 z-0"></div>}
+              </>
+            )}
+
+            {/* Content Column (Centered) */}
+            <div className={`relative z-20 w-full flex flex-col flex-1 space-y-2 md:space-y-4 p-2 ${slide.visual ? 'lg:w-1/2 justify-center' : 'items-center text-center justify-center'}`}>
               
               <div className="inline-flex w-fit items-center gap-2 bg-primary/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-primary/30">
                 <span className="text-xs font-bold uppercase tracking-widest text-primary-foreground dark:text-primary">
@@ -162,26 +149,25 @@ const HeroBanner = () => {
                 {slide.id === 1 && <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>}
               </div>
               
-              <div className="space-y-2">
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-black font-display tracking-tight text-white leading-tight">
+              <div className={`space-y-3 ${!slide.visual ? 'text-center' : ''} max-w-3xl`}>
+                <h1 className="text-3xl md:text-4xl uppercase font-black font-display tracking-tight text-white leading-[1.15] drop-shadow-2xl">
                   {slide.title}
-                  <br className="hidden md:block"/>
-                  <span className="gradient-text">{slide.subtitle && ` ${slide.subtitle}`}</span>
+                  <span className="gradient-text drop-shadow-amber-600">{slide.subtitle && ` ${slide.subtitle}`}</span>
                 </h1>
-                <p className="text-sm md:text-base text-slate-300 max-w-lg leading-relaxed pt-2">
+                <p className={`text-sm text-slate-200/90 max-w-2xl leading-relaxed pt-1 drop-shadow-lg font-medium ${!slide.visual ? 'mx-auto' : ''}`}>
                   {slide.description}
                 </p>
               </div>
               
               {/* Optional Stats for slides like Tournament */}
               {slide.stats && (
-                <div className="flex items-center gap-8 py-2">
+                <div className={`flex items-center gap-8 py-2 ${!slide.visual ? 'justify-center' : ''}`}>
                   {slide.stats.map((stat, i) => (
-                    <div key={i}>
-                      <div className="text-xs text-slate-400 uppercase font-bold tracking-widest mb-1">
+                    <div key={i} className={!slide.visual ? 'text-center' : ''}>
+                      <div className="text-xs text-slate-300 uppercase font-bold tracking-widest mb-1 drop-shadow-sm">
                         {stat.label}
                       </div>
-                      <div className="text-lg md:text-2xl font-display font-bold text-white tabular-nums">
+                      <div className="text-xl md:text-2xl font-display font-black text-white tabular-nums drop-shadow-md">
                         {stat.value}
                       </div>
                     </div>
@@ -190,10 +176,10 @@ const HeroBanner = () => {
               )}
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-4 pt-4">
+              <div className={`flex items-center gap-2 md:gap-4 pt-2 ${!slide.visual ? 'justify-center' : ''}`}>
                 <Link
                   to={slide.primaryAction.href}
-                  className="px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-xl transition-all duration-300 flex items-center gap-2 glow-primary shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] hover:-translate-y-1"
+                  className={`px-6 py-3 ${slide.backgroundImage ? 'bg-primary hover:bg-primary/90 text-primary-foreground' : 'bg-primary hover:bg-primary/90 text-primary-foreground'} font-bold rounded-xl transition-all duration-300 flex items-center gap-2 glow-primary shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] hover:-translate-y-1`}
                 >
                   {slide.id === 1 ? <Play size={18} fill="currentColor" /> : null}
                   {slide.id === 2 ? <Swords size={18} /> : null}
@@ -203,7 +189,7 @@ const HeroBanner = () => {
                 {slide.secondaryAction && (
                   <Link
                     to={slide.secondaryAction.href}
-                    className="px-6 py-3 bg-white/5 hover:bg-white/10 text-white font-bold rounded-xl transition-all duration-300 backdrop-blur-md border border-white/10 flex items-center gap-2 hover:-translate-y-1"
+                    className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-all duration-300 backdrop-blur-md border border-white/20 flex items-center gap-2 hover:-translate-y-1"
                   >
                     <TrendingUp size={18} className="text-primary" />
                     {slide.secondaryAction.label}
@@ -213,10 +199,13 @@ const HeroBanner = () => {
               
             </div>
 
-            {/* Right Visual Column */}
-            <div className="w-full lg:w-1/2 h-50 md:h-75 lg:h-full flex items-center justify-center">
-              {slide.visual}
-            </div>
+            {/* Right Visual Column (if any) */}
+            {slide.visual && (
+              <div className="relative z-10 w-full lg:w-1/2 flex-1 min-h-62 sm:min-h-75 lg:min-h-0 lg:h-full flex items-center justify-center py-4 lg:py-0 mt-6 lg:mt-0">
+                {slide.visual}
+              </div>
+            )}
+            
             
           </div>
         ))}

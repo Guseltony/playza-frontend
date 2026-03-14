@@ -14,43 +14,38 @@ const GamesCard = ({
   badge,
 }: Game) => {
   return (
-    <div className=" max-w-58 border-2 border-red-800 min-h-44 relative glass overflow-hidden group hover:border-primary transition-all">
-      {/* <div className="w-full h-full absolute inset-0 bg-linear-to-t z-12 from-[#091f00] to-transparent"></div> */}
-      <Link to={`/games/${slug}`} key={id} className="z-15">
-        <div className="h-44 w-full relative">
-          <span className={`absolute top-2 left-2 z-15`}>
-            {(badge === "NEW" || badge === "HOT") && (
-              <GiFlame
-                className={` text-xl ${(badge === "NEW" || badge === "HOT") && badgeStyles[badge]}`}
-              />
-            )}
-          </span>
+    <div className="game-card-root max-w-56 overflow-hidden">
+      <Link to={`/games/${slug}`} key={id} className="block relative">
+        <div className="game-card-img-wrapper">
+          {badge && (badge === "NEW" || badge === "HOT") && (
+            <div className={`game-card-badge bg-black/50 ${badgeStyles[badge]}`}>
+              <GiFlame /> {badge}
+            </div>
+          )}
+          
           <img
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-            data-alt="Futuristic esports arena with neon lights"
+            className="game-card-img"
             src={thumbnail}
-            alt={slug}
+            alt={title}
             loading="lazy"
           />
-          <div className="bg-secondary/30 absolute top-2 right-2 flex gap-1 z-15 backdrop-blur-md">
-            <span className="px-2 py-0.5 rounded text-sm font-extrabold ">
-              ₦{entryFee.toLocaleString()}
-            </span>
+          
+          <div className="game-card-fee">
+            ₦{entryFee.toLocaleString()}
           </div>
-          <div className="absolute w-16 h-6 bg-black top-2 right-2"></div>
-          <div className="bg-muted p-1 rounded-full flex gap-2 items-center absolute bottom-2 left-2 z-15">
+          
+          <div className="game-card-stats">
             <FaUsers />
-            <p className="text-xs text-primary font-bold">
-              {activePlayers} players
-            </p>
+            <span>{activePlayers.toLocaleString()} PLAYERS</span>
           </div>
         </div>
+        
+        <div className="p-3.5 text-center bg-black/40">
+          <h4 className="game-card-title truncate">
+            {title}
+          </h4>
+        </div>
       </Link>
-      <div className="p-2 flex flex-col overflow-x-hidden z-15">
-        <h4 className="font-bold text-xs uppercase text-center z-15">
-          {title}
-        </h4>
-      </div>
     </div>
   );
 };

@@ -1,16 +1,10 @@
 import type { Game } from "@/types/types";
 import GamesCard from "@/utils/GamesCard";
-import { ChevronLeft, ChevronRight, type LucideIcon } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
 
-type HomeGamesProps = {
-  games: Game[];
-  Icon: LucideIcon;
-  title: string;
-};
-
-const HomeGames = ({ games, Icon, title }: HomeGamesProps) => {
+const HomeGames = ({ games, title }: { games: Game[]; title: string }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -20,8 +14,8 @@ const HomeGames = ({ games, Icon, title }: HomeGamesProps) => {
     const el = scrollRef.current;
     if (!el) return;
 
-    const isAtStart = el.scrollLeft <= 0;
-    const isAtEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
+    const isAtStart = el.scrollLeft <= 5;
+    const isAtEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 5;
 
     setCanScrollLeft(!isAtStart);
     setCanScrollRight(!isAtEnd);
@@ -31,15 +25,7 @@ const HomeGames = ({ games, Icon, title }: HomeGamesProps) => {
     const el = scrollRef.current;
     if (!el) return;
 
-    // const card = el.querySelector("[data-card]");
-    // if (!card) return;
-
-    // const cardWidth = card.clientWidth + 16; // include gap
-    // const cardsToMove = window.innerWidth < 768 ? 2 : 4;
-
-    // const scrollAmount = cardWidth * cardsToMove;
-
-    const scrollAmount = el.clientWidth;
+    const scrollAmount = el.clientWidth * 0.8;
 
     el.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
@@ -52,50 +38,55 @@ const HomeGames = ({ games, Icon, title }: HomeGamesProps) => {
     if (!el) return;
 
     checkScroll();
-    el.addEventListener("scroll", checkScroll);
+    el.addEventListener("scroll", checkScroll, { passive: true });
 
     return () => el.removeEventListener("scroll", checkScroll);
   }, []);
 
   return (
-    <div className="mb-8">
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="font-heading text-xl font-bold flex gap-2 items-center">
-          <Icon className="text-chart-4" /> {title}
-        </h2>
-        <div className="flex gap-2 items-center justify-center">
-          <Link
-            to="/games"
-            className="py-2 px-2.5 rounded-lg bg-border/40 hover:bg-primary transition"
-          >
-            All
+    <div className="mb-12">
+      <div className="flex items-end justify-between mb-6 px-1">
+        <div>
+          <h2 className="font-heading text-2xl font-black uppercase tracking-tight text-white/90">
+            {title}
+          </h2>
+          <div className="h-1 w-12 bg-primary mt-1 rounded-full"></div>
+        </div>
+        
+        <div className="flex gap-3 items-center">
+          <Link to="/games" className="show-all-btn">
+            View All
           </Link>
-          <button
-            onClick={() => scroll("left")}
-            disabled={!canScrollLeft}
-            className={`p-2 rounded-lg transition ${canScrollLeft ? "bg-border hover:bg-primary " : "bg-border/40 cursor-not-allowed"}`}
-          >
-            <ChevronLeft />
-          </button>
-          <button
-            onClick={() => scroll("right")}
-            disabled={!canScrollRight}
-            className={`p-2 rounded-lg transition ${canScrollRight ? "bg-border hover:bg-primary " : "bg-border/40 cursor-not-allowed"}`}
-          >
-            <ChevronRight />
-          </button>
+          <div className="flex gap-2">
+            <button
+              onClick={() => scroll("left")}
+              disabled={!canScrollLeft}
+              className="section-header-btn"
+              aria-label="Scroll Left"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              disabled={!canScrollRight}
+              className="section-header-btn"
+              aria-label="Scroll Right"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
         </div>
       </div>
-      <div className="overflow-hidden flex items-center whitespace-nowrap mt-2">
+      
+      <div className="overflow-hidden">
         <div
           ref={scrollRef}
-          className="flex overflow-x-auto gap-4 scrollbar-hide scroll-smooth snap-x snap-mandatory"
+          className="flex overflow-x-auto gap-5 scrollbar-hide scroll-smooth snap-x snap-mandatory py-2"
         >
           {games.map((game) => (
             <div
               key={game.id}
-              data-card
-              className=" shrink-0 snap-start"
+              className="shrink-0 snap-start"
             >
               <GamesCard {...game} />
             </div>

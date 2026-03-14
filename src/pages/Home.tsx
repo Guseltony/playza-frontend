@@ -4,7 +4,6 @@ import HowItWorks from "@/components/home/HowItWorks";
 import RecentWinners from "@/components/home/RecentWinners";
 import { games } from "@/data/games";
 import HomeGames from "@/components/home/HomeGames";
-import { Flame, Star, BadgePlus } from "lucide-react";
 import CTAReferral from "@/components/home/CTAReferral";
 
 const Home = () => {
@@ -18,9 +17,9 @@ const Home = () => {
     <main className="flex-1 min-w-0 space-y-6">
       <HeroBanner />
       <RecentWinners />
-      <HomeGames games={newestGames} Icon={BadgePlus} title="Newest Games" />
-      <HomeGames games={popularGames} Icon={Star} title="Popular Games" />
-      <HomeGames games={hottestGames} Icon={Flame} title="Hottest Games" />
+      <HomeGames games={newestGames} title="Newest Games" />
+      <HomeGames games={popularGames} title="Popular Games" />
+      <HomeGames games={hottestGames} title="Hottest Games" />
       <CTAReferral />
       {/* <LeaderBoard /> */}
       <HowItWorks />
