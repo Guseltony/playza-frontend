@@ -4,13 +4,11 @@ const Footer = ({ showAbout = true }: { showAbout?: boolean }) => {
   return (
     <footer className="bg-background-dark border-t border-slate-200 dark:border-slate-800 py-12">
       <div className="max-w-400 mx-auto px-2 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        {showAbout && (<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* About */}
-          {showAbout && (
             <div className="">
               <About />
             </div>
-          )}
 
           {/* Platform */}
           <div className="flex justify-between md:justify-around">
@@ -61,9 +59,9 @@ const Footer = ({ showAbout = true }: { showAbout?: boolean }) => {
               </ul>
             </div>
           </div>
-        </div>
+        </div>)}
 
-        <div className="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:row justify-between items-center gap-4 text-xs text-slate-500 mb-2">
+        <div className=" flex flex-col md:row justify-between items-center gap-4 text-xs text-slate-500 mb-2">
           <p>© 2024 PlayPeak Interactive. All rights reserved.</p>
           <div className="flex gap-6">
             <a className="hover:text-slate-900 dark:hover:text-white transition-colors" href="#">

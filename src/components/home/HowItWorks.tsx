@@ -24,7 +24,7 @@ const HowItWorks = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {/* Step 1 */}
           <div className="referral-card group p-5 md:p-8 flex flex-row md:flex-col items-center gap-5 md:gap-6 text-left md:text-center transition-all duration-300 hover:scale-[1.02]">
-            <div className="relative flex-shrink-0">
+            <div className="relative shrink-0">
                <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
                <div className="relative w-14 h-14 md:w-20 md:h-20 bg-primary/10 rounded-2xl flex items-center justify-center border border-primary/20 group-hover:bg-primary transition-all duration-300">
                 <FaWallet className="text-xl md:text-4xl text-primary group-hover:text-white" />
@@ -41,7 +41,7 @@ const HowItWorks = () => {
 
           {/* Step 2 */}
           <div className="referral-card group p-5 md:p-8 flex flex-row md:flex-col items-center gap-5 md:gap-6 text-left md:text-center transition-all duration-300 hover:scale-[1.02]">
-            <div className="relative flex-shrink-0">
+            <div className="relative shrink-0">
                <div className="absolute inset-0 bg-secondary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
                <div className="relative w-14 h-14 md:w-20 md:h-20 bg-secondary/10 rounded-2xl flex items-center justify-center border border-secondary/20 group-hover:bg-secondary transition-all duration-300">
                 <MdStadium className="text-xl md:text-4xl text-secondary group-hover:text-white" />
@@ -58,7 +58,7 @@ const HowItWorks = () => {
 
           {/* Step 3 */}
           <div className="referral-card group p-5 md:p-8 flex flex-row md:flex-col items-center gap-5 md:gap-6 text-left md:text-center transition-all duration-300 hover:scale-[1.02]">
-            <div className="relative flex-shrink-0">
+            <div className="relative shrink-0">
                <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
                <div className="relative w-14 h-14 md:w-20 md:h-20 bg-primary/10 rounded-2xl flex items-center justify-center border border-primary/20 group-hover:bg-primary transition-all duration-300">
                 <FaTrophy className="text-xl md:text-4xl text-primary group-hover:text-white" />
