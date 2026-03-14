@@ -1,14 +1,16 @@
 import About from "./About";
 
-const Footer = () => {
+const Footer = ({ showAbout = true }: { showAbout?: boolean }) => {
   return (
     <footer className="bg-background-dark border-t border-slate-200 dark:border-slate-800 py-12">
-      <div className="max-w-[1600px] mx-auto px-2 md:px-6">
+      <div className="max-w-400 mx-auto px-2 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* About */}
-          <div className="">
-            <About />
-          </div>
+          {showAbout && (
+            <div className="">
+              <About />
+            </div>
+          )}
 
           {/* Platform */}
           <div className="flex justify-between md:justify-around">

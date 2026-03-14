@@ -81,7 +81,7 @@ const App = () => {
           {pathname === "/" && <RightSideBar />}
         </div>
 
-        {!isRegistrationPage && <Footer />}
+        {!isRegistrationPage && <Footer showAbout={pathname === "/"} />}
 
         {!isRegistrationPage && <NavFooter />}
       </div>
