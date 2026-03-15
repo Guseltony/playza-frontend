@@ -1,14 +1,12 @@
 import { Key, LockOpen } from "lucide-react";
-import React from "react";
-import { MdLockReset, MdSecurity, MdVerifiedUser } from "react-icons/md";
-import { TbShieldHeart } from "react-icons/tb";
+import { MdLockReset, MdVerifiedUser } from "react-icons/md";
 
 const NewPassword = ({ onClick }: { onClick: (value: string) => void }) => {
   return (
     <main className="flex-1 flex flex-col items-center justify-center relative overflow-hidden">
       <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-[120px]"></div>
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-[150px]"></div>
-      <div className="max-w-[520px] w-full glass-card rounded-xl p-2 lg:p-10 neo-shadow z-10">
+      <div className="max-w-130 w-full glass-card rounded-xl p-2 lg:p-10 neo-shadow z-10">
         <div className="text-center mb-10">
           <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-4">
             <MdLockReset className="material-symbols-outlined text-primary text-3xl" />
@@ -126,20 +124,6 @@ const NewPassword = ({ onClick }: { onClick: (value: string) => void }) => {
             Minimum 12 characters required
           </p>
         </div> */}
-      </div>
-      <div className="mt-4 md:mt-12 flex gap-2 md:gap-8 items-center opacity-40 grayscale contrast-125">
-        <div className="flex items-center gap-2">
-          <MdSecurity className=" text-primary" />
-          <span className="text-xs font-bold tracking-widest text-slate-700 dark:text-slate-300 uppercase">
-            Bank-grade Encryption
-          </span>
-        </div>
-        <div className="flex items-center gap-2">
-          <TbShieldHeart className="text-primary" />
-          <span className="text-xs font-bold tracking-widest text-slate-700 dark:text-slate-300 uppercase">
-            2FA Protected
-          </span>
-        </div>
       </div>
     </main>
   );

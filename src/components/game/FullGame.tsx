@@ -8,6 +8,7 @@ import Filter, { type FilterOption } from "./Filter";
 import { calculatePrizePool } from "@/utils/calculatedPrizePool";
 import FeatureGameCard from "../FeatureGameCard";
 import { filterGames } from "@/lib/filterGames";
+import { Link } from "react-router";
 
 const FullGame = () => {
   // const [tab, setTab] = useState("All");
@@ -55,16 +56,13 @@ const FullGame = () => {
       {/* <!-- Header section --> */}
       <div className="mb-8">
         <nav className="flex text-xs text-slate-500 gap-2 mb-2">
-          <a className="hover:text-primary" href="#">
+          <Link to="/" className="hover:text-primary">
             Home
-          </a>
+          </Link>
           <span>/</span>
 
           <span className="text-slate-700 dark:text-slate-300">Games</span>
         </nav>
-        <h1 className="text-4xl font-display font-bold tracking-tight">
-          Explore Games
-        </h1>
       </div>
 
       <section className="relative h-64 md:h-72 lg:h-80 rounded-2xl overflow-hidden">

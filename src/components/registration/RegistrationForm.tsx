@@ -1,6 +1,6 @@
 import { Button } from "../ui/button";
 import { Globe, Smartphone, User, Mail, Lock, Shield, ArrowRight, Rocket } from "lucide-react";
-import { Link } from "react-router";
+// import { Link } from "react-router";
 
 interface RegistrationFormProps {
   onClick: (value: string) => void;
@@ -8,9 +8,9 @@ interface RegistrationFormProps {
 
 const RegistrationForm = ({ onClick }: RegistrationFormProps) => {
   return (
-    <main className="h-full flex items-center justify-center p-4">
+    <main className="h-full flex items-center justify-center">
       <div className="w-full max-w-2xl">
-        <div className="glass-card p-6 md:p-10 rounded-2xl shadow-2xl relative overflow-hidden border border-white/10">
+        <div className="glass-card p-2 md:p-10 rounded-2xl shadow-2xl relative overflow-hidden border border-white/10">
           {/* Subtle Neon Accent */}
           <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-primary to-transparent opacity-50"></div>
           

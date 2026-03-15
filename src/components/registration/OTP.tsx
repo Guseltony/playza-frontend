@@ -1,4 +1,4 @@
-import { Edit, Verified, ShieldCheck } from "lucide-react";
+import { Edit, ShieldCheck } from "lucide-react";
 import { Button } from "../ui/button";
 
 interface OtpProps {
@@ -7,9 +7,9 @@ interface OtpProps {
 
 const OTP = ({ onClick }: OtpProps) => {
   return (
-    <main className="h-full flex items-center justify-center p-4">
+    <main className="h-full flex items-center justify-center">
       <div className="w-full max-w-lg">
-        <div className="glass-card p-6 md:p-12 rounded-2xl shadow-2xl relative overflow-hidden border border-white/10 text-center">
+        <div className="glass-card p-2 md:p-6 rounded-2xl shadow-2xl relative overflow-hidden border border-white/10 text-center">
           {/* Decorative Cyan Accent Line */}
           <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-primary to-transparent opacity-50"></div>
           
@@ -34,7 +34,7 @@ const OTP = ({ onClick }: OtpProps) => {
                 <input
                   key={i}
                   required
-                  className="w-10 h-12 md:w-14 md:h-16 text-center bg-slate-900/50 border-2 border-white/5 rounded-xl focus:border-primary focus:ring-1 focus:ring-primary text-2xl font-black text-primary transition-all outline-none"
+                  className="w-12 h-14 md:w-14 md:h-16 text-center bg-slate-900/50 border-2 border-white/5 rounded-xl focus:border-primary focus:ring-1 focus:ring-primary text-2xl font-black text-primary transition-all outline-none"
                   max="9"
                   maxLength={1}
                   type="text"
@@ -46,7 +46,7 @@ const OTP = ({ onClick }: OtpProps) => {
           <div className="space-y-6">
             <Button
               onClick={() => window.location.href = "/"}
-              className="w-full h-[60px] bg-primary text-background-dark text-lg font-black uppercase tracking-widest rounded-xl shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all"
+              className="w-full h-15 bg-primary text-background-dark text-lg font-black uppercase tracking-widest rounded-xl shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all"
             >
               Verify & Launch
             </Button>
@@ -81,7 +81,5 @@ const OTP = ({ onClick }: OtpProps) => {
     </main>
   );
 };
-
-export default OTP;
 
 export default OTP;

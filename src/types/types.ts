@@ -132,3 +132,16 @@ export interface Match {
 
 export type Month = (typeof MONTHS)[number];
 export type DayOfWeek = (typeof DAYS_OF_WEEK)[number];
+
+export interface Session {
+  id: string;
+  title: string;
+  entryFee: number;
+  playersJoined: number;
+  maxPlayers: number;
+  prizePool: string;
+  startTime: string;
+  endTime: string;
+  status: 'live' | 'upcoming' | 'starting soon' | 'ended';
+  type: 'tournament' | 'daily';
+}

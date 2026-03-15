@@ -2,15 +2,12 @@ import { games } from "@/data/games";
 import { calculatePrizePool } from "@/utils/calculatedPrizePool";
 import { Link, useParams } from "react-router";
 import { ArrowBigLeft, Info, Laptop, Smartphone } from "lucide-react";
-
 import { BiTrendingUp, BiTrophy } from "react-icons/bi";
 import { MdArrowForward, MdSupportAgent } from "react-icons/md";
 import { useState } from "react";
 import SessionLeaderboard from "@/components/gameSession/SessionLeaderboard";
 import SessionPerformance from "@/components/gameSession/SessionPerformance";
 import SessionActivities from "@/components/gameSession/SessionActivities";
-import SessionInfo from "@/components/gameSession/SessionInfo";
-import SessionRules from "@/components/gameSession/SessionRules";
 import SessionHero from "@/components/gameSession/SessionHero";
 import LiveEntryModal from "@/components/gameSession/LiveEntryModal";
 
@@ -46,13 +43,13 @@ const MatchSession = () => {
     { tab: "Live Leaderboard", render: () => <SessionLeaderboard /> },
     { tab: "My Game", render: () => <SessionPerformance /> },
     { tab: "Live Feeds", render: () => <SessionActivities /> },
-    {
-      tab: "Info",
-      render: () => (
-        <SessionInfo title={game?.title} pricePool={game?.pricePool} />
-      ),
-    },
-    { tab: "Rules", render: () => <SessionRules /> },
+    // {
+    //   tab: "Info",
+    //   render: () => (
+    //     <SessionInfo title={game?.title} pricePool={game?.pricePool} />
+    //   ),
+    // },
+    // { tab: "Rules", render: () => <SessionRules /> },
   ];
 
   const activeTabContent = tabContent.find((item) => item.tab === activeTab);
@@ -86,8 +83,8 @@ const MatchSession = () => {
                 "Live Leaderboard",
                 "My Game",
                 "Live Feeds",
-                "Info",
-                "Rules",
+                // "Info",
+                // "Rules",
               ].map((tab, i) => (
                 <button
                   onClick={() => setActiveTab(tab)}

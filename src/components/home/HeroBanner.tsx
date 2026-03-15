@@ -149,7 +149,7 @@ const HeroBanner = () => {
                 {slide.id === 1 && <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>}
               </div>
               
-              <div className={`space-y-3 ${!slide.visual ? 'text-center' : ''} max-w-3xl`}>
+              <div className={` ${!slide.visual ? 'text-center' : ''} max-w-3xl`}>
                 <h1 className="text-xl md:text-4xl uppercase font-black font-display tracking-tight text-white leading-[1.15] drop-shadow-2xl">
                   {slide.title}
                   <span className="gradient-text drop-shadow-amber-600">{slide.subtitle && ` ${slide.subtitle}`}</span>
