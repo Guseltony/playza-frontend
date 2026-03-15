@@ -1,263 +1,192 @@
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import {
-  MdAccountBalance,
-  MdAddCircle,
-  MdEmojiEvents,
-  MdFileDownload,
-  MdVideogameAsset,
-} from "react-icons/md";
+import { Loader2 } from "lucide-react";
+import { MdFileDownload, MdSearch, MdFilterList } from "react-icons/md";
+import TransactionItem from "@/components/transactions/TransactionItem";
+import { useState, useEffect, useMemo, useRef } from "react";
+import TransactionDetailModal from "@/components/transactions/TransactionDetailModal";
+import type { TransactionUI } from "@/types/types";
+import { transactionsData } from "@/data/transactions";
+
+const ITEMS_PER_PAGE = 8;
 
 const Transactions = () => {
+  const [selectedTxn, setSelectedTxn] = useState<TransactionUI | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState("All");
+  const [itemsToShow, setItemsToShow] = useState(ITEMS_PER_PAGE);
+  const [isLoading, setIsLoading] = useState(false);
+  
+  const observerBottom = useRef(null);
+  const observerTop = useRef(null);
+
+  const handleOpen = (txn: TransactionUI) => {
+    setSelectedTxn(txn);
+    setIsModalOpen(true);
+  };
+
+  const filteredTransactions = useMemo(() => {
+    if (activeTab === "All") return transactionsData;
+    return transactionsData.filter(txn => txn.typeKey === activeTab);
+  }, [activeTab]);
+
+  const currentItems = useMemo(() => {
+    return filteredTransactions.slice(0, itemsToShow);
+  }, [filteredTransactions, itemsToShow]);
+
+  const hasMore = itemsToShow < filteredTransactions.length;
+
+  const loadMore = () => {
+    if (isLoading || !hasMore) return;
+    setIsLoading(true);
+    setTimeout(() => {
+      setItemsToShow(prev => prev + ITEMS_PER_PAGE);
+      setIsLoading(false);
+    }, 800);
+  };
+
+
+
+  // Bottom Observer (Load More)
+  useEffect(() => {
+    const target = observerBottom.current;
+    if (!target) return;
+
+    const observer = new IntersectionObserver(
+      entries => {
+        if (entries[0].isIntersecting && hasMore && !isLoading) {
+          loadMore();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, [hasMore, isLoading]);
+
+  // Top Observer (Reduce List)
+  useEffect(() => {
+    const target = observerTop.current;
+    if (!target) return;
+
+    const observer = new IntersectionObserver(
+      entries => {
+        // If we are back at the top and have more than initial page, we can "reduce"
+        // But we only want to do this if we actually scrolled down significantly
+        if (entries[0].isIntersecting && itemsToShow > ITEMS_PER_PAGE) {
+          // We don't want to snap back instantly usually, 
+          // but the user asked for "reduces" when scrolling up.
+          // To make it less jarring, we'll only do it if the user is at the very top.
+          setItemsToShow(ITEMS_PER_PAGE);
+        }
+      },
+      { threshold: 1.0 }
+    );
+
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, [itemsToShow]);
+
   return (
-    <main className="flex-1 max-w-7xl mx-auto w-full px-2 md:px-6">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 md:gap-6 mb-8">
-        <div className="space-y-1">
-          <h1 className="text-4xl font-black tracking-tight text-slate-900 dark:text-slate-100">
-            Transaction <span className="text-primary">History</span>
+    <main className="flex-1 max-w-7xl mx-auto w-full ">
+      {/* Top Observer Target */}
+      <div ref={observerTop} className="h-1 w-full absolute top-0" />
+
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10 mt-4">
+        <div className="space-y-2">
+          <h1 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900 dark:text-slate-100">
+            Ledger <span className="text-primary">&</span> History
           </h1>
-          <p className="text-slate-600 dark:text-slate-400 text-base">
-            Comprehensive ledger of your gaming earnings and deposits.
+          <p className="text-slate-600 dark:text-slate-400 text-sm md:text-base font-medium">
+            Your detailed financial activity and gaming rewards statement.
           </p>
         </div>
-        <button className="flex items-center gap-2 px-5 py-2.5 bg-primary text-background-dark font-bold rounded-xl hover:scale-[1.02] transition-transform neon-glow">
-          <MdFileDownload />
-          <span>Export Statement</span>
+        <button className="flex items-center gap-2 px-6 py-3 bg-primary text-background-dark font-black rounded-xl hover:scale-[1.05] transition-all neon-glow group shadow-xl">
+          <MdFileDownload className="text-xl group-hover:animate-bounce" />
+          <span>Download PDF</span>
         </button>
       </div>
-      <div className="flex gap-2 mb-8 bg-primary/5 p-1.5 rounded-xl border border-primary/10 overflow-x-auto whitespace-nowrap">
-        <button className="px-5 py-2 rounded-lg bg-primary text-background-dark text-sm font-bold transition-all">
-          All
-        </button>
-        <button className="px-5 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-primary hover:bg-primary/10 text-sm font-medium transition-all">
-          Deposits
-        </button>
-        <button className="px-5 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-primary hover:bg-primary/10 text-sm font-medium transition-all">
-          Withdrawals
-        </button>
-        <button className="px-5 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-primary hover:bg-primary/10 text-sm font-medium transition-all">
-          Game Entries
-        </button>
-        <button className="px-5 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-primary hover:bg-primary/10 text-sm font-medium transition-all">
-          Prize Wins
-        </button>
+
+      <div className="flex flex-col lg:flex-row gap-4 mb-8 ">
+         <div className="flex-1 flex gap-2 overflow-x-auto pb-2 lg:pb-0 scrollbar-hide">
+            {["All", "Deposits", "Withdrawals", "Entries", "Wins"].map((filter) => (
+              <button 
+                key={filter}
+                onClick={() => {
+                  setActiveTab(filter);
+                  setItemsToShow(ITEMS_PER_PAGE);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className={`px-5 py-2.5 rounded-xl text-sm font-bold transition-all border shrink-0 ${
+                  activeTab === filter 
+                  ? "bg-primary text-background-dark border-primary shadow-lg shadow-primary/20" 
+                  : "bg-white/5 text-slate-500 border-white/5 hover:border-primary/30 hover:text-primary"
+                }`}
+              >
+                {filter}
+              </button>
+            ))}
+         </div>
+         <div className="flex gap-2">
+            <div className="relative flex-1 lg:w-64">
+                <MdSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg" />
+                <input 
+                  type="text" 
+                  placeholder="Search transactions..." 
+                  className="w-full bg-white/5 border border-white/5 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:border-primary/50 transition-all text-white"
+                />
+            </div>
+            <button className="p-2.5 bg-white/5 border border-white/5 rounded-xl text-slate-500 hover:text-primary transition-all">
+                <MdFilterList className="text-xl" />
+            </button>
+         </div>
       </div>
-      <div className="glass-panel rounded-2xl overflow-hidden mb-8 border border-primary/10 shadow-2xl">
-        <div className="overflow-x-auto">
-          <Table className="w-full text-left border-collapse">
-            <TableHeader>
-              <TableRow className="bg-primary/5 text-primary text-xs uppercase tracking-widest font-bold">
-                <TableHead className="px-6 py-5 border-b border-primary/10">
-                  Transaction ID
-                </TableHead>
-                <TableHead className="px-6 py-5 border-b border-primary/10">
-                  Type
-                </TableHead>
-                <TableHead className="px-6 py-5 border-b border-primary/10 text-right">
-                  Amount (₦)
-                </TableHead>
-                <TableHead className="px-6 py-5 border-b border-primary/10">
-                  Status
-                </TableHead>
-                <TableHead className="px-6 py-5 border-b border-primary/10">
-                  Reference
-                </TableHead>
-                <TableHead className="px-6 py-5 border-b border-primary/10">
-                  Date
-                </TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody className="text-sm divide-y divide-primary/5">
-              <TableRow className="hover:bg-primary/5 transition-colors">
-                <TableCell className="px-6 py-5 font-mono text-slate-600 dark:text-slate-400">
-                  #TXN-90821
-                </TableCell>
-                <TableCell className="px-6 py-5">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/20 text-primary font-semibold text-xs border border-primary/20">
-                    <MdEmojiEvents className="text-sm" /> Prize Win
-                  </span>
-                </TableCell>
-                <TableCell className="px-6 py-5 text-right font-bold text-primary">
-                  +₦50,000.00
-                </TableCell>
-                <TableCell className="px-6 py-5">
-                  <div className="flex items-center gap-2 text-emerald-400">
-                    <span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.5)]"></span>
-                    <span className="font-medium">Completed</span>
-                  </div>
-                </TableCell>
-                <TableCell className="px-6 py-5 text-slate-600 dark:text-slate-400">
-                  VAL-TOURN-X-FINALS
-                </TableCell>
-                <TableCell className="px-6 py-5 text-slate-600 dark:text-slate-400 whitespace-nowrap">
-                  Oct 24, 2023 · 14:32
-                </TableCell>
-              </TableRow>
-              <TableRow className="hover:bg-primary/5 transition-colors">
-                <TableCell className="px-6 py-5 font-mono text-slate-600 dark:text-slate-400">
-                  #TXN-90744
-                </TableCell>
-                <TableCell className="px-6 py-5">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 font-semibold text-xs border border-blue-500/20">
-                    <MdAddCircle className="text-sm" /> Deposit
-                  </span>
-                </TableCell>
-                <TableCell className="px-6 py-5 text-right font-bold text-slate-900 dark:text-slate-100">
-                  +₦10,000.00
-                </TableCell>
-                <TableCell className="px-6 py-5">
-                  <div className="flex items-center gap-2 text-emerald-400">
-                    <span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.5)]"></span>
-                    <span className="font-medium">Completed</span>
-                  </div>
-                </TableCell>
-                <TableCell className="px-6 py-5 text-slate-600 dark:text-slate-400">
-                  PAYSTACK-REF-889
-                </TableCell>
-                <TableCell className="px-6 py-5 text-slate-600 dark:text-slate-400 whitespace-nowrap">
-                  Oct 23, 2023 · 09:15
-                </TableCell>
-              </TableRow>
-              <TableRow className="hover:bg-primary/5 transition-colors">
-                <TableCell className="px-6 py-5 font-mono text-slate-600 dark:text-slate-400">
-                  #TXN-90612
-                </TableCell>
-                <TableCell className="px-6 py-5">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-500/10 text-slate-600 dark:text-slate-400 font-semibold text-xs border border-slate-500/20">
-                    <MdVideogameAsset className="text-sm" /> Game Entry
-                  </span>
-                </TableCell>
-                <TableCell className="px-6 py-5 text-right font-bold text-slate-900 dark:text-slate-100">
-                  -₦2,500.00
-                </TableCell>
-                <TableCell className="px-6 py-5">
-                  <div className="flex items-center gap-2 text-emerald-400">
-                    <span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.5)]"></span>
-                    <span className="font-medium">Completed</span>
-                  </div>
-                </TableCell>
-                <TableCell className="px-6 py-5 text-slate-600 dark:text-slate-400">
-                  ENTRY-FEE-VAL-44
-                </TableCell>
-                <TableCell className="px-6 py-5 text-slate-600 dark:text-slate-400 whitespace-nowrap">
-                  Oct 22, 2023 · 18:00
-                </TableCell>
-              </TableRow>
-              <TableRow className="hover:bg-primary/5 transition-colors">
-                <TableCell className="px-6 py-5 font-mono text-slate-600 dark:text-slate-400">
-                  #TXN-90501
-                </TableCell>
-                <TableCell className="px-6 py-5">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 font-semibold text-xs border border-amber-500/20">
-                    <MdAccountBalance className="text-sm" /> Withdrawal
-                  </span>
-                </TableCell>
-                <TableCell className="px-6 py-5 text-right font-bold text-slate-900 dark:text-slate-100">
-                  -₦15,000.00
-                </TableCell>
-                <TableCell className="px-6 py-5">
-                  <div className="flex items-center gap-2 text-amber-400">
-                    <span className="size-2 rounded-full bg-amber-400 animate-pulse"></span>
-                    <span className="font-medium">Pending</span>
-                  </div>
-                </TableCell>
-                <TableCell className="px-6 py-5 text-slate-600 dark:text-slate-400">
-                  BANK-X-442291
-                </TableCell>
-                <TableCell className="px-6 py-5 text-slate-600 dark:text-slate-400 whitespace-nowrap">
-                  Oct 21, 2023 · 11:45
-                </TableCell>
-              </TableRow>
-              <TableRow className="hover:bg-primary/5 transition-colors">
-                <TableCell className="px-6 py-5 font-mono text-slate-600 dark:text-slate-400">
-                  #TXN-90488
-                </TableCell>
-                <TableCell className="px-6 py-5">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/20 text-primary font-semibold text-xs border border-primary/20">
-                    <MdEmojiEvents className="text-sm" /> Prize Win
-                  </span>
-                </TableCell>
-                <TableCell className="px-6 py-5 text-right font-bold text-primary">
-                  +₦5,000.00
-                </TableCell>
-                <TableCell className="px-6 py-5">
-                  <div className="flex items-center gap-2 text-emerald-400">
-                    <span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.5)]"></span>
-                    <span className="font-medium">Completed</span>
-                  </div>
-                </TableCell>
-                <TableCell className="px-6 py-5 text-slate-600 dark:text-slate-400">
-                  MATCH-WIN-8821
-                </TableCell>
-                <TableCell className="px-6 py-5 text-slate-600 dark:text-slate-400 whitespace-nowrap">
-                  Oct 20, 2023 · 22:10
-                </TableCell>
-              </TableRow>
-              <TableRow className="hover:bg-primary/5 transition-colors">
-                <TableCell className="px-6 py-5 font-mono text-slate-600 dark:text-slate-400">
-                  #TXN-90412
-                </TableCell>
-                <TableCell className="px-6 py-5">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-500/10 text-slate-600 dark:text-slate-400 font-semibold text-xs border border-slate-500/20">
-                    <MdVideogameAsset className="text-sm" /> Game Entry
-                  </span>
-                </TableCell>
-                <TableCell className="px-6 py-5 text-right font-bold text-slate-900 dark:text-slate-100">
-                  -₦1,000.00
-                </TableCell>
-                <TableCell className="px-6 py-5">
-                  <div className="flex items-center gap-2 text-emerald-400">
-                    <span className="size-2 rounded-full bg-emerald-400"></span>
-                    <span className="font-medium">Completed</span>
-                  </div>
-                </TableCell>
-                <TableCell className="px-6 py-5 text-slate-600 dark:text-slate-400">
-                  ENTRY-PUBG-M-1
-                </TableCell>
-                <TableCell className="px-6 py-5 text-slate-600 dark:text-slate-400 whitespace-nowrap">
-                  Oct 19, 2023 · 15:20
-                </TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
+
+      <div className="glass-card rounded-2xl overflow-hidden mb-10 border border-white/5 shadow-2xl">
+        <div className="bg-white/5 px-2 py-4 border-b border-white/5 flex items-center justify-between">
+           <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">Transaction Details</span>
+           <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">Amount & Status</span>
+        </div>
+        <div className="flex flex-col">
+          {currentItems.map((txn) => (
+            <TransactionItem key={txn.id} {...txn} onClick={() => handleOpen(txn)} />
+          ))}
+          
+          {/* Bottom Observer Target */}
+          <div ref={observerBottom} className="h-20 w-full" />
+          
+          {isLoading && (
+            <div className="flex flex-col items-center justify-center p-8 text-slate-500 gap-3">
+              <Loader2 className="animate-spin text-primary" size={32} />
+              <p className="text-xs font-bold uppercase tracking-widest animate-pulse">Loading more transactions...</p>
+            </div>
+          )}
+
+          {!hasMore && currentItems.length > 0 && (
+            <div className="p-8 text-center border-t border-white/5 bg-white/5">
+              <p className="text-xs font-bold text-slate-500 uppercase tracking-[0.2em]">
+                ✨ No more transactions to show
+              </p>
+            </div>
+          )}
+
+          {currentItems.length === 0 && (
+            <div className="p-20 text-center">
+              <p className="text-slate-500 font-bold">No transactions found for this category.</p>
+            </div>
+          )}
         </div>
       </div>
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-2 md:gap-0 py-6">
-        <div className="text-slate-600 dark:text-slate-400 text-sm">
-          Showing <span className="text-slate-900 dark:text-slate-100 font-bold">1-6</span> of{" "}
-          <span className="text-slate-900 dark:text-slate-100 font-bold">124</span> results
-        </div>
-        <div className="flex items-center gap-2">
-          <button className="flex size-10 items-center justify-center rounded-xl bg-primary/5 text-slate-600 dark:text-slate-400 hover:text-primary border border-primary/10 transition-all">
-            <ChevronLeft />
-          </button>
-          <button className="flex size-10 items-center justify-center rounded-xl bg-primary text-background-dark text-sm font-bold shadow-lg shadow-primary/20">
-            1
-          </button>
-          <button className="flex size-10 items-center justify-center rounded-xl bg-primary/5 text-slate-600 dark:text-slate-400 hover:text-primary border border-primary/10 text-sm font-medium transition-all">
-            2
-          </button>
-          <button className="flex size-10 items-center justify-center rounded-xl bg-primary/5 text-slate-600 dark:text-slate-400 hover:text-primary border border-primary/10 text-sm font-medium transition-all">
-            3
-          </button>
-          <span className="text-slate-600 px-2 font-bold">...</span>
-          <button className="flex size-10 items-center justify-center rounded-xl bg-primary/5 text-slate-600 dark:text-slate-400 hover:text-primary border border-primary/10 text-sm font-medium transition-all">
-            21
-          </button>
-          <button className="flex size-10 items-center justify-center rounded-xl bg-primary/5 text-slate-600 dark:text-slate-400 hover:text-primary border border-primary/10 transition-all">
-            <ChevronRight />
-          </button>
-        </div>
-      </div>
+
+      <TransactionDetailModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        transaction={selectedTxn} 
+      />
     </main>
   );
 };
 
 export default Transactions;
+
+
+

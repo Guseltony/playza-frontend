@@ -24,6 +24,16 @@ export interface Transaction {
   status: "completed" | "pending";
 }
 
+export interface TransactionUI {
+  id: string;
+  type: string;
+  amount: string;
+  status: string;
+  date: string;
+  reference: string;
+  typeKey?: string;
+}
+
 export interface Currency {
   code: string;
   symbol: string;

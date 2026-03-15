@@ -1,119 +1,128 @@
-import { ChevronRight } from "lucide-react";
-import React from "react";
-import { MdAccountBalance, MdClose, MdLock } from "react-icons/md";
+import { ChevronRight, Wallet, X, Lock, Info, Landmark } from "lucide-react";
 import { useNavigate } from "react-router";
 
-const ReqWithdraw = ({ onClick }: { onClick: (value: boolean) => void }) => {
+interface ReqWithdrawProps {
+  onClick: (value: boolean) => void;
+}
+
+const ReqWithdraw = ({ onClick }: ReqWithdrawProps) => {
   const navigate = useNavigate();
+  
   return (
-    <div className="fixed inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center z-40 px-2">
-      {/* <!-- Modal Container --> */}
-      <div className="glass-panel w-full max-w-130 rounded-xl overflow-hidden shadow-2xl flex flex-col relative">
-        {/* <!-- Header --> */}
-        <div className="p-2 md:p-6 border-b border-primary/10 flex justify-between items-center">
-          <div className="flex flex-col gap-1">
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
-              Withdraw Funds
-            </h2>
-            <p className="text-slate-600 dark:text-slate-400 text-sm">
-              Securely transfer winnings to your bank account
+    <div className="glass-card rounded-4xl md:rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 relative">
+      {/* Header Accent */}
+      <div className="h-1.5 w-full bg-linear-to-r from-transparent via-primary to-transparent opacity-60"></div>
+
+      {/* Close Button */}
+      <button 
+        onClick={() => navigate(-1)}
+        className="absolute top-4 right-4 md:top-6 md:right-6 p-2 rounded-full bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-all z-20"
+      >
+        <X size={20} />
+      </button>
+
+      <div className="p-5 md:p-10">
+        {/* Header */}
+        <div className="flex items-center gap-4 md:gap-5 mb-8 md:mb-10">
+          <div className="size-12 md:size-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center shadow-inner shrink-0">
+            <Landmark className="text-primary size-6 md:size-7" />
+          </div>
+          <div>
+            <h1 className="text-xl md:text-3xl font-black text-white tracking-tight uppercase font-display">
+              Withdraw <span className="text-primary">Funds</span>
+            </h1>
+            <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest mt-0.5">
+              Secure Profit Extraction
             </p>
           </div>
-          <button
-            onClick={() => navigate(-1)}
-            className="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
-          >
-            <MdClose />
-          </button>
         </div>
-        <div className="p-2 md:p-6 space-y-3 md:space-y-6">
-          {/* <!-- Balance Card --> */}
-          <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 flex justify-between items-center">
-            <div>
-              <p className="text-slate-600 dark:text-slate-400 text-xs uppercase tracking-widest font-semibold">
-                Available Balance
-              </p>
-              <p className="text-xl md:text-3xl font-bold text-primary mt-1">
-                ₦42,500
-              </p>
+
+        <div className="space-y-6 md:space-y-8">
+          {/* Balance Preview */}
+          <div className="bg-primary/5 border border-primary/20 rounded-2xl p-5 flex justify-between items-center relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-3xl rounded-full -mr-16 -mt-16 pointer-events-none"></div>
+            <div className="relative z-10">
+              <p className="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-1">Available Balance</p>
+              <h2 className="text-2xl md:text-3xl font-black text-primary">₦42,500</h2>
             </div>
-            <div className="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
-              <MdAccountBalance className="text-3xl" />
+            <div className="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20 group-hover:scale-110 transition-transform">
+              <Wallet size={24} />
             </div>
           </div>
-          {/* <!-- Input Amount --> */}
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-slate-700 dark:text-slate-300 ml-1">
+
+          {/* Amount Input Section */}
+          <div className="space-y-3">
+            <label className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 px-1">
               Withdrawal Amount
             </label>
-            <div className="relative">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-400 font-bold">
+            <div className="relative group">
+              <span className="absolute left-5 md:left-6 top-1/2 -translate-y-1/2 text-primary font-black text-2xl md:text-3xl opacity-50 transition-opacity group-focus-within:opacity-100">
                 ₦
               </span>
               <input
-                className="w-full bg-background-dark/50 border border-primary/20 rounded-lg h-14 pl-10 pr-4 text-xl font-semibold text-slate-900 dark:text-white focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all outline-none"
-                placeholder="0.00"
                 type="text"
+                inputMode="numeric"
+                className="w-full bg-white/5 border-2 border-white/5 rounded-xl md:rounded-2xl py-4 md:py-6 pl-10 md:pl-12 pr-28 text-2xl md:text-3xl font-black text-white placeholder:text-slate-700 outline-none focus:border-primary/50 focus:bg-white/[0.07] transition-all shadow-inner"
+                placeholder="0.00"
               />
-              <button className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-primary hover:text-primary/80 uppercase tracking-tighter">
-                Max Amount
+              <button className="absolute right-4 top-1/2 -translate-y-1/2 px-3 py-1.5 rounded-lg bg-primary/10 border border-primary/20 text-[10px] font-black text-primary uppercase tracking-widest hover:bg-primary hover:text-background-dark transition-all">
+                Max
               </button>
             </div>
           </div>
-          {/* <!-- Bank Selection --> */}
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-slate-700 dark:text-slate-300 ml-1">
+
+          {/* Destination Section */}
+          <div className="space-y-3">
+            <label className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 px-1">
               Destination Account
             </label>
-            <div className="flex items-center justify-between p-2 lg:p-4 bg-background-dark/40 border border-primary/10 rounded-lg group hover:border-primary/30 transition-all cursor-pointer">
+            <div className="flex items-center justify-between p-4 bg-white/5 border-2 border-white/5 rounded-xl md:rounded-2xl hover:border-primary/30 transition-all group cursor-pointer">
               <div className="flex items-center gap-4">
-                <div className="w-10 md:w-12 h-10 md:h-12 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center overflow-hidden border border-slate-300 dark:border-slate-700">
-                  <div
-                    className="w-full h-full bg-slate-200 dark:bg-slate-700 bg-center bg-cover"
-                    data-alt="Zenith Bank corporate logo"
-                    style={{
-                      backgroundImage:
-                        "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBYtU1_HPzqSa-0y7X532KW2U-aTR0S8OtxGz_oRbuquaVquualIs4R3y5yF2WE8iDsxI_sM28uToeXTtx7rijNTJqhogLq5kHdgTqBvhtwHaAHSOtfe9BDrfcyBvh68e5Cl3HcZYORLIWoz_HbRLySIQXqhgEzFEkNOJzjGRG4UL4WpjkQyAxS__a1CYMogsi-_7FfOpMMMI-AQUrgfTeeF8v1SuP9cEpYSWZ55PENRj9Pcg9L4mJUfoNmhKNRDtLUnE69mbQFg2bH')",
-                    }}
-                  ></div>
+                <div className="size-11 rounded-xl bg-white/10 flex items-center justify-center overflow-hidden border border-white/10 p-0.5">
+                  <div className="w-full h-full bg-slate-800 rounded-lg overflow-hidden flex items-center justify-center">
+                    <img 
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYtU1_HPzqSa-0y7X532KW2U-aTR0S8OtxGz_oRbuquaVquualIs4R3y5yF2WE8iDsxI_sM28uToeXTtx7rijNTJqhogLq5kHdgTqBvhtwHaAHSOtfe9BDrfcyBvh68e5Cl3HcZYORLIWoz_HbRLySIQXqhgEzFEkNOJzjGRG4UL4WpjkQyAxS__a1CYMogsi-_7FfOpMMMI-AQUrgfTeeF8v1SuP9cEpYSWZ55PENRj9Pcg9L4mJUfoNmhKNRDtLUnE69mbQFg2bH" 
+                      alt="Zenith Bank"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
                 <div>
-                  <p className="text-slate-900 dark:text-slate-100 font-bold">Zenith Bank</p>
-                  <p className="text-slate-600 dark:text-slate-400 text-xs font-mono">**** 8841</p>
+                  <p className="text-white text-sm font-black uppercase tracking-tight">Zenith Bank</p>
+                  <p className="text-slate-500 text-xs font-mono">•••• 8841</p>
                 </div>
               </div>
-              <ChevronRight className="material-symbols-outlined text-slate-500 group-hover:text-primary" />
+              <ChevronRight className="text-slate-600 group-hover:text-primary group-hover:translate-x-1 transition-all" size={20} />
             </div>
           </div>
-          {/* <!-- Security / OTP Section --> */}
 
-          {/* <!-- Footer Stats --> */}
-          <div className="grid grid-cols-2 gap-4 border-t border-primary/10 pt-6">
-            <div className="flex flex-col">
-              <p className="text-slate-500 text-[10px] uppercase tracking-widest font-bold">
-                Min Withdrawal
-              </p>
-              <p className="text-slate-800 dark:text-slate-200 text-sm font-semibold">₦500</p>
+          {/* Info Grid */}
+          <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
+            <div className="space-y-1">
+              <p className="text-[9px] font-black uppercase tracking-widest text-slate-500">Min Withdrawal</p>
+              <p className="text-white text-sm font-black">₦500</p>
             </div>
-            <div className="flex flex-col text-right">
-              <p className="text-slate-500 text-[10px] uppercase tracking-widest font-bold">
-                Processing Time
-              </p>
-              <p className="text-slate-800 dark:text-slate-200 text-sm font-semibold">2-24 Hours</p>
+            <div className="space-y-1 text-right">
+              <p className="text-[9px] font-black uppercase tracking-widest text-slate-500">Processing Time</p>
+              <div className="flex items-center justify-end gap-1.5 text-white">
+                <Info size={12} className="text-primary" />
+                <p className="text-sm font-black">2-24 Hours</p>
+              </div>
             </div>
           </div>
-          {/* <!-- Action Button --> */}
-          <button
-            onClick={() => onClick(true)}
-            className="w-full bg-primary text-background-dark font-bold py-2 md:py-4 rounded-lg neon-shadow hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
-          >
-            <MdLock className="material-symbols-outlined font-bold" />
-            Request Withdrawal
-          </button>
+
+          {/* Action Button */}
+          <div className="pt-2">
+            <button
+              onClick={() => onClick(true)}
+              className="w-full bg-primary text-background-dark py-4 md:py-5 rounded-xl md:rounded-2xl font-black uppercase tracking-[0.2em] shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 active:scale-[0.98] transition-all flex items-center justify-center gap-3 group relative overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              <Lock className="size-4.5 group-hover:rotate-12 transition-transform" />
+              <span>Initiate Withdrawal</span>
+            </button>
+          </div>
         </div>
-        {/* <!-- Decorative Elements --> */}
-        <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/10 blur-[80px] rounded-full pointer-events-none"></div>
-        <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-primary/5 blur-[80px] rounded-full pointer-events-none"></div>
       </div>
     </div>
   );

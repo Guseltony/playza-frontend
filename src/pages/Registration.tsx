@@ -1,8 +1,8 @@
-import ForgotPassword from "@/components/registration/ForgotPassword";
-import LogIn from "@/components/registration/LogIn";
-import NewPassword from "@/components/registration/NewPassword";
-import OTP from "@/components/registration/OTP";
-import RegistrationForm from "@/components/registration/RegistrationForm";
+import ForgotPassword from "@/components/referral/registration/ForgotPassword";
+import LogIn from "@/components/referral/registration/LogIn";
+import NewPassword from "@/components/referral/registration/NewPassword";
+import OTP from "@/components/referral/registration/OTP";
+import RegistrationForm from "@/components/referral/registration/RegistrationForm";
 import { useState } from "react";
 
 const Registration = () => {

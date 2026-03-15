@@ -1,4 +1,4 @@
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 import { Globe, Smartphone, User, Mail, Lock, Shield, ArrowRight, Rocket } from "lucide-react";
 // import { Link } from "react-router";
 
