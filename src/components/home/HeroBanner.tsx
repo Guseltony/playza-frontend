@@ -100,7 +100,7 @@ const HeroBanner = () => {
 
   return (
     <section 
-      className="relative w-full rounded-3xl overflow-hidden glass border-slate-900/10 dark:border-white/10 group flex flex-col min-h-100"
+      className="relative w-full rounded-3xl overflow-hidden border-slate-900/10 dark:border-white/10 group flex flex-col min-h-80 lg:min-h-100"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onFocus={() => setIsHovered(true)}
@@ -150,24 +150,24 @@ const HeroBanner = () => {
               </div>
               
               <div className={`space-y-3 ${!slide.visual ? 'text-center' : ''} max-w-3xl`}>
-                <h1 className="text-3xl md:text-4xl uppercase font-black font-display tracking-tight text-white leading-[1.15] drop-shadow-2xl">
+                <h1 className="text-xl md:text-4xl uppercase font-black font-display tracking-tight text-white leading-[1.15] drop-shadow-2xl">
                   {slide.title}
                   <span className="gradient-text drop-shadow-amber-600">{slide.subtitle && ` ${slide.subtitle}`}</span>
                 </h1>
-                <p className={`text-sm text-slate-200/90 max-w-2xl leading-relaxed pt-1 drop-shadow-lg font-medium ${!slide.visual ? 'mx-auto' : ''}`}>
+                <p className={`text-xs md:text-sm text-slate-200/90 max-w-2xl leading-relaxed pt-1 drop-shadow-lg font-medium ${!slide.visual ? 'mx-auto' : ''}`}>
                   {slide.description}
                 </p>
               </div>
               
               {/* Optional Stats for slides like Tournament */}
               {slide.stats && (
-                <div className={`flex items-center gap-8 py-2 ${!slide.visual ? 'justify-center' : ''}`}>
+                <div className={`flex items-center gap-4 md:gap-8 py-2 ${!slide.visual ? 'justify-center' : ''}`}>
                   {slide.stats.map((stat, i) => (
                     <div key={i} className={!slide.visual ? 'text-center' : ''}>
-                      <div className="text-xs text-slate-300 uppercase font-bold tracking-widest mb-1 drop-shadow-sm">
+                      <div className="text-[10px] md:text-xs text-slate-300 uppercase font-bold tracking-widest mb-1 drop-shadow-sm">
                         {stat.label}
                       </div>
-                      <div className="text-xl md:text-2xl font-display font-black text-white tabular-nums drop-shadow-md">
+                      <div className="text-sm md:text-2xl font-display font-black text-white tabular-nums drop-shadow-md">
                         {stat.value}
                       </div>
                     </div>
@@ -176,10 +176,10 @@ const HeroBanner = () => {
               )}
 
               {/* Action Buttons */}
-              <div className={`flex items-center gap-2 md:gap-4 pt-2 ${!slide.visual ? 'justify-center' : ''}`}>
+              <div className={`flex items-center gap-2 md:gap-4 ${!slide.visual ? 'justify-center' : ''}`}>
                 <Link
                   to={slide.primaryAction.href}
-                  className={`px-6 py-3 ${slide.backgroundImage ? 'bg-primary hover:bg-primary/90 text-primary-foreground' : 'bg-primary hover:bg-primary/90 text-primary-foreground'} font-bold rounded-xl transition-all duration-300 flex items-center gap-2 glow-primary shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] hover:-translate-y-1`}
+                  className={`px-3 md:px-6 py-2 md:py-3 ${slide.backgroundImage ? 'bg-primary hover:bg-primary/90 text-primary-foreground' : 'bg-primary hover:bg-primary/90 text-primary-foreground'} font-bold rounded-xl transition-all duration-300 flex items-center gap-2 glow-primary shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] hover:-translate-y-1`}
                 >
                   {slide.id === 1 ? <Play size={18} fill="currentColor" /> : null}
                   {slide.id === 2 ? <Swords size={18} /> : null}
@@ -189,7 +189,7 @@ const HeroBanner = () => {
                 {slide.secondaryAction && (
                   <Link
                     to={slide.secondaryAction.href}
-                    className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-all duration-300 backdrop-blur-md border border-white/20 flex items-center gap-2 hover:-translate-y-1"
+                    className="px-3 md:px-6 py-2 md:py-3 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-all duration-300 backdrop-blur-md border border-white/20 flex items-center gap-2 hover:-translate-y-1"
                   >
                     <TrendingUp size={18} className="text-primary" />
                     {slide.secondaryAction.label}

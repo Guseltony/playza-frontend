@@ -44,10 +44,10 @@ const HomeGames = ({ games, title }: { games: Game[]; title: string }) => {
   }, []);
 
   return (
-    <div className="mb-12">
-      <div className="flex items-end justify-between mb-6 px-1">
+    <div>
+      <div className="flex items-end justify-between mb-6">
         <div>
-          <h2 className="font-heading text-2xl font-black uppercase tracking-tight text-white/90">
+          <h2 className="font-heading text-lg md:text-2xl font-black uppercase tracking-tight text-white/90">
             {title}
           </h2>
           <div className="h-1 w-12 bg-primary mt-1 rounded-full"></div>

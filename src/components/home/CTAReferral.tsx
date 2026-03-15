@@ -7,10 +7,10 @@ const CTAReferral = () => {
         <div className="referral-card relative group transition-all duration-500 hover:border-primary/30">
           <div className="referral-accent-bg" />
           
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10 ">
             {/* <!-- Content --> */}
-            <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-6 flex-1 ">
-              <div className="space-y-4">
+            <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-6 flex-1  ">
+              <div className="space-y-2 md:space-y-4">
                 <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest animate-pulse">
                   Limited Time Bonus
                 </div>
@@ -20,7 +20,7 @@ const CTAReferral = () => {
                     Earn Rewards together.
                   </span>
                 </h2>
-                <p className="text-slate-400 text-base md:text-xl max-w-xl leading-relaxed">
+                <p className="text-slate-400 text-base md:text-xl leading-relaxed">
                   Join the Playza community and get rewarded for every friend who joins. 
                   Earn up to <span className="text-accent font-black">1,000 Za</span> instantly.
                 </p>
