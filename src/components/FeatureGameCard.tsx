@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "./ui/button";
-import { TrendingUp } from "lucide-react";
+import { TrendingUp, Clock, Play } from "lucide-react";
 import type { Game } from "@/types/types";
 
 interface Props extends Game {
@@ -16,44 +16,62 @@ const FeatureGameCard = ({
   subTitle,
 }: Props) => {
   return (
-    <div>
+    <div className="relative w-full h-full group overflow-hidden">
+      {/* Background Image with Zoom Effect */}
       <img
-        alt="Tournament Banner"
-        className="absolute inset-0 w-full h-full object-cover"
+        alt={title}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
         src={thumbnail}
       />
-      <div className="absolute inset-0 bg-linear-to-r from-black via-black/80 to-transparent"></div>
-      <div className="relative h-full p-4 md:p-8 flex flex-col justify-center z-5">
-        <div className="flex flex-col  space-y-1 my-4">
-          <h1 className="text-sm md:text-2xl lg:text-5xl tracking-tight uppercase text-primary font-bold">
-            {title}
-          </h1>
-          <span className="text-xs font-bold text-secondary">{subTitle}</span>
-        </div>
-        <div className="flex items-center gap-12">
+      
+      {/* Multi-layered Overlays */}
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-transparent to-transparent"></div>
+      
+      {/* Glass Panel Container */}
+      <div className="feature-card-container">
+        <div className="feature-card-content">
+          {/* Badge */}
+          <div className="feature-card-badge">
+            <span className="live-dot"></span>
+            Featured Tournament
+          </div>
+
+          {/* Title Area */}
           <div>
-            <div className="text-xs text-slate-600 dark:text-slate-400 uppercase font-bold tracking-widest mb-1">
-              Current Game Pool
+            <h1 className="feature-card-title">{title}</h1>
+            <p className="feature-card-subtitle">{subTitle}</p>
+          </div>
+
+          {/* Stats Bar */}
+          <div className="feature-card-stats">
+            <div className="stat-item">
+              <span className="stat-label">Total Prize Pool</span>
+              <div className="stat-value prize-glow">
+                ${pricePool.toLocaleString()}
+                <TrendingUp className="text-secondary" size={24} />
+              </div>
             </div>
-            <div className="flex items-center text-base md:text-xl lg:text-3xl font-display font-bold text-accent">
-              {pricePool.toLocaleString()}
-              <TrendingUp className=" text-green-400 ml-1" size={15} />
+
+            <div className="stat-item border-l border-white/10 pl-10 md:pl-16">
+              <span className="stat-label">Ends In</span>
+              <div className="stat-value">
+                <Clock className="text-primary" size={20} />
+                00:42:15
+              </div>
             </div>
           </div>
-          <div className="h-10 w-px bg-slate-900/20 dark:bg-white/20"></div>
-          <div>
-            <div className="text-xs text-slate-600 dark:text-slate-400 uppercase font-bold tracking-widest mb-1">
-              Time Remaining
-            </div>
-            <div className="text-base md:text-xl lg:text-3xl font-display font-bold text-slate-900 dark:text-white tabular-nums">
-              00:42:15
-            </div>
-          </div>
+
+          {/* CTA Button */}
+          <Button className="feature-card-cta">
+            <Play className="mr-2 fill-current" size={16} />
+            {ctaLabel}
+          </Button>
         </div>
-        <Button className="bg-secondary/50 px-4 py-2 w-fit mt-8">
-          {ctaLabel}
-        </Button>
       </div>
+
+      {/* Edge Light Effect */}
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
     </div>
   );
 };
