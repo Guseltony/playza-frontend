@@ -2,8 +2,7 @@ import ForgotPassword from "@/components/registration/ForgotPassword";
 import LogIn from "@/components/registration/LogIn";
 import NewPassword from "@/components/registration/NewPassword";
 import OTP from "@/components/registration/OTP";
-import Profile from "@/components/registration/Profile";
-import SignUp from "@/components/registration/SignUp";
+import RegistrationForm from "@/components/registration/RegistrationForm";
 import { useState } from "react";
 
 const Registration = () => {
@@ -12,17 +11,11 @@ const Registration = () => {
   const renderComponent = () => {
     switch (page) {
       case "signup":
-        return <SignUp onClick={setPage} />;
-      // break;
-
+        return <RegistrationForm onClick={setPage} />;
+      
       case "otp":
         return <OTP onClick={setPage} />;
-      // break;
-
-      case "profile":
-        return <Profile />;
-      // break;
-
+      
       case "login":
         return <LogIn onClick={setPage} />;
       // break;

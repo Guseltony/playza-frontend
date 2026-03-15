@@ -1,124 +1,87 @@
-import { Edit, Verified } from "lucide-react";
+import { Edit, Verified, ShieldCheck } from "lucide-react";
+import { Button } from "../ui/button";
 
 interface OtpProps {
-  // placeholder: string;
-  // value: string;
   onClick: (value: string) => void;
 }
 
 const OTP = ({ onClick }: OtpProps) => {
   return (
-    <div className="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 relative overflow-x-hidden h-full flex items-center justify-center">
-      {/* <!-- Abstract Background Texture --> */}
-      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full"></div>
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-600/10 blur-[120px] rounded-full"></div>
-        <div className="absolute inset-0 particle-bg opacity-40"></div>
-      </div>
-      <div className="relative z-10 flex w-full flex-col">
-        <div className="layout-container flex h-full grow flex-col">
-          <div className="flex-1 flex items-center justify-center">
-            <div className="w-full max-w-125 glass-card rounded-xl p-2 md:p-12 shadow-2xl relative overflow-hidden">
-              {/* <!-- Decorative Cyan Accent Line --> */}
-              <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-primary to-transparent opacity-50"></div>
-              <div className="flex flex-col gap-2 mb-8 text-center">
-                <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-primary/20">
-                  <Verified className="material-symbols-outlined text-primary text-3xl" />
-                </div>
-                <h1 className="text-slate-900 dark:text-slate-100 text-3xl font-black leading-tight tracking-tight">
-                  Verify Identity
-                </h1>
-                <p className="text-slate-600 dark:text-slate-400 text-base font-normal">
-                  We've sent a 6-digit code to{" "}
-                  <span className="text-primary font-medium">
-                    +234 •••• ••• 424
-                  </span>
-                </p>
-              </div>
-              <div className="flex justify-center mb-8">
-                <fieldset className="relative flex gap-3 md:gap-4">
-                  {/* <!-- Focus ring is primary neon cyan --> */}
-                  <input
-                    required
-                    className="flex h-12 w-11 md:w-14 md:h-14 text-center appearance-none bg-slate-100 dark:bg-slate-900/50 border-2 border-slate-300 dark:border-slate-700/50 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary text-xl font-bold text-primary transition-all"
-                    max="9"
-                    maxLength={1}
-                    type="text"
-                  />
-                  <input
-                    required
-                    className="flex h-12 w-11 md:w-14 md:h-14 text-center appearance-none bg-slate-100 dark:bg-slate-900/50 border-2 border-slate-300 dark:border-slate-700/50 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary text-xl font-bold text-primary transition-all"
-                    max="9"
-                    maxLength={1}
-                    type="text"
-                  />
-                  <input
-                    required
-                    className="flex h-12 w-11 md:w-14 md:h-14 text-center appearance-none bg-slate-100 dark:bg-slate-900/50 border-2 border-slate-300 dark:border-slate-700/50 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary text-xl font-bold text-primary transition-all"
-                    max="9"
-                    maxLength={1}
-                    type="text"
-                  />
-                  <input
-                    required
-                    className="flex h-12 w-11 md:w-14 md:h-14 text-center appearance-none bg-slate-100 dark:bg-slate-900/50 border-2 border-slate-300 dark:border-slate-700/50 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary text-xl font-bold text-primary transition-all"
-                    max="9"
-                    maxLength={1}
-                    type="text"
-                  />
-                  <input
-                    required
-                    className="flex h-12 w-11 md:w-14 md:h-14 text-center appearance-none bg-slate-100 dark:bg-slate-900/50 border-2 border-slate-300 dark:border-slate-700/50 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary text-xl font-bold text-primary transition-all"
-                    max="9"
-                    maxLength={1}
-                    type="text"
-                  />
-                  <input
-                    required
-                    className="flex h-12 w-11 md:w-14 md:h-14 text-center appearance-none bg-slate-100 dark:bg-slate-900/50 border-2 border-slate-300 dark:border-slate-700/50 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary text-xl font-bold text-primary transition-all"
-                    max="9"
-                    maxLength={1}
-                    type="text"
-                  />
-                </fieldset>
-              </div>
-              <div className="flex flex-col gap-6">
-                <button
-                  onClick={() => onClick("profile")}
-                  className="w-full flex h-14 items-center justify-center rounded-lg bg-primary text-background-dark text-lg font-bold tracking-wide hover:shadow-[0_0_20px_rgba(13,242,242,0.4)] transition-all"
-                >
-                  Verify &amp; Continue
-                </button>
-                <div className="flex flex-col items-center gap-4">
-                  <div className="flex items-center gap-6">
-                    <div className="flex flex-col items-center">
-                      <div className="flex h-10 w-16 items-center justify-center rounded-lg bg-white dark:bg-slate-800/50 border border-slate-300 dark:border-slate-700">
-                        <p className="text-primary text-sm font-bold">01:59</p>
-                      </div>
-                      <p className="text-slate-500 text-[10px] uppercase tracking-widest mt-1">
-                        Expires
-                      </p>
-                    </div>
-                    <div className="h-8 w-px bg-slate-200 dark:bg-slate-700"></div>
-                    <button className="text-slate-600 dark:text-slate-400 hover:text-primary text-sm font-medium transition-colors">
-                      Resend Code
-                    </button>
+    <main className="h-full flex items-center justify-center p-4">
+      <div className="w-full max-w-lg">
+        <div className="glass-card p-6 md:p-12 rounded-2xl shadow-2xl relative overflow-hidden border border-white/10 text-center">
+          {/* Decorative Cyan Accent Line */}
+          <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-primary to-transparent opacity-50"></div>
+          
+          <div className="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-8 border border-primary/20 shadow-[0_0_30px_rgba(var(--primary),0.1)]">
+            <ShieldCheck className="text-primary" size={40} />
+          </div>
+
+          <div className="mb-10">
+            <h1 className="text-3xl md:text-4xl font-black text-white mb-3 tracking-tighter uppercase font-display">
+              Verify Account
+            </h1>
+            <p className="text-slate-400 text-sm md:text-base leading-relaxed">
+              We've sent a 6-digit verification code to
+              <br />
+              <span className="text-primary font-black tracking-wider">+234 •••• ••• 424</span>
+            </p>
+          </div>
+
+          <div className="flex justify-center mb-10">
+            <fieldset className="flex gap-2 md:gap-4">
+              {[...Array(6)].map((_, i) => (
+                <input
+                  key={i}
+                  required
+                  className="w-10 h-12 md:w-14 md:h-16 text-center bg-slate-900/50 border-2 border-white/5 rounded-xl focus:border-primary focus:ring-1 focus:ring-primary text-2xl font-black text-primary transition-all outline-none"
+                  max="9"
+                  maxLength={1}
+                  type="text"
+                />
+              ))}
+            </fieldset>
+          </div>
+
+          <div className="space-y-6">
+            <Button
+              onClick={() => window.location.href = "/"}
+              className="w-full h-[60px] bg-primary text-background-dark text-lg font-black uppercase tracking-widest rounded-xl shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all"
+            >
+              Verify & Launch
+            </Button>
+            
+            <div className="flex flex-col items-center gap-6 pt-4">
+              <div className="flex items-center gap-6">
+                <div className="flex flex-col items-center">
+                  <div className="bg-slate-900/80 px-4 py-2 rounded-lg border border-white/5">
+                    <p className="text-primary text-sm font-black font-mono">01:59</p>
                   </div>
-                  <button
-                    onClick={() => onClick("signup")}
-                    className="flex items-center gap-2 text-slate-500 hover:text-slate-300 text-sm font-normal transition-colors py-2 border-t border-slate-200 dark:border-slate-800 w-full justify-center mt-2"
-                  >
-                    <Edit className="text-sm" />
-                    Change phone number
-                  </button>
+                  <p className="text-slate-500 text-[9px] uppercase font-black tracking-widest mt-2 opacity-50">
+                    Code Expires
+                  </p>
                 </div>
+                <div className="h-10 w-px bg-white/5"></div>
+                <button className="text-slate-400 hover:text-primary text-xs font-black uppercase tracking-widest transition-colors">
+                  Resend Code
+                </button>
               </div>
+
+              <button
+                onClick={() => onClick("signup")}
+                className="flex items-center gap-2 text-slate-500 hover:text-white text-xs font-bold transition-all p-3 border-t border-white/5 w-full justify-center group"
+              >
+                <Edit size={14} className="group-hover:text-primary transition-colors" />
+                Change contact information
+              </button>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
+
+export default OTP;
 
 export default OTP;

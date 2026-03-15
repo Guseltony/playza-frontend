@@ -1,70 +1,31 @@
-import { Lock, LockOpen, Phone } from "lucide-react";
-import { MdVisibility } from "react-icons/md";
+import { User, Lock, ArrowRight, Github } from "lucide-react";
+import { Button } from "../ui/button";
 
-interface LoginProps {
-  // placeholder: string;
-  // value: string;
+interface LogInProps {
   onClick: (value: string) => void;
 }
 
-const LogIn = ({ onClick }: LoginProps) => {
+const LogIn = ({ onClick }: LogInProps) => {
   return (
-    <main className=" h-full flex items-center justify-center">
-      <div className="glass-card w-full md:min-w-120 p-2 md:p-10 rounded-xl shadow-2xl border border-white/5">
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 mb-6">
-            <LockOpen className=" text-primary text-3xl" />
+    <main className="h-full flex items-center justify-center p-4">
+      <div className="w-full max-w-md">
+        <div className="glass-card p-8 md:p-12 rounded-2xl shadow-2xl relative overflow-hidden border border-white/10">
+          <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-primary to-transparent opacity-50"></div>
+          
+          <div className="text-center mb-10">
+            <h1 className="text-3xl md:text-4xl font-black text-white mb-3 tracking-tighter uppercase font-display">
+              Welcome Back
+            </h1>
+            <p className="text-slate-400 text-sm">
+              Log in to access your dashboard and active tournaments.
+            </p>
           </div>
-          <h1 className="text-slate-900 dark:text-white text-3xl font-bold tracking-tight mb-2">
-            Welcome Back
-          </h1>
-          <p className="text-slate-600 dark:text-slate-400 text-sm">
-            Secure access to your competitive gaming assets
-          </p>
-        </div>
-        <form className="space-y-3 md:space-y-6">
-          {/* <!-- Identity Field --> */}
-          <div className="space-y-2">
-            <label className="text-slate-700 dark:text-slate-300 text-sm font-semibold ml-1">
-              Phone
-            </label>
-            <div className="relative group">
-              <Phone className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-primary transition-colors text-[20px]" />
-              <input
-                required
-                className="w-full bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 focus:border-primary focus:ring-1 focus:ring-primary/50 rounded-xl py-4 pl-12 pr-4 text-slate-900 dark:text-white placeholder:text-slate-600 outline-none transition-all"
-                placeholder="07000509001"
-                type="text"
-              />
-            </div>
-          </div>
-          {/* <!-- Password Field --> */}
-          <div className="space-y-2">
-            <div className="flex justify-between items-center px-1">
-              <label className="text-slate-700 dark:text-slate-300 text-sm font-semibold">
-                Password
+
+          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <div className="space-y-2">
+              <label className="block text-[10px] font-black uppercase tracking-widest text-slate-500 ml-1">
+                Username or Email
               </label>
-              <div
-              onClick={() => onClick("forgot")}
-                className="text-primary text-xs font-bold hover:underline"
-              >
-                Forgot Password?
-              </div>
-            </div>
-            <div className="relative group">
-              <Lock className=" absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-primary transition-colors text-[20px]" />
-              <input
-                required
-                className="w-full bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 focus:border-primary focus:ring-1 focus:ring-primary/50 rounded-xl py-4 pl-12 pr-12 text-slate-900 dark:text-white placeholder:text-slate-600 outline-none transition-all"
-                placeholder="Enter your password"
-                type="password"
-              />
-              <button
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300"
-                type="button"
-              >
-                <MdVisibility className="material-symbols-outlined text-[20px]" />
-              </button>
             </div>
           </div>
           {/* <!-- Action Buttons --> */}
