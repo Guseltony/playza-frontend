@@ -31,7 +31,7 @@ const FeatureGameCard = ({
       <div 
         className="relative w-full h-full flex flex-col justify-end overflow-hidden bg-linear-to-t from-[rgba(2,6,23,0.9)] via-[rgba(2,6,23,0.3)_50%] to-transparent"
       >
-        <div className="relative z-10 p-6 md:p-10 flex flex-col gap-6 max-w-4xl animate-in fade-in slide-in-from-bottom-8 duration-1000">
+        <div className="relative z-10 p-2 md:p-4 flex flex-col gap-2 w-full h-full animate-in fade-in slide-in-from-bottom-8 duration-1000 ">
           {/* Badge */}
           <div className="w-fit px-4 py-1.5 rounded-full text-[11px] font-black uppercase tracking-widest bg-primary text-primary-foreground shadow-lg shadow-primary/20 mb-2 flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-white animate-pulse shadow-[0_0_8px_rgba(255,255,255,0.8)]"></span>
@@ -40,16 +40,16 @@ const FeatureGameCard = ({
 
           {/* Title Area */}
           <div>
-            <h1 className="text-4xl md:text-6xl lg:text-8xl font-black uppercase tracking-tighter text-white leading-[0.9] drop-shadow-2xl mb-1 font-display">
+            <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white leading-[0.9] drop-shadow-2xl mb-1 font-display">
               {title}
             </h1>
-            <p className="text-sm md:text-lg font-bold text-secondary tracking-wide uppercase opacity-90 mb-4">
+            <p className="text-sm font-bold text-secondary tracking-wide uppercase opacity-90 mb-2">
               {subTitle}
             </p>
           </div>
 
           {/* Stats Bar */}
-          <div className="flex flex-wrap items-center gap-10 md:gap-16 border-t border-white/10 pt-6">
+          <div className="flex flex-wrap items-center gap-10 md:gap-16">
             <div className="flex flex-col gap-1">
               <span className="text-[10px] md:text-[12px] font-black uppercase tracking-[0.2em] text-white/40">
                 Total Prize Pool
@@ -72,7 +72,7 @@ const FeatureGameCard = ({
           </div>
 
           {/* CTA Button */}
-          <Button className="w-fit px-10 py-8 rounded-2xl font-black uppercase tracking-[0.15em] transition-all duration-300 transform hover:scale-105 active:scale-95 mt-4 text-xs md:text-sm bg-secondary text-secondary-foreground shadow-[0_10px_30px_-5px_var(--secondary)] hover:shadow-[0_15px_40px_-5px_var(--secondary)] hover:-translate-y-1">
+          <Button className="w-fit px-6 py-6 rounded-2xl font-black uppercase tracking-[0.15em] transition-all duration-300 transform hover:scale-105 active:scale-95 mt-4 text-xs md:text-sm bg-secondary text-secondary-foreground  hover:-translate-y-1">
             <Play className="mr-2 fill-current" size={16} />
             {ctaLabel}
           </Button>
